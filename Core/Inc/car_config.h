@@ -16,6 +16,14 @@
 #define CAR_BUTTON_DEBOUNCE_MS      25U
 #define CAR_LINE_LOST_TIMEOUT_MS    600U
 
+/* 横向起终点线覆盖五路传感器；默认完成一圈后停车。 */
+#ifndef CAR_TARGET_LAPS
+#define CAR_TARGET_LAPS             1U
+#endif
+#define CAR_MARKER_DEBOUNCE_MS      15U
+#define CAR_MARKER_CLEAR_MS         100U
+#define CAR_MIN_LAP_TIME_MS         1000U
+
 /* 模块在黑线上输出低电平时为 1，高电平时改为 0。 */
 #define CAR_SENSOR_BLACK_IS_LOW     1
 /* 某个车轮方向反了，就把对应的 1 改为 0。 */
@@ -63,6 +71,11 @@
 #if (CAR_CONTROL_PERIOD_MS == 0U) || (CAR_BUTTON_DEBOUNCE_MS == 0U) || \
     (CAR_LINE_LOST_TIMEOUT_MS <= CAR_CONTROL_PERIOD_MS)
 #error "Invalid car timing configuration"
+#endif
+#if (CAR_TARGET_LAPS < 1U) || (CAR_TARGET_LAPS > 255U) || \
+    (CAR_MARKER_DEBOUNCE_MS == 0U) || (CAR_MARKER_CLEAR_MS < CAR_MARKER_DEBOUNCE_MS) || \
+    (CAR_MIN_LAP_TIME_MS < CAR_MARKER_CLEAR_MS)
+#error "Invalid finish-line or lap configuration"
 #endif
 #if (CAR_LEFT_SCALE_PERCENT == 0U) || (CAR_LEFT_SCALE_PERCENT > 200U) || \
     (CAR_RIGHT_SCALE_PERCENT == 0U) || (CAR_RIGHT_SCALE_PERCENT > 200U)

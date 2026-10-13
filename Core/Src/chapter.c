@@ -3,7 +3,7 @@
 #include "car_config.h"
 #include "car_control.h"
 
-/* 可在调试器中查看 state、left_pwm、right_pwm。 */
+/* 可在调试器中查看 state、completed_laps、left_pwm、right_pwm。 */
 static CarControl car;
 
 static bool ReadButton(void)
@@ -143,9 +143,10 @@ void chapter_main(void)
         CarControl_Update(&car, now, ReadBlackMask(), ReadButton());
         MotorApply(car.left_pwm, car.right_pwm);
 
-        /* 板载 LED：停止时熄灭，运行时常亮，丢线故障时闪烁。 */
+        /* LED：停止/完成时熄灭，运行时常亮，丢线或不在起点时闪烁。 */
         bool led_on = (car.state == CAR_RUNNING) ||
-                      (car.state == CAR_FAULT_LINE_LOST && (now / 100U) % 2U == 0U);
+                      ((car.state == CAR_FAULT_LINE_LOST || car.state == CAR_START_REQUIRED) &&
+                       (now / 100U) % 2U == 0U);
         HAL_GPIO_WritePin(CAR_LED_PORT, CAR_LED_PIN,
                          led_on ? GPIO_PIN_RESET : GPIO_PIN_SET);
         HAL_Delay(1U);

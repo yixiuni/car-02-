@@ -12,7 +12,9 @@ typedef enum
 {
     CAR_STOPPED = 0,
     CAR_RUNNING,
-    CAR_FAULT_LINE_LOST
+    CAR_FAULT_LINE_LOST,
+    CAR_DONE,
+    CAR_START_REQUIRED
 } CarState;
 
 typedef struct
@@ -27,9 +29,17 @@ typedef struct
     bool button_raw;
     bool button_stable;
     bool button_armed;
+    uint8_t completed_laps;
+    bool marker_raw;
+    bool marker_stable;
+    bool marker_clear_pending;
+    bool lap_armed;
     uint32_t button_changed_at;
     uint32_t last_control_at;
     uint32_t line_missing_at;
+    uint32_t marker_changed_at;
+    uint32_t marker_clear_since;
+    uint32_t lap_started_at;
 } CarControl;
 
 /* 纯控制逻辑，不依赖 HAL；pressed=true 表示按键按下。 */
