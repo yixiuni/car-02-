@@ -1,0 +1,5 @@
+D:/STM32project/stm32-car/Core/Src/car_control.c:4:17:ClampSpeed	16	static
+D:/STM32project/stm32-car/Core/Src/car_control.c:17:13:Stop	16	static
+D:/STM32project/stm32-car/Core/Src/car_control.c:27:13:ButtonPressedEvent	24	static
+D:/STM32project/stm32-car/Core/Src/car_control.c:54:6:CarControl_Init	56	static
+D:/STM32project/stm32-car/Core/Src/car_control.c:65:6:CarControl_Update	56	static
