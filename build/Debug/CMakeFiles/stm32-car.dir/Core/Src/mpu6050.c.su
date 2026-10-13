@@ -1,0 +1,8 @@
+D:/STM32project/stm32-car/Core/Src/mpu6050.c:4:13:DelayUs	24	static
+D:/STM32project/stm32-car/Core/Src/mpu6050.c:11:13:SDA	16	static
+D:/STM32project/stm32-car/Core/Src/mpu6050.c:17:13:SCL	24	static
+D:/STM32project/stm32-car/Core/Src/mpu6050.c:33:13:Start	8	static
+D:/STM32project/stm32-car/Core/Src/mpu6050.c:45:13:Stop	8	static
+D:/STM32project/stm32-car/Core/Src/mpu6050.c:55:13:Write	24	static
+D:/STM32project/stm32-car/Core/Src/mpu6050.c:73:13:Read	32	static
+D:/STM32project/stm32-car/Core/Src/mpu6050.c:92:6:MPU6050_CheckIdentity	48	static

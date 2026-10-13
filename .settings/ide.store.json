@@ -1,5 +1,5 @@
 {
-    "device": "STM32F103C8T6",
+    "device": "STM32F103RCT6",
     "core": "Cortex-M3",
     "tz": "TZ-disabled",
     "toolchain": "GCC"

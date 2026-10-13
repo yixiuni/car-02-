@@ -28,7 +28,7 @@ static void Stop(CarControl *car, CarState state)
 /* 持续全黑才确认横线，只在确认进入横线时产生一次事件。 */
 static bool MarkerEntered(CarControl *car, uint32_t now, uint8_t mask)
 {
-    bool present = mask == 0x1FU;
+    bool present = mask == CAR_MARKER_MASK;
     if (present != car->marker_raw)
     {
         car->marker_raw = present;
@@ -46,7 +46,7 @@ static bool MarkerEntered(CarControl *car, uint32_t now, uint8_t mask)
 static void UpdateLaps(CarControl *car, uint32_t now, uint8_t mask, bool entered)
 {
     /* 只有稳定回到普通黑线才确认离开横线，全白丢线不能用于重新许可。 */
-    if (mask != 0U && mask != 0x1FU)
+    if (mask != 0U && mask != CAR_MARKER_MASK)
     {
         if (!car->marker_clear_pending)
         {
@@ -72,7 +72,7 @@ static void UpdateLaps(CarControl *car, uint32_t now, uint8_t mask, bool entered
         {
             ++car->completed_laps;
             car->lap_started_at = now;
-            if (car->completed_laps >= CAR_TARGET_LAPS)
+            if (car->completed_laps == CAR_TARGET_LAPS)
             {
                 Stop(car, CAR_DONE);
             }
@@ -121,9 +121,10 @@ void CarControl_Init(CarControl *car, uint32_t now_ms, bool pressed)
 }
 
 void CarControl_Update(CarControl *car, uint32_t now_ms,
-                       uint8_t black_mask, bool pressed)
+                       uint8_t black_mask, bool pressed,
+                       bool sensor_valid, bool enabled)
 {
-    static const int16_t weights[5] = {-200, -100, 0, 100, 200};
+    static const int16_t weights[CAR_SENSOR_COUNT] = {-200, -143, -86, -29, 29, 86, 143, 200};
     int32_t sum = 0;
     int32_t count = 0;
     int32_t error;
@@ -132,11 +133,18 @@ void CarControl_Update(CarControl *car, uint32_t now_ms,
     int32_t magnitude;
     int32_t base;
     bool marker_entered;
+    bool button_event = ButtonPressedEvent(car, now_ms, pressed);
 
-    black_mask &= 0x1FU;
+    if (!enabled || !sensor_valid)
+    {
+        Stop(car, enabled ? CAR_FAULT_SENSOR : CAR_STOPPED);
+        car->marker_raw = car->marker_stable = false;
+        car->marker_changed_at = now_ms;
+        return;
+    }
     marker_entered = MarkerEntered(car, now_ms, black_mask);
 
-    if (ButtonPressedEvent(car, now_ms, pressed))
+    if (button_event)
     {
         if (car->state == CAR_RUNNING)
         {
@@ -145,7 +153,8 @@ void CarControl_Update(CarControl *car, uint32_t now_ms,
         else
         {
             /* 必须从横向起终点线启动，否则首个横线无法代表完整一圈。 */
-            if (!car->marker_stable || black_mask != 0x1FU)
+            if (CAR_TARGET_LAPS > 0U &&
+                (!car->marker_stable || black_mask != CAR_MARKER_MASK))
             {
                 Stop(car, CAR_START_REQUIRED);
                 return;
@@ -166,7 +175,7 @@ void CarControl_Update(CarControl *car, uint32_t now_ms,
         }
     }
 
-    if (car->state == CAR_RUNNING)
+    if (CAR_TARGET_LAPS > 0U && car->state == CAR_RUNNING)
     {
         /* 每次输入采样都检查横线，计圈不受 5 ms 转向周期限制。 */
         UpdateLaps(car, now_ms, black_mask, marker_entered);
@@ -201,7 +210,7 @@ void CarControl_Update(CarControl *car, uint32_t now_ms,
     car->line_missing = false;
 
     /* 全黑表示横线：首次启动/未达目标圈数时低速通过，完成时已停车返回。 */
-    if (black_mask == 0x1FU)
+    if (black_mask == CAR_MARKER_MASK)
     {
         car->left_pwm = CAR_WIDE_LINE_SPEED;
         car->right_pwm = CAR_WIDE_LINE_SPEED;
@@ -209,7 +218,7 @@ void CarControl_Update(CarControl *car, uint32_t now_ms,
         return;
     }
 
-    for (uint8_t i = 0U; i < 5U; ++i)
+    for (uint8_t i = 0U; i < CAR_SENSOR_COUNT; ++i)
     {
         if ((black_mask & (1U << i)) != 0U)
         {

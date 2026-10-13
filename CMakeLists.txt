@@ -45,7 +45,11 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    Core/Src/chapter.c
+    Core/Src/app.c
+    Core/Src/board_c10b.c
+    Core/Src/hiwonder_gray.c
+    Core/Src/gray_protocol.c
+    Core/Src/mpu6050.c
     Core/Src/car_control.c
 )
 

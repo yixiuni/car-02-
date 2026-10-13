@@ -4,7 +4,7 @@ enable_language(C ASM)
 # STM32CubeMX generated symbols (macros)
 set(MX_Defines_Syms 
 	USE_HAL_DRIVER 
-	STM32F103xB
+	STM32F103xE
     $<$<CONFIG:Debug>:DEBUG>
 )
 
@@ -24,7 +24,7 @@ set(MX_Application_Src
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/stm32f1xx_hal_msp.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/sysmem.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/syscalls.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../startup_stm32f103xb.s
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../startup_stm32f103xe.s
 )
 
 # STM32 HAL/LL Drivers

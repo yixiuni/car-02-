@@ -8,7 +8,7 @@
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build STM32 (Debug)",
             "preBuild": "",
-            "deviceName": "STM32F103C8T6",
+            "deviceName": "STM32F103RCT6",
             "deviceCore": "Cortex-M3",
             "deviceTrustzone": "TZ-disabled",
             "runEntry": "main",

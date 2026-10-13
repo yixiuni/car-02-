@@ -14,7 +14,8 @@ typedef enum
     CAR_RUNNING,
     CAR_FAULT_LINE_LOST,
     CAR_DONE,
-    CAR_START_REQUIRED
+    CAR_START_REQUIRED,
+    CAR_FAULT_SENSOR
 } CarState;
 
 typedef struct
@@ -44,9 +45,11 @@ typedef struct
 
 /* 纯控制逻辑，不依赖 HAL；pressed=true 表示按键按下。 */
 void CarControl_Init(CarControl *car, uint32_t now_ms, bool pressed);
-/* black_mask 的 bit0..bit4 按最左到最右排列，1 表示检测到黑线。 */
+/* sensor_valid=false or enabled=false stops immediately and requires a new press. */
+/* black_mask 的 bit0..bit7 按最左到最右排列，1 表示检测到黑线。 */
 void CarControl_Update(CarControl *car, uint32_t now_ms,
-                       uint8_t black_mask, bool pressed);
+                       uint8_t black_mask, bool pressed,
+                       bool sensor_valid, bool enabled);
 
 #ifdef __cplusplus
 }
