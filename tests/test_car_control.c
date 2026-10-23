@@ -1,280 +1,99 @@
-#include <assert.h>
-#include <stdint.h>
-#include <stdio.h>
-
 #include "car_control.h"
 #include "car_config.h"
+#include "imu_filter.h"
+#include <assert.h>
+#include <math.h>
+#include <stdio.h>
 
-typedef struct
+static CarGeometry Geometry(void)
 {
-    CarControl car;
-    uint32_t now;
-} Simulation;
-
-static void Init(Simulation *sim, uint32_t now, bool held)
-{
-    sim->now = now;
-    CarControl_Init(&sim->car, now, held);
+    return (CarGeometry){65,120,1560,1560,125,125,75,70,true};
 }
-
-static void Advance(Simulation *sim, uint32_t duration, uint8_t mask, bool pressed)
+static CarControl car;
+static CarInputs in;
+static void Init(uint32_t time,bool held)
 {
-    for (uint32_t i = 0; i < duration; ++i)
-    {
-        ++sim->now;
-        CarControl_Update(&sim->car, sim->now, mask, pressed, true, true);
-        assert(sim->car.left_pwm <= CAR_MAX_SPEED);
-        assert(sim->car.right_pwm <= CAR_MAX_SPEED);
-        if (sim->car.state != CAR_RUNNING)
-        {
-            assert(sim->car.left_pwm == 0U && sim->car.right_pwm == 0U);
-        }
+    CarGeometry g=Geometry();
+    in=(CarInputs){.now_ms=time,.pressed=held,.enabled=true,.gray_online=true,
+        .imu_ready=true,.encoder_valid=true};
+    CarControl_Init(&car,&g,time,held);
+}
+static void Tick(unsigned ms)
+{
+    for (unsigned t=0;t<ms;t+=5) {
+        in.now_ms+=5; ++in.gray_samples;
+        in.left_mm+=in.left_speed*0.005f; in.right_mm+=in.right_speed*0.005f;
+        CarControl_Update(&car,&in);
     }
 }
-
-static void Press(Simulation *sim, uint8_t mask)
+static void Start(void)
 {
-    Advance(sim, CAR_BUTTON_DEBOUNCE_MS + 2U, mask, true);
+    in.pressed=true; Tick(50); in.pressed=false; Tick(50);
 }
-
-static void Release(Simulation *sim, uint8_t mask)
-{
-    Advance(sim, CAR_BUTTON_DEBOUNCE_MS + 2U, mask, false);
-}
-
-static void Start(Simulation *sim, uint8_t mask)
-{
-    Init(sim, 0U, false);
-    Press(sim, 0xFFU);
-    Release(sim, 0xFFU);
-    Advance(sim, CAR_MARKER_CLEAR_MS + 10U, mask, false);
-    assert(sim->car.state == CAR_RUNNING && sim->car.completed_laps == 0U);
-}
-
-static void TestBootAndReset(void)
-{
-    Simulation sim;
-    Init(&sim, 0U, false);
-    Advance(&sim, 100U, 0xFFU, false);
-    assert(sim.car.state == CAR_STOPPED);
-    Init(&sim, sim.now, true);
-    Advance(&sim, 100U, 0xFFU, true);
-    assert(sim.car.state == CAR_STOPPED); /* Reset 时按住按钮不会自动启动。 */
-    Release(&sim, 0xFFU);
-    Press(&sim, 0xFFU);
-    assert(sim.car.state == CAR_RUNNING);
-    Init(&sim, sim.now, false);
-    assert(sim.car.state == CAR_STOPPED);
-    assert(sim.car.left_pwm == 0U && sim.car.right_pwm == 0U);
-}
-
-static void TestButton(void)
-{
-    Simulation sim;
-    Init(&sim, 0U, false);
-    for (unsigned i = 0U; i < 8U; ++i)
-    {
-        Advance(&sim, 3U, 0xFFU, true);
-        Advance(&sim, 3U, 0xFFU, false);
-    }
-    assert(sim.car.state == CAR_STOPPED);
-    Press(&sim, 0xFFU);
-    Advance(&sim, 1000U, 0xFFU, true);
-    assert(sim.car.state == CAR_RUNNING); /* 长按只能启动一次。 */
-    Advance(&sim, 3U, 0xFFU, false);
-    Advance(&sim, 30U, 0xFFU, true);
-    assert(sim.car.state == CAR_RUNNING); /* 松手抖动不能重新触发。 */
-    Release(&sim, 0xFFU);
-    Press(&sim, 0xFFU);
-    assert(sim.car.state == CAR_STOPPED);
-    Advance(&sim, 1000U, 0xFFU, true);
-    assert(sim.car.state == CAR_STOPPED);
-}
-
-static void TestSteering(void)
-{
-    Simulation sim;
-    Start(&sim, 0x18U);
-    assert(sim.car.left_pwm == sim.car.right_pwm);
-    Advance(&sim, 50U, 0x04U, false);
-    assert(sim.car.left_pwm < sim.car.right_pwm);
-    Advance(&sim, 50U, 0x20U, false);
-    assert(sim.car.left_pwm > sim.car.right_pwm);
-    Advance(&sim, 50U, 0x06U, false);
-    assert(sim.car.left_pwm < sim.car.right_pwm);
-    Advance(&sim, 50U, 0x60U, false);
-    assert(sim.car.left_pwm > sim.car.right_pwm);
-    Advance(&sim, 50U, 0x18U, false);
-    assert(sim.car.left_pwm == sim.car.right_pwm);
-
-}
-
-static void TestRecoveryAndFault(void)
-{
-    Simulation sim;
-    Start(&sim, 0x04U);
-    Advance(&sim, 100U, 0U, false);
-    assert(sim.car.state == CAR_RUNNING && sim.car.line_missing);
-    assert(sim.car.left_pwm < sim.car.right_pwm);
-    Advance(&sim, 100U, 0x18U, false);
-    assert(!sim.car.line_missing && sim.car.state == CAR_RUNNING);
-    Advance(&sim, CAR_LINE_LOST_TIMEOUT_MS + 20U, 0U, false);
-    assert(sim.car.state == CAR_FAULT_LINE_LOST);
-    Advance(&sim, 100U, 0x18U, false);
-    assert(sim.car.state == CAR_FAULT_LINE_LOST); /* 重新看到线不会擅自启动。 */
-    Press(&sim, 0xFFU);
-    assert(sim.car.state == CAR_RUNNING);
-    assert(sim.car.left_pwm == sim.car.right_pwm);
-    Release(&sim, 0x20U);
-    Advance(&sim, 100U, 0U, false);
-    assert(sim.car.left_pwm > sim.car.right_pwm);
-    Press(&sim, 0U);
-    assert(sim.car.state == CAR_STOPPED); /* 找线过程中仍可按键停车。 */
-}
-
-static void TestAllSensorPatterns(void)
-{
-    Simulation sim;
-    for (unsigned mask = 1U; mask <= 255U; ++mask)
-    {
-        Start(&sim, (uint8_t)mask);
-        assert(sim.car.state == CAR_RUNNING);
-        assert(sim.car.left_pwm > 0U || sim.car.right_pwm > 0U);
-    }
-}
-
-#if CAR_TARGET_LAPS > 0U
-static void CompleteLap(Simulation *sim)
-{
-    Advance(sim, CAR_MIN_LAP_TIME_MS + CAR_MARKER_CLEAR_MS, 0x18U, false);
-    assert(sim->car.lap_armed);
-    Advance(sim, CAR_MARKER_DEBOUNCE_MS + 2U, 0xFFU, false);
-}
-
-static void TestFinishLine(void)
-{
-    Simulation sim;
-    Start(&sim, 0xFFU);
-    Advance(&sim, 2000U, 0xFFU, false);
-    assert(sim.car.completed_laps == 0U); /* 起点停留不计圈。 */
-    for (unsigned lap = 1U; lap <= CAR_TARGET_LAPS; ++lap)
-    {
-        Advance(&sim, CAR_MIN_LAP_TIME_MS + CAR_MARKER_CLEAR_MS, 0x18U, false);
-        assert(sim.car.lap_armed);
-        for (unsigned bounce = 0U; bounce < 8U; ++bounce)
-        {
-            Advance(&sim, 3U, 0xFFU, false);
-            Advance(&sim, 3U, 0x18U, false);
-        }
-        assert(sim.car.completed_laps == lap - 1U); /* 短促全黑不算圈。 */
-        Advance(&sim, CAR_MARKER_DEBOUNCE_MS + 2U, 0xFFU, false);
-        assert(sim.car.completed_laps == lap);
-        assert(sim.car.state == (lap == CAR_TARGET_LAPS ? CAR_DONE : CAR_RUNNING));
-        Advance(&sim, 1500U, 0xFFU, false);
-        assert(sim.car.completed_laps == lap); /* 同次横线不能反复计数。 */
-    }
-    Advance(&sim, 100U, 0x18U, false);
-    assert(sim.car.state == CAR_DONE); /* 到终点后保持停车。 */
-    Press(&sim, 0xFFU);
-    assert(sim.car.state == CAR_RUNNING && sim.car.completed_laps == 0U);
-    Release(&sim, 0xFFU);
-}
-
-static void TestStartPositionAndDeparture(void)
-{
-    Simulation sim;
-    Init(&sim, 0U, false);
-    Press(&sim, 0x18U);
-    assert(sim.car.state == CAR_START_REQUIRED);
-    Release(&sim, 0xFFU);
-    assert(sim.car.state == CAR_START_REQUIRED); /* 回起点不会自动启动。 */
-    Press(&sim, 0xFFU);
-    assert(sim.car.state == CAR_RUNNING);
-    Release(&sim, 0xFFU);
-    Advance(&sim, CAR_MARKER_CLEAR_MS - 1U, 0x18U, false);
-    Advance(&sim, CAR_MARKER_DEBOUNCE_MS + 2U, 0xFFU, false);
-    assert(!sim.car.lap_armed && sim.car.completed_laps == 0U);
-    Advance(&sim, CAR_LINE_LOST_TIMEOUT_MS / 2U, 0U, false);
-    assert(!sim.car.lap_armed); /* 全白丢线不能作为离开起点的证据。 */
-    Advance(&sim, CAR_MARKER_DEBOUNCE_MS + 2U, 0xFFU, false);
-    assert(sim.car.completed_laps == 0U);
-    Advance(&sim, CAR_MARKER_CLEAR_MS + 10U, 0x18U, false);
-    assert(sim.car.lap_armed);
-    Press(&sim, 0x18U);
-    assert(sim.car.state == CAR_STOPPED); /* 运行中可手动停车。 */
-}
-
-static void TestEarlyCrossing(void)
-{
-    Simulation sim;
-    Start(&sim, 0x18U);
-    Advance(&sim, CAR_MARKER_DEBOUNCE_MS + 2U, 0xFFU, false);
-    assert(sim.car.completed_laps == 0U && !sim.car.lap_armed);
-    Advance(&sim, CAR_MIN_LAP_TIME_MS + 100U, 0xFFU, false);
-    assert(sim.car.completed_laps == 0U); /* 太早返回后停留不能补算一圈。 */
-    CompleteLap(&sim);
-    assert(sim.car.completed_laps == 1U);
-}
-
-static void TestClockWrap(void)
-{
-    Simulation sim;
-    Init(&sim, UINT32_MAX - 10U, false);
-    Press(&sim, 0xFFU);
-    assert(sim.now < 100U && sim.car.state == CAR_RUNNING);
-    Release(&sim, 0x18U);
-    for (unsigned lap = 0U; lap < CAR_TARGET_LAPS; ++lap) { CompleteLap(&sim); }
-    assert(sim.car.state == CAR_DONE && sim.car.completed_laps == CAR_TARGET_LAPS);
-
-    Init(&sim, UINT32_MAX - 350U, false);
-    Press(&sim, 0xFFU);
-    Release(&sim, 0x20U);
-    Advance(&sim, CAR_LINE_LOST_TIMEOUT_MS + 20U, 0U, false);
-    assert(sim.now < 1000U && sim.car.state == CAR_FAULT_LINE_LOST);
-}
-
-#endif
-
-static void TestCommunicationAndEnable(void)
-{
-    Simulation sim;
-    Start(&sim, 0x18U);
-    CarControl_Update(&sim.car, ++sim.now, 0xFFU, false, false, true);
-    assert(sim.car.state == CAR_FAULT_SENSOR);
-    assert(sim.car.left_pwm == 0U && sim.car.right_pwm == 0U);
-    Advance(&sim, 100U, 0xFFU, false);
-    assert(sim.car.state == CAR_FAULT_SENSOR); /* link recovery never restarts motion */
-    Press(&sim, 0xFFU);
-    assert(sim.car.state == CAR_RUNNING);
-    Release(&sim, 0x18U);
-    CarControl_Update(&sim.car, ++sim.now, 0x18U, false, true, false);
-    assert(sim.car.state == CAR_STOPPED);
-    assert(sim.car.left_pwm == 0U && sim.car.right_pwm == 0U);
-    Advance(&sim, 100U, 0xFFU, false);
-    assert(sim.car.state == CAR_STOPPED); /* switch-on never restarts motion */
-    for (unsigned i = 0U; i < CAR_BUTTON_DEBOUNCE_MS + 2U; ++i)
-        CarControl_Update(&sim.car, ++sim.now, 0xFFU, true, false, true);
-    Advance(&sim, 100U, 0xFFU, true);
-    assert(sim.car.state != CAR_RUNNING); /* holding a press during outage is consumed */
-    Release(&sim, 0xFFU);
-    Press(&sim, 0xFFU);
-    assert(sim.car.state == CAR_RUNNING);
-}
-
 int main(void)
 {
-    TestBootAndReset();
-    TestButton();
-    TestSteering();
-    TestRecoveryAndFault();
-    TestAllSensorPatterns();
-    TestCommunicationAndEnable();
-#if CAR_TARGET_LAPS > 0U
-    TestFinishLine();
-    TestStartPositionAndDeparture();
-    TestEarlyCrossing();
-    TestClockWrap();
-#endif
-    printf("PASS: 8-channel control, buttons/reset, steering, all masks, communication/enable safety, %u-lap mode\n", (unsigned)CAR_TARGET_LAPS);
-    return 0;
+    CarGeometry g=CarGeometry_Default();
+    assert(!CarGeometry_Valid(&g)); /* delivered build must be parked */
+    g=Geometry(); assert(CarGeometry_Valid(&g));
+    g.counts_a_rev=NAN; assert(!CarGeometry_Valid(&g));
+    assert(Encoder_CounterDelta(3,65530)==9);
+    assert(Encoder_CounterDelta(65530,3)==-9);
+    assert(Encoder_CounterDelta(0,32768)==-32768);
+    MotionControl m={0}; uint16_t l,r;
+    for(unsigned i=0;i<1000;i++) Motion_Update(&m,1000,1000,0,0,.005f,&l,&r);
+    assert(l<=CAR_PWM_LIMIT && r<=CAR_PWM_LIMIT);
+    Motion_Update(&m,0,0,200,200,.005f,&l,&r); assert(l==0 && r==0);
+    Motion_Update(&m,NAN,100,0,0,.005f,&l,&r); assert(l==0 && r==0);
+
+    Init(0,false); Start(); assert(car.state==CAR_STRAIGHT && car.point_events==1);
+    in.left_speed=in.right_speed=200; Tick(1000);
+    assert(car.state==CAR_STRAIGHT); /* planned white is not lost line */
+    in.gray_online=false; Tick(5);
+    assert(car.state==CAR_FAULT && car.fault==CAR_FAULT_GRAY && !car.left_pwm);
+    in.gray_online=true; Tick(100); assert(car.state==CAR_FAULT);
+    in.left_speed=in.right_speed=0; Start(); assert(car.state==CAR_STRAIGHT);
+    in.pressed=true; Tick(35); assert(car.state==CAR_STOPPED);
+    in.pressed=false; Tick(50); assert(car.state==CAR_STOPPED);
+
+    Init(0,true); Tick(1000); assert(!CarControl_Active(&car));
+    in.pressed=false; Tick(50); assert(!CarControl_Active(&car));
+    Start(); assert(car.state==CAR_STRAIGHT);
+    Init(0,false); in.pressed=true; Tick(1000);
+    assert(car.task==2 && car.mode_events==1 && !CarControl_Active(&car));
+    in.pressed=false; Tick(50); assert(!CarControl_Active(&car));
+    Init(0,false); car.geometry.confirmed=false; Start();
+    assert(car.fault==CAR_FAULT_CONFIG && !car.left_pwm);
+    Init(0,false); in.enabled=false; Start(); in.enabled=true; Tick(100);
+    assert(!CarControl_Active(&car));
+    Init(0,false); in.enabled=false; in.pressed=true; Tick(30);
+    in.enabled=true; in.pressed=false; Tick(50); assert(!CarControl_Active(&car));
+    Init(0,false); Start(); in.enabled=false; Tick(5); in.enabled=true; Tick(100);
+    assert(car.state==CAR_STOPPED);
+    Init(0,false); Start(); in.now_ms+=100; CarControl_Update(&car,&in);
+    assert(car.fault==CAR_FAULT_TIMING);
+    Init(0,false); Start(); Tick(1500); assert(car.fault==CAR_FAULT_STALL);
+    Init(UINT32_MAX-200,false); Start();
+    in.left_speed=in.right_speed=200; Tick(1000); assert(car.state==CAR_STRAIGHT);
+
+    /* Black away from the destination, including illegal FF, cannot advance. */
+    Init(0,false); car.task=2; Start(); in.black_mask=0xFF;
+    in.left_speed=in.right_speed=150; Tick(500); assert(car.segment==0);
+    in.black_mask=0x18; Tick(500); assert(car.segment==0);
+    /* Endpoint confirmations require new frames; repeated main-loop reads don't count. */
+    car.x_mm=930; car.y_mm=0; car.black_frames=0;
+    in.left_speed=in.right_speed=0; in.black_mask=0x18;
+    for(unsigned i=0;i<10;i++) { in.now_ms+=5; CarControl_Update(&car,&in); }
+    assert(car.segment==0);
+    in.imu_ready=false; Tick(5); assert(car.fault==CAR_FAULT_IMU);
+
+    ImuFilter f; ImuFilter_Init(&f);
+    for(unsigned i=0;i<500;i++) ImuFilter_Update(&f,i*5,1.25f,true,true);
+    assert(f.ready && fabsf(f.bias_dps-1.25f)<.001f);
+    for(unsigned i=500;i<700;i++) ImuFilter_Update(&f,i*5,91.25f,true,false);
+    assert(fabsf(f.yaw_rad-CAR_PI*.5f)<.01f);
+    ImuFilter_Update(&f,3500,0,false,false); assert(!f.ready && !f.online);
+    ImuFilter_Init(&f);
+    for(unsigned i=0;i<1000;i++) ImuFilter_Update(&f,i*5,i%2 ? 4 : -4,true,true);
+    assert(!f.ready); /* unstable bias rejected */
+    puts("PASS: startup interlocks, buttons, white navigation, freshness, faults, wrap, PI, encoder wrap, gyro calibration");
 }

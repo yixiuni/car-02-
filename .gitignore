@@ -1,0 +1,5 @@
+/build-local/
+/build-host/
+.tools/
+__pycache__/
+.DS_Store

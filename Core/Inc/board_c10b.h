@@ -26,6 +26,16 @@
 #define BOARD_MPU_SCL_PIN        GPIO_PIN_14
 #define BOARD_MPU_SDA_PIN        GPIO_PIN_15
 
+#define BOARD_ENCODER_A_PORT     GPIOB
+#define BOARD_ENCODER_A_CH1_PIN  GPIO_PIN_6
+#define BOARD_ENCODER_A_CH2_PIN  GPIO_PIN_7
+#define BOARD_ENCODER_B_PORT     GPIOC
+#define BOARD_ENCODER_B_CH1_PIN  GPIO_PIN_6
+#define BOARD_ENCODER_B_CH2_PIN  GPIO_PIN_7
+#define BOARD_BUZZER_PORT        GPIOA
+#define BOARD_BUZZER_PIN         GPIO_PIN_15
+
+void Board_SetBuzzer(bool on);
 void Board_Init(void);
 bool Board_ButtonPressed(void);
 bool Board_MotionEnabled(void);

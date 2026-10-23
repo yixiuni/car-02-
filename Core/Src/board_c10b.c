@@ -42,6 +42,11 @@ void Board_Init(void)
     gpio.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(BOARD_LED_PORT, &gpio);
 
+    gpio.Pin = BOARD_BUZZER_PIN;
+    HAL_GPIO_WritePin(BOARD_BUZZER_PORT, BOARD_BUZZER_PIN,
+                     CAR_BUZZER_ACTIVE_HIGH ? GPIO_PIN_RESET : GPIO_PIN_SET);
+    HAL_GPIO_Init(BOARD_BUZZER_PORT, &gpio);
+
     timer_clock = HAL_RCC_GetPCLK1Freq();
     if ((RCC->CFGR & RCC_CFGR_PPRE1) != RCC_CFGR_PPRE1_DIV1)
     {
@@ -111,4 +116,10 @@ void Board_SetLeds(bool running, bool fault)
                       running ? GPIO_PIN_RESET : GPIO_PIN_SET);
     HAL_GPIO_WritePin(BOARD_LED_PORT, BOARD_LED_FAULT_PIN,
                       fault ? GPIO_PIN_RESET : GPIO_PIN_SET);
+}
+
+void Board_SetBuzzer(bool on)
+{
+    HAL_GPIO_WritePin(BOARD_BUZZER_PORT, BOARD_BUZZER_PIN,
+        (on == (CAR_BUZZER_ACTIVE_HIGH != 0)) ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }

@@ -2,6 +2,7 @@
 #define MPU6050_H
 #include <stdbool.h>
 #include <stdint.h>
-/* PB14/PB15 software I2C. Reads identity only; does not change MPU configuration. */
 bool MPU6050_CheckIdentity(uint8_t *identity);
+bool MPU6050_Init(uint8_t *identity);
+bool MPU6050_ReadGyroZ(float *z_dps);
 #endif

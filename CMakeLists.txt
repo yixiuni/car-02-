@@ -51,6 +51,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/gray_protocol.c
     Core/Src/mpu6050.c
     Core/Src/car_control.c
+    Core/Src/motion_control.c
+    Core/Src/encoder.c
+    Core/Src/imu_filter.c
 )
 
 # Add include paths

@@ -18,6 +18,9 @@ expected = {
     "LED": ("GPIOC", {"RUN": 2, "FAULT": 3}),
     "GRAY": ("GPIOC", {"TX": 10, "RX": 11}),
     "MPU": ("GPIOB", {"SCL": 14, "SDA": 15}),
+    "ENCODER_A": ("GPIOB", {"CH1": 6, "CH2": 7}),
+    "ENCODER_B": ("GPIOC", {"CH1": 6, "CH2": 7}),
+    "BUZZER": ("GPIOA", {"": 15}),
 }
 owners = {}
 for peripheral, (port, pins) in expected.items():
@@ -38,6 +41,10 @@ for key, value in {
     "PA6.Signal": "S_TIM3_CH1", "PA7.Signal": "S_TIM3_CH2",
     "PB0.Signal": "S_TIM3_CH3", "PB1.Signal": "S_TIM3_CH4",
     "PC10.Signal": "UART4_TX", "PC11.Signal": "UART4_RX",
+    "PB6.Signal": "S_TIM4_CH1", "PB7.Signal": "S_TIM4_CH2",
+    "PC6.Signal": "S_TIM8_CH1", "PC7.Signal": "S_TIM8_CH2",
+    "TIM4.EncoderMode": "TIM_ENCODERMODE_TI12", "TIM8.EncoderMode": "TIM_ENCODERMODE_TI12",
+    "PA15.Signal": "GPIO_Output",
     "UART4.BaudRate": "115200", "TIM3.Period": "3599",
     "PB14.GPIO_ModeDefaultOutputPP": "GPIO_MODE_OUTPUT_OD",
     "PB15.GPIO_ModeDefaultOutputPP": "GPIO_MODE_OUTPUT_OD",
