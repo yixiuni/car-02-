@@ -54,6 +54,12 @@
 #ifndef CAR_TIME_TRIAL_ARC_BOOST
 #define CAR_TIME_TRIAL_ARC_BOOST 0
 #endif
+#ifndef CAR_TIME_TRIAL_EXIT_TRACE
+#define CAR_TIME_TRIAL_EXIT_TRACE 0
+#endif
+#if CAR_TIME_TRIAL_EXIT_TRACE && (!CAR_TIME_TRIAL_ADAPTIVE || CAR_TIME_TRIAL_ARC_BOOST)
+#error "Exit trace uses the physically successful T309 baseline"
+#endif
 #if CAR_TIME_TRIAL_ARC_BOOST && !CAR_TIME_TRIAL_ADAPTIVE
 #error "Arc boost requires the adaptive baseline"
 #endif

@@ -14,6 +14,18 @@
 #include <stdlib.h>
 
 typedef struct { float x,y,theta,vl,vr,left,right; } Plant;
+static uint64_t ControlHash(uint64_t h,const CarControl *c)
+{
+    const float values[]={c->x_mm,c->y_mm,c->heading_rad,c->left_target,c->right_target,
+        c->motion.left.integral,c->motion.right.integral,c->line_error,c->line_rate};
+    for(unsigned i=0;i<sizeof(values)/sizeof(values[0]);i++) {
+        union { float f;uint32_t u; } bits={.f=values[i]};
+        h=(h^bits.u)*1099511628211ULL;
+    }
+    const uint32_t words[]={c->state,c->fault,c->segment,c->point_events,c->left_pwm,c->right_pwm};
+    for(unsigned i=0;i<sizeof(words)/sizeof(words[0]);i++) h=(h^words[i])*1099511628211ULL;
+    return h;
+}
 static float placement_error_rad;
 static unsigned fault_lap;
 static unsigned selected_laps;
@@ -66,6 +78,15 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
     if (!isfinite(plant_pwm_per_mm_s) || plant_pwm_per_mm_s<0.5f || plant_pwm_per_mm_s>3.0f) {
         fputs("FAIL: invalid assumed motor model\n",stderr); return 1;
     }
+    /* Independent encoder distance-scale error while turning. True plant pose
+     * and physical coverage checks stay unchanged; this is a hypothesis sweep,
+     * not a fitted measurement of the failed hardware run. */
+    float arc_odometry_scale=getenv("SIM_ARC_ODOMETRY_SCALE") ?
+        strtof(getenv("SIM_ARC_ODOMETRY_SCALE"),NULL) : 1.0f;
+    if (!isfinite(arc_odometry_scale) || arc_odometry_scale<.8f || arc_odometry_scale>1.2f) {
+        fputs("FAIL: invalid arc odometry scale\n",stderr);return 1;
+    }
+    float encoder_left=0,encoder_right=0;
     unsigned gray_phase=getenv("SIM_GRAY_PHASE_MS") ?
         (unsigned)strtoul(getenv("SIM_GRAY_PHASE_MS"),NULL,10)%15U : 0;
     /* Use measured chassis dimensions; counts are a test fixture only. */
@@ -90,6 +111,7 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
     uint32_t arc_at=0,injected_at=0; bool injected=false,pose_displaced=false,c_pose_displaced=false;
     float frozen_left=0;
     unsigned active_updates=0,saturated_updates=0,peak_pwm=0;
+    uint64_t control_hash=1469598103934665603ULL;
     const CarFault expected_fault[]={CAR_OK,CAR_FAULT_GRAY,CAR_FAULT_LINE,CAR_FAULT_STALL,CAR_FAULT_TIMING,CAR_OK};
     for(unsigned ms=5;ms<170000;ms+=5) {
         /* Fixed historical plant model: changing the controller feedforward
@@ -105,7 +127,10 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
         p.y+=(dl+dr)*.5f*sinf(p.theta+dtheta*.5f); p.theta+=dtheta;
         p.left+=dl; p.right+=dr;
         in.now_ms=ms; in.enabled=true; in.pressed=ms>=100 && ms<160;
-        in.left_mm=p.left; in.right_mm=p.right; in.left_speed=p.vl; in.right_speed=p.vr;
+        float encoder_scale=c.state==CAR_ARC ? arc_odometry_scale : 1.0f;
+        encoder_left+=dl*encoder_scale;encoder_right+=dr*encoder_scale;
+        in.left_mm=encoder_left;in.right_mm=encoder_right;
+        in.left_speed=p.vl*encoder_scale;in.right_speed=p.vr*encoder_scale;
         in.yaw_rad=p.theta-initial+bias*(float)ms*.001f;
         if((ms+gray_phase)%15==0) { ++in.gray_samples; in.black_mask=Sense(&p,g.sensor_forward_mm); }
         if(c.state==CAR_ARC && !arc_at) arc_at=ms;
@@ -130,6 +155,11 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
 #endif
 #endif
         CarControl_Update(&c,&in);
+        if (getenv("SIM_CONTROL_FINGERPRINT")) {
+            control_hash=ControlHash(control_hash,&c);
+            if (c.state==CAR_DONE || c.state==CAR_FAULT || (injected && c.state==CAR_STOPPED))
+                printf("CONTROL_HASH task%u %016llx\n",task,(unsigned long long)control_hash);
+        }
         if(c.state==CAR_STRAIGHT || c.state==CAR_CAPTURE || c.state==CAR_ARC) {
             ++active_updates;
             unsigned peak=c.left_pwm>c.right_pwm ? c.left_pwm : c.right_pwm;
@@ -241,6 +271,11 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
                 Task1Test_Apply(&gate,&in,c.state,1);
 #endif
                 CarControl_Update(&c,&in);
+                if (getenv("SIM_CONTROL_FINGERPRINT")) {
+                    control_hash=ControlHash(control_hash,&c);
+                    if (c.state==CAR_DONE || c.state==CAR_FAULT || (injected && c.state==CAR_STOPPED))
+                        printf("CONTROL_HASH task%u %016llx\n",task,(unsigned long long)control_hash);
+                }
                 if(in.enabled || c.left_pwm || c.right_pwm || gate.phase!=TASK1_FINISHED) return 1;
             }
 #endif

@@ -1,0 +1,44 @@
+{
+  "firmware": "T311",
+  "magic": "0x54333131",
+  "sha256": "1811ed4c7e529daca6236e1981ac42468f7897f549a01adf204a5c8b4bc6750d",
+  "flash_bytes": 46164,
+  "ram_bytes": 41416,
+  "full_flash_identical": true,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "idle_ccr": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "gray_before": [
+    780,
+    0,
+    0,
+    0
+  ],
+  "gray_after": [
+    863,
+    0,
+    0,
+    0
+  ],
+  "default_mode": "NORMAL",
+  "default_laps": 1,
+  "idle_max_control_gap_ms": 8,
+  "straight_mm_s": 800,
+  "arc_mm_s": 430,
+  "entry_mm_s": 370,
+  "source_firmware": "T309",
+  "source_full_ram_bytes": 49152,
+  "source_sha256": "cef962e218c53e2c19a0cf9861001e5ad034b1b989261b78d2f6e9a4ad24be17",
+  "remote_motor_start": false,
+  "physical_run": "pending",
+  "scope": "Read-only observations added to T309; active timing and physical success remain to be measured."
+}

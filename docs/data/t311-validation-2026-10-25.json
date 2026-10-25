@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-25",
+  "asan_ubsan_exit_code": 0,
+  "pass_lines": 5543,
+  "log_sha256": "b99d7584031d13f6c5e132fbd7603103a1e94980d7195e51535f1dc226788fa5",
+  "control_equivalence_suites": 36,
+  "control_equivalence_passed": 36,
+  "exit_trace_unit": "PASS",
+  "decoder_fixture": "PASS",
+  "firmware_vectors_and_hex": "PASS",
+  "firmware_bin_sha256": "1811ed4c7e529daca6236e1981ac42468f7897f549a01adf204a5c8b4bc6750d",
+  "flash_bytes": 46164,
+  "ram_bytes": 41416,
+  "physical_validation": "pending",
+  "scope": "T309 control with read-only exit diagnostics. Host checks do not prove target timing or physical completion."
+}

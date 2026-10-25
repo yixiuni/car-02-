@@ -42,6 +42,7 @@ PROFILES={
     'entry530': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TIME_TRIAL_C_ENTRY':1,'CAR_TT_STRAIGHT_SPEED':530.0},
     'entry535': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TIME_TRIAL_C_ENTRY':1,'CAR_TT_STRAIGHT_SPEED':535.0},
     'straight': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TIME_TRIAL_C_ENTRY':1,'CAR_TIME_TRIAL_STRAIGHT_BOOST':1},
+    'exit-trace': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TIME_TRIAL_C_ENTRY':1,'CAR_TIME_TRIAL_FAST':1,'CAR_TIME_TRIAL_ADAPTIVE':1,'CAR_TIME_TRIAL_EXIT_TRACE':1},
     'arc-boost': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TIME_TRIAL_C_ENTRY':1,'CAR_TIME_TRIAL_FAST':1,'CAR_TIME_TRIAL_ADAPTIVE':1,'CAR_TIME_TRIAL_ARC_BOOST':1},
     'adaptive': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TIME_TRIAL_C_ENTRY':1,'CAR_TIME_TRIAL_FAST':1,'CAR_TIME_TRIAL_ADAPTIVE':1},
     'fast': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TIME_TRIAL_C_ENTRY':1,'CAR_TIME_TRIAL_FAST':1},
@@ -65,7 +66,7 @@ def main():
     if not args.compiler:parser.error('Host C compiler required')
     if not all(0.5<=m<=3 for m in args.models):parser.error('Model must be in [0.5,3]')
     args.output=args.output.resolve();out=args.output.parent;out.mkdir(parents=True,exist_ok=True)
-    inputs=SOURCES+['Core/Inc/car_config.h','Core/Inc/car_control.h',
+    inputs=SOURCES+['Core/Inc/car_config.h','Core/Inc/car_control.h','Core/Inc/car_arc_debug.h',
                    'Core/Inc/motion_control.h','Core/Inc/course_mode.h','Core/Inc/task1_test.h',
                    'Core/Inc/imu_filter.h','tools/evaluate_time_trial.py']
     report={'scope':'HOST SIMULATION ONLY. Plant gain, response time and tire grip are not high-speed measurements.',

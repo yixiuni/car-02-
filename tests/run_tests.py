@@ -36,7 +36,9 @@ trial_profiles=[('time-trial', trial_defines),
     ('time-trial-adaptive', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
         '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1']),
     ('time-trial-arc-boost', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
-        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1','-DCAR_TIME_TRIAL_ARC_BOOST=1'])]
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1','-DCAR_TIME_TRIAL_ARC_BOOST=1']),
+    ('time-trial-exit-trace', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1','-DCAR_TIME_TRIAL_EXIT_TRACE=1'])]
 for prefix, defines in trial_profiles:
     run(prefix + '-profile', base + ['tests/test_time_trial.c'], defines)
     run(prefix + '-course', base + ['Core/Src/task1_test.c', 'Core/Src/course_mode.c',
@@ -48,13 +50,14 @@ for prefix, defines in trial_profiles:
                 env['SIM_D_ENTRY_SWEEP'] = '1'
             exe = prefix + '-course' + ('.exe' if os.name == 'nt' else '')
             subprocess.run([str(out / exe)], cwd=ROOT, env=env, check=True)
-for prefix, defines in trial_profiles[-5:]:
+for prefix, defines in trial_profiles[-6:]:
     run(prefix+'-c-entry',base+['tests/test_c_entry.c'],defines)
     for phase in ('0','5','10'):
         subprocess.run([str(out/(prefix+'-course'+('.exe' if os.name=='nt' else '')))],
             cwd=ROOT,env={**os.environ,'SIM_C_ENTRY_SWEEP':'1','SIM_GRAY_PHASE_MS':phase,
                           'SIM_WEAK_BRAKE':'1'},check=True)
-run('arc-boost-acquisition',base+['tests/test_arc_boost.c'],trial_profiles[-1][1])
+run('arc-boost-acquisition',base+['tests/test_arc_boost.c'],trial_profiles[-2][1])
+run('exit-trace-observation',base+['tests/test_exit_trace.c'],trial_profiles[-1][1])
 run('arc-preview', base + ['tests/test_arc_preview.c'],
     ['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1'])
 run('oled-ui',['Core/Src/oled_ui.c','tests/test_oled_ui.c'])

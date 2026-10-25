@@ -1,6 +1,19 @@
 #include "car_control.h"
 #include "car_config.h"
 #include <math.h>
+#if CAR_TIME_TRIAL_EXIT_TRACE
+#include "car_arc_debug.h"
+volatile CarArcDebug car_arc_debug[CAR_ARC_DEBUG_CAPACITY];
+_Static_assert(sizeof(CarArcDebug)==116, "Exit trace layout");
+static volatile CarArcDebug *ArcDebugSlot(const CarControl *c)
+{
+    if (c->point_events<2 || (c->point_events&1U)) return 0;
+    unsigned slot=c->point_events/2-1;
+    if (slot>=CAR_ARC_DEBUG_CAPACITY) return 0;
+    volatile CarArcDebug *d=&car_arc_debug[slot];
+    d->point_events=c->point_events;return d;
+}
+#endif
 
 /* Map: A=(0,0), B=(1000,0), C=(1000,-800), D=(0,-800).
  * Heading positive CCW. Start axle at A facing B for every task. */
@@ -88,6 +101,9 @@ static void Start(CarControl *c, const CarInputs *in)
 {
     CarFault f=InputFault(c,in);
     if (f!=CAR_OK) { Stop(c,CAR_FAULT,f); return; }
+#if CAR_TIME_TRIAL_EXIT_TRACE
+    for(unsigned i=0;i<CAR_ARC_DEBUG_CAPACITY;i++) car_arc_debug[i]=(CarArcDebug){0};
+#endif
     c->segment=0; c->completed_laps=0; c->distance_mm=0;
     c->x_mm=c->y_mm=0;
     /* Common physical reference: A facing B. Cross tasks turn forward toward
@@ -153,6 +169,22 @@ static void Gray(CarControl *c,const CarInputs *in)
         else c->line_rate=rate;
         c->line_error=error; c->line_at=c->last_line_at=in->now_ms;
         c->have_line=true; c->line_missing=false; c->white_frames=0;
+#if CAR_TIME_TRIAL_EXIT_TRACE
+        if (c->state==CAR_ARC && c->distance_mm-c->segment_distance>=c->geometry.sensor_forward_mm &&
+            fabsf(c->line_error)<=1.5f*CAR_GRAY_PITCH_MM) {
+            volatile CarArcDebug *d=ArcDebugSlot(c);
+            if (d) {
+                float cs=cosf(c->heading_rad),sn=sinf(c->heading_rad);
+                float px=c->x_mm+c->geometry.sensor_forward_mm*cs+c->line_error*sn;
+                float py=c->y_mm+c->geometry.sensor_forward_mm*sn-c->line_error*cs;
+                float cx=c->segment==1 ? 1000.0f : 0.0f;
+                float residual=hypotf(px-cx,py+400.0f)-400.0f;
+                d->last_radial_error_mm=residual;
+                d->max_abs_radial_error_mm=fmaxf(d->max_abs_radial_error_mm,fabsf(residual));
+                ++d->black_samples;
+            }
+        }
+#endif
         if (c->black_frames<255) ++c->black_frames;
     } else {
         c->black_frames=0;
@@ -421,6 +453,27 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             CAR_CROSS_ENDPOINT_CORRECTION_MM : CAR_ENDPOINT_CORRECTION_MM;
         exit=exit && hypotf(observed_x-c->x_mm,observed_y-c->y_mm)<=correction_limit &&
             CoversPose(c,end,observed_x,observed_y,observed_heading);
+#if CAR_TIME_TRIAL_EXIT_TRACE
+        if (c->white_frames>=CAR_LINE_CONFIRM_FRAMES && progress>CAR_ARC_MIN_PROGRESS*400*CAR_PI) {
+            volatile CarArcDebug *d=ArcDebugSlot(c);
+            if (d) {
+                float offset=hypotf(observed_x-c->x_mm,observed_y-c->y_mm);
+                uint32_t rejected=(!c->have_line ? ARC_EXIT_NO_LINE : 0U) |
+                    (in->now_ms-c->last_line_at>=100 ? ARC_EXIT_STALE : 0U) |
+                    (fabsf(c->line_error)>1.5f*CAR_GRAY_PITCH_MM ? ARC_EXIT_LATERAL : 0U) |
+                    (turned<=CAR_ARC_MIN_TURN_RAD ? ARC_EXIT_TURN : 0U) |
+                    (heading_error>=CAR_ENDPOINT_HEADING_RAD ? ARC_EXIT_HEADING : 0U) |
+                    (end_distance>=CAR_ENDPOINT_GATE_MM ? ARC_EXIT_DISTANCE : 0U) |
+                    (offset>correction_limit ? ARC_EXIT_CORRECTION : 0U) |
+                    (!CoversPose(c,end,observed_x,observed_y,observed_heading) ? ARC_EXIT_FOOTPRINT : 0U);
+                CarArcExitSample sample={in->now_ms,rejected,c->x_mm,c->y_mm,c->heading_rad,
+                    progress,turned,heading_error,offset,c->line_error,c->white_frames,
+                    in->now_ms-c->last_line_at};
+                if (!d->exit_attempts) d->first=sample;
+                d->last=sample;++d->exit_attempts;
+            }
+        }
+#endif
         if (exit) {
             /* Geometric yaw observation at a centered, qualified arc exit.
              * For a forward sensor on a circle, body heading lags the sensor

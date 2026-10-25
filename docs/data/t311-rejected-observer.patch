@@ -1,0 +1,58 @@
+diff --git a/Core/Inc/car_config.h b/Core/Inc/car_config.h
+index 8fbbcd0..4c9e415 100644
+--- a/Core/Inc/car_config.h
++++ b/Core/Inc/car_config.h
+@@ -54,6 +54,12 @@
+ #ifndef CAR_TIME_TRIAL_ARC_BOOST
+ #define CAR_TIME_TRIAL_ARC_BOOST 0
+ #endif
++#ifndef CAR_TIME_TRIAL_ARC_OBSERVER
++#define CAR_TIME_TRIAL_ARC_OBSERVER 0
++#endif
++#if CAR_TIME_TRIAL_ARC_OBSERVER && (!CAR_TIME_TRIAL_ADAPTIVE || CAR_TIME_TRIAL_ARC_BOOST)
++#error "Arc observer requires the unboosted T309 adaptive baseline"
++#endif
+ #if CAR_TIME_TRIAL_ARC_BOOST && !CAR_TIME_TRIAL_ADAPTIVE
+ #error "Arc boost requires the adaptive baseline"
+ #endif
+diff --git a/Core/Src/car_control.c b/Core/Src/car_control.c
+index bdeb44f..08d9d82 100644
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -162,6 +162,26 @@ static void Gray(CarControl *c,const CarInputs *in)
+         if (!c->line_missing) { c->line_missing=true; c->missing_at=in->now_ms; }
+     }
+ }
++static void ObserveArcLine(CarControl *c,bool fresh)
++{
++    if (!CAR_TIME_TRIAL_ARC_OBSERVER || !FastCourse(c) || c->state!=CAR_ARC || !fresh ||
++        c->line_missing || !c->have_line || c->black_frames<CAR_LINE_CONFIRM_FRAMES ||
++        fabsf(c->line_error)>1.5f*CAR_GRAY_PITCH_MM ||
++        c->distance_mm-c->segment_distance<c->geometry.sensor_forward_mm) return;
++    /* A fresh black point lies on the known circle. Its radial residual is a
++     * one-dimensional position observation, not an endpoint or yaw observation.
++     * Limit each correction and reject a distant/wrong-half-circle hypothesis. */
++    float cx=c->segment==1 ? 1000.0f : 0.0f;
++    float cs=cosf(c->heading_rad),sn=sinf(c->heading_rad);
++    float px=c->x_mm+c->geometry.sensor_forward_mm*cs+c->line_error*sn;
++    float py=c->y_mm+c->geometry.sensor_forward_mm*sn-c->line_error*cs;
++    float dx=px-cx,dy=py+400.0f;
++    if ((c->segment==1 && dx < -30) || (c->segment==3 && dx > 30)) return;
++    float radius=hypotf(dx,dy),residual=radius-400.0f;
++    if (!isfinite(radius) || radius<300 || radius>500) return;
++    float correction=Clamp(-0.05f*residual,-1.5f,1.5f);
++    c->x_mm+=correction*dx/radius;c->y_mm+=correction*dy/radius;
++}
+ static void Drive(CarControl *c,float speed,float omega,float dt,const CarInputs *in)
+ {
+     /* Differential drive forward only; curvature is limited before mixing. */
+@@ -276,7 +296,9 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
+     float ds=(dl+dr)*0.5f, mid=c->heading_rad+turn*0.5f;
+     c->x_mm+=ds*cosf(mid); c->y_mm+=ds*sinf(mid);
+     c->heading_rad+=turn; c->distance_mm+=ds;
++    bool fresh_gray=in->gray_samples!=c->last_gray_samples;
+     Gray(c,in);
++    ObserveArcLine(c,fresh_gray);
+     /* Task 4 has no stated fixed deadline; 160 s is our recoverable watchdog,
+      * not a claim about the competition rules. */
+     uint32_t limit=c->task==1 ? 15000U : c->task==2 ? (TargetLaps(c)>1 ? 160000U : 30000U) : c->task==3 ? 40000U : 160000U;

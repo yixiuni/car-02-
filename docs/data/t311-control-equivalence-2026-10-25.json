@@ -1,0 +1,294 @@
+{
+  "scope": "Host model only; compares selected control state and outputs at every tick, not physical timing or stability.",
+  "passed": true,
+  "runs": [
+    {
+      "model": 1.5,
+      "phase": 0,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "9b506829517bcc15ff81c01ea7c64ed67a2961ddb6249a3f452aa99fe6300832"
+    },
+    {
+      "model": 1.5,
+      "phase": 0,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "eff49f7a65022a6d5f635b891a7ad64b08691b6010549de090589c8880bf0137"
+    },
+    {
+      "model": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3740,
+      "stdout_sha256": "1f3a3399492257276618518839e5cd437d53a17b921e7ea72847a3f707f9449e"
+    },
+    {
+      "model": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "bfe5bca13fae8d10eb044b1f133d6a634ef61777967285952cf1a83058951628"
+    },
+    {
+      "model": 1.5,
+      "phase": 5,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "227132295d7f089afb23130cbeb041f4212a16473315770e9bc8e1d0bbdaf917"
+    },
+    {
+      "model": 1.5,
+      "phase": 5,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "728bbcc5bc9b260f37ddb538a027fd91efd4488c5d51cc111d5a84cd8e260806"
+    },
+    {
+      "model": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3440,
+      "stdout_sha256": "91efa97735d6d187060c1c2c768d75ec3273676f1feac0b067221225f68f2b93"
+    },
+    {
+      "model": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "b63d9dfe41fc4b235de4a9dff73e35c8d4868dd89f4303e65dd6381674e3d153"
+    },
+    {
+      "model": 1.5,
+      "phase": 10,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "31f6e60c687b8a914b58f492ed91793e26b65b5b5a1e4ecd5af1ff14a1406c52"
+    },
+    {
+      "model": 1.5,
+      "phase": 10,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "f7abd1260a3d9b58102e1f12cc52346916df2f5064d11c9761c80464e9e3357c"
+    },
+    {
+      "model": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3440,
+      "stdout_sha256": "e21ba49ecb5f5fdafa7ccda9fab9423a4f8bd75ef00031f6ff8341590e740cf4"
+    },
+    {
+      "model": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "ac702bf8c3502ed4573efa20bdb0e45b7befc2d8d3dc660c328757412030549a"
+    },
+    {
+      "model": 1.0,
+      "phase": 0,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "7b10a672ae985a647daf7eddd0b83bed9dd27df487501bba37e1a64159b024e6"
+    },
+    {
+      "model": 1.0,
+      "phase": 0,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "dfa9814796b9f1b53b664140fcb424d766821c671a6cb1c52bc92211d16278df"
+    },
+    {
+      "model": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3540,
+      "stdout_sha256": "498a3d6ee102061c787400b634decad12a99707bfb07c3696c4566063e98046f"
+    },
+    {
+      "model": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "826c4c848c23ad41d7ff67da60012ea1efa6b703ad663d438e87628c6a0e5801"
+    },
+    {
+      "model": 1.0,
+      "phase": 5,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "4998534508a5c6e19c7203a8fc59b08e07ee2f98b54fd2b0819ae973522412a9"
+    },
+    {
+      "model": 1.0,
+      "phase": 5,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "9beca5803a3609da6ea221e70b2673f1d39655692e6d0ffe4804baa2d9b0ff42"
+    },
+    {
+      "model": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3740,
+      "stdout_sha256": "fde545f7e370cee34c7118413d3843bb2f22ae9d0737834e492bad26eab6bb4a"
+    },
+    {
+      "model": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "52f249a74c266af0e77b09d3f0f9175be4250a29d43581538fb808d75d7d4179"
+    },
+    {
+      "model": 1.0,
+      "phase": 10,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "69113924de97a0ff869b19ecffad36d4cbf95a2697b0782277163919def1a9d4"
+    },
+    {
+      "model": 1.0,
+      "phase": 10,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "47d0d7b814fb387a240fbbf7d8e7d6dd03dac99f77e786c0d9f472e3ad269107"
+    },
+    {
+      "model": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3840,
+      "stdout_sha256": "0be4b719a4c65bafc1c1200b62b26e23d6954c1c50adf5bd81604f6b62db66f5"
+    },
+    {
+      "model": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "fd7a2963a02d67740cb90428fbd4653b1096279104135ec9b87e866277e951df"
+    },
+    {
+      "model": 0.9,
+      "phase": 0,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "35c010ab1bb641bbc4fa68abb2f9a5a3f413374503d1c8818d53b314fc013be3"
+    },
+    {
+      "model": 0.9,
+      "phase": 0,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "5462307f7119aac6c02dd9b43b45954eab6bad5cc9c1385a642ab17092726c12"
+    },
+    {
+      "model": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3840,
+      "stdout_sha256": "2467ee2b64a68fa8b022dabc407d076597e12b112d8ab5fa53e0db12b5bae864"
+    },
+    {
+      "model": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "26622b5fbb693b5556bb93db5bde36e9f1d81ce8231a6c8aa04bb1126871f2b5"
+    },
+    {
+      "model": 0.9,
+      "phase": 5,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "2923cf3a90ded20fe41da83043bc746d04ab2eddabcc84abfcc75f1124390e2a"
+    },
+    {
+      "model": 0.9,
+      "phase": 5,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "79fe9d4953b04a741fd83cc50d390ea4122bc765459a35608b1d6dd8abe22961"
+    },
+    {
+      "model": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3840,
+      "stdout_sha256": "a7a54c961411888d7447bd5228bc006d3c4900f33508aaa7b0d8f1316c06a3b6"
+    },
+    {
+      "model": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "ce6bbcfeab23bc1e4c86f712ac7fcbce50da3a8cfc2e4a75684a777078695493"
+    },
+    {
+      "model": 0.9,
+      "phase": 10,
+      "suite": "nominal",
+      "passed": true,
+      "control_hashes": 202,
+      "stdout_sha256": "7c719d1dc39f941075e4db7467b2f121db201f28e025a9868adc394ec0c5b0f1"
+    },
+    {
+      "model": 0.9,
+      "phase": 10,
+      "suite": "full",
+      "passed": true,
+      "control_hashes": 3656,
+      "stdout_sha256": "a2cb3a7f75de343aa85458356496d6fa3faf839807a80b0bb74484ad3a1d3ef7"
+    },
+    {
+      "model": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "control_hashes": 3540,
+      "stdout_sha256": "a8e033b50e363656f8375923ff4346ce45dfb7fc8ca65cd26e39e4489e764d18"
+    },
+    {
+      "model": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "control_hashes": 10908,
+      "stdout_sha256": "0b8c03c2aacf52d4737c2b17a3af86cd626af03563154d25fd04817fab6d4e17"
+    }
+  ]
+}

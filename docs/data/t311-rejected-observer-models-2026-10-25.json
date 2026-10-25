@@ -1,0 +1,815 @@
+{
+  "scope": "Hypothetical arc-only encoder-scale errors; nominal NORMAL4/CROSS4 with independent true pose coverage. No real-run failure reproduction claim.",
+  "runs": [
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": false,
+      "error": "FAIL task2 t17.85 fault7 seg3 true(-69.7,-39.3,-707.1)",
+      "log": "adaptive-scale0.9-model1.5-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": false,
+      "error": "FAIL task2 t13.59 fault7 seg1 true(1068.0,-761.3,-527.4)",
+      "log": "adaptive-scale0.9-model1.5-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": false,
+      "error": "FAIL task2 t13.60 fault7 seg1 true(1067.1,-760.6,-527.9)",
+      "log": "adaptive-scale0.9-model1.5-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": false,
+      "error": "FAIL task2 t12.66 fault7 seg1 true(1071.4,-757.3,-526.6)",
+      "log": "adaptive-scale0.9-model1.0-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": false,
+      "error": "FAIL task2 t8.71 fault7 seg3 true(-74.6,-45.5,-348.4)",
+      "log": "adaptive-scale0.9-model1.0-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": false,
+      "error": "FAIL task2 t12.65 fault7 seg1 true(1069.9,-757.3,-526.8)",
+      "log": "adaptive-scale0.9-model1.0-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": false,
+      "error": "FAIL task2 t12.66 fault7 seg1 true(1070.4,-757.6,-526.9)",
+      "log": "adaptive-scale0.9-model0.9-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": false,
+      "error": "FAIL task2 t16.62 fault7 seg3 true(-73.3,-43.1,-706.3)",
+      "log": "adaptive-scale0.9-model0.9-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": false,
+      "error": "FAIL task2 t8.69 fault7 seg3 true(-74.7,-45.5,-348.3)",
+      "log": "adaptive-scale0.9-model0.9-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model1.5-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model1.5-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model1.5-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model1.0-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model1.0-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model1.0-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model0.9-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model0.9-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale0.95-model0.9-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model1.5-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model1.5-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model1.5-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model1.0-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model1.0-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model1.0-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model0.9-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model0.9-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1-model0.9-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model1.5-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model1.5-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model1.5-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model1.0-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model1.0-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model1.0-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model0.9-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model0.9-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.05-model0.9-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model1.5-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model1.5-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model1.5-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model1.0-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model1.0-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model1.0-phase10.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model0.9-phase0.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model0.9-phase5.log"
+    },
+    {
+      "profile": "adaptive",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "adaptive-scale1.1-model0.9-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": false,
+      "error": "FAIL task2 t9.33 fault7 seg3 true(-67.6,-39.3,-348.0)",
+      "log": "observer-scale0.9-model1.5-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": false,
+      "error": "FAIL task2 t9.33 fault7 seg3 true(-68.6,-39.6,-347.7)",
+      "log": "observer-scale0.9-model1.5-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": false,
+      "error": "FAIL task2 t13.58 fault7 seg1 true(1076.2,-757.0,-529.3)",
+      "log": "observer-scale0.9-model1.5-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": false,
+      "error": "FAIL task2 t8.71 fault7 seg3 true(-72.4,-42.7,-346.7)",
+      "log": "observer-scale0.9-model1.0-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": false,
+      "error": "FAIL task2 t8.71 fault7 seg3 true(-74.1,-45.4,-348.4)",
+      "log": "observer-scale0.9-model1.0-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": false,
+      "error": "FAIL task2 t8.71 fault7 seg3 true(-73.3,-42.6,-346.2)",
+      "log": "observer-scale0.9-model1.0-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": false,
+      "error": "FAIL task2 t8.70 fault7 seg3 true(-71.0,-42.5,-346.8)",
+      "log": "observer-scale0.9-model0.9-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": false,
+      "error": "FAIL task2 t8.70 fault7 seg3 true(-71.8,-43.0,-346.6)",
+      "log": "observer-scale0.9-model0.9-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.9,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": false,
+      "error": "FAIL task2 t8.69 fault7 seg3 true(-74.7,-45.5,-348.3)",
+      "log": "observer-scale0.9-model0.9-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model1.5-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model1.5-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model1.5-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model1.0-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model1.0-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model1.0-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model0.9-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model0.9-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 0.95,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale0.95-model0.9-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model1.5-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model1.5-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model1.5-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model1.0-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model1.0-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model1.0-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model0.9-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model0.9-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1-model0.9-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model1.5-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model1.5-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model1.5-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model1.0-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model1.0-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model1.0-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model0.9-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model0.9-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.05,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.05-model0.9-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.5,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model1.5-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.5,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model1.5-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.5,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model1.5-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.0,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model1.0-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.0,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model1.0-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 1.0,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model1.0-phase10.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 0.9,
+      "phase": 0,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model0.9-phase0.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 0.9,
+      "phase": 5,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model0.9-phase5.log"
+    },
+    {
+      "profile": "observer",
+      "arc_odometry_scale": 1.1,
+      "motor_assumption": 0.9,
+      "phase": 10,
+      "passed": true,
+      "error": "",
+      "log": "observer-scale1.1-model0.9-phase10.log"
+    }
+  ]
+}
