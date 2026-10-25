@@ -61,6 +61,12 @@ static bool Covers(const CarControl *c, Point p)
 static CarFault InputFault(const CarControl *c, const CarInputs *in)
 {
     if (!CarGeometry_Valid(&c->geometry)) return CAR_FAULT_CONFIG;
+    if (CAR_TIME_TRIAL_BUILD &&
+        !(CAR_TT_ENTRY_SPEED>0 && CAR_TT_ENTRY_SPEED<=CAR_TT_ARC_SPEED &&
+          CAR_TT_ENTRY_SPEED<=CAR_TT_STRAIGHT_SPEED && CAR_TT_ARC_SPEED<=1000 &&
+          CAR_TT_STRAIGHT_SPEED<=1000 && CAR_TT_WHEEL_SPEED>=CAR_TT_ENTRY_SPEED &&
+          CAR_TT_WHEEL_SPEED<=1600 && CAR_TT_D_FILTER_MS>=0 && CAR_TT_D_FILTER_MS<=100))
+        return CAR_FAULT_CONFIG;
     if (!in->gray_online) return CAR_FAULT_GRAY;
     if (!in->imu_ready || !isfinite(in->yaw_rad)) return CAR_FAULT_IMU;
     if (!in->encoder_valid || !isfinite(in->left_mm) || !isfinite(in->right_mm) ||
@@ -136,8 +142,11 @@ static void Gray(CarControl *c,const CarInputs *in)
         for (unsigned i=0;i<8;i++) if (in->black_mask&(1U<<i)) { sum+=(float)i-3.5f; ++n; }
         float error=sum*CAR_GRAY_PITCH_MM/(float)n;
         uint32_t elapsed=in->now_ms-c->line_at;
-        c->line_rate=c->have_line && elapsed>0 && elapsed<100 ?
+        float rate=c->have_line && elapsed>0 && elapsed<100 ?
             (error-c->line_error)*1000.0f/(float)elapsed : 0;
+        if (CAR_TIME_TRIAL_BUILD && FastCourse(c) && c->have_line && elapsed>0 && elapsed<100)
+            c->line_rate+=(float)elapsed/((float)elapsed+CAR_TT_D_FILTER_MS)*(rate-c->line_rate);
+        else c->line_rate=rate;
         c->line_error=error; c->line_at=c->last_line_at=in->now_ms;
         c->have_line=true; c->line_missing=false; c->white_frames=0;
         if (c->black_frames<255) ++c->black_frames;
@@ -155,6 +164,16 @@ static void Drive(CarControl *c,float speed,float omega,float dt,const CarInputs
     omega=Clamp(omega,-2*speed/c->geometry.track_mm,2*speed/c->geometry.track_mm);
     c->left_target=fmaxf(0,speed-omega*c->geometry.track_mm*0.5f);
     c->right_target=fmaxf(0,speed+omega*c->geometry.track_mm*0.5f);
+    if (CAR_TIME_TRIAL_BUILD && FastCourse(c)) {
+        /* Scale both wheels together to retain requested curvature. Independent
+         * clipping would straighten the turn when the outside wheel saturates.
+         * This speed ceiling is an experiment, not a measured motor capability. */
+        float peak=fmaxf(c->left_target,c->right_target);
+        if (peak>CAR_TT_WHEEL_SPEED) {
+            c->left_target*=CAR_TT_WHEEL_SPEED/peak;
+            c->right_target*=CAR_TT_WHEEL_SPEED/peak;
+        }
+    }
     Motion_UpdateWithAccel(&c->motion,c->left_target,c->right_target,in->left_speed,in->right_speed,
                   dt,FastCourse(c) ? CAR_FOUR_ACCEL_MM_S2 : CAR_ACCEL_MM_S2,&c->left_pwm,&c->right_pwm);
 }
@@ -172,6 +191,32 @@ static void Brake(CarControl *c,uint32_t now)
 static float ArcStart(const CarControl *c) { return c->segment==1 ? 0.0f : CAR_PI; }
 static float ArcEnd(const CarControl *c) { return c->segment==1 ? CAR_PI : 0.0f; }
 static float ArcSign(const CarControl *c) { return c->task>=3 && c->segment==1 ? 1.0f : -1.0f; }
+static float FastArcSpeed(void)
+{
+    return CAR_TIME_TRIAL_BUILD ? CAR_TT_ARC_SPEED : CAR_FOUR_CRUISE_SPEED;
+}
+static float FastEntrySpeed(void)
+{
+    return CAR_TIME_TRIAL_BUILD ? CAR_TT_ENTRY_SPEED : CAR_FOUR_CRUISE_SPEED;
+}
+static float ArcRadius(const CarControl *c)
+{
+    /* The front sensor follows the 400 mm circle; its axle follows a smaller
+     * circle. Use that axle radius for feedforward, with gray feedback intact. */
+    return CAR_TIME_TRIAL_BUILD ?
+        sqrtf(400.0f*400.0f-c->geometry.sensor_forward_mm*c->geometry.sensor_forward_mm) : 400.0f;
+}
+static float ArcFeedback(const CarControl *c,float speed,bool derivative)
+{
+    float gain=FastCourse(c) ? speed/180.0f : 1.0f;
+    if (!CAR_TIME_TRIAL_BUILD)
+        return gain*(CAR_LINE_KP*c->line_error+(derivative ? CAR_LINE_KD*c->line_rate : 0));
+    /* d(error)/dt already grows with forward speed. Holding its angular gain
+     * at the reference speed avoids amplifying the same spatial disturbance
+     * twice when cruise is raised. P still scales with speed. */
+    float d_gain=CAR_TIME_TRIAL_BUILD && FastCourse(c) ? CAR_FOUR_CRUISE_SPEED/180.0f : gain;
+    return gain*CAR_LINE_KP*c->line_error+(derivative ? d_gain*CAR_LINE_KD*c->line_rate : 0);
+}
 
 void CarControl_Update(CarControl *c,const CarInputs *in)
 {
@@ -265,6 +310,20 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             }
             omega=CAR_HEADING_KP*Motion_Wrap(desired-c->heading_rad);
             speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED : c->task<=2 ? CAR_STRAIGHT_SPEED : CAR_DIAGONAL_SPEED;
+            if (CAR_TIME_TRIAL_BUILD && FastCourse(c)) {
+                float heading_error=Motion_Wrap(desired-c->heading_rad);
+                /* Accelerate only after aligning. The distance envelope reaches
+                 * arc speed before the front sensor can see the endpoint. */
+                float aligned=Clamp((0.55f-fabsf(heading_error))/0.35f,0,1);
+                float requested=CAR_TT_ENTRY_SPEED+
+                    aligned*(CAR_TT_STRAIGHT_SPEED-CAR_TT_ENTRY_SPEED);
+                float available=fmaxf(0,remaining-c->geometry.sensor_forward_mm-60.0f);
+                speed=fminf(requested,sqrtf(CAR_TT_ENTRY_SPEED*CAR_TT_ENTRY_SPEED+
+                                            2*CAR_TT_APPROACH_ACCEL*available));
+                /* Speed-scaled heading feedback preserves geometric turning
+                 * response when accelerating, unlike a fixed angular gain. */
+                omega=CAR_HEADING_KP*(speed/CAR_FOUR_CRUISE_SPEED)*heading_error;
+            }
             if(CAR_DUAL_MODE_BUILD && FastCourse(c) && c->black_frames>0 &&
                remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
                end_distance<CAR_ENDPOINT_GATE_MM && Covers(c,end)) {
@@ -273,8 +332,8 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
                  * until the usual three consecutive frames confirm it above.
                  * A white/ambiguous frame cancels this provisional steering. */
                 float sign=c->task>=3 && c->segment==0 ? 1.0f : -1.0f;
-                omega=sign*speed/400.0f-(speed/180.0f)*
-                    (CAR_LINE_KP*c->line_error+CAR_LINE_KD*c->line_rate);
+                if (CAR_TIME_TRIAL_BUILD) speed=FastEntrySpeed();
+                omega=sign*speed/ArcRadius(c)-ArcFeedback(c,speed,true);
             }
             /* Gentle initial turn from A-B to the crossing line. Both wheels
              * stay forward; odometry includes the curved departure from A. */
@@ -289,7 +348,7 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
         float offset=asinf(c->geometry.sensor_forward_mm/400.0f);
         float relative=ArcSign(c)*Motion_Wrap(c->heading_rad-ArcStart(c));
         float desired=ArcStart(c)-ArcSign(c)*offset;
-        speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED : CAR_CAPTURE_SPEED;
+        speed=FastCourse(c) ? FastEntrySpeed() : CAR_CAPTURE_SPEED;
         omega=CAR_HEADING_KP*Motion_Wrap(desired-c->heading_rad);
         /* A forward sensor reaches the arc before the axle. Accept the
          * interval between the entry tangent and the settled body heading,
@@ -353,15 +412,21 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             } else { Signal(c,dest); ++c->segment; }
             BeginSegment(c,in->now_ms); c->state=CAR_STRAIGHT;
             /* Task 4 keeps cruise through the segment boundary as well. */
-            speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED : CAR_CAPTURE_SPEED; omega=0;
+            speed=FastCourse(c) ? FastEntrySpeed() : CAR_CAPTURE_SPEED; omega=0;
         } else {
             if ((c->line_missing && in->now_ms-c->missing_at>=CAR_LINE_LOST_TIMEOUT_MS) ||
                 progress>400*CAR_PI+350 || turned>CAR_PI+0.7f) {
                 Stop(c,CAR_FAULT,CAR_FAULT_LINE); return;
             }
-            speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED :
+            speed=FastCourse(c) ? FastArcSpeed() :
                 (turned>2.55f && !FinalSegment(c)) ? CAR_CAPTURE_SPEED : CAR_ARC_SPEED;
-            omega=ArcSign(c)*speed/400.0f;
+            if (CAR_TIME_TRIAL_BUILD && FastCourse(c)) {
+                speed=fminf(speed,sqrtf(CAR_TT_ENTRY_SPEED*CAR_TT_ENTRY_SPEED+
+                    2*CAR_TT_APPROACH_ACCEL*fmaxf(0,progress)));
+                if (c->line_missing || fabsf(c->line_error)>1.5f*CAR_GRAY_PITCH_MM)
+                    speed=fminf(speed,CAR_TT_ENTRY_SPEED);
+            }
+            omega=ArcSign(c)*speed/ArcRadius(c);
             /* At faster arc entry an outer probe can briefly lose the edge.
              * Continue the last proportional correction for at most 80 ms;
              * dropping straight to circle feedforward would turn too late.
@@ -369,9 +434,7 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             bool recent_edge=FastCourse(c) && c->have_line &&
                 in->now_ms-c->last_line_at<=80U;
             if (!c->line_missing || recent_edge) {
-                float gain=FastCourse(c) ? speed/180.0f : 1.0f;
-                omega-=gain*(CAR_LINE_KP*c->line_error+
-                    (c->line_missing ? 0.0f : CAR_LINE_KD*c->line_rate));
+                omega-=ArcFeedback(c,speed,!c->line_missing);
             }
         }
     }

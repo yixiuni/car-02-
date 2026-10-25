@@ -85,7 +85,7 @@ void App_Run(void)
     CourseMode_Init(&mode,&car);
 #endif
     Task1WatchdogStart();
-    task1_test_magic=CAR_DUAL_MODE_BUILD ? 0x44554C35U : CAR_FOUR_TEST_BUILD ? 0x54534B37U : CAR_CROSS_TEST_BUILD ? 0x43525333U : CAR_LAP_TEST_BUILD ? 0x4C415031U : CAR_ARC_TEST_BUILD ? 0x41524331U : 0x54415331U;
+    task1_test_magic=CAR_TIME_TRIAL_BUILD ? 0x54333031U : CAR_DUAL_MODE_BUILD ? 0x44554C35U : CAR_FOUR_TEST_BUILD ? 0x54534B37U : CAR_CROSS_TEST_BUILD ? 0x43525333U : CAR_LAP_TEST_BUILD ? 0x4C415031U : CAR_ARC_TEST_BUILD ? 0x41524331U : 0x54415331U;
     uint32_t fed_at=HAL_GetTick(), trace_at=0, trace_run_at=0;
     uint32_t traced_state=CAR_STOPPED, traced_points=0, traced_signals=0;
     bool tracing=false;

@@ -29,6 +29,29 @@
 #ifndef CAR_FOUR_TEST_BUILD
 #define CAR_FOUR_TEST_BUILD 0
 #endif
+/* Experimental speed planner; the validated DUL5 remains the default. */
+#ifndef CAR_TIME_TRIAL_BUILD
+#define CAR_TIME_TRIAL_BUILD 0
+#endif
+#if CAR_TIME_TRIAL_BUILD && !CAR_DUAL_MODE_BUILD
+#error "Time trial requires the dual-mode course build"
+#endif
+#ifndef CAR_TT_STRAIGHT_SPEED
+#define CAR_TT_STRAIGHT_SPEED 450.0f
+#endif
+#ifndef CAR_TT_ARC_SPEED
+#define CAR_TT_ARC_SPEED 370.0f
+#endif
+#ifndef CAR_TT_ENTRY_SPEED
+#define CAR_TT_ENTRY_SPEED 370.0f
+#endif
+#ifndef CAR_TT_WHEEL_SPEED
+#define CAR_TT_WHEEL_SPEED 620.0f
+#endif
+#ifndef CAR_TT_D_FILTER_MS
+#define CAR_TT_D_FILTER_MS 10.0f
+#endif
+#define CAR_TT_APPROACH_ACCEL 1000.0f
 #if (CAR_ARC_TEST_BUILD + CAR_LAP_TEST_BUILD + CAR_CROSS_TEST_BUILD + CAR_FOUR_TEST_BUILD + CAR_DUAL_MODE_BUILD) > 1
 #error "Choose arc or lap diagnostic"
 #endif

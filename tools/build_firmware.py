@@ -16,6 +16,7 @@ p.add_argument('--motor-test', action='store_true', help='Separate one-shot rais
 p.add_argument('--ground-test', action='store_true', help='Separate fixed 200/500/1000 mm ground diagnostic')
 p.add_argument('--task1-test', action='store_true', help='One-shot real A-to-B controller, sensors and signals')
 p.add_argument('--dual-mode', action='store_true')
+p.add_argument('--time-trial', action='store_true', help='Separate experimental T301 speed-planned dual-mode image')
 p.add_argument('--four-test', action='store_true', help='One-shot task4 four crossing laps, 160 s guard')
 p.add_argument('--cross-test', action='store_true', help='One-shot task 3 crossing lap, 40 s limit')
 p.add_argument('--lap-test', action='store_true', help='One-shot full task 2 lap, 30 s limit')
@@ -24,6 +25,8 @@ p.add_argument('--gray-learn', action='store_true', help='No-motion analog grays
 p.add_argument('--motor-slow-decay', action='store_true', help='Bench-only alternate AT8236 PWM mode')
 p.add_argument('--motor-fast-decay', action='store_true', help='Bench comparison with original fast-decay PWM')
 a = p.parse_args()
+if a.time_trial:
+    a.dual_mode=True
 if sum((a.arc_test,a.lap_test,a.cross_test,a.four_test,a.dual_mode))>1: p.error('Choose one course diagnostic')
 if a.arc_test or a.lap_test or a.cross_test or a.four_test or a.dual_mode:
     if a.task1_test: p.error('--arc-test and --task1-test are separate images')
@@ -47,7 +50,7 @@ def tool(name):
         p.error('ARM tool not found: ' + name)
     return found
 cc, objcopy, size = tool('gcc'), tool('objcopy'), tool('size')
-out = root / 'build-local' / (('GrayLearn' if a.gray_learn else 'DualMode' if a.dual_mode else 'FourTest' if a.four_test else 'CrossTest' if a.cross_test else 'LapTest' if a.lap_test else 'ArcTest' if a.arc_test else 'Task1Test' if a.task1_test else 'GroundTest' if a.ground_test else 'MotorTestFast' if a.motor_fast_decay else 'MotorTestSlow' if a.motor_slow_decay else 'MotorTest' if a.motor_test else '') + a.config)
+out = root / 'build-local' / (('GrayLearn' if a.gray_learn else 'TimeTrial' if a.time_trial else 'DualMode' if a.dual_mode else 'FourTest' if a.four_test else 'CrossTest' if a.cross_test else 'LapTest' if a.lap_test else 'ArcTest' if a.arc_test else 'Task1Test' if a.task1_test else 'GroundTest' if a.ground_test else 'MotorTestFast' if a.motor_fast_decay else 'MotorTestSlow' if a.motor_slow_decay else 'MotorTest' if a.motor_test else '') + a.config)
 out.mkdir(parents=True, exist_ok=True)
 includes = ['Core/Inc', 'Drivers/STM32F1xx_HAL_Driver/Inc',
             'Drivers/STM32F1xx_HAL_Driver/Inc/Legacy', 'Drivers/CMSIS/Device/ST/STM32F1xx/Include',
@@ -72,6 +75,8 @@ if a.task1_test:
     flags += ['-DCAR_TASK1_TEST_BUILD=1']
 if a.dual_mode:
     flags += ['-DCAR_DUAL_MODE_BUILD=1']
+if a.time_trial:
+    flags += ['-DCAR_TIME_TRIAL_BUILD=1']
 if a.four_test:
     flags += ['-DCAR_FOUR_TEST_BUILD=1']
 if a.cross_test:

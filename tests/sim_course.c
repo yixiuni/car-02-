@@ -57,6 +57,13 @@ static bool ArcCovered(const Plant *p, const CarGeometry *g, unsigned segment)
 }
 static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injection)
 {
+    /* Optional sensitivity experiment only. Keep the historical default fixed;
+     * a faster assumed plant is never evidence that the actual car is faster. */
+    float plant_pwm_per_mm_s=getenv("SIM_PWM_PER_MM_S") ?
+        strtof(getenv("SIM_PWM_PER_MM_S"),NULL) : 1.5f;
+    if (!isfinite(plant_pwm_per_mm_s) || plant_pwm_per_mm_s<0.5f || plant_pwm_per_mm_s>3.0f) {
+        fputs("FAIL: invalid assumed motor model\n",stderr); return 1;
+    }
     unsigned gray_phase=getenv("SIM_GRAY_PHASE_MS") ?
         (unsigned)strtoul(getenv("SIM_GRAY_PHASE_MS"),NULL,10)%15U : 0;
     /* Use measured chassis dimensions; counts are a test fixture only. */
@@ -80,11 +87,11 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
     unsigned events=0; CarState prev=CAR_STOPPED; unsigned seg=0;
     uint32_t arc_at=0,injected_at=0; bool injected=false,pose_displaced=false;
     float frozen_left=0;
+    unsigned active_updates=0,saturated_updates=0,peak_pwm=0;
     const CarFault expected_fault[]={CAR_OK,CAR_FAULT_GRAY,CAR_FAULT_LINE,CAR_FAULT_STALL,CAR_FAULT_TIMING,CAR_OK};
     for(unsigned ms=5;ms<170000;ms+=5) {
         /* Fixed historical plant model: changing the controller feedforward
          * must not silently change the simulated motor being controlled. */
-        const float plant_pwm_per_mm_s=1.5f;
         float tl=(float)c.left_pwm/plant_pwm_per_mm_s*gain_l;
         float tr=(float)c.right_pwm/plant_pwm_per_mm_s*gain_r;
         /* Brake response is an independent plant assumption, not an actual
@@ -121,12 +128,25 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
 #endif
 #endif
         CarControl_Update(&c,&in);
+        if(c.state==CAR_STRAIGHT || c.state==CAR_CAPTURE || c.state==CAR_ARC) {
+            ++active_updates;
+            unsigned peak=c.left_pwm>c.right_pwm ? c.left_pwm : c.right_pwm;
+            if(peak>peak_pwm) peak_pwm=peak;
+            if(peak>=CAR_PWM_LIMIT) ++saturated_updates;
+        }
         if(c.left_target<0 || c.right_target<0) {
             fputs("FAIL: automatic start requested reverse motion\n",stderr); return 1;
         }
-        if((task==4 || (CAR_DUAL_MODE_BUILD && task==2)) && ms!=c.run_at && (c.state==CAR_STRAIGHT || c.state==CAR_CAPTURE || c.state==CAR_ARC) &&
+        if(!CAR_TIME_TRIAL_BUILD && (task==4 || (CAR_DUAL_MODE_BUILD && task==2)) && ms!=c.run_at && (c.state==CAR_STRAIGHT || c.state==CAR_CAPTURE || c.state==CAR_ARC) &&
             fabsf((c.left_target+c.right_target)*.5f-CAR_FOUR_CRUISE_SPEED)>.01f) {
             fputs("FAIL: task4 cruise slowed at an approach or segment boundary\n",stderr); return 1;
+        }
+        if(CAR_TIME_TRIAL_BUILD && ms!=c.run_at &&
+           (c.state==CAR_STRAIGHT || c.state==CAR_CAPTURE || c.state==CAR_ARC) &&
+           (c.left_target>CAR_TT_WHEEL_SPEED+.01f || c.right_target>CAR_TT_WHEEL_SPEED+.01f ||
+            (c.left_target+c.right_target)*.5f<1 ||
+            (c.left_target+c.right_target)*.5f>fmaxf(CAR_TT_STRAIGHT_SPEED,CAR_TT_ARC_SPEED)+.01f)) {
+            fputs("FAIL: time-trial target outside planned envelope\n",stderr); return 1;
         }
         if(task>=3 && ms==2000 && p.theta-initial>-0.35f) {
             fputs("FAIL: no automatic right turn toward C\n",stderr); return 1;
@@ -218,7 +238,10 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
             for(unsigned k=0;k<100;k++) { in.now_ms+=5; ++in.gray_samples; CarControl_Update(&c,&in); }
             if(c.state!=CAR_DONE || c.point_events!=events) return 1;
             printf("PASS: task%u %.2fs, %u point events, %u laps (motor gains %.2f/%.2f, yaw bias %.3f rad/s)\n",
-                task,(ms-c.run_at)*.001,events,c.completed_laps,gain_l,gain_r,bias); return 0;
+                task,(ms-c.run_at)*.001,events,c.completed_laps,gain_l,gain_r,bias);
+            if(getenv("SIM_METRICS")) printf("MODEL: pwm_per_mm_s=%.3f peak_pwm=%u saturation=%u/%u travel_mm=%.1f\n",
+                plant_pwm_per_mm_s,peak_pwm,saturated_updates,active_updates,(p.left+p.right)*.5f);
+            return 0;
         }
     }
     return 1;
@@ -226,6 +249,10 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
 int main(void)
 {
 #if CAR_DUAL_MODE_BUILD
+    if(getenv("SIM_NOMINAL_ONLY")) {
+        selected_laps=4;
+        return Run(2,1,1,0,0) || Run(4,1,1,0,0);
+    }
     if(getenv("SIM_D_ENTRY_SWEEP")) {
         const float offsets[]={-40,0,40,60};
         for(selected_laps=1;selected_laps<=4;selected_laps+=3)
@@ -234,7 +261,7 @@ int main(void)
                     b_pose_error_mm=offsets[i];
                     if(Run(4,1,1,0,0) || Run(4,.95f,1.05f,.001f,0)) return 1;
                 }
-        puts("PASS: D entry pose-error sweep, 1/4 laps, each B exit, full coverage and unchanged cruise");
+        puts("PASS: D entry pose-error sweep, 1/4 laps, each B exit, full coverage and speed envelope");
         return 0;
     }
     for(unsigned task=2;task<=4;task+=2) {
