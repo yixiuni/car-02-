@@ -1,0 +1,50 @@
+{
+  "firmware": "T304",
+  "magic": "0x54333034",
+  "flashed": true,
+  "live_flash_sha256": "ceb2f192a8eab56325b6652c5f07d9d213fee55210ca3bfc2d401f3679bdc03e",
+  "flash_bytes": 42420,
+  "ram_bytes": 40488,
+  "straight_mm_s": 550,
+  "arc_mm_s": 470,
+  "entry_mm_s": 370,
+  "wheel_target_limit_mm_s": 700,
+  "pwm_limit_permille": 850,
+  "D_entry_aim_mm": 25,
+  "physical_run": "pending",
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    494,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    577,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "T303",
+  "source_cross_four_seconds": null,
+  "source_flash_sha256": "6f16be7aa07ffb85c86021631a87726f975d71a530fec18ff15c2d582597f7b8",
+  "host_scenarios_passed": 27,
+  "host_scenarios_total": 27,
+  "asan_ubsan_passed": true,
+  "validation_pass_lines": 1485,
+  "scope": "Flash and idle verified; bounded outer-edge P recovery at arc entry; physical run pending",
+  "source_result": "LINE fault7 at7.502s;0 completed laps"
+}

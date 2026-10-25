@@ -1,0 +1,20 @@
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -516,7 +516,7 @@
+             /* An outer-probe observation becomes uncertain during loss.
+              * Retain P initially, then fade it to zero by the existing 180 ms
+              * loss deadline. Never extrapolate D or confirm an unseen point. */
+-            bool entry_edge=CAR_TIME_TRIAL_STAGE3 &&
++            bool entry_edge=(CAR_TIME_TRIAL_STAGE3 || (CAR_RESEARCH_ENTRY_HOLD!=0)) &&
+                 progress<c->geometry.sensor_forward_mm &&
+                 fabsf(c->line_error)>=2.5f*CAR_GRAY_PITCH_MM;
+             uint32_t edge_age=in->now_ms-c->last_line_at;
+@@ -524,7 +524,7 @@
+             bool recent_edge=FastCourse(c) && c->have_line && edge_age<=edge_hold_ms;
+             if (!c->line_missing || recent_edge) {
+                 float correction=ArcFeedback(c,speed,!c->line_missing);
+-                if (c->line_missing && entry_edge && edge_age>80U)
++                if (c->line_missing && entry_edge && edge_age>80U && CAR_RESEARCH_ENTRY_HOLD!=2)
+                     correction*=Clamp((float)(CAR_LINE_LOST_TIMEOUT_MS-edge_age)/
+                                       (CAR_LINE_LOST_TIMEOUT_MS-80U),0,1);
+                 omega-=correction;

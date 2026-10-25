@@ -1,0 +1,100 @@
+{
+  "firmware": "T320",
+  "status": "PHYSICAL_FAILED_SECOND_LAP_B",
+  "physical_result": "FAILED",
+  "bin_sha256": "3bbfd522a55746c7b97f77f531171e528940ac85c8d413067ae7d49b1ff5248f",
+  "flash_bytes": 50460,
+  "ram_link_bytes": 47304,
+  "host_regression_pass_lines": 1123,
+  "host_sanitizers": "ASAN/UBSAN passed, exit0",
+  "extended_model_passed": 224,
+  "extended_model_total": 225,
+  "extended_failures": [
+    {
+      "assumed_pwm_per_mm_s": 1.5,
+      "gray_phase_ms": 14,
+      "suite": "full",
+      "passed": false,
+      "returncode": 1,
+      "cross_four_seconds": [],
+      "errors": "FAIL task2: event point3 not physically covered at -2,-719\nPOINT_DETAIL heading-22.071 map(20.4,-793.1,-22.002) line-52.5 frames3 lap3 Coffset0.0 Doffset0.0",
+      "log": "edge-pose-model1.5-phase14-full.log"
+    }
+  ],
+  "cross_full_passed": 45,
+  "C_offset_passed": 45,
+  "D_offset_passed": 45,
+  "normal_equivalence_cases": 45,
+  "synthetic_drift": {
+    "T319_passed": 73,
+    "T320_passed": 90,
+    "total": 90,
+    "scope": "Synthetic estimator drift; not physical run replay"
+  },
+  "speeds_mm_s": {
+    "cross": [
+      1000,
+      650,
+      370
+    ],
+    "normal": [
+      800,
+      460,
+      370
+    ]
+  },
+  "C_D_entry_aim_mm": 15,
+  "endpoint_correction_limit_mm": 100,
+  "active_control_timing_pending": false,
+  "remote_motor_start": false,
+  "failed_baseline_record": "docs/data/t319-cross-four-run-03.json",
+  "source_sha256": {
+    "Core/Src/car_control.c": "1087039c6df530aa91c33ba8563126d6cf3b13f4c6a287b34e16ffbbf6d1dfac",
+    "Core/Inc/car_control.h": "bdea97ee489c623d71faaf563236bcf15eefffcec840195dce3f29643cfb357b",
+    "Core/Inc/car_config.h": "60bf68327f8337a6f4f0acf26a3a5579f4c9d5eee7fe85372e1c9df915317150",
+    "Core/Src/app.c": "b59736bdfad0ac7be5c14c3fa6c0b829f2e97c70f565bf7afea3f85464d5619e",
+    "tests/test_edge_pose.c": "fd123b05fa6de384362ae6947a1f35ab6e6804226c9aed44c908022bae14109d",
+    "tests/sim_course.c": "6dd9f16a87955d47f114944c557626fc3593b6321035268bcf1c69c4cb9b5646"
+  },
+  "before_prefix": ".tools/hardware-backups/t320-before-01",
+  "rollback_T319_sha256": "8ff3514cacadeb94569bc600874ed5e23467c3af554d1d98ce7375a658d55333",
+  "flash_readback_identical": true,
+  "post_flash": [
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        683,
+        0,
+        0,
+        0
+      ],
+      "control_interval_ms": 6
+    },
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        762,
+        0,
+        0,
+        0
+      ],
+      "control_interval_ms": 7
+    }
+  ],
+  "physical_run": {
+    "status": "FAILED_SECOND_LAP_B",
+    "record": "docs/data/t320-cross-four-run-01.json",
+    "elapsed_s": 11.872,
+    "fault": 7,
+    "completed_laps": 1,
+    "point_events": 6,
+    "first_B_correction_mm": 121.23878479003906,
+    "user_confirmed_location": "B"
+  }
+}

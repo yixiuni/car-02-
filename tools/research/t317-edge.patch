@@ -1,0 +1,35 @@
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -433,7 +433,13 @@
+         float turned=ArcSign(c)*(c->heading_rad-c->arc_heading_start);
+         /* Compare body heading with body heading, including the forward sensor
+          * offset; the endpoint tangent can differ by over 24 degrees. */
+-        float observed=ArcEnd(c)-ArcSign(c)*asinf(c->geometry.sensor_forward_mm/400.0f);
++        float edge_delay_ms=c->line_missing ?
++            (float)(in->now_ms-c->missing_at)+0.5f*(float)(c->missing_at-c->last_line_at) : 0;
++        float edge_travel=CAR_RESEARCH_EDGE_ADVANCE*0.001f*edge_delay_ms*
++            fmaxf(0,(in->left_speed+in->right_speed)*0.5f);
++        edge_travel=Clamp(edge_travel,0,60.0f);
++        float edge_turn=ArcSign(c)*edge_travel/ArcRadius(c);
++        float observed=ArcEnd(c)-ArcSign(c)*asinf(c->geometry.sensor_forward_mm/400.0f)+edge_turn;
+         float heading_error=fabsf(Motion_Wrap(c->heading_rad-observed));
+         bool exit=c->have_line && c->white_frames>=CAR_LINE_CONFIRM_FRAMES &&
+             in->now_ms-c->last_line_at<100 && fabsf(c->line_error)<=1.5f*CAR_GRAY_PITCH_MM &&
+@@ -445,10 +451,13 @@
+         float correction=Clamp(Motion_Wrap(observed-c->heading_rad),-0.15f,0.15f);
+         float observed_heading=c->heading_rad+CAR_ENDPOINT_YAW_BLEND*correction;
+         float lateral=-c->line_error;
+-        float observed_x=end.x-c->geometry.sensor_forward_mm*cosf(observed_heading)
+-                             +lateral*sinf(observed_heading);
+-        float observed_y=end.y-c->geometry.sensor_forward_mm*sinf(observed_heading)
+-                             -lateral*cosf(observed_heading);
++        float edge_heading=observed_heading-edge_turn;
++        float observed_x=end.x-c->geometry.sensor_forward_mm*cosf(edge_heading)
++                             +lateral*sinf(edge_heading)
++                             +ArcSign(c)*ArcRadius(c)*(sinf(observed_heading)-sinf(edge_heading));
++        float observed_y=end.y-c->geometry.sensor_forward_mm*sinf(edge_heading)
++                             -lateral*cosf(edge_heading)
++                             -ArcSign(c)*ArcRadius(c)*(cosf(observed_heading)-cosf(edge_heading));
+         float correction_limit=(c->task>=3 || FastCourse(c)) ?
+             CAR_CROSS_ENDPOINT_CORRECTION_MM : CAR_ENDPOINT_CORRECTION_MM;
+         exit=exit && hypotf(observed_x-c->x_mm,observed_y-c->y_mm)<=correction_limit &&

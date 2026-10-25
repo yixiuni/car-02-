@@ -1,0 +1,61 @@
+{
+  "firmware": "T308",
+  "magic": "0x54333038",
+  "flashed": true,
+  "live_flash_sha256": "c62a2bfe661725f83556a9673087253137fe90f324c5282dbb17258bddda28ca",
+  "flash_bytes": 42640,
+  "ram_bytes": 40488,
+  "straight_mm_s": 650,
+  "arc_mm_s": 430,
+  "entry_mm_s": 370,
+  "wheel_target_limit_mm_s": 850,
+  "pwm_limit_permille": 1000,
+  "C_entry_aim_mm": 25,
+  "D_entry_aim_mm": 20,
+  "C_preview_before_footprint": true,
+  "event_gates": "Actual C footprint and three fresh black frames unchanged",
+  "stage3_turn_changes_enabled": false,
+  "physical_run": "pending",
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    479,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    562,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "T307",
+  "source_physical_successes_s": [],
+  "source_run_at": 0,
+  "source_flash_sha256": "30dc1807472bb76426cf71dc9565349644e85240eb53b8d079d572c3659fe4ad",
+  "asan_ubsan_passed": true,
+  "validation_pass_lines": 3513,
+  "expanded_suites_passed": 36,
+  "expanded_suites_total": 36,
+  "C_entry_assumptions": "Independent true position shifts -40..40mm in10mm steps after A, each lap;3 motor response mismatches;3 PWM-speed assumptions;3 sensor phases. Not a measured physical error fit.",
+  "scope": "Straight650, wheel850, PWM1000, Caim25. Arc430 and entry370 nominal targets unchanged; higher PWM and wheel caps also affect available arc correction. Full flash readback and idle verified. Physical pending; 30s not achieved.",
+  "source_state": "Unrun T307 idle, phase0 trace0 run_at0, saved full RAM/flash before reset",
+  "previous_physical_baseline": {
+    "firmware": "T306",
+    "elapsed_s": 42.502,
+    "straight_mm_s": 500
+  }
+}

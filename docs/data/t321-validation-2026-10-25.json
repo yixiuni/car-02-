@@ -1,0 +1,111 @@
+{
+  "firmware": "T321",
+  "status": "FLASH_VERIFIED_IDLE_READY_PHYSICAL_PENDING",
+  "physical_result": "PENDING",
+  "bin_sha256": "c9d2924ef8b42dbf736c10c9af108587d4675aee03d68b5329c49bc7c83835d4",
+  "flash_bytes": 51068,
+  "ram_link_bytes": 47304,
+  "host_regression_pass_lines": 1123,
+  "host_sanitizers": "ASAN/UBSAN passed, exit0",
+  "extended_model_passed": 224,
+  "extended_model_total": 225,
+  "extended_failures": [
+    {
+      "assumed_pwm_per_mm_s": 1.5,
+      "gray_phase_ms": 14,
+      "suite": "full",
+      "passed": false,
+      "returncode": 1,
+      "cross_four_seconds": [],
+      "errors": "FAIL task2: event point3 not physically covered at -2,-719\nPOINT_DETAIL heading-22.071 map(20.4,-793.1,-22.002) line-52.5 frames3 lap3 Coffset0.0 Doffset0.0",
+      "log": "arc-phase-model1.5-phase14-full.log"
+    }
+  ],
+  "cross_full_passed": 45,
+  "C_offset_passed": 45,
+  "D_offset_passed": 45,
+  "normal_equivalence_cases": 45,
+  "encoder_scale_model": {
+    "T320_passed": 36,
+    "T321_passed": 63,
+    "total": 63,
+    "scales": [
+      0.85,
+      0.9,
+      0.95,
+      1.0,
+      1.05,
+      1.1,
+      1.15
+    ],
+    "scope": "Synthetic encoder distance scale on every arc, independently checked physical plant. Not real slip fit or trajectory replay."
+  },
+  "speeds_mm_s": {
+    "cross": [
+      1000,
+      650,
+      370
+    ],
+    "normal": [
+      800,
+      460,
+      370
+    ]
+  },
+  "C_D_entry_aim_mm": 15,
+  "endpoint_correction_limit_mm": 100,
+  "phase_prior": {
+    "gain": 0.1,
+    "max_step_mm": 2,
+    "max_innovation_mm": 160,
+    "min_arc_progress_mm": 300,
+    "min_black_frames": 4,
+    "max_line_error_mm": 7.5,
+    "max_line_rate_mm_s": 200,
+    "updates_yaw": false,
+    "updates_distance": false,
+    "updates_points": false
+  },
+  "active_control_timing_pending": true,
+  "remote_motor_start": false,
+  "failed_baseline_record": "docs/data/t320-cross-four-run-01.json",
+  "source_sha256": {
+    "Core/Src/car_control.c": "ad10ec3cb88dd086142c286d8fd64c5b5f2c746bed0588d8203f59e614676fbe",
+    "Core/Inc/car_control.h": "bdea97ee489c623d71faaf563236bcf15eefffcec840195dce3f29643cfb357b",
+    "Core/Inc/car_config.h": "f4aa6c1b484c1c2952509a00f2d5504459c5744ae7d7c22fe3f5ab34072edd34",
+    "Core/Src/app.c": "46404c1a2389cf72e46a51919c941b29a8905cce2bf63e453cf5ed3cd95e616f",
+    "tests/test_arc_phase.c": "ac75d3f9f0cc943447d22be067e752f9b5e4107fe5bedfc7fe302846f4dfb078",
+    "tests/sim_course.c": "6dd9f16a87955d47f114944c557626fc3593b6321035268bcf1c69c4cb9b5646"
+  },
+  "before_prefix": ".tools/hardware-backups/t321-before-01",
+  "rollback_T320_sha256": "3bbfd522a55746c7b97f77f531171e528940ac85c8d413067ae7d49b1ff5248f",
+  "flash_readback_identical": true,
+  "post_flash": [
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        683,
+        0,
+        0,
+        0
+      ],
+      "control_interval_ms": 6
+    },
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        761,
+        0,
+        0,
+        0
+      ],
+      "control_interval_ms": 7
+    }
+  ]
+}

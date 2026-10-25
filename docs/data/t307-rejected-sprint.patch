@@ -1,0 +1,32 @@
+diff --git a/Core/Inc/car_config.h b/Core/Inc/car_config.h
+index 3e3651a..17e648e 100644
+--- a/Core/Inc/car_config.h
++++ b/Core/Inc/car_config.h
+@@ -69,6 +69,9 @@
+ #ifndef CAR_TT_D_FILTER_MS
+ #define CAR_TT_D_FILTER_MS 10.0f
+ #endif
++#ifndef CAR_TT_SPRINT_DELAY_MM
++#define CAR_TT_SPRINT_DELAY_MM 0.0f
++#endif
+ #define CAR_TT_APPROACH_ACCEL 1000.0f
+ #if (CAR_ARC_TEST_BUILD + CAR_LAP_TEST_BUILD + CAR_CROSS_TEST_BUILD + CAR_FOUR_TEST_BUILD + CAR_DUAL_MODE_BUILD) > 1
+ #error "Choose arc or lap diagnostic"
+diff --git a/Core/Src/car_control.c b/Core/Src/car_control.c
+index e846bed..351dbd9 100644
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -325,8 +325,11 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
+                 /* Accelerate only after aligning. The distance envelope reaches
+                  * arc speed before the front sensor can see the endpoint. */
+                 float aligned=Clamp((0.55f-fabsf(heading_error))/0.35f,0,1);
+-                float requested=CAR_TT_ENTRY_SPEED+
+-                    aligned*(CAR_TT_STRAIGHT_SPEED-CAR_TT_ENTRY_SPEED);
++                float cruise=CAR_TT_STRAIGHT_SPEED;
++                if(CAR_TT_SPRINT_DELAY_MM>0 &&
++                   c->distance_mm-c->segment_distance<CAR_TT_SPRINT_DELAY_MM)
++                    cruise=fminf(cruise,500.0f);
++                float requested=CAR_TT_ENTRY_SPEED+aligned*(cruise-CAR_TT_ENTRY_SPEED);
+                 float available=fmaxf(0,remaining-c->geometry.sensor_forward_mm-60.0f);
+                 speed=fminf(requested,sqrtf(CAR_TT_ENTRY_SPEED*CAR_TT_ENTRY_SPEED+
+                                             2*CAR_TT_APPROACH_ACCEL*available));

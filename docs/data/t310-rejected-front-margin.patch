@@ -1,0 +1,36 @@
+--- a/Core/Inc/car_config.h
++++ b/Core/Inc/car_config.h
+@@ -217,6 +217,9 @@
+ #define CAR_ENDPOINT_HEADING_RAD    0.44f
+ #define CAR_ENDPOINT_CORRECTION_MM 60.0f /* max accepted odometry correction */
+ #define CAR_CROSS_ENDPOINT_CORRECTION_MM 100.0f /* qualified edge only; measured cross-run drift ~78 mm */
++#ifndef CAR_CROSS_ENTRY_FRONT_MARGIN_MM
++#define CAR_CROSS_ENTRY_FRONT_MARGIN_MM 0.0f
++#endif
+ #ifndef CAR_CROSS_D_ENTRY_PREVIEW
+ #define CAR_CROSS_D_ENTRY_PREVIEW CAR_TIME_TRIAL_ARC_BOOST
+ #endif
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -56,7 +56,12 @@
+ }
+ static bool Covers(const CarControl *c, Point p)
+ {
+-    return CoversPose(c,p,c->x_mm,c->y_mm,c->heading_rad);
++    if (!CoversPose(c,p,c->x_mm,c->y_mm,c->heading_rad)) return false;
++    if (c->task==4 && c->state==CAR_STRAIGHT && CAR_CROSS_ENTRY_FRONT_MARGIN_MM>0) {
++        float forward=cosf(c->heading_rad)*(p.x-c->x_mm)+sinf(c->heading_rad)*(p.y-c->y_mm);
++        return forward<=c->geometry.front_mm-CAR_CROSS_ENTRY_FRONT_MARGIN_MM;
++    }
++    return true;
+ }
+ static CarFault InputFault(const CarControl *c, const CarInputs *in)
+ {
+@@ -69,6 +74,7 @@
+           CAR_TT_STRAIGHT_PWM_RESERVE>=0 && CAR_TT_STRAIGHT_PWM_RESERVE<=CAR_PWM_LIMIT &&
+           CAR_TT_ARC_PWM_RESERVE>=0 && CAR_TT_ARC_PWM_RESERVE<=CAR_PWM_LIMIT &&
+           CAR_TT_ARC_ACCEL_START_MM>=0 && CAR_TT_ARC_ACCEL_START_MM<=400 &&
++          CAR_CROSS_ENTRY_FRONT_MARGIN_MM>=0 && CAR_CROSS_ENTRY_FRONT_MARGIN_MM<=30 &&
+           CAR_TT_D_FILTER_MS>=0 && CAR_TT_D_FILTER_MS<=100))
+         return CAR_FAULT_CONFIG;
+     if (!in->gray_online) return CAR_FAULT_GRAY;

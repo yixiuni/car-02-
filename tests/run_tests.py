@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 p = argparse.ArgumentParser()
 p.add_argument('--compiler', default=shutil.which('clang') or shutil.which('gcc'))
 p.add_argument('--sanitize', action='store_true')
+p.add_argument('--trial-profile', action='append', help='Select trial profile(s); still runs common controller/driver tests')
 a = p.parse_args()
 if not a.compiler:
     p.error('Install a host C compiler or pass --compiler')
@@ -23,10 +24,87 @@ def run(name, sources, defines=()):
     subprocess.run(cmd + list(defines) + sources + ['-lm', '-o', str(exe)], cwd=ROOT, check=True)
     subprocess.run([str(exe)], cwd=ROOT, check=True)
 base = ['Core/Src/car_control.c', 'Core/Src/motion_control.c', 'Core/Src/imu_filter.c']
+trial_defines=['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1', '-DCAR_TIME_TRIAL_BUILD=1']
+trial_profiles=[('time-trial', trial_defines),
+    ('time-trial2', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1']),
+    ('time-trial3', trial_defines+['-DCAR_TIME_TRIAL_STAGE3=1']),
+    ('time-trial-entry', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+                                      '-DCAR_TIME_TRIAL_C_ENTRY=1']),
+    ('time-trial-straight', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_STRAIGHT_BOOST=1']),
+    ('time-trial-fast', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1']),
+    ('time-trial-adaptive', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1']),
+    ('time-trial-arc-boost', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1','-DCAR_TIME_TRIAL_ARC_BOOST=1']),
+    ('time-trial-exit-trace', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1','-DCAR_TIME_TRIAL_EXIT_TRACE=1'])]
+trial_profiles.append(('time-trial-arc-step',trial_profiles[-1][1]+['-DCAR_TIME_TRIAL_ARC_STEP=1']))
+trial_profiles.append(('time-trial-entry-hold',trial_profiles[-1][1]+['-DCAR_TIME_TRIAL_ENTRY_HOLD=1']))
+trial_profiles.append(('time-trial-cross-sprint',trial_profiles[-1][1]+['-DCAR_TIME_TRIAL_CROSS_SPRINT=1']))
+trial_profiles.append(('time-trial-arc-localize',trial_profiles[-1][1]+['-DCAR_TIME_TRIAL_ARC_LOCALIZE=1']))
+trial_profiles.append(('time-trial-edge-pose',trial_profiles[-1][1]+['-DCAR_TIME_TRIAL_EDGE_POSE=1']))
+trial_profiles.append(('time-trial-arc-phase',trial_profiles[-1][1]+['-DCAR_TIME_TRIAL_ARC_PHASE=1']))
+if a.trial_profile:
+    unknown=set(a.trial_profile)-set(dict(trial_profiles))
+    if unknown:p.error('Unknown trial profiles: '+', '.join(sorted(unknown)))
+    trial_profiles=[(name,flags) for name,flags in trial_profiles if name in a.trial_profile]
+for prefix, defines in trial_profiles:
+    run(prefix + '-profile', base + ['tests/test_time_trial.c'], defines)
+    run(prefix + '-course', base + ['Core/Src/task1_test.c', 'Core/Src/course_mode.c',
+                                  'tests/sim_course.c'], defines)
+    for phase in ('0', '5', '10'):
+        for offset in (False, True):
+            env = {**os.environ, 'SIM_GRAY_PHASE_MS': phase, 'SIM_WEAK_BRAKE': '1'}
+            if offset:
+                env['SIM_D_ENTRY_SWEEP'] = '1'
+            exe = prefix + '-course' + ('.exe' if os.name == 'nt' else '')
+            subprocess.run([str(out / exe)], cwd=ROOT, env=env, check=True)
+for prefix, defines in trial_profiles:
+    if '-DCAR_TIME_TRIAL_C_ENTRY=1' not in defines:continue
+    run(prefix+'-c-entry',base+['tests/test_c_entry.c'],defines)
+    for phase in ('0','5','10'):
+        subprocess.run([str(out/(prefix+'-course'+('.exe' if os.name=='nt' else '')))],
+            cwd=ROOT,env={**os.environ,'SIM_C_ENTRY_SWEEP':'1','SIM_GRAY_PHASE_MS':phase,
+                          'SIM_WEAK_BRAKE':'1'},check=True)
+for profile in ('time-trial-arc-boost',):
+    if profile in dict(trial_profiles):
+        run(profile+'-acquisition',base+['tests/test_arc_boost.c'],dict(trial_profiles)[profile])
+for profile in ('time-trial-exit-trace','time-trial-arc-step','time-trial-entry-hold','time-trial-cross-sprint','time-trial-arc-localize'):
+    if profile not in dict(trial_profiles):continue
+    run(profile+'-observation',base+['tests/test_exit_trace.c'],dict(trial_profiles)[profile])
+if 'time-trial-entry-hold' in dict(trial_profiles):
+    run('entry-hold-boundaries',base+['tests/test_entry_hold.c'],dict(trial_profiles)['time-trial-entry-hold'])
+if 'time-trial-cross-sprint' in dict(trial_profiles):
+    run('cross-sprint-boundaries',base+['tests/test_cross_sprint.c'],dict(trial_profiles)['time-trial-cross-sprint'])
+    run('sprint-entry-hold-boundaries',base+['tests/test_entry_hold.c'],dict(trial_profiles)['time-trial-cross-sprint'])
+if 'time-trial-arc-localize' in dict(trial_profiles):
+    flags=dict(trial_profiles)['time-trial-arc-localize']
+    run('arc-position-boundaries',base+['tests/test_arc_position.c'],flags)
+    run('arc-position-sprint',base+['tests/test_cross_sprint.c'],flags)
+    run('arc-position-entry-hold',base+['tests/test_entry_hold.c'],flags)
+if 'time-trial-edge-pose' in dict(trial_profiles):
+    flags=dict(trial_profiles)['time-trial-edge-pose']
+    run('edge-pose-boundaries',base+['tests/test_edge_pose.c'],flags)
+    run('edge-pose-sprint',base+['tests/test_cross_sprint.c'],flags)
+    run('edge-pose-observer',base+['tests/test_arc_position.c'],flags)
+    run('edge-pose-entry-hold',base+['tests/test_entry_hold.c'],flags)
+if 'time-trial-arc-phase' in dict(trial_profiles):
+    flags=dict(trial_profiles)['time-trial-arc-phase']
+    run('arc-phase-boundaries',base+['tests/test_arc_phase.c'],flags)
+    run('arc-phase-edge-pose',base+['tests/test_edge_pose.c'],flags)
+    run('arc-phase-sprint',base+['tests/test_cross_sprint.c'],flags)
+    run('arc-phase-entry-hold',base+['tests/test_entry_hold.c'],flags)
 run('arc-preview', base + ['tests/test_arc_preview.c'],
     ['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1'])
 run('oled-ui',['Core/Src/oled_ui.c','tests/test_oled_ui.c'])
 run('gray-analog',['Core/Src/gray_analog.c','tests/test_gray_analog.c'])
+run('gray-position',['Core/Src/gray_position.c','tests/test_gray_position.c'])
+run('speed-trace',['Core/Src/speed_trace.c','tests/test_speed_trace.c'],
+    trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1','-DCAR_TIME_TRIAL_C_ENTRY=1',
+    '-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1','-DCAR_TIME_TRIAL_EXIT_TRACE=1',
+    '-DCAR_TIME_TRIAL_ARC_STEP=1','-DCAR_SPEED_TRACE_BUILD=1'])
 subprocess.run([os.sys.executable,'tests/test_gray_calibration.py'],cwd=ROOT,check=True)
 run('encoder', ['Core/Src/encoder.c', 'Core/Src/motion_control.c', 'tests/test_encoder.c'],
     ['-Itests/stubs'])

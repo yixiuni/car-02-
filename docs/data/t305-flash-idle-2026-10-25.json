@@ -1,0 +1,50 @@
+{
+  "firmware": "T305",
+  "magic": "0x54333035",
+  "flashed": true,
+  "live_flash_sha256": "1932adb10515d81e98736073ee5956d75670f3f258c9e298bb10a222bad98753",
+  "flash_bytes": 42668,
+  "ram_bytes": 40488,
+  "straight_mm_s": 550,
+  "arc_mm_s": 470,
+  "entry_mm_s": 370,
+  "wheel_target_limit_mm_s": 700,
+  "pwm_limit_permille": 850,
+  "D_entry_aim_mm": 25,
+  "physical_run": "pending",
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    872,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    953,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "T304",
+  "source_cross_four_seconds": null,
+  "source_flash_sha256": "ceb2f192a8eab56325b6652c5f07d9d213fee55210ca3bfc2d401f3679bdc03e",
+  "host_scenarios_passed": 27,
+  "host_scenarios_total": 27,
+  "asan_ubsan_passed": true,
+  "validation_pass_lines": 1485,
+  "scope": "Flash and idle verified; fading stale entry P and bounded entry turn, first400ms arc trace every40ms; physical run pending",
+  "source_result": "Second lap C LINE fault7 at12.205s;1 completed lap"
+}

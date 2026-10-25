@@ -1,0 +1,13 @@
+{
+  "firmware": "T317",
+  "baseline": "T315",
+  "elapsed_s": 35.667,
+  "baseline_elapsed_s": 36.123,
+  "saved_s": 0.456,
+  "phase_saved_s": {
+    "1": 0.057,
+    "3": 0.378,
+    "4": 0.021
+  },
+  "scope": "Single run per firmware; phase estimates from sparse trace, not repeatability proof."
+}

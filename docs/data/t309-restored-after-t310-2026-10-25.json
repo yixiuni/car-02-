@@ -1,0 +1,44 @@
+{
+  "restored_firmware": "T309",
+  "magic": "0x54333039",
+  "sha256": "cef962e218c53e2c19a0cf9861001e5ad034b1b989261b78d2f6e9a4ad24be17",
+  "flash_bytes": 42916,
+  "flash_verified": true,
+  "live_flash_byte_identical": true,
+  "restored_original_archive": ".tools/hardware-backups/t309-adaptive-validated.elf",
+  "restored_image_path": "build-local/T309Restored/stm32-car.elf",
+  "previous_physical_success_s": 37.161,
+  "source_failed_firmware": "T310",
+  "source_fault": 7,
+  "source_run_at": 136604,
+  "source_elapsed_s": 8.402,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "idle_ccr": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "default_mode": "NORMAL",
+  "default_laps": 1,
+  "gray_before": [
+    1228,
+    0,
+    0,
+    0
+  ],
+  "gray_after": [
+    1311,
+    0,
+    0,
+    0
+  ],
+  "idle_max_control_gap_ms": 8,
+  "remote_motor_start": false,
+  "scope": "Restore exact physically successful T309 image. T310 model success did not predict this physical failure. No new physical run after restore."
+}

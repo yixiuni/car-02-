@@ -1,0 +1,44 @@
+{
+  "firmware": "T312",
+  "magic": "0x54333132",
+  "sha256": "368341bae7b8827770c1741ad444ce7713a987e6e74bb57104e14d075889f478",
+  "flash_bytes": 46164,
+  "ram_bytes": 41416,
+  "full_flash_identical": true,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "idle_ccr": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "gray_before": [
+    387,
+    0,
+    0,
+    0
+  ],
+  "gray_after": [
+    470,
+    0,
+    0,
+    0
+  ],
+  "default_mode": "NORMAL",
+  "default_laps": 1,
+  "idle_max_control_gap_ms": 8,
+  "straight_mm_s": 800,
+  "arc_mm_s": 450,
+  "entry_mm_s": 370,
+  "source_firmware": "T311",
+  "source_run_at": 135617,
+  "source_physical_success_s": 37.049,
+  "source_full_ram_bytes": 49152,
+  "remote_motor_start": false,
+  "physical_run": "pending"
+}

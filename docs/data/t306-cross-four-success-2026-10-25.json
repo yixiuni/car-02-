@@ -1,0 +1,131 @@
+{
+  "firmware": "T306",
+  "result": "COMPLETED",
+  "straight_target_mm_s": 500,
+  "arc_target_mm_s": 430,
+  "entry_target_mm_s": 370,
+  "task": 4,
+  "route": "A-C-B-D-A",
+  "completed_laps": 4,
+  "target_laps": 4,
+  "point_events": 17,
+  "elapsed_s": 42.502,
+  "fault": 0,
+  "run_at": 124922,
+  "events": [
+    {
+      "event": 1,
+      "point": "A",
+      "elapsed_s": 0.001
+    },
+    {
+      "event": 2,
+      "point": "C",
+      "elapsed_s": 2.492
+    },
+    {
+      "event": 3,
+      "point": "B",
+      "elapsed_s": 5.146
+    },
+    {
+      "event": 4,
+      "point": "D",
+      "elapsed_s": 7.734
+    },
+    {
+      "event": 5,
+      "point": "A",
+      "elapsed_s": 10.503
+    },
+    {
+      "event": 6,
+      "point": "C",
+      "elapsed_s": 13.099
+    },
+    {
+      "event": 7,
+      "point": "B",
+      "elapsed_s": 15.741
+    },
+    {
+      "event": 8,
+      "point": "D",
+      "elapsed_s": 18.341
+    },
+    {
+      "event": 9,
+      "point": "A",
+      "elapsed_s": 20.965
+    },
+    {
+      "event": 10,
+      "point": "C",
+      "elapsed_s": 23.566
+    },
+    {
+      "event": 11,
+      "point": "B",
+      "elapsed_s": 26.294
+    },
+    {
+      "event": 12,
+      "point": "D",
+      "elapsed_s": 28.918
+    },
+    {
+      "event": 13,
+      "point": "A",
+      "elapsed_s": 31.545
+    },
+    {
+      "event": 14,
+      "point": "C",
+      "elapsed_s": 34.146
+    },
+    {
+      "event": 15,
+      "point": "B",
+      "elapsed_s": 36.872
+    },
+    {
+      "event": 16,
+      "point": "D",
+      "elapsed_s": 39.468
+    },
+    {
+      "event": 17,
+      "point": "A",
+      "elapsed_s": 42.502
+    }
+  ],
+  "peak_pwm_control_rate": [
+    671,
+    710
+  ],
+  "pwm_limit": 800,
+  "saturated_updates": 0,
+  "active_updates": 5957,
+  "max_active_control_interval_ms": 8,
+  "gray_counters": [
+    15790,
+    0,
+    0,
+    0
+  ],
+  "encoder_speed_estimates": {
+    "straight": {
+      "samples": 103,
+      "median_mm_s": 501.83,
+      "max_interval_average_mm_s": 534.09
+    },
+    "arc": {
+      "samples": 88,
+      "median_mm_s": 429.93,
+      "max_interval_average_mm_s": 438.72
+    }
+  },
+  "speed_estimate_method": "Adjacent same-state/same-point trace intervals0.1-0.3s, calibrated signed encoders. Not independent ground speed.",
+  "user_report": "好了，感觉直线段还是慢了",
+  "scope": "One completed T306 CROSS4 run, not long-term repeatability or independently measured geometric acceptance."
+}

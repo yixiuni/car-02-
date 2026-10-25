@@ -1,0 +1,62 @@
+{
+  "scope": "Decode T315's frozen wheel response windows. Does not connect to a device.\n\nSpeeds/targets are mm/s; integral and PWM are permille, rounded to integers.\nMeasured speed is the existing 30 ms filtered encoder estimate. PWM in a row is\napplied after that row's measurement: do not treat it as its cause or fit Ka\nwithout accounting for the filtering and sample timing.\n",
+  "windows": [
+    {
+      "window": 0,
+      "segment": 0,
+      "count": 86,
+      "dropped": 0,
+      "complete": true,
+      "clipped_rows": 0,
+      "duration_ms": 1923,
+      "sample_gap_min_ms": 15,
+      "sample_gap_max_ms": 24,
+      "left": {
+        "mean_abs_target_ramp_gap_mm_s": 32.129411764705885,
+        "mean_abs_tracking_error_mm_s": 59.04705882352941,
+        "peak_pwm": 901,
+        "peak_requested_mm_s": 868,
+        "peak_measured_mm_s": 891
+      },
+      "right": {
+        "mean_abs_target_ramp_gap_mm_s": 8.6,
+        "mean_abs_tracking_error_mm_s": 53.752941176470586,
+        "peak_pwm": 900,
+        "peak_requested_mm_s": 869,
+        "peak_measured_mm_s": 901
+      }
+    },
+    {
+      "window": 1,
+      "segment": 2,
+      "count": 81,
+      "dropped": 0,
+      "complete": true,
+      "clipped_rows": 0,
+      "duration_ms": 1795,
+      "sample_gap_min_ms": 6,
+      "sample_gap_max_ms": 24,
+      "left": {
+        "mean_abs_target_ramp_gap_mm_s": 7.5,
+        "mean_abs_tracking_error_mm_s": 62.4375,
+        "peak_pwm": 901,
+        "peak_requested_mm_s": 903,
+        "peak_measured_mm_s": 926
+      },
+      "right": {
+        "mean_abs_target_ramp_gap_mm_s": 9.8,
+        "mean_abs_tracking_error_mm_s": 52.1625,
+        "peak_pwm": 902,
+        "peak_requested_mm_s": 902,
+        "peak_measured_mm_s": 917
+      }
+    }
+  ],
+  "max_record_cycles": 5003,
+  "max_record_us_at_72MHz": 69.48611111111111,
+  "automatic_gain_fit": false,
+  "sources_sha256": {
+    "build-local/captures/t319-run-01-speed-meta.bin": "4ecd033f9a74a56c0422287cb7ac6c29c24a0991091d379b5e708b24dd1d4205",
+    "build-local/captures/t319-run-01-speed-samples.bin": "9cedc4812dfdd5a04c263a97052c6dd80026c4bcde22000d3b716af4c54695cd"
+  }
+}

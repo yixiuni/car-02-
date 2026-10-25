@@ -1,0 +1,17 @@
+{
+  "status": "T312 production sources preserved; rejected experiments not flashed",
+  "asan_ubsan_exit_code": 0,
+  "tested_trial_profile": "time-trial-arc-step",
+  "common_controller_driver_tests": true,
+  "pass_lines": 1118,
+  "test_log_sha256": "e14c53a9e93c63ae04f72ebed33dce1cfb8faebc74d7db42a90a8313daf8c35e",
+  "historical_phase_suites_passed": 36,
+  "historical_phase_full_outputs_byte_identical": 36,
+  "new_phase_baseline_suites_passed": 35,
+  "new_phase_baseline_suites_total": 36,
+  "research_only": true,
+  "board_firmware": "T312",
+  "physical_baseline_s": 36.081,
+  "remote_motor_start": false,
+  "flash_written": false
+}

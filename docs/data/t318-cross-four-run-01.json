@@ -1,0 +1,407 @@
+{
+  "firmware": "T318",
+  "result": "FAILED",
+  "state": 6,
+  "fault": 7,
+  "task": 4,
+  "segment": 3,
+  "completed_laps": 0,
+  "target_laps": 4,
+  "point_events": 4,
+  "run_at": 139649,
+  "elapsed_s": 7.704,
+  "gray_counters": [
+    14903,
+    0,
+    0,
+    0
+  ],
+  "run_metrics": [
+    901,
+    902,
+    0,
+    1080,
+    8
+  ],
+  "last_pose": [
+    24.768476486206055,
+    32.42869567871094,
+    -0.07929714769124985
+  ],
+  "events": [
+    {
+      "event": 1,
+      "elapsed_s": 0.001,
+      "state": 1,
+      "pose": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "event": 2,
+      "elapsed_s": 1.979,
+      "state": 3,
+      "pose": [
+        916.2940673828125,
+        -709.8092041015625,
+        -0.6772158741950989
+      ]
+    },
+    {
+      "event": 3,
+      "elapsed_s": 3.836,
+      "state": 1,
+      "pose": [
+        1150.987548828125,
+        -68.21095275878906,
+        2.807931661605835
+      ]
+    },
+    {
+      "event": 4,
+      "elapsed_s": 5.639,
+      "state": 3,
+      "pose": [
+        118.41129302978516,
+        -676.5070190429688,
+        3.738072633743286
+      ]
+    }
+  ],
+  "arc_observations": [
+    {
+      "point_events": 2,
+      "black_samples": 99,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -14.286712646484375,
+      "max_abs_radial_error_mm": 25.29937744140625,
+      "slot": 0,
+      "first": {
+        "tick": 143483,
+        "rejected": 0,
+        "x_mm": 1101.17529296875,
+        "y_mm": -74.13922882080078,
+        "heading_rad": 2.882931709289551,
+        "progress_mm": 1116.81591796875,
+        "turned_rad": 3.560147523880005,
+        "heading_error_rad": 0.1665356159210205,
+        "correction_mm": 50.16378402709961,
+        "line_error_mm": 15.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      },
+      "last": {
+        "tick": 143483,
+        "rejected": 0,
+        "x_mm": 1101.17529296875,
+        "y_mm": -74.13922882080078,
+        "heading_rad": 2.882931709289551,
+        "progress_mm": 1116.81591796875,
+        "turned_rad": 3.560147523880005,
+        "heading_error_rad": 0.1665356159210205,
+        "correction_mm": 50.16378402709961,
+        "line_error_mm": 15.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 4,
+      "black_samples": 101,
+      "exit_attempts": 22,
+      "last_radial_error_mm": 79.50808715820312,
+      "max_abs_radial_error_mm": 79.50808715820312,
+      "slot": 1,
+      "first": {
+        "tick": 147201,
+        "rejected": 256,
+        "x_mm": -49.40918731689453,
+        "y_mm": 27.716827392578125,
+        "heading_rad": 0.18467310070991516,
+        "progress_mm": 1161.311279296875,
+        "turned_rad": 3.5533995628356934,
+        "heading_error_rad": 0.24052360653877258,
+        "correction_mm": 132.9397430419922,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 44,
+        "reasons": [
+          "correction"
+        ]
+      },
+      "last": {
+        "tick": 147352,
+        "rejected": 324,
+        "x_mm": 24.768476486206055,
+        "y_mm": 32.42869567871094,
+        "heading_rad": -0.07929714769124985,
+        "progress_mm": 1235.852294921875,
+        "turned_rad": 3.8173696994781494,
+        "heading_error_rad": 0.5044938325881958,
+        "correction_mm": 193.80894470214844,
+        "line_error_mm": -7.5,
+        "white_frames": 13,
+        "line_age_ms": 195,
+        "reasons": [
+          "stale",
+          "heading",
+          "correction"
+        ]
+      }
+    },
+    {
+      "point_events": 0,
+      "black_samples": 0,
+      "exit_attempts": 0,
+      "last_radial_error_mm": 0.0,
+      "max_abs_radial_error_mm": 0.0,
+      "slot": 2,
+      "first": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      },
+      "last": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 0,
+      "black_samples": 0,
+      "exit_attempts": 0,
+      "last_radial_error_mm": 0.0,
+      "max_abs_radial_error_mm": 0.0,
+      "slot": 3,
+      "first": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      },
+      "last": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 0,
+      "black_samples": 0,
+      "exit_attempts": 0,
+      "last_radial_error_mm": 0.0,
+      "max_abs_radial_error_mm": 0.0,
+      "slot": 4,
+      "first": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      },
+      "last": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 0,
+      "black_samples": 0,
+      "exit_attempts": 0,
+      "last_radial_error_mm": 0.0,
+      "max_abs_radial_error_mm": 0.0,
+      "slot": 5,
+      "first": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      },
+      "last": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 0,
+      "black_samples": 0,
+      "exit_attempts": 0,
+      "last_radial_error_mm": 0.0,
+      "max_abs_radial_error_mm": 0.0,
+      "slot": 6,
+      "first": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      },
+      "last": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 0,
+      "black_samples": 0,
+      "exit_attempts": 0,
+      "last_radial_error_mm": 0.0,
+      "max_abs_radial_error_mm": 0.0,
+      "slot": 7,
+      "first": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      },
+      "last": {
+        "tick": 0,
+        "rejected": 0,
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "heading_rad": 0.0,
+        "progress_mm": 0.0,
+        "turned_rad": 0.0,
+        "heading_error_rad": 0.0,
+        "correction_mm": 0.0,
+        "line_error_mm": 0.0,
+        "white_frames": 0,
+        "line_age_ms": 0,
+        "reasons": []
+      }
+    }
+  ],
+  "raw_sources_sha256": {
+    "t318-run-01-controller.bin": "574448c7b21610c7484405d61338d34d62f93113128ce26cfed3952b45134fd3",
+    "t318-run-01-speed-meta.bin": "8863476b05264747fb0d376906b9ea7cfec22ee27a8d81952bb4485839234bc4",
+    "t318-run-01-metadata.bin": "b55c4b7aa16d5f758472aaec0bcd99fd4e22e06332b15b628528d32eec351185",
+    "t318-run-01-speed-samples.bin": "dfa42ff4c44c29b32ded789f483dbc4a455d7e67b23570a228eeea07a9d8b32c",
+    "t318-run-01-arc-debug.bin": "2053fd0f6dab049347ac3d741112ace154e13fcb9415d6063492969e754313b5",
+    "t318-run-01-ram.bin": "1678dc2dc2b564c138be1cb3c914b1f376524a54e99f7e837d4754d44ac7e251",
+    "t318-run-01-trace.bin": "04c6420cf7085cb6c9094abdd2820e8113aa1062f19813aa7724de32a8e6d22b",
+    "t318-run-01-diag.bin": "1dd961b3398a23084e2495dcbad3c6642775803651f350ce8657c10cfd960fc2",
+    "t318-run-01-run-metrics.bin": "e457f30f893120a413dffb3b924452cc862548d77688173fe7526584435393b1"
+  },
+  "user_report": "失败了；用户确认在 A 点",
+  "scope": "Physical RAM capture before any reset. Estimated pose is not independently measured ground truth.",
+  "failure_analysis": {
+    "first_A_candidate_rejected_for": "correction >100 mm",
+    "first_A_candidate_correction_mm": 132.9397430419922,
+    "terminal_fault": "CAR_FAULT_LINE",
+    "first_A_candidate_elapsed_s": 7.552,
+    "failure_delay_after_first_candidate_ms": 152,
+    "sensor_communication_errors": 0,
+    "note": "No independent true pose. Localization discrepancy observed, not proof of its unique physical cause."
+  }
+}

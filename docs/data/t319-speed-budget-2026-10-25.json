@@ -1,0 +1,37 @@
+{
+  "scope": "Estimate a phase time budget from a saved physical trace, without device access.\n\nSparse samples assign each interval to its starting state. Distances use signed,\nalready-normalized encoder counts and the supplied calibration, not ground truth.\nThe hypothetical speeds are phase averages, never firmware cruise setpoints.\n",
+  "firmware": "T319",
+  "physical_elapsed_s": 29.975,
+  "calibration": {
+    "diameter_mm": 66.5,
+    "counts_a_rev": 1467.7,
+    "counts_b_rev": 1473.3
+  },
+  "phases": {
+    "straight": {
+      "duration_s": 14.306999999999995,
+      "distance_mm": 9864.912458946155,
+      "mean_speed_mm_s": 689.5164925523281
+    },
+    "arc": {
+      "duration_s": 15.252999999999988,
+      "distance_mm": 9056.456172168793,
+      "mean_speed_mm_s": 593.7491753864027
+    },
+    "braking": {
+      "duration_s": 0.41400000000000003,
+      "distance_mm": 38.6597769597462,
+      "mean_speed_mm_s": 93.38110376750289
+    }
+  },
+  "straight_only_30s_required_mean_mm_s": 688.2657126174664,
+  "ideal_straight_1000_with_unchanged_arc_s": 25.531912458946145,
+  "hypothetical_mean_straight850_arc500_s": 30.13269170780365,
+  "moving_mean_required_for_18s_mm_s": 1075.933619419706,
+  "caveat": "Same path and brake duration assumed. Sparse trace/encoder estimates; no tire-slip correction. These are time-budget calculations, not achievable speed predictions.",
+  "sources_sha256": {
+    "docs/data/t319-cross-four-run-01.csv": "b3b09f12ff886d328fd7a4042e32298548bea3a47c88e032231c04dc21e8f5a3",
+    "docs/data/t319-cross-four-run-01.json": "7d9b95e385d59a7fd83221564cc54dfe664e6bd8d98669f0f7cb538a2a0cde67",
+    "Core/Inc/car_config.h": "4ac2f02d9901077e5bdbd2efea4b7ed2b515a01a4107ef398121813e8fd02f14"
+  }
+}

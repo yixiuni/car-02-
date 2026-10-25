@@ -7,6 +7,9 @@
 #include "mpu6050.h"
 #include "motor_test.h"
 #include "gray_learn.h"
+#if CAR_SPEED_TRACE_BUILD
+#include "speed_trace.h"
+#endif
 #if CAR_TASK1_TEST_BUILD
 #include "task1_test.h"
 #if CAR_DUAL_MODE_BUILD
@@ -33,7 +36,8 @@ typedef struct {
 volatile Task1Trace task1_test_trace[CAR_TEST_TRACE_CAPACITY];
 #if CAR_FOUR_TEST_BUILD || CAR_DUAL_MODE_BUILD
 _Static_assert(CAR_TEST_TRACE_CAPACITY >=
-               (CAR_TEST_RUN_LIMIT_MS+1000U)/CAR_TEST_TRACE_PERIOD_MS+128U,
+               (CAR_TEST_RUN_LIMIT_MS+1000U)/CAR_TEST_TRACE_PERIOD_MS+128U+
+               ((CAR_TIME_TRIAL_STAGE3 || CAR_TIME_TRIAL_C_ENTRY) ? 80U : 0U),
                "Four-lap trace must retain the full time window and route events");
 #endif
 static void Task1WatchdogStart(void)
@@ -62,6 +66,9 @@ void App_Run(void)
     return;
 #endif
     Board_Init();
+#if CAR_SPEED_TRACE_BUILD
+    SpeedTrace_Reset();
+#endif
 #if CAR_DUAL_MODE_BUILD
     Oled_Init();
     uint32_t display_elapsed=0;
@@ -85,7 +92,7 @@ void App_Run(void)
     CourseMode_Init(&mode,&car);
 #endif
     Task1WatchdogStart();
-    task1_test_magic=CAR_DUAL_MODE_BUILD ? 0x44554C35U : CAR_FOUR_TEST_BUILD ? 0x54534B37U : CAR_CROSS_TEST_BUILD ? 0x43525333U : CAR_LAP_TEST_BUILD ? 0x4C415031U : CAR_ARC_TEST_BUILD ? 0x41524331U : 0x54415331U;
+    task1_test_magic=CAR_TIME_TRIAL_ARC_PHASE ? 0x54333231U : CAR_TIME_TRIAL_EDGE_POSE ? 0x54333230U : CAR_TIME_TRIAL_ARC_LOCALIZE ? 0x54333139U : CAR_TIME_TRIAL_CROSS_SPRINT ? 0x54333138U : CAR_TIME_TRIAL_ENTRY_HOLD ? 0x54333137U : CAR_SPEED_TRACE_BUILD ? 0x54333135U : CAR_TIME_TRIAL_ARC_STEP ? 0x54333132U : CAR_TIME_TRIAL_EXIT_TRACE ? 0x54333131U : CAR_TIME_TRIAL_ARC_BOOST ? 0x54333130U : CAR_TIME_TRIAL_ADAPTIVE ? 0x54333039U : CAR_TIME_TRIAL_FAST ? 0x54333038U : CAR_TIME_TRIAL_STRAIGHT_BOOST ? 0x54333037U : CAR_TIME_TRIAL_C_ENTRY ? 0x54333036U : CAR_TIME_TRIAL_STAGE3 ? 0x54333035U : CAR_TIME_TRIAL_STAGE2 ? 0x54333032U : CAR_TIME_TRIAL_BUILD ? 0x54333031U : CAR_DUAL_MODE_BUILD ? 0x44554C35U : CAR_FOUR_TEST_BUILD ? 0x54534B37U : CAR_CROSS_TEST_BUILD ? 0x43525333U : CAR_LAP_TEST_BUILD ? 0x4C415031U : CAR_ARC_TEST_BUILD ? 0x41524331U : 0x54415331U;
     uint32_t fed_at=HAL_GetTick(), trace_at=0, trace_run_at=0;
     uint32_t traced_state=CAR_STOPPED, traced_points=0, traced_signals=0;
     bool tracing=false;
@@ -129,6 +136,9 @@ void App_Run(void)
             /* This image is operated by physical gestures only. */
             CourseMode_Apply(&mode,&gate,&in,&car);
             if(gate.recalibrate) {
+#if CAR_SPEED_TRACE_BUILD
+                SpeedTrace_Reset();
+#endif
                 display_elapsed=0;
                 course_run_metrics=(CourseRunMetrics){0};
                 course_run_settings=(uint32_t)car.task | ((uint32_t)car.target_laps<<8);
@@ -165,6 +175,12 @@ void App_Run(void)
 #endif
             brake_applied=CarControl_BrakeActive(&car,now) && Board_MotorBrake();
             if(!brake_applied) Board_MotorApply(car.left_pwm,car.right_pwm);
+#if CAR_SPEED_TRACE_BUILD
+            uint32_t trace_started=DWT->CYCCNT;
+            SpeedTrace_Observe(&car,&in);
+            uint32_t trace_cycles=DWT->CYCCNT-trace_started;
+            if(trace_cycles>speed_trace_meta.max_cycles) speed_trace_meta.max_cycles=trace_cycles;
+#endif
             if (point_events!=car.point_events) {
                 point_events=car.point_events; signal_at=now; point_signal=true; mode_flashes=0;
             }
@@ -211,8 +227,16 @@ void App_Run(void)
         if (!tracing && car.point_events) { tracing=true; trace_run_at=now; }
         uint32_t signals=(point_signal || mode_signal ? 1U : 0U) |
             (run_led ? 2U : 0U) | (brake_applied ? 4U : 0U);
+        uint32_t trace_period=(CAR_TIME_TRIAL_STAGE3 || CAR_TIME_TRIAL_C_ENTRY) && car.state==CAR_ARC &&
+            now-car.segment_at<400U ? 40U : CAR_TEST_TRACE_PERIOD_MS;
+        /* T320: preserve fresh black/white transitions near both acquisition
+         * and departure; this is diagnostic only, not a control input. */
+        if (CAR_TIME_TRIAL_EDGE_POSE && car.task==4 &&
+            ((car.state==CAR_STRAIGHT && ((car.x_mm- (car.segment==0 ? 1000.0f : 0.0f))*
+              (car.x_mm- (car.segment==0 ? 1000.0f : 0.0f))+(car.y_mm+800.0f)*(car.y_mm+800.0f)<90000.0f)) ||
+             (car.state==CAR_ARC && car.distance_mm-car.segment_distance>900.0f))) trace_period=15U;
         if (tracing && now-trace_run_at<=CAR_TEST_RUN_LIMIT_MS+1000U && task1_test_trace_count<CAR_TEST_TRACE_CAPACITY &&
-            (!task1_test_trace_count || now-trace_at>=CAR_TEST_TRACE_PERIOD_MS || traced_state!=(uint32_t)car.state ||
+            (!task1_test_trace_count || now-trace_at>=trace_period || traced_state!=(uint32_t)car.state ||
              traced_points!=car.point_events || traced_signals!=signals)) {
             task1_test_trace[task1_test_trace_count]=(Task1Trace){now,
                 (uint8_t)car.state,(uint8_t)car.fault,(uint8_t)car.point_events,

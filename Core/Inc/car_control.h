@@ -1,6 +1,7 @@
 #ifndef CAR_CONTROL_H
 #define CAR_CONTROL_H
 #include "motion_control.h"
+#include "car_config.h"
 
 typedef enum {
     CAR_STOPPED, CAR_STRAIGHT, CAR_CAPTURE, CAR_ARC, CAR_BRAKING, CAR_DONE, CAR_FAULT
@@ -38,6 +39,11 @@ typedef struct {
     bool settled, left_stall, right_stall;
     bool button_raw, button_stable, button_armed, hold_consumed;
     uint32_t button_changed_at, pressed_at;
+#if CAR_TIME_TRIAL_EDGE_POSE
+    /* Latest centered black pose, then frozen black/white midpoint pose. */
+    float edge_x, edge_y, edge_heading;
+    bool edge_valid, edge_ready;
+#endif
 } CarControl;
 void CarControl_Init(CarControl *car, const CarGeometry *geometry, uint32_t now, bool pressed);
 void CarControl_Update(CarControl *car, const CarInputs *input);

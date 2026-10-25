@@ -1,0 +1,411 @@
+{
+  "scope": "Verify NORMAL control fingerprints against the archived T317 controller.\n\nBaseline failures remain failures. This comparison proves host equivalence,\nnot physical timing, sensor validity or successful ground-truth coverage.\n",
+  "all_normal_equivalent": true,
+  "cases": [
+    {
+      "gain": 1.5,
+      "phase": 0,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "b0e27dc61f82affcfa12caa84e984d2bce76a56cfbc61dc261ef9eed14f83cb5",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 1,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "d283a6a34960094653deb06456f3a6063ed349662cc7ff697dd4a446d753735b",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 2,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "23ac473f62bc485cb0f0c64b30fe6c1e9bad57772ee73ee72435e80dd19b7626",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 3,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "0b7137eeddeccecbc3e6fa7d51961db30aea3a6f3970a68e152258b5ab6f5243",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 4,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "24c90cf8b6ccbdf347d661f1b994e007dcf16981112f2431af425502291919c4",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 5,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "1118b55429e59e2ff59c62503596b829e703e2287e3b00325011b138b3b9da25",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 6,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "c329b90b23855164a32c95b645dfc656d8d32956857abff728bd3f6759353543",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 7,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "65546d4c12bda7f9b28aae86838add85e9cbc14ef2e1ccf78686d32c2fd05c25",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 8,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "0437d09128d4d7e3de540fb4486982090d5208eb0ce92b897885d93e561ea7dd",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 9,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "e16393f1e9ed82cc52a579d14fee4f9628e76896e9c006a6e7b3de4e202414a0",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 10,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "fabc72330ec93743efa0a6de3b8a5c6a13ae1b6dafabc6e4b93238abb4e69870",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 11,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "a27b37ed94413599f71300eaf9051ec3361309f574646a497edc5b04e6527cd8",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 12,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "0e1bf501a20e78f5edb219e668bddd1a5403374e1e8fb1be258b36136ed696f0",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 13,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "ae65447966588deb9c09794babf7a49da55e29d6625fe1ad2ccc5fb763c80a93",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.5,
+      "phase": 14,
+      "equivalent": true,
+      "normal_hash_count": 1414,
+      "fingerprints_sha256": "cc12d8aa32e5fa4d4711e5f9a435b8b044e16a9b0f03ae074285b00c5ad2893a",
+      "baseline_error": "FAIL task2: event point3 not physically covered at -2,-719\nPOINT_DETAIL heading-22.071 map(20.4,-793.1,-22.002) line-52.5 frames3 lap3 Coffset0.0 Doffset0.0\n",
+      "trial_error": "FAIL task2: event point3 not physically covered at -2,-719\nPOINT_DETAIL heading-22.071 map(20.4,-793.1,-22.002) line-52.5 frames3 lap3 Coffset0.0 Doffset0.0\n"
+    },
+    {
+      "gain": 1.0,
+      "phase": 0,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "88bb620031df59bf8230321bdbaf33f3bc68f4e698092b6c7c4bd07c7f26f698",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 1,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "4b08f0ea09e7aff55883757439cb8d3f4c2f1cb001391a554d36a153964f9010",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 2,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "925c84821e7c2b4e128b342ab12a7ce9e948016083032398221a0c52e44a9cfd",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 3,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "3aceef97ca8dd06942ea88af2460daaa98b41f033894334230bb1d5ec0191ffe",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 4,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "d5a5696ff6b50f7a2a5a7cd88cc4f7dc4c8bbf223432a3b78c583ef8aecada67",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 5,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "33b8dd3aff70545d20a02f069934ec2710a2a9a015df3cf237b9b59396eca621",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 6,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "d0d6f69fbd3daf92fce190e8fbd526057b94000768c1b3b4f5ac06ac240ec028",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 7,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "e01b8b77d86182f0021a525efc4f7d834e978216a3cd2fa1496e1b511cd023e6",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 8,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "34271ba3bc63dd9493f95bbf052f7fa7d996baea336b3f9070b9f83bbb1008f7",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 9,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "4abd571960115e9db829a6fb725a826c7d7a2a67aa1d7c9aaf145c7bc5c51070",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 10,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "7005b78f71af2979bfd5229590397304d30f76b9a1e2a371db96cbcf0ce640b2",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 11,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "79410fa5be4712e2128935d0c91e4c841b4b36529e4216d4b1034e31d02de988",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 12,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "9dd1cbf85b89cadd25c76dbaaa0c85dd39beeb8efdba6897c0843d761d3c6c88",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 13,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "f845d9d40c4905715f714ad2028d8fd57f7f9c59c60d7c2788a50ec7b9d3759c",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 1.0,
+      "phase": 14,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "b3373b0bc05f4677b9316a32d62a7cebf1f01041033ab76c6ad70a631af58146",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 0,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "4c0bb1806364fbcc3c7cf846592d942f90f9d52a5b4ebce04a3ea821ca4d4123",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 1,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "70a65507c9121e645226ab5caa4f1dd84376a174db410c8e7800563a4896ff89",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 2,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "58d20fdbbc463f093743b24328be9b0820911bfc5dc11cf4fc5872d168e484aa",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 3,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "4c0b83905cd3a661f56f3bc6135b77f67e8c4eaae03fbf17d737a0ec2ff34c9f",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 4,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "10b20bbe2f9e4462a302aab814e378bb5e081df66b6345ed04ad3bf6f67aad8f",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 5,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "564f3434503b3b226fb19e69c5c40685b8b6253fbb149591e1877486ea263e23",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 6,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "275dfb5bb61065b137b2abb99f5af0ef5ec1e9086b43d9e92c3f423888f68eed",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 7,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "8c4c857900b96bb79f09e1802f5025509be43b0e438558211e941c4a42cf6f01",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 8,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "df2a02ded808274ad99882b7deec14104f57b336415ef97f1a0cdf79d1c8a189",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 9,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "be9b2eb1b63afc5ef3c5d5e962e3a741038dc9bc58bacb363f86df991fa71ef5",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 10,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "fbbb5241d7b30253bcbb48588fd6a3fd48221e16dd87fcdba986ac2b62b46338",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 11,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "d08fe75ef9b92549425bb1e50b3974d793367dc9b111067bef41e2d0af6987e8",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 12,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "4f77d298aa0bf3f6073590d02adc50978dd26997d37e70ada4ce5c1afc7ab9b3",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 13,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "15a6a112729cf5188499484e14eeb3ae6e34dc29ee5eba662bc708d24cc8bb2f",
+      "baseline_error": "",
+      "trial_error": ""
+    },
+    {
+      "gain": 0.9,
+      "phase": 14,
+      "equivalent": true,
+      "normal_hash_count": 1828,
+      "fingerprints_sha256": "c1277dfa433408d133b58ec0353f4392137863b9fd3dedb7cb6078e40c23e580",
+      "baseline_error": "",
+      "trial_error": ""
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "firmware": "T303",
+  "magic": "0x54333033",
+  "flashed": true,
+  "live_flash_sha256": "6f16be7aa07ffb85c86021631a87726f975d71a530fec18ff15c2d582597f7b8",
+  "flash_bytes": 42316,
+  "ram_bytes": 40488,
+  "straight_mm_s": 550,
+  "arc_mm_s": 470,
+  "entry_mm_s": 370,
+  "wheel_target_limit_mm_s": 700,
+  "pwm_limit_permille": 850,
+  "D_entry_aim_mm": 25,
+  "physical_run": "pending",
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    340,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    422,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "T302",
+  "source_cross_four_seconds": 42.705,
+  "source_flash_sha256": "f21609677b84082897b2f317ad6b733cfdad8d96bde73ae52ab9a81c47af13e6",
+  "host_scenarios_passed": 27,
+  "host_scenarios_total": 27,
+  "asan_ubsan_passed": true,
+  "validation_pass_lines": 1485,
+  "scope": "Flash readback and idle verified only; T303 physical course run pending"
+}

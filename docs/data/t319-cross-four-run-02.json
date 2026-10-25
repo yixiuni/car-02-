@@ -1,0 +1,441 @@
+{
+  "firmware": "T319",
+  "result": "COMPLETED",
+  "state": 5,
+  "fault": 0,
+  "task": 4,
+  "completed_laps": 4,
+  "target_laps": 4,
+  "point_events": 17,
+  "run_at": 482590,
+  "elapsed_s": 29.73,
+  "elapsed_method": "First terminal trace minus run_at",
+  "straight_target_mm_s": 1000,
+  "arc_target_mm_s": 650,
+  "entry_target_mm_s": 370,
+  "peak_pwm_control_rate": [
+    902,
+    902
+  ],
+  "saturated_updates": 0,
+  "active_updates": 3930,
+  "max_active_control_interval_ms": 8,
+  "gray_counters": [
+    39458,
+    0,
+    0,
+    0
+  ],
+  "events": [
+    {
+      "event": 1,
+      "elapsed_s": 0.001,
+      "state": 1
+    },
+    {
+      "event": 2,
+      "elapsed_s": 1.954,
+      "state": 3
+    },
+    {
+      "event": 3,
+      "elapsed_s": 4.028,
+      "state": 1
+    },
+    {
+      "event": 4,
+      "elapsed_s": 5.833,
+      "state": 3
+    },
+    {
+      "event": 5,
+      "elapsed_s": 7.681,
+      "state": 1
+    },
+    {
+      "event": 6,
+      "elapsed_s": 9.431,
+      "state": 3
+    },
+    {
+      "event": 7,
+      "elapsed_s": 11.265,
+      "state": 1
+    },
+    {
+      "event": 8,
+      "elapsed_s": 13.02,
+      "state": 3
+    },
+    {
+      "event": 9,
+      "elapsed_s": 14.988,
+      "state": 1
+    },
+    {
+      "event": 10,
+      "elapsed_s": 16.723,
+      "state": 3
+    },
+    {
+      "event": 11,
+      "elapsed_s": 18.549,
+      "state": 1
+    },
+    {
+      "event": 12,
+      "elapsed_s": 20.342,
+      "state": 3
+    },
+    {
+      "event": 13,
+      "elapsed_s": 22.168,
+      "state": 1
+    },
+    {
+      "event": 14,
+      "elapsed_s": 23.897,
+      "state": 3
+    },
+    {
+      "event": 15,
+      "elapsed_s": 25.708,
+      "state": 1
+    },
+    {
+      "event": 16,
+      "elapsed_s": 27.469,
+      "state": 3
+    },
+    {
+      "event": 17,
+      "elapsed_s": 29.73,
+      "state": 5
+    }
+  ],
+  "arc_observations": [
+    {
+      "point_events": 2,
+      "black_samples": 94,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 4.445404052734375,
+      "max_abs_radial_error_mm": 13.004302978515625,
+      "slot": 0,
+      "first": {
+        "tick": 486616,
+        "rejected": 0,
+        "x_mm": 1070.19091796875,
+        "y_mm": -54.90797424316406,
+        "heading_rad": 2.899754047393799,
+        "progress_mm": 1160.5703125,
+        "turned_rad": 3.5605578422546387,
+        "heading_error_rad": 0.18335795402526855,
+        "correction_mm": 82.62548828125,
+        "line_error_mm": 15.0,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      },
+      "last": {
+        "tick": 486616,
+        "rejected": 0,
+        "x_mm": 1070.19091796875,
+        "y_mm": -54.90797424316406,
+        "heading_rad": 2.899754047393799,
+        "progress_mm": 1160.5703125,
+        "turned_rad": 3.5605578422546387,
+        "heading_error_rad": 0.18335795402526855,
+        "correction_mm": 82.62548828125,
+        "line_error_mm": 15.0,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 4,
+      "black_samples": 95,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 0.107391357421875,
+      "max_abs_radial_error_mm": 43.87530517578125,
+      "slot": 1,
+      "first": {
+        "tick": 490270,
+        "rejected": 0,
+        "x_mm": -89.58879852294922,
+        "y_mm": -49.778221130371094,
+        "heading_rad": 0.267274409532547,
+        "progress_mm": 1133.671875,
+        "turned_rad": 3.52176833152771,
+        "heading_error_rad": 0.15792229771614075,
+        "correction_mm": 66.07794952392578,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      },
+      "last": {
+        "tick": 490270,
+        "rejected": 0,
+        "x_mm": -89.58879852294922,
+        "y_mm": -49.778221130371094,
+        "heading_rad": 0.267274409532547,
+        "progress_mm": 1133.671875,
+        "turned_rad": 3.52176833152771,
+        "heading_error_rad": 0.15792229771614075,
+        "correction_mm": 66.07794952392578,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 6,
+      "black_samples": 95,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -1.43243408203125,
+      "max_abs_radial_error_mm": 36.079925537109375,
+      "slot": 2,
+      "first": {
+        "tick": 493854,
+        "rejected": 0,
+        "x_mm": 1104.128662109375,
+        "y_mm": -51.333518981933594,
+        "heading_rad": 2.8699848651885986,
+        "progress_mm": 1130.603515625,
+        "turned_rad": 3.52199649810791,
+        "heading_error_rad": 0.15358877182006836,
+        "correction_mm": 51.27640151977539,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      },
+      "last": {
+        "tick": 493854,
+        "rejected": 0,
+        "x_mm": 1104.128662109375,
+        "y_mm": -51.333518981933594,
+        "heading_rad": 2.8699848651885986,
+        "progress_mm": 1130.603515625,
+        "turned_rad": 3.52199649810791,
+        "heading_error_rad": 0.15358877182006836,
+        "correction_mm": 51.27640151977539,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 8,
+      "black_samples": 90,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 11.057708740234375,
+      "max_abs_radial_error_mm": 42.99285888671875,
+      "slot": 3,
+      "first": {
+        "tick": 497577,
+        "rejected": 0,
+        "x_mm": -71.34405517578125,
+        "y_mm": -39.41904830932617,
+        "heading_rad": 0.19191431999206543,
+        "progress_mm": 1146.88671875,
+        "turned_rad": 3.580876350402832,
+        "heading_error_rad": 0.23328238725662231,
+        "correction_mm": 86.58023071289062,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      },
+      "last": {
+        "tick": 497577,
+        "rejected": 0,
+        "x_mm": -71.34405517578125,
+        "y_mm": -39.41904830932617,
+        "heading_rad": 0.19191431999206543,
+        "progress_mm": 1146.88671875,
+        "turned_rad": 3.580876350402832,
+        "heading_error_rad": 0.23328238725662231,
+        "correction_mm": 86.58023071289062,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 10,
+      "black_samples": 94,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 6.465972900390625,
+      "max_abs_radial_error_mm": 40.603912353515625,
+      "slot": 4,
+      "first": {
+        "tick": 501138,
+        "rejected": 0,
+        "x_mm": 1102.24169921875,
+        "y_mm": -49.98741912841797,
+        "heading_rad": 2.8637874126434326,
+        "progress_mm": 1124.712890625,
+        "turned_rad": 3.5135340690612793,
+        "heading_error_rad": 0.14739131927490234,
+        "correction_mm": 51.9709358215332,
+        "line_error_mm": 7.5,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      },
+      "last": {
+        "tick": 501138,
+        "rejected": 0,
+        "x_mm": 1102.24169921875,
+        "y_mm": -49.98741912841797,
+        "heading_rad": 2.8637874126434326,
+        "progress_mm": 1124.712890625,
+        "turned_rad": 3.5135340690612793,
+        "heading_error_rad": 0.14739131927490234,
+        "correction_mm": 51.9709358215332,
+        "line_error_mm": 7.5,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 12,
+      "black_samples": 95,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -6.49755859375,
+      "max_abs_radial_error_mm": 55.0989990234375,
+      "slot": 5,
+      "first": {
+        "tick": 504757,
+        "rejected": 0,
+        "x_mm": -93.30709838867188,
+        "y_mm": -50.55265808105469,
+        "heading_rad": 0.26876217126846313,
+        "progress_mm": 1128.55078125,
+        "turned_rad": 3.511415958404541,
+        "heading_error_rad": 0.1564345359802246,
+        "correction_mm": 64.59812927246094,
+        "line_error_mm": 7.5,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      },
+      "last": {
+        "tick": 504757,
+        "rejected": 0,
+        "x_mm": -93.30709838867188,
+        "y_mm": -50.55265808105469,
+        "heading_rad": 0.26876217126846313,
+        "progress_mm": 1128.55078125,
+        "turned_rad": 3.511415958404541,
+        "heading_error_rad": 0.1564345359802246,
+        "correction_mm": 64.59812927246094,
+        "line_error_mm": 7.5,
+        "white_frames": 3,
+        "line_age_ms": 45,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 14,
+      "black_samples": 94,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -0.488922119140625,
+      "max_abs_radial_error_mm": 55.45953369140625,
+      "slot": 6,
+      "first": {
+        "tick": 508297,
+        "rejected": 0,
+        "x_mm": 1105.645751953125,
+        "y_mm": -51.89728546142578,
+        "heading_rad": 2.857630968093872,
+        "progress_mm": 1113.84765625,
+        "turned_rad": 3.4825186729431152,
+        "heading_error_rad": 0.1412348747253418,
+        "correction_mm": 49.385108947753906,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 46,
+        "reasons": []
+      },
+      "last": {
+        "tick": 508297,
+        "rejected": 0,
+        "x_mm": 1105.645751953125,
+        "y_mm": -51.89728546142578,
+        "heading_rad": 2.857630968093872,
+        "progress_mm": 1113.84765625,
+        "turned_rad": 3.4825186729431152,
+        "heading_error_rad": 0.1412348747253418,
+        "correction_mm": 49.385108947753906,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 46,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 16,
+      "black_samples": 95,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -3.08770751953125,
+      "max_abs_radial_error_mm": 49.38592529296875,
+      "slot": 7,
+      "first": {
+        "tick": 511884,
+        "rejected": 0,
+        "x_mm": -102.05462646484375,
+        "y_mm": -47.0351676940918,
+        "heading_rad": 0.22557958960533142,
+        "progress_mm": 1126.1484375,
+        "turned_rad": 3.562431812286377,
+        "heading_error_rad": 0.19961711764335632,
+        "correction_mm": 55.57732009887695,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 46,
+        "reasons": []
+      },
+      "last": {
+        "tick": 511884,
+        "rejected": 0,
+        "x_mm": -102.05462646484375,
+        "y_mm": -47.0351676940918,
+        "heading_rad": 0.22557958960533142,
+        "progress_mm": 1126.1484375,
+        "turned_rad": 3.562431812286377,
+        "heading_error_rad": 0.19961711764335632,
+        "correction_mm": 55.57732009887695,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 46,
+        "reasons": []
+      }
+    }
+  ],
+  "all_eight_exits_accepted_first_candidate": true,
+  "state_intervals_s": {
+    "1": 14.281,
+    "3": 15.013,
+    "4": 0.435
+  },
+  "scope": "One physical run; firmware clock includes final stopped confirmation. Sparse state intervals are estimates; not independent ground-truth coverage proof.",
+  "user_report": "好了",
+  "raw_sources_sha256": {
+    "t319-run-02-arc-debug.bin": "96b01a748360c4f8a3927106b4d542a5e26b13b73114f1a8c0cac2d1b5ecb6b1",
+    "t319-run-02-controller.bin": "181ccf77e9b79f7000ee432155ab1d7606cd1db8232652e3ab7f27e50e66f4bb",
+    "t319-run-02-diag.bin": "ed66e8f71b39e1fd11cf003d3d88f673feee7652c580cd1594e788e78a20ea34",
+    "t319-run-02-metadata.bin": "687e25c51cabb2314813472fbd2a39f13d3b2e8ddc48bfa05c5fd1f728e0d0b9",
+    "t319-run-02-ram.bin": "ef0940414fa358583ee8028bbbede554036506bbe3b9a2f5c802c894e8e50c12",
+    "t319-run-02-run-metrics.bin": "14aa68271507fcf3b0c0faa93e05b841814e2db140f41ccc743761d310a60673",
+    "t319-run-02-speed-meta.bin": "87e7089b579b784a1cee841cc547b04075dd09b9f751325c0280799e78f4b77f",
+    "t319-run-02-speed-samples.bin": "3a6aea3ed6d0039852ed5a6eb58abdf3510430bff6a2ca26a93b6bd69f917829",
+    "t319-run-02-trace.bin": "4791b91ef466d2cba77286328340b86ccf58cd4af3c30db455cf6e79375bfad5"
+  }
+}

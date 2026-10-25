@@ -1,0 +1,41 @@
+{
+  "version": "T321",
+  "date": "2026-10-25",
+  "target": "STM32F103RCT6 / WHEELTEC C10B",
+  "flash_address": "0x08000000",
+  "magic": "0x54333231",
+  "build": "ArcPhaseDebug (--time-trial-arc-phase)",
+  "toolchain": "Arm GNU Toolchain 14.3.Rel1",
+  "bin_sha256": "c9d2924ef8b42dbf736c10c9af108587d4675aee03d68b5329c49bc7c83835d4",
+  "hex_sha256": "f3ab4557684042e78a6a6fb16e1a75a8c9ddf05e0dac20264f6769e6e0aac6e9",
+  "bin_bytes": 51068,
+  "ram_link_bytes": 47304,
+  "physical_status": "PENDING",
+  "flash_readback_identical": true,
+  "speeds_mm_s": {
+    "cross": [
+      1000,
+      650,
+      370
+    ],
+    "normal": [
+      800,
+      460,
+      370
+    ]
+  },
+  "lap_options": [
+    1,
+    4
+  ],
+  "validation": "../../docs/data/t321-validation-2026-10-25.json",
+  "source_sha256": {
+    "Core/Src/car_control.c": "ad10ec3cb88dd086142c286d8fd64c5b5f2c746bed0588d8203f59e614676fbe",
+    "Core/Inc/car_control.h": "bdea97ee489c623d71faaf563236bcf15eefffcec840195dce3f29643cfb357b",
+    "Core/Inc/car_config.h": "f4aa6c1b484c1c2952509a00f2d5504459c5744ae7d7c22fe3f5ab34072edd34",
+    "Core/Src/app.c": "46404c1a2389cf72e46a51919c941b29a8905cce2bf63e453cf5ed3cd95e616f",
+    "tests/test_arc_phase.c": "ac75d3f9f0cc943447d22be067e752f9b5e4107fe5bedfc7fe302846f4dfb078",
+    "tests/sim_course.c": "6dd9f16a87955d47f114944c557626fc3593b6321035268bcf1c69c4cb9b5646"
+  },
+  "calibration": "Specific to this car; calibrate another car separately. Default non-trial firmware remains calibration locked."
+}

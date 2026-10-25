@@ -1,0 +1,14 @@
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -267,7 +267,10 @@
+      * at the reference speed avoids amplifying the same spatial disturbance
+      * twice when cruise is raised. P still scales with speed. */
+     float d_gain=CAR_TIME_TRIAL_BUILD && FastCourse(c) ? CAR_FOUR_CRUISE_SPEED/180.0f : gain;
+-    return gain*CAR_LINE_KP*c->line_error+(derivative ? d_gain*CAR_LINE_KD*c->line_rate : 0);
++    float d=derivative ? d_gain*CAR_LINE_KD*c->line_rate : 0;
++    if (CAR_RESEARCH_D_BOUND>0)
++        d=Clamp(d,-CAR_RESEARCH_D_BOUND*speed/ArcRadius(c),CAR_RESEARCH_D_BOUND*speed/ArcRadius(c));
++    return gain*CAR_LINE_KP*c->line_error+d;
+ }
+ 
+ /* During fast acquisition keep both target wheels moving. A saturated turn

@@ -1,0 +1,159 @@
+{
+  "firmware": "T319",
+  "status": "PHYSICAL_UNSTABLE_REPEATED_FAILURES",
+  "physical_result": "UNSTABLE",
+  "bin_sha256": "8ff3514cacadeb94569bc600874ed5e23467c3af554d1d98ce7375a658d55333",
+  "flash_bytes": 48716,
+  "ram_link_bytes": 47288,
+  "source_sha256": {
+    "Core/Src/car_control.c": "4864f9e4237287b91362408b508f32a7ab45a4a7902e591c4c83edcdf60a17ca",
+    "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+    "Core/Src/imu_filter.c": "7da06894224dfff5e0283a52ebb360e7b03410a9009a54421920c8d542d8a4bd",
+    "Core/Src/task1_test.c": "52d7a311d1b316409b4eb45719110715213bed000616a8ee05bce9e2591300fc",
+    "Core/Src/course_mode.c": "339517b9a6f21d6adb002d7cb77346612bb0d358fe8be09e34b3fc57d42d36fb",
+    "tests/sim_course.c": "6dd9f16a87955d47f114944c557626fc3593b6321035268bcf1c69c4cb9b5646",
+    "Core/Inc/car_config.h": "4ac2f02d9901077e5bdbd2efea4b7ed2b515a01a4107ef398121813e8fd02f14",
+    "Core/Inc/car_control.h": "80df5927b7e87a6a48c22c16e2c029d5f9b4171a6c34e3614302a27456a22df9",
+    "Core/Inc/car_arc_debug.h": "9b2eac284c25d3dd458b6775706759b55bd391a45c02475fa9805bb177f8d98b",
+    "Core/Inc/motion_control.h": "c7f60a43a89b2eee9b0b6ade2e1e90c4e6132e8e1a10b96588d1a3d4c693ddb9",
+    "Core/Inc/course_mode.h": "29817e54d0021fdcc797495293d2a40fde2f1efc82e483bffd86931fc3510f4e",
+    "Core/Inc/task1_test.h": "f2d00c31c633d143a03cdd9648e4fea7b7258324e52f77711cc183aee7e664ad",
+    "Core/Inc/imu_filter.h": "43f6426cb2b8cf164f7ac7f6b4a6a59247f4fcb5c3a3d671c0f3e1f8bb85e92f",
+    "tools/evaluate_time_trial.py": "963977ac405597ce463a029b6a5835eab92e8f690cd395b8a4015806a38801e9"
+  },
+  "model_report_sha256": "af16ba82f44084851a871f378a04f30d546c9ffdad691477e25c51ce4f15bd33",
+  "host_regression_pass_lines": 1123,
+  "standard_model_passed": 72,
+  "standard_model_total": 72,
+  "extended_model_passed": 224,
+  "extended_model_total": 225,
+  "extended_failures": [
+    {
+      "assumed_pwm_per_mm_s": 1.5,
+      "gray_phase_ms": 14,
+      "suite": "full",
+      "passed": false,
+      "returncode": 1,
+      "cross_four_seconds": [],
+      "errors": "FAIL task2: event point3 not physically covered at -2,-719\nPOINT_DETAIL heading-22.071 map(20.4,-793.1,-22.002) line-52.5 frames3 lap3 Coffset0.0 Doffset0.0",
+      "log": "arc-localize-model1.5-phase14-full.log"
+    }
+  ],
+  "normal_equivalence_cases": 45,
+  "cross_full_passed": 45,
+  "C_offset_passed": 45,
+  "D_offset_passed": 45,
+  "synthetic_drift": {
+    "baseline_passed": 36,
+    "trial_passed": 73,
+    "total": 90,
+    "new_regressions": 0,
+    "positive130_failures": 17,
+    "positive130_cases": 18,
+    "scope": "Synthetic position-estimator drift only, not exact replay of real failure"
+  },
+  "speeds_mm_s": {
+    "cross": [
+      1000,
+      650,
+      370
+    ],
+    "normal": [
+      800,
+      460,
+      370
+    ]
+  },
+  "observer": {
+    "gain": 0.5,
+    "max_step_per_fresh_frame_mm": 8,
+    "max_radial_innovation_mm": 120,
+    "minimum_arc_progress_mm": 165,
+    "max_lateral_error_mm": 22.5,
+    "max_contiguous_probes": 3,
+    "minimum_black_frames": 3,
+    "updates_yaw": false,
+    "updates_travel_distance": false,
+    "updates_point_events": false
+  },
+  "active_control_timing_pending": false,
+  "remote_motor_start": false,
+  "failed_baseline_record": "docs/data/t318-cross-four-run-01.json",
+  "before_prefix": ".tools/hardware-backups/t319-before-01",
+  "rollback_T318_sha256": "729daaf9b2924b2b597f56c4be6b44d49d0f55e6a5c6a16fbaeea0b5462da55a",
+  "flash_readback_identical": true,
+  "post_flash": [
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        2853,
+        0,
+        0,
+        0
+      ],
+      "max_control_interval_ms": 7
+    },
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        2930,
+        0,
+        0,
+        0
+      ],
+      "max_control_interval_ms": 6
+    }
+  ],
+  "physical_run": {
+    "status": "COMPLETED_ONE_PHYSICAL_RUN",
+    "record": "docs/data/t319-cross-four-run-01.json",
+    "elapsed_s": 29.975,
+    "completed_laps": 4,
+    "target_laps": 4,
+    "point_events": 17,
+    "fault": 0,
+    "all_eight_exits_accepted_first_candidate": true,
+    "max_active_control_interval_ms": 8,
+    "margin_below_30s": 0.025,
+    "repeatability_verified": false,
+    "independent_ground_truth_verified": false
+  },
+  "physical_repeat_runs": {
+    "status": "TWO_CONSECUTIVE_COMPLETED_RUNS_UNDER_30S",
+    "records": [
+      "docs/data/t319-cross-four-run-01.json",
+      "docs/data/t319-cross-four-run-02.json"
+    ],
+    "elapsed_s": [
+      29.975,
+      29.73
+    ],
+    "completed_runs": 2,
+    "under_30s_runs": 2,
+    "all_sixteen_exits_accepted_first_candidate": true,
+    "worst_margin_below_30s": 0.025,
+    "best_margin_below_30s": 0.27,
+    "latest_max_active_control_interval_ms": 8,
+    "scope": "Two consecutive physical runs with unchanged T319 firmware, not broad repeatability or independent ground-truth verification."
+  },
+  "latest_physical_assessment": {
+    "status": "UNSTABLE_REPEATED_FAILURES",
+    "latest_record": "docs/data/t319-cross-four-run-03.json",
+    "latest_fault": 7,
+    "latest_elapsed_s": 7.791,
+    "latest_segment": "First D to A exit",
+    "user_reported_failed_attempts": "approximately5or6",
+    "retained_failed_runs": 1,
+    "prior_retained_success_s": [
+      29.975,
+      29.73
+    ],
+    "qualified_as_stable": false
+  }
+}

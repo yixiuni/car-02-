@@ -1,0 +1,1139 @@
+{
+  "scope": "Independent synthetic encoder-scale stress on both arcs of all four laps.\nThis is not a measured slip estimate. True plant/coverage remain unchanged.\nRequires the separately built T320 and T321 research model executables.\n",
+  "runs": [
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.45 fault7 seg1 true(1060.9,-37.9,169.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1034.2 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(1241.7,-88.3,2.962)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.45 fault7 seg1 true(1063.3,-38.4,169.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1092.8 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(1175.7,-62.9,2.957)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 37.20s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 37.29s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 37.27s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 37.35s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.45 fault7 seg1 true(1070.3,-42.6,168.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1385.1 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(946.9,-13.8,2.938)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.44 fault7 seg1 true(1061.7,-38.2,169.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1034.4 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(1243.0,-89.2,2.958)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.44 fault7 seg1 true(1063.8,-38.8,169.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1093.1 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(1177.4,-63.7,2.953)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 37.21s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 37.26s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 37.29s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 37.41s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.46 fault7 seg1 true(1067.1,-39.9,168.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1394.3 arc_age2445 missing_age180 line_age195 line_error7.5 estimate(940.9,-11.3,2.947)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.45 fault7 seg1 true(1059.2,-37.7,170.0)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1033.9 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(1240.4,-87.2,2.966)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.45 fault7 seg1 true(1061.5,-38.6,169.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1092.5 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(1174.3,-62.0,2.963)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 37.20s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 37.27s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 37.31s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 37.43s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t5.45 fault7 seg1 true(1070.7,-40.6,168.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1384.9 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(945.8,-14.3,2.940)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.32 fault7 seg1 true(1036.0,-40.7,177.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1046.7 arc_age1800 missing_age180 line_age195 line_error0.0 estimate(1216.7,-86.0,3.096)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.38 fault7 seg1 true(1042.6,-41.0,176.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1103.8 arc_age1860 missing_age180 line_age195 line_error0.0 estimate(1155.1,-60.2,3.075)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 29.18s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.82s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.48s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 31.21s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.70 fault7 seg1 true(1069.1,-42.1,167.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1380.6 arc_age2175 missing_age180 line_age195 line_error7.5 estimate(946.9,-12.1,2.931)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.33 fault7 seg1 true(1032.7,-37.0,173.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1046.7 arc_age1800 missing_age180 line_age195 line_error7.5 estimate(1213.3,-84.2,3.034)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.92 fault7 seg3 true(-40.7,-37.6,7.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1103.7 arc_age1860 missing_age180 line_age195 line_error-7.5 estimate(-157.4,-60.8,0.127)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 29.29s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.75s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 31.09s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.71 fault7 seg1 true(1066.0,-41.6,168.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1380.9 arc_age2175 missing_age180 line_age195 line_error7.5 estimate(943.4,-12.6,2.938)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.33 fault7 seg1 true(1034.6,-37.2,173.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1046.6 arc_age1800 missing_age180 line_age195 line_error7.5 estimate(1214.9,-85.3,3.029)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.38 fault7 seg1 true(1039.6,-38.0,172.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1103.6 arc_age1860 missing_age180 line_age195 line_error7.5 estimate(1155.5,-60.3,3.015)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 29.21s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.77s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.46s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 31.08s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.70 fault7 seg1 true(1066.7,-42.2,168.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1380.6 arc_age2175 missing_age180 line_age195 line_error7.5 estimate(944.8,-12.5,2.937)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.23 fault7 seg1 true(1037.6,-37.5,173.0)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1043.1 arc_age1785 missing_age180 line_age195 line_error7.5 estimate(1217.6,-87.4,3.019)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.29 fault7 seg1 true(1045.1,-41.8,176.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1098.9 arc_age1845 missing_age180 line_age195 line_error0.0 estimate(1158.4,-61.5,3.074)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 28.62s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.31s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.05s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 30.62s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.62 fault7 seg1 true(1069.6,-42.6,168.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1379.5 arc_age2175 missing_age180 line_age195 line_error7.5 estimate(946.0,-12.7,2.935)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.24 fault7 seg1 true(1034.3,-36.5,173.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1043.3 arc_age1785 missing_age180 line_age195 line_error7.5 estimate(1214.5,-84.7,3.027)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.30 fault7 seg1 true(1042.3,-38.4,172.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1098.8 arc_age1845 missing_age180 line_age195 line_error7.5 estimate(1154.9,-60.1,3.008)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 28.69s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.32s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.08s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 30.74s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.63 fault7 seg1 true(1066.0,-42.0,168.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1379.6 arc_age2175 missing_age180 line_age195 line_error7.5 estimate(942.4,-13.7,2.947)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 0.85,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.24 fault7 seg1 true(1036.9,-41.4,177.6)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1043.6 arc_age1785 missing_age180 line_age195 line_error0.0 estimate(1216.3,-86.3,3.099)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 0.9,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.29 fault7 seg1 true(1044.5,-38.6,172.0)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1098.7 arc_age1845 missing_age180 line_age195 line_error7.5 estimate(1156.7,-61.0,3.002)\n"
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 28.70s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.25s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 29.98s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 30.57s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T320",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 1.15,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t4.62 fault7 seg1 true(1067.1,-42.0,168.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1379.6 arc_age2175 missing_age180 line_age195 line_error7.5 estimate(944.0,-12.7,2.937)\n"
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 37.11s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 37.20s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 37.22s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 37.27s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 37.35s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 0,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 37.41s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 37.21s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 37.26s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 37.29s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 37.44s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 5,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 37.41s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 37.13s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 37.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 37.20s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 37.28s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 37.33s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 37.43s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.5,
+      "phase": 10,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 37.43s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 28.05s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 28.62s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 29.18s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.82s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.48s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 31.21s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 0,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 31.79s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 28.04s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 28.66s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 29.29s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.75s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 31.09s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 5,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 31.75s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 27.99s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 28.71s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 29.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.72s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.46s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 31.08s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 1.0,
+      "phase": 10,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 31.66s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 27.41s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 28.09s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 28.74s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.36s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.04s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 30.58s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 0,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 31.34s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 27.38s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 28.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 28.75s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.32s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 30.08s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 30.74s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 5,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 31.29s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 0.85,
+      "passed": true,
+      "stdout": "PASS: task4 27.38s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 0.9,
+      "passed": true,
+      "stdout": "PASS: task4 28.14s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 0.95,
+      "passed": true,
+      "stdout": "PASS: task4 28.70s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 1.0,
+      "passed": true,
+      "stdout": "PASS: task4 29.30s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 1.05,
+      "passed": true,
+      "stdout": "PASS: task4 29.98s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 1.1,
+      "passed": true,
+      "stdout": "PASS: task4 30.57s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "T321-production",
+      "gain": 0.9,
+      "phase": 10,
+      "scale": 1.15,
+      "passed": true,
+      "stdout": "PASS: task4 31.42s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    }
+  ]
+}

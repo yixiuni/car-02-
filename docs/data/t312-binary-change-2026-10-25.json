@@ -1,0 +1,22 @@
+{
+  "source": "T311 physically completed37.049s",
+  "target": "T312 physical pending",
+  "source_sha256": "1811ed4c7e529daca6236e1981ac42468f7897f549a01adf204a5c8b4bc6750d",
+  "target_sha256": "368341bae7b8827770c1741ad444ce7713a987e6e74bb57104e14d075889f478",
+  "bytes_each": 46164,
+  "only_changed_byte_offsets": [
+    3224,
+    14034
+  ],
+  "changes": [
+    {
+      "address": "0x08000c98",
+      "purpose": "version magic T311 to T312"
+    },
+    {
+      "address": "0x080036d2",
+      "purpose": "arc speed float430 to450; float begins0x080036d0"
+    }
+  ],
+  "other_bytes_identical": true
+}

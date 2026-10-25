@@ -29,6 +29,149 @@
 #ifndef CAR_FOUR_TEST_BUILD
 #define CAR_FOUR_TEST_BUILD 0
 #endif
+/* Experimental speed planner; the validated DUL5 remains the default. */
+#ifndef CAR_TIME_TRIAL_BUILD
+#define CAR_TIME_TRIAL_BUILD 0
+#endif
+#ifndef CAR_TIME_TRIAL_STAGE2
+#define CAR_TIME_TRIAL_STAGE2 0
+#endif
+#ifndef CAR_TIME_TRIAL_STAGE3
+#define CAR_TIME_TRIAL_STAGE3 0
+#endif
+#ifndef CAR_TIME_TRIAL_C_ENTRY
+#define CAR_TIME_TRIAL_C_ENTRY 0
+#endif
+#ifndef CAR_TIME_TRIAL_STRAIGHT_BOOST
+#define CAR_TIME_TRIAL_STRAIGHT_BOOST 0
+#endif
+#ifndef CAR_TIME_TRIAL_FAST
+#define CAR_TIME_TRIAL_FAST 0
+#endif
+#ifndef CAR_TIME_TRIAL_ADAPTIVE
+#define CAR_TIME_TRIAL_ADAPTIVE 0
+#endif
+#ifndef CAR_TIME_TRIAL_ARC_BOOST
+#define CAR_TIME_TRIAL_ARC_BOOST 0
+#endif
+#ifndef CAR_TIME_TRIAL_EXIT_TRACE
+#define CAR_TIME_TRIAL_EXIT_TRACE 0
+#endif
+#ifndef CAR_TIME_TRIAL_ARC_STEP
+#define CAR_TIME_TRIAL_ARC_STEP 0
+#endif
+#ifndef CAR_SPEED_TRACE_BUILD
+#define CAR_SPEED_TRACE_BUILD 0
+#endif
+#ifndef CAR_TIME_TRIAL_ENTRY_HOLD
+#define CAR_TIME_TRIAL_ENTRY_HOLD 0
+#endif
+#ifndef CAR_TIME_TRIAL_CROSS_SPRINT
+#define CAR_TIME_TRIAL_CROSS_SPRINT 0
+#endif
+#ifndef CAR_TIME_TRIAL_ARC_PHASE
+#define CAR_TIME_TRIAL_ARC_PHASE 0
+#endif
+#if CAR_TIME_TRIAL_ARC_PHASE && !CAR_TIME_TRIAL_EDGE_POSE
+#error "Arc phase prior requires T320 edge pose"
+#endif
+#ifndef CAR_TIME_TRIAL_EDGE_POSE
+#define CAR_TIME_TRIAL_EDGE_POSE 0
+#endif
+#if CAR_TIME_TRIAL_EDGE_POSE && !CAR_TIME_TRIAL_ARC_LOCALIZE
+#error "Edge pose requires T319 arc localization"
+#endif
+#define CAR_EDGE_POSE_ENTRY_AIM_MM 15.0f
+#ifndef CAR_TIME_TRIAL_ARC_LOCALIZE
+#define CAR_TIME_TRIAL_ARC_LOCALIZE 0
+#endif
+#if CAR_TIME_TRIAL_ARC_LOCALIZE && !CAR_TIME_TRIAL_CROSS_SPRINT
+#error "Arc localization requires the T318 CROSS baseline"
+#endif
+#ifndef CAR_ARC_POSITION_GAIN
+#define CAR_ARC_POSITION_GAIN 0.5f
+#endif
+#ifndef CAR_ARC_POSITION_STEP_MM
+#define CAR_ARC_POSITION_STEP_MM 8.0f
+#endif
+#define CAR_ARC_POSITION_INNOVATION_MM 120.0f
+#if CAR_TIME_TRIAL_CROSS_SPRINT && !CAR_TIME_TRIAL_ENTRY_HOLD
+#error "Cross sprint requires the T317 entry-hold baseline"
+#endif
+/* T318: CROSS only. NORMAL retains the T317 targets and controller. */
+#define CAR_CROSS_SPRINT_STRAIGHT_SPEED 1000.0f
+#define CAR_CROSS_SPRINT_ARC_SPEED       650.0f
+#define CAR_CROSS_SPRINT_LOOKAHEAD_MM    350.0f
+#define CAR_CROSS_SPRINT_ARC_PWM         900.0f
+#define CAR_CROSS_SPRINT_C_AIM_MM         30.0f
+#define CAR_CROSS_SPRINT_D_AIM_MM         35.0f
+#define CAR_CROSS_SPRINT_P_SCALE          0.5f
+#define CAR_CROSS_SPRINT_D_SCALE          0.25f
+#define CAR_CROSS_SPRINT_EDGE_LIMIT       (1.5f*CAR_GRAY_PITCH_MM)
+#if CAR_TIME_TRIAL_ENTRY_HOLD && !CAR_TIME_TRIAL_ARC_STEP
+#error "Entry hold requires the validated arc-step baseline"
+#endif
+#if CAR_SPEED_TRACE_BUILD && !CAR_TIME_TRIAL_ARC_STEP
+#error "Speed recording requires the T312 baseline"
+#endif
+#if CAR_TIME_TRIAL_ARC_STEP && !CAR_TIME_TRIAL_EXIT_TRACE
+#error "Arc step requires exit observations on the T309 control baseline"
+#endif
+#if CAR_TIME_TRIAL_EXIT_TRACE && (!CAR_TIME_TRIAL_ADAPTIVE || CAR_TIME_TRIAL_ARC_BOOST)
+#error "Exit trace uses the physically successful T309 baseline"
+#endif
+#if CAR_TIME_TRIAL_ARC_BOOST && !CAR_TIME_TRIAL_ADAPTIVE
+#error "Arc boost requires the adaptive baseline"
+#endif
+#if CAR_TIME_TRIAL_ADAPTIVE && !CAR_TIME_TRIAL_FAST
+#error "Adaptive straight requires the fast baseline"
+#endif
+#if CAR_TIME_TRIAL_FAST && (!CAR_TIME_TRIAL_C_ENTRY || CAR_TIME_TRIAL_STRAIGHT_BOOST)
+#error "Fast trial requires C-entry baseline and a separate profile"
+#endif
+#if CAR_TIME_TRIAL_STRAIGHT_BOOST && !CAR_TIME_TRIAL_C_ENTRY
+#error "Straight boost requires the validated C-entry baseline"
+#endif
+#if CAR_TIME_TRIAL_C_ENTRY && !CAR_TIME_TRIAL_STAGE2
+#error "C entry experiment requires the stage 2 baseline"
+#endif
+#if CAR_TIME_TRIAL_STAGE2 && CAR_TIME_TRIAL_STAGE3
+#error "Choose one time-trial stage"
+#endif
+#if (CAR_TIME_TRIAL_STAGE2 || CAR_TIME_TRIAL_STAGE3) && !CAR_TIME_TRIAL_BUILD
+#error "Stage 2/3 requires the time-trial build"
+#endif
+#if CAR_TIME_TRIAL_BUILD && !CAR_DUAL_MODE_BUILD
+#error "Time trial requires the dual-mode course build"
+#endif
+#ifndef CAR_TT_STRAIGHT_SPEED
+#define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_ARC_BOOST ? 850.0f : CAR_TIME_TRIAL_ADAPTIVE ? 800.0f : CAR_TIME_TRIAL_FAST ? 650.0f : CAR_TIME_TRIAL_STRAIGHT_BOOST ? 520.0f : CAR_TIME_TRIAL_STAGE3 ? 550.0f : CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
+#endif
+#ifndef CAR_TT_ARC_SPEED
+#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_ENTRY_HOLD ? 460.0f : CAR_TIME_TRIAL_ARC_STEP ? 450.0f : CAR_TIME_TRIAL_ARC_BOOST ? 550.0f : CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
+#endif
+#ifndef CAR_TT_ENTRY_SPEED
+#define CAR_TT_ENTRY_SPEED 370.0f
+#endif
+#ifndef CAR_TT_WHEEL_SPEED
+#define CAR_TT_WHEEL_SPEED (CAR_TIME_TRIAL_ADAPTIVE ? 1000.0f : CAR_TIME_TRIAL_FAST ? 850.0f : CAR_TIME_TRIAL_STAGE3 ? 700.0f : CAR_TIME_TRIAL_STAGE2 ? 650.0f : 620.0f)
+#endif
+#ifndef CAR_TT_D_FILTER_MS
+#define CAR_TT_D_FILTER_MS 10.0f
+#endif
+#define CAR_TT_APPROACH_ACCEL 1000.0f
+#ifndef CAR_TT_STRAIGHT_PWM_RESERVE
+#define CAR_TT_STRAIGHT_PWM_RESERVE (CAR_TIME_TRIAL_ADAPTIVE ? 900.0f : 0.0f)
+#endif
+#ifndef CAR_TT_ARC_ACCEL_START_MM
+#define CAR_TT_ARC_ACCEL_START_MM (CAR_TIME_TRIAL_ARC_BOOST ? 165.0f : 0.0f)
+#endif
+#ifndef CAR_TT_ARC_PWM_RESERVE
+#define CAR_TT_ARC_PWM_RESERVE (CAR_TIME_TRIAL_ARC_BOOST ? 900.0f : 0.0f)
+#endif
+#ifndef CAR_TT_STRAIGHT_DECEL
+#define CAR_TT_STRAIGHT_DECEL CAR_TT_APPROACH_ACCEL
+#endif
 #if (CAR_ARC_TEST_BUILD + CAR_LAP_TEST_BUILD + CAR_CROSS_TEST_BUILD + CAR_FOUR_TEST_BUILD + CAR_DUAL_MODE_BUILD) > 1
 #error "Choose arc or lap diagnostic"
 #endif
@@ -83,7 +226,7 @@
 
 #define CAR_PWM_MAX              1000U
 #ifndef CAR_FOUR_PWM_LIMIT
-#define CAR_FOUR_PWM_LIMIT        700U
+#define CAR_FOUR_PWM_LIMIT        (CAR_TIME_TRIAL_FAST ? 1000U : CAR_TIME_TRIAL_STAGE3 ? 850U : CAR_TIME_TRIAL_STAGE2 ? 800U : 700U)
 #endif
 #if CAR_FOUR_TEST_BUILD || CAR_DUAL_MODE_BUILD
 #define CAR_PWM_LIMIT             CAR_FOUR_PWM_LIMIT /* cruise and steering headroom */
@@ -140,8 +283,17 @@
 #define CAR_ENDPOINT_HEADING_RAD    0.44f
 #define CAR_ENDPOINT_CORRECTION_MM 60.0f /* max accepted odometry correction */
 #define CAR_CROSS_ENDPOINT_CORRECTION_MM 100.0f /* qualified edge only; measured cross-run drift ~78 mm */
+#ifndef CAR_CROSS_D_ENTRY_PREVIEW
+#define CAR_CROSS_D_ENTRY_PREVIEW CAR_TIME_TRIAL_ARC_BOOST
+#endif
+#ifndef CAR_CROSS_C_ENTRY_PREVIEW
+#define CAR_CROSS_C_ENTRY_PREVIEW  CAR_TIME_TRIAL_C_ENTRY
+#endif
+#ifndef CAR_CROSS_C_ENTRY_AIM_MM
+#define CAR_CROSS_C_ENTRY_AIM_MM    (CAR_TIME_TRIAL_ADAPTIVE ? 20.0f : CAR_TIME_TRIAL_FAST ? 25.0f : CAR_TIME_TRIAL_C_ENTRY ? 20.0f : 0.0f)
+#endif
 #ifndef CAR_CROSS_D_ENTRY_AIM_MM
-#define CAR_CROSS_D_ENTRY_AIM_MM    20.0f /* aim onto left arc just beyond D */
+#define CAR_CROSS_D_ENTRY_AIM_MM    (CAR_TIME_TRIAL_STAGE3 ? 25.0f : 20.0f) /* along left arc beyond D */
 #endif
 #define CAR_ENDPOINT_YAW_BLEND      0.5f
 

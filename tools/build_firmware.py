@@ -16,6 +16,22 @@ p.add_argument('--motor-test', action='store_true', help='Separate one-shot rais
 p.add_argument('--ground-test', action='store_true', help='Separate fixed 200/500/1000 mm ground diagnostic')
 p.add_argument('--task1-test', action='store_true', help='One-shot real A-to-B controller, sensors and signals')
 p.add_argument('--dual-mode', action='store_true')
+p.add_argument('--time-trial', action='store_true', help='Separate experimental T301 speed-planned dual-mode image')
+p.add_argument('--time-trial-stage2', action='store_true', help='Separate experimental T302: straight500 arc430 entry370')
+p.add_argument('--time-trial-stage3', action='store_true', help='Separate experimental T305: straight550 arc470 entry370 with fading bounded entry recovery')
+p.add_argument('--time-trial-c-entry', action='store_true', help='Separate T306: T302 speeds and C entry path/preview experiment')
+p.add_argument('--time-trial-exit-trace', action='store_true', help='T311: T309 speeds/control, read-only arc/exit diagnostics')
+p.add_argument('--speed-trace', action='store_true', help='T315: unchanged T312 control with onboard speed recording')
+p.add_argument('--time-trial-entry-hold', action='store_true', help='T317: bounded entry recovery, arc460 and speed recording')
+p.add_argument('--time-trial-cross-sprint', action='store_true', help='T318: CROSS1000/650 with staged feedback and C confirmation; NORMAL T317')
+p.add_argument('--time-trial-arc-phase', action='store_true', help='T321: bounded mature-arc phase position prior')
+p.add_argument('--time-trial-edge-pose', action='store_true', help='T320: time-aligned edge pose and near-endpoint acquisition')
+p.add_argument('--time-trial-arc-localize', action='store_true', help='T319: T318 speeds with bounded mature-arc position observation')
+p.add_argument('--time-trial-arc-step', action='store_true', help='T312: T311 with arc target450 only')
+p.add_argument('--time-trial-arc-boost', action='store_true', help='Separate T310: straight850 arc550 entry370, arc headroom900 acquisition165 Dpreview')
+p.add_argument('--time-trial-adaptive', action='store_true', help='Separate T309: straight800, PI headroom900, arc430 entry370 Caim20')
+p.add_argument('--time-trial-fast', action='store_true', help='Separate T308: straight650 arc430 entry370, PWM1000 wheel850 Caim25')
+p.add_argument('--time-trial-straight', action='store_true', help='Separate T307: T306 entry control, straight520 arc430 entry370')
 p.add_argument('--four-test', action='store_true', help='One-shot task4 four crossing laps, 160 s guard')
 p.add_argument('--cross-test', action='store_true', help='One-shot task 3 crossing lap, 40 s limit')
 p.add_argument('--lap-test', action='store_true', help='One-shot full task 2 lap, 30 s limit')
@@ -24,6 +40,38 @@ p.add_argument('--gray-learn', action='store_true', help='No-motion analog grays
 p.add_argument('--motor-slow-decay', action='store_true', help='Bench-only alternate AT8236 PWM mode')
 p.add_argument('--motor-fast-decay', action='store_true', help='Bench comparison with original fast-decay PWM')
 a = p.parse_args()
+if a.time_trial_arc_phase:
+    a.time_trial_edge_pose=True
+if a.time_trial_edge_pose:
+    a.time_trial_arc_localize=True
+if a.time_trial_arc_localize:
+    a.time_trial_cross_sprint=True
+if a.time_trial_cross_sprint:
+    a.time_trial_entry_hold=True
+if a.time_trial_entry_hold:
+    a.speed_trace=True
+if a.speed_trace:
+    a.time_trial_arc_step=True
+if a.time_trial_arc_step:
+    a.time_trial_exit_trace=True
+if a.time_trial_exit_trace:
+    a.time_trial_adaptive=True
+if a.time_trial_arc_boost:
+    a.time_trial_adaptive=True
+if a.time_trial_adaptive:
+    a.time_trial_fast=True
+if a.time_trial_fast and a.time_trial_straight:
+    p.error("Choose one straight speed profile")
+if a.time_trial_fast or a.time_trial_straight:
+    a.time_trial_c_entry=True
+if a.time_trial_c_entry:
+    a.time_trial_stage2=True
+if a.time_trial_stage2 and a.time_trial_stage3:
+    p.error('Choose one time-trial stage')
+if a.time_trial_stage2 or a.time_trial_stage3:
+    a.time_trial=True
+if a.time_trial:
+    a.dual_mode=True
 if sum((a.arc_test,a.lap_test,a.cross_test,a.four_test,a.dual_mode))>1: p.error('Choose one course diagnostic')
 if a.arc_test or a.lap_test or a.cross_test or a.four_test or a.dual_mode:
     if a.task1_test: p.error('--arc-test and --task1-test are separate images')
@@ -47,7 +95,7 @@ def tool(name):
         p.error('ARM tool not found: ' + name)
     return found
 cc, objcopy, size = tool('gcc'), tool('objcopy'), tool('size')
-out = root / 'build-local' / (('GrayLearn' if a.gray_learn else 'DualMode' if a.dual_mode else 'FourTest' if a.four_test else 'CrossTest' if a.cross_test else 'LapTest' if a.lap_test else 'ArcTest' if a.arc_test else 'Task1Test' if a.task1_test else 'GroundTest' if a.ground_test else 'MotorTestFast' if a.motor_fast_decay else 'MotorTestSlow' if a.motor_slow_decay else 'MotorTest' if a.motor_test else '') + a.config)
+out = root / 'build-local' / (('GrayLearn' if a.gray_learn else 'ArcPhase' if a.time_trial_arc_phase else 'EdgePose' if a.time_trial_edge_pose else 'ArcLocalize' if a.time_trial_arc_localize else 'CrossSprint' if a.time_trial_cross_sprint else 'EntryHold' if a.time_trial_entry_hold else 'SpeedTrace' if a.speed_trace else 'TimeTrialArcStep' if a.time_trial_arc_step else 'TimeTrialExitTrace' if a.time_trial_exit_trace else 'TimeTrialArcBoost' if a.time_trial_arc_boost else 'TimeTrialAdaptive' if a.time_trial_adaptive else 'TimeTrialFast' if a.time_trial_fast else 'TimeTrialStraight' if a.time_trial_straight else 'TimeTrialEntry' if a.time_trial_c_entry else 'TimeTrial3' if a.time_trial_stage3 else 'TimeTrial2' if a.time_trial_stage2 else 'TimeTrial' if a.time_trial else 'DualMode' if a.dual_mode else 'FourTest' if a.four_test else 'CrossTest' if a.cross_test else 'LapTest' if a.lap_test else 'ArcTest' if a.arc_test else 'Task1Test' if a.task1_test else 'GroundTest' if a.ground_test else 'MotorTestFast' if a.motor_fast_decay else 'MotorTestSlow' if a.motor_slow_decay else 'MotorTest' if a.motor_test else '') + a.config)
 out.mkdir(parents=True, exist_ok=True)
 includes = ['Core/Inc', 'Drivers/STM32F1xx_HAL_Driver/Inc',
             'Drivers/STM32F1xx_HAL_Driver/Inc/Legacy', 'Drivers/CMSIS/Device/ST/STM32F1xx/Include',
@@ -72,6 +120,38 @@ if a.task1_test:
     flags += ['-DCAR_TASK1_TEST_BUILD=1']
 if a.dual_mode:
     flags += ['-DCAR_DUAL_MODE_BUILD=1']
+if a.time_trial:
+    flags += ['-DCAR_TIME_TRIAL_BUILD=1']
+if a.time_trial_stage2:
+    flags += ['-DCAR_TIME_TRIAL_STAGE2=1']
+if a.time_trial_exit_trace:
+    flags += ['-DCAR_TIME_TRIAL_EXIT_TRACE=1']
+if a.speed_trace:
+    flags += ['-DCAR_SPEED_TRACE_BUILD=1']
+if a.time_trial_entry_hold:
+    flags += ['-DCAR_TIME_TRIAL_ENTRY_HOLD=1']
+if a.time_trial_cross_sprint:
+    flags += ['-DCAR_TIME_TRIAL_CROSS_SPRINT=1']
+if a.time_trial_arc_phase:
+    flags += ['-DCAR_TIME_TRIAL_ARC_PHASE=1']
+if a.time_trial_edge_pose:
+    flags += ['-DCAR_TIME_TRIAL_EDGE_POSE=1']
+if a.time_trial_arc_localize:
+    flags += ['-DCAR_TIME_TRIAL_ARC_LOCALIZE=1']
+if a.time_trial_arc_step:
+    flags += ['-DCAR_TIME_TRIAL_ARC_STEP=1']
+if a.time_trial_arc_boost:
+    flags += ['-DCAR_TIME_TRIAL_ARC_BOOST=1']
+if a.time_trial_adaptive:
+    flags += ['-DCAR_TIME_TRIAL_ADAPTIVE=1']
+if a.time_trial_fast:
+    flags += ['-DCAR_TIME_TRIAL_FAST=1']
+if a.time_trial_straight:
+    flags += ['-DCAR_TIME_TRIAL_STRAIGHT_BOOST=1']
+if a.time_trial_c_entry:
+    flags += ['-DCAR_TIME_TRIAL_C_ENTRY=1']
+if a.time_trial_stage3:
+    flags += ['-DCAR_TIME_TRIAL_STAGE3=1']
 if a.four_test:
     flags += ['-DCAR_FOUR_TEST_BUILD=1']
 if a.cross_test:

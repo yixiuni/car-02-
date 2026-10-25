@@ -1,0 +1,1039 @@
+{
+  "scope": "Host assumptions only; preserve unsuccessful high straight targets and headroom allocation candidates. Selected800, reserve900, Caim20, decel1000.",
+  "profiles": [
+    {
+      "name": "s750d1000",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 750.0,
+        "CAR_TT_STRAIGHT_DECEL": 1000.0
+      },
+      "passed": 26,
+      "total": 36,
+      "nominal_cross4_s": [
+        38.95,
+        38.95,
+        38.97,
+        37.52,
+        37.53,
+        37.54,
+        37.47,
+        37.49,
+        37.46
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2 t3.01 fault8 seg0 true(1078.8,69.2,-1.7)",
+          "log": "s750d1000-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.45 fault8 seg2 true(-38.1,-898.2,214.2)",
+          "log": "s750d1000-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t3.58 fault8 seg0 true(1032.0,-888.4,-33.9)",
+          "log": "s750d1000-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2 t3.01 fault8 seg0 true(1078.8,69.2,-1.7)",
+          "log": "s750d1000-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.44 fault8 seg2 true(-38.4,-900.5,214.3)",
+          "log": "s750d1000-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t3.58 fault8 seg0 true(1031.6,-889.0,-33.9)",
+          "log": "s750d1000-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2 t3.01 fault8 seg0 true(1078.8,69.2,-1.7)",
+          "log": "s750d1000-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.44 fault8 seg2 true(-39.1,-895.9,214.1)",
+          "log": "s750d1000-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t3.58 fault8 seg0 true(1032.0,-888.4,-33.9)",
+          "log": "s750d1000-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-658",
+          "log": "s750d1000-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "s800d1000",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_DECEL": 1000.0
+      },
+      "passed": 23,
+      "total": 36,
+      "nominal_cross4_s": [
+        38.83,
+        38.79,
+        38.84,
+        36.93,
+        36.93,
+        36.92,
+        36.93,
+        36.91,
+        36.89
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2 t3.02 fault8 seg0 true(1079.9,69.0,-2.2)",
+          "log": "s800d1000-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.43 fault8 seg2 true(-36.8,-896.7,213.6)",
+          "log": "s800d1000-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t3.58 fault8 seg0 true(1029.8,-891.7,-33.6)",
+          "log": "s800d1000-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2 t3.02 fault8 seg0 true(1079.9,69.0,-2.2)",
+          "log": "s800d1000-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.43 fault8 seg2 true(-35.9,-908.1,213.7)",
+          "log": "s800d1000-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t3.58 fault8 seg0 true(1029.8,-891.7,-33.6)",
+          "log": "s800d1000-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2 t3.02 fault8 seg0 true(1079.9,69.0,-2.2)",
+          "log": "s800d1000-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.44 fault8 seg2 true(-35.4,-900.8,213.7)",
+          "log": "s800d1000-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t3.58 fault8 seg0 true(1029.8,-891.7,-33.6)",
+          "log": "s800d1000-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-658",
+          "log": "s800d1000-model1.0-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-658",
+          "log": "s800d1000-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-659",
+          "log": "s800d1000-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 944,-658",
+          "log": "s800d1000-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "s800d700",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_DECEL": 700.0
+      },
+      "passed": 24,
+      "total": 36,
+      "nominal_cross4_s": [
+        39.12,
+        39.13,
+        39.18,
+        37.38,
+        37.38,
+        37.34,
+        37.28,
+        37.31,
+        37.31
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2 t3.04 fault8 seg0 true(1079.5,61.2,-1.8)",
+          "log": "s800d700-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.01 fault7 seg3 true(69.4,-772.8,211.9)",
+          "log": "s800d700-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 958,-650",
+          "log": "s800d700-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2 t3.04 fault8 seg0 true(1079.5,61.2,-1.8)",
+          "log": "s800d700-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.02 fault7 seg3 true(63.1,-772.1,207.9)",
+          "log": "s800d700-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 957,-648",
+          "log": "s800d700-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2 t3.04 fault8 seg0 true(1079.5,61.2,-1.8)",
+          "log": "s800d700-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.50 fault8 seg2 true(-38.6,-899.9,214.6)",
+          "log": "s800d700-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 956,-647",
+          "log": "s800d700-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 935,-659",
+          "log": "s800d700-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-659",
+          "log": "s800d700-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-659",
+          "log": "s800d700-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "s800d500",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_DECEL": 500.0
+      },
+      "passed": 28,
+      "total": 36,
+      "nominal_cross4_s": [
+        39.48,
+        39.49,
+        39.52,
+        37.9,
+        37.89,
+        37.85,
+        37.82,
+        37.83,
+        37.8
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task4: event point2 not physically covered at 947,-654",
+          "log": "s800d500-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task4: event point2 not physically covered at 946,-653",
+          "log": "s800d500-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task4: event point2 not physically covered at 945,-652",
+          "log": "s800d500-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.09 fault7 seg3 true(73.1,-774.0,207.3)",
+          "log": "s800d500-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-658",
+          "log": "s800d500-model1.0-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 937,-657",
+          "log": "s800d500-model0.9-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-657",
+          "log": "s800d500-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-656",
+          "log": "s800d500-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "s750d700",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 750.0,
+        "CAR_TT_STRAIGHT_DECEL": 700.0
+      },
+      "passed": 26,
+      "total": 36,
+      "nominal_cross4_s": [
+        39.16,
+        39.21,
+        39.18,
+        37.88,
+        37.83,
+        37.86,
+        37.8,
+        37.81,
+        37.79
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2 t3.04 fault8 seg0 true(1078.7,61.2,-1.4)",
+          "log": "s750d700-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.04 fault7 seg3 true(61.5,-774.6,204.3)",
+          "log": "s750d700-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 951,-651",
+          "log": "s750d700-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2 t3.04 fault8 seg0 true(1078.7,61.2,-1.4)",
+          "log": "s750d700-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.49 fault8 seg2 true(-39.4,-896.1,214.9)",
+          "log": "s750d700-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 953,-653",
+          "log": "s750d700-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2 t3.04 fault8 seg0 true(1078.7,61.2,-1.4)",
+          "log": "s750d700-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.49 fault8 seg2 true(-41.5,-892.4,214.8)",
+          "log": "s750d700-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 952,-652",
+          "log": "s750d700-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 937,-658",
+          "log": "s750d700-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "s850d700",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_STRAIGHT_DECEL": 700.0
+      },
+      "passed": 25,
+      "total": 36,
+      "nominal_cross4_s": [
+        39.12,
+        39.11,
+        39.12,
+        36.95,
+        36.94,
+        36.91,
+        36.91,
+        36.93,
+        36.88
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2 t3.06 fault8 seg0 true(1080.4,59.2,-1.8)",
+          "log": "s850d700-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.48 fault8 seg2 true(-41.5,-900.5,213.9)",
+          "log": "s850d700-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 946,-648",
+          "log": "s850d700-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2 t3.06 fault8 seg0 true(1080.4,59.2,-1.8)",
+          "log": "s850d700-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.48 fault8 seg2 true(-38.3,-898.4,214.1)",
+          "log": "s850d700-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 945,-647",
+          "log": "s850d700-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2 t3.06 fault8 seg0 true(1080.4,59.2,-1.8)",
+          "log": "s850d700-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.03 fault7 seg3 true(62.5,-769.1,208.8)",
+          "log": "s850d700-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 947,-650",
+          "log": "s850d700-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 935,-658",
+          "log": "s850d700-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 931,-657",
+          "log": "s850d700-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "r900d1000",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_DECEL": 1000.0
+      },
+      "passed": 33,
+      "total": 36,
+      "nominal_cross4_s": [
+        40.13,
+        40.12,
+        40.12,
+        36.91,
+        36.97,
+        36.95,
+        36.91,
+        36.9,
+        36.91
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-657",
+          "log": "r900d1000-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-659",
+          "log": "r900d1000-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 944,-658",
+          "log": "r900d1000-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "r950d1000",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0,
+        "CAR_TT_STRAIGHT_DECEL": 1000.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        39.38,
+        39.34,
+        39.38,
+        36.94,
+        36.95,
+        36.92,
+        36.93,
+        36.91,
+        36.89
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-658",
+          "log": "r950d1000-model1.0-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-658",
+          "log": "r950d1000-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-659",
+          "log": "r950d1000-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 944,-658",
+          "log": "r950d1000-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "r900d700",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_DECEL": 700.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        40.25,
+        40.27,
+        40.3,
+        37.35,
+        37.31,
+        37.36,
+        37.29,
+        37.31,
+        37.3
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-659",
+          "log": "r900d700-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-659",
+          "log": "r900d700-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "r950d700",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0,
+        "CAR_TT_STRAIGHT_DECEL": 700.0
+      },
+      "passed": 33,
+      "total": 36,
+      "nominal_cross4_s": [
+        39.61,
+        39.55,
+        39.56,
+        37.38,
+        37.36,
+        37.34,
+        37.28,
+        37.31,
+        37.31
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 935,-659",
+          "log": "r950d700-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-659",
+          "log": "r950d700-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-659",
+          "log": "r950d700-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "a20d1000",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_TT_STRAIGHT_DECEL": 1000.0
+      },
+      "passed": 36,
+      "total": 36,
+      "nominal_cross4_s": [
+        40.1,
+        40.12,
+        40.09,
+        36.97,
+        36.98,
+        36.97,
+        36.91,
+        36.93,
+        36.91
+      ],
+      "failures": []
+    },
+    {
+      "name": "a15d1000",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 15.0,
+        "CAR_TT_STRAIGHT_DECEL": 1000.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        40.22,
+        40.17,
+        40.16,
+        37.02,
+        36.98,
+        37.01,
+        36.93,
+        36.91,
+        36.95
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t33.84 fault8 seg0 true(1036.8,-901.0,-40.3)",
+          "log": "a15d1000-model1.5-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "a20d700",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_TT_STRAIGHT_DECEL": 700.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        40.27,
+        40.26,
+        40.24,
+        37.37,
+        37.39,
+        37.34,
+        37.27,
+        37.31,
+        37.28
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-659",
+          "log": "a20d700-model1.0-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "a15d700",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 15.0,
+        "CAR_TT_STRAIGHT_DECEL": 700.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        40.34,
+        40.34,
+        40.33,
+        37.38,
+        37.38,
+        37.41,
+        37.32,
+        37.34,
+        37.36
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t23.87 fault8 seg0 true(1037.5,-899.6,-40.1)",
+          "log": "a15d700-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t33.97 fault8 seg0 true(1038.1,-896.8,-40.0)",
+          "log": "a15d700-model1.5-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "a25d500",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_STRAIGHT_DECEL": 500.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        40.52,
+        40.47,
+        40.45,
+        37.88,
+        37.9,
+        37.9,
+        37.8,
+        37.81,
+        37.82
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-658",
+          "log": "a25d500-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 937,-657",
+          "log": "a25d500-model0.9-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-657",
+          "log": "a25d500-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-656",
+          "log": "a25d500-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "name": "a20d500",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TT_WHEEL_SPEED": 1000.0,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_TT_STRAIGHT_DECEL": 500.0
+      },
+      "passed": 36,
+      "total": 36,
+      "nominal_cross4_s": [
+        40.52,
+        40.48,
+        40.49,
+        37.86,
+        37.86,
+        37.91,
+        37.81,
+        37.83,
+        37.85
+      ],
+      "failures": []
+    }
+  ]
+}

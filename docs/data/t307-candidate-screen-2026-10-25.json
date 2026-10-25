@@ -1,0 +1,4359 @@
+{
+  "t307-screen": {
+    "scope": "HOST SIMULATION ONLY. Plant gain, response time and tire grip are not high-speed measurements.",
+    "inputs_sha256": {
+      "Core/Src/car_control.c": "cdbc636b64e3eec1a5e28aa4e5d233ff4915375d347859a498e092346fe175ba",
+      "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+      "Core/Src/imu_filter.c": "7da06894224dfff5e0283a52ebb360e7b03410a9009a54421920c8d542d8a4bd",
+      "Core/Src/task1_test.c": "52d7a311d1b316409b4eb45719110715213bed000616a8ee05bce9e2591300fc",
+      "Core/Src/course_mode.c": "339517b9a6f21d6adb002d7cb77346612bb0d358fe8be09e34b3fc57d42d36fb",
+      "tests/sim_course.c": "bd2412f94cb0999acee4eb96adfe1ce8ac167b30fcb274066b0f0ee68ffff008",
+      "Core/Inc/car_config.h": "15b250a1058d9544430edee5d9cd12a1deb6a26ec839bd83d167bc1163197beb",
+      "Core/Inc/car_control.h": "80df5927b7e87a6a48c22c16e2c029d5f9b4171a6c34e3614302a27456a22df9",
+      "Core/Inc/motion_control.h": "c7f60a43a89b2eee9b0b6ade2e1e90c4e6132e8e1a10b96588d1a3d4c693ddb9",
+      "Core/Inc/course_mode.h": "29817e54d0021fdcc797495293d2a40fde2f1efc82e483bffd86931fc3510f4e",
+      "Core/Inc/task1_test.h": "f2d00c31c633d143a03cdd9648e4fea7b7258324e52f77711cc183aee7e664ad",
+      "Core/Inc/imu_filter.h": "43f6426cb2b8cf164f7ac7f6b4a6a59247f4fcb5c3a3d671c0f3e1f8bb85e92f",
+      "tools/evaluate_time_trial.py": "efd081af9ae4b3b13492ec95d4dcf121b4ad2130047a1798a2c9f84824c31288"
+    },
+    "profiles": [
+      {
+        "name": "entry520",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 520.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.86
+            ],
+            "errors": "",
+            "log": "entry520-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 26
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.84
+            ],
+            "errors": "",
+            "log": "entry520-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 24
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.85
+            ],
+            "errors": "",
+            "log": "entry520-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 25
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.02
+            ],
+            "errors": "",
+            "log": "entry520-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.99
+            ],
+            "errors": "",
+            "log": "entry520-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.02
+            ],
+            "errors": "",
+            "log": "entry520-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.93
+            ],
+            "errors": "",
+            "log": "entry520-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.91
+            ],
+            "errors": "",
+            "log": "entry520-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.91
+            ],
+            "errors": "",
+            "log": "entry520-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry520-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": true
+      },
+      {
+        "name": "entry540",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 540.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.63
+            ],
+            "errors": "",
+            "log": "entry540-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.97 fault8 seg0 true(1032.5,-888.2,-37.7)",
+            "log": "entry540-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.19 fault8 seg2 true(-39.7,-895.4,218.9)",
+            "log": "entry540-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.62
+            ],
+            "errors": "",
+            "log": "entry540-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.97 fault8 seg0 true(1032.5,-888.3,-37.7)",
+            "log": "entry540-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.26 fault8 seg2 true(-37.4,-902.9,214.2)",
+            "log": "entry540-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.61
+            ],
+            "errors": "",
+            "log": "entry540-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.97 fault8 seg0 true(1032.5,-888.3,-37.7)",
+            "log": "entry540-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.27 fault8 seg2 true(-36.0,-900.8,214.4)",
+            "log": "entry540-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.49
+            ],
+            "errors": "",
+            "log": "entry540-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 27
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.47
+            ],
+            "errors": "",
+            "log": "entry540-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.45
+            ],
+            "errors": "",
+            "log": "entry540-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.34
+            ],
+            "errors": "",
+            "log": "entry540-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.33
+            ],
+            "errors": "",
+            "log": "entry540-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.34
+            ],
+            "errors": "",
+            "log": "entry540-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 27
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry540-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      },
+      {
+        "name": "entry550",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 550.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.55
+            ],
+            "errors": "",
+            "log": "entry550-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.96 fault8 seg0 true(1026.7,-894.3,-36.7)",
+            "log": "entry550-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t8.71 fault7 seg3 true(88.3,-782.8,203.8)",
+            "log": "entry550-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.96 fault8 seg0 true(1032.6,-888.7,-34.7)",
+            "log": "entry550-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 2
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.57
+            ],
+            "errors": "",
+            "log": "entry550-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.96 fault8 seg0 true(1026.7,-894.3,-36.7)",
+            "log": "entry550-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.15 fault8 seg2 true(-39.9,-901.3,218.0)",
+            "log": "entry550-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.96 fault8 seg0 true(1032.6,-888.7,-34.7)",
+            "log": "entry550-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 2
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.56
+            ],
+            "errors": "",
+            "log": "entry550-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.96 fault8 seg0 true(1026.7,-894.3,-36.7)",
+            "log": "entry550-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.16 fault8 seg2 true(-39.8,-895.3,218.2)",
+            "log": "entry550-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.96 fault8 seg0 true(1032.6,-888.7,-34.7)",
+            "log": "entry550-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 2
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.18
+            ],
+            "errors": "",
+            "log": "entry550-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.19
+            ],
+            "errors": "",
+            "log": "entry550-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.21
+            ],
+            "errors": "",
+            "log": "entry550-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.07
+            ],
+            "errors": "",
+            "log": "entry550-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.08
+            ],
+            "errors": "",
+            "log": "entry550-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.06
+            ],
+            "errors": "",
+            "log": "entry550-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry550-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      },
+      {
+        "name": "entry580",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 580.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.4
+            ],
+            "errors": "",
+            "log": "entry580-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2 t3.25 fault8 seg0 true(1079.7,67.6,-1.3)",
+            "log": "entry580-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.19 fault8 seg2 true(-36.2,-896.0,212.5)",
+            "log": "entry580-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.88 fault8 seg0 true(1034.9,-884.9,-35.9)",
+            "log": "entry580-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.38
+            ],
+            "errors": "",
+            "log": "entry580-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point1 not physically covered at 939,-78",
+            "log": "entry580-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.21 fault8 seg2 true(-32.4,-907.2,213.1)",
+            "log": "entry580-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.95 fault8 seg0 true(1028.1,-894.5,-33.4)",
+            "log": "entry580-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 2
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.37
+            ],
+            "errors": "",
+            "log": "entry580-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point1 not physically covered at 940,-78",
+            "log": "entry580-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.21 fault8 seg2 true(-37.1,-897.9,212.7)",
+            "log": "entry580-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.88 fault8 seg0 true(1034.9,-884.9,-35.9)",
+            "log": "entry580-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.44
+            ],
+            "errors": "",
+            "log": "entry580-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.45
+            ],
+            "errors": "",
+            "log": "entry580-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.43
+            ],
+            "errors": "",
+            "log": "entry580-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.35
+            ],
+            "errors": "",
+            "log": "entry580-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.36
+            ],
+            "errors": "",
+            "log": "entry580-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.34
+            ],
+            "errors": "",
+            "log": "entry580-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry580-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      },
+      {
+        "name": "entry600",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 600.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.35
+            ],
+            "errors": "",
+            "log": "entry600-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point1 not physically covered at 964,-80",
+            "log": "entry600-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t8.78 fault7 seg3 true(55.8,-772.4,210.3)",
+            "log": "entry600-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.87 fault8 seg0 true(1032.0,-890.4,-34.6)",
+            "log": "entry600-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.31
+            ],
+            "errors": "",
+            "log": "entry600-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point1 not physically covered at 968,-80",
+            "log": "entry600-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.21 fault8 seg2 true(-36.5,-895.7,212.0)",
+            "log": "entry600-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.87 fault8 seg0 true(1032.0,-890.4,-34.6)",
+            "log": "entry600-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.33
+            ],
+            "errors": "",
+            "log": "entry600-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point1 not physically covered at 966,-80",
+            "log": "entry600-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.20 fault8 seg2 true(-34.7,-897.2,212.1)",
+            "log": "entry600-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.87 fault8 seg0 true(1032.0,-890.4,-34.6)",
+            "log": "entry600-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.01
+            ],
+            "errors": "",
+            "log": "entry600-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.02
+            ],
+            "errors": "",
+            "log": "entry600-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.01
+            ],
+            "errors": "",
+            "log": "entry600-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              39.91
+            ],
+            "errors": "",
+            "log": "entry600-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              39.9
+            ],
+            "errors": "",
+            "log": "entry600-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              39.91
+            ],
+            "errors": "",
+            "log": "entry600-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry600-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      }
+    ],
+    "summary_note": "Non-nominal per-run times omitted; all suite statuses and errors retained. Sprint trials used rejected patch t307-rejected-sprint.patch against f2f23e1 and were not flashed."
+  },
+  "t307-refine": {
+    "scope": "HOST SIMULATION ONLY. Plant gain, response time and tire grip are not high-speed measurements.",
+    "inputs_sha256": {
+      "Core/Src/car_control.c": "cdbc636b64e3eec1a5e28aa4e5d233ff4915375d347859a498e092346fe175ba",
+      "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+      "Core/Src/imu_filter.c": "7da06894224dfff5e0283a52ebb360e7b03410a9009a54421920c8d542d8a4bd",
+      "Core/Src/task1_test.c": "52d7a311d1b316409b4eb45719110715213bed000616a8ee05bce9e2591300fc",
+      "Core/Src/course_mode.c": "339517b9a6f21d6adb002d7cb77346612bb0d358fe8be09e34b3fc57d42d36fb",
+      "tests/sim_course.c": "bd2412f94cb0999acee4eb96adfe1ce8ac167b30fcb274066b0f0ee68ffff008",
+      "Core/Inc/car_config.h": "15b250a1058d9544430edee5d9cd12a1deb6a26ec839bd83d167bc1163197beb",
+      "Core/Inc/car_control.h": "80df5927b7e87a6a48c22c16e2c029d5f9b4171a6c34e3614302a27456a22df9",
+      "Core/Inc/motion_control.h": "c7f60a43a89b2eee9b0b6ade2e1e90c4e6132e8e1a10b96588d1a3d4c693ddb9",
+      "Core/Inc/course_mode.h": "29817e54d0021fdcc797495293d2a40fde2f1efc82e483bffd86931fc3510f4e",
+      "Core/Inc/task1_test.h": "f2d00c31c633d143a03cdd9648e4fea7b7258324e52f77711cc183aee7e664ad",
+      "Core/Inc/imu_filter.h": "43f6426cb2b8cf164f7ac7f6b4a6a59247f4fcb5c3a3d671c0f3e1f8bb85e92f",
+      "tools/evaluate_time_trial.py": "f639fb9adb5719796a6e516db963c00e2dd11e27e9885474ae94d3169d5b108d"
+    },
+    "profiles": [
+      {
+        "name": "entry530",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 530.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.62
+            ],
+            "errors": "",
+            "log": "entry530-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.28 fault8 seg2 true(-40.5,-888.8,215.4)",
+            "log": "entry530-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.62
+            ],
+            "errors": "",
+            "log": "entry530-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.28 fault8 seg2 true(-40.0,-899.2,215.4)",
+            "log": "entry530-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.59
+            ],
+            "errors": "",
+            "log": "entry530-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.29 fault8 seg2 true(-38.8,-893.5,215.6)",
+            "log": "entry530-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.73
+            ],
+            "errors": "",
+            "log": "entry530-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.76
+            ],
+            "errors": "",
+            "log": "entry530-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.72
+            ],
+            "errors": "",
+            "log": "entry530-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.66
+            ],
+            "errors": "",
+            "log": "entry530-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.62
+            ],
+            "errors": "",
+            "log": "entry530-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.63
+            ],
+            "errors": "",
+            "log": "entry530-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry530-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      },
+      {
+        "name": "entry535",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 535.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.55
+            ],
+            "errors": "",
+            "log": "entry535-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.27 fault8 seg2 true(-38.7,-892.9,214.7)",
+            "log": "entry535-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.57
+            ],
+            "errors": "",
+            "log": "entry535-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.27 fault8 seg2 true(-37.8,-897.7,215.0)",
+            "log": "entry535-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.56
+            ],
+            "errors": "",
+            "log": "entry535-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.27 fault8 seg2 true(-37.1,-898.0,215.0)",
+            "log": "entry535-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.59
+            ],
+            "errors": "",
+            "log": "entry535-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.58
+            ],
+            "errors": "",
+            "log": "entry535-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.59
+            ],
+            "errors": "",
+            "log": "entry535-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.48
+            ],
+            "errors": "",
+            "log": "entry535-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.47
+            ],
+            "errors": "",
+            "log": "entry535-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.47
+            ],
+            "errors": "",
+            "log": "entry535-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "entry535-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      }
+    ],
+    "summary_note": "Non-nominal per-run times omitted; all suite statuses and errors retained. Sprint trials used rejected patch t307-rejected-sprint.patch against f2f23e1 and were not flashed."
+  },
+  "t307-sprint": {
+    "scope": "HOST SIMULATION ONLY. Plant gain, response time and tire grip are not high-speed measurements.",
+    "inputs_sha256": {
+      "Core/Src/car_control.c": "ac672482f16034af50e6f18d4a0b22353351b339f627bb49adf2b7927c6b361b",
+      "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+      "Core/Src/imu_filter.c": "7da06894224dfff5e0283a52ebb360e7b03410a9009a54421920c8d542d8a4bd",
+      "Core/Src/task1_test.c": "52d7a311d1b316409b4eb45719110715213bed000616a8ee05bce9e2591300fc",
+      "Core/Src/course_mode.c": "339517b9a6f21d6adb002d7cb77346612bb0d358fe8be09e34b3fc57d42d36fb",
+      "tests/sim_course.c": "bd2412f94cb0999acee4eb96adfe1ce8ac167b30fcb274066b0f0ee68ffff008",
+      "Core/Inc/car_config.h": "dab5cb63baa7173cd459eda0a786100fb1a6c9c030eba3aa705c4ebd7a80d151",
+      "Core/Inc/car_control.h": "80df5927b7e87a6a48c22c16e2c029d5f9b4171a6c34e3614302a27456a22df9",
+      "Core/Inc/motion_control.h": "c7f60a43a89b2eee9b0b6ade2e1e90c4e6132e8e1a10b96588d1a3d4c693ddb9",
+      "Core/Inc/course_mode.h": "29817e54d0021fdcc797495293d2a40fde2f1efc82e483bffd86931fc3510f4e",
+      "Core/Inc/task1_test.h": "f2d00c31c633d143a03cdd9648e4fea7b7258324e52f77711cc183aee7e664ad",
+      "Core/Inc/imu_filter.h": "43f6426cb2b8cf164f7ac7f6b4a6a59247f4fcb5c3a3d671c0f3e1f8bb85e92f",
+      "tools/evaluate_time_trial.py": "b1fcf119c2cc3190a34249d45be327de71a5535912d0e9dcd23cac609a1a5394"
+    },
+    "profiles": [
+      {
+        "name": "sprint550d400",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 550.0,
+          "CAR_TT_SPRINT_DELAY_MM": 400.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.77
+            ],
+            "errors": "",
+            "log": "sprint550d400-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.01 fault8 seg0 true(1027.5,-892.9,-36.7)",
+            "log": "sprint550d400-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.22 fault8 seg2 true(-38.6,-900.4,217.8)",
+            "log": "sprint550d400-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.01 fault8 seg0 true(1034.6,-885.6,-34.7)",
+            "log": "sprint550d400-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 2
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.78
+            ],
+            "errors": "",
+            "log": "sprint550d400-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.01 fault8 seg0 true(1027.5,-892.9,-36.7)",
+            "log": "sprint550d400-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.23 fault8 seg2 true(-40.1,-894.5,218.0)",
+            "log": "sprint550d400-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.01 fault8 seg0 true(1033.5,-887.2,-34.7)",
+            "log": "sprint550d400-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 2
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.77
+            ],
+            "errors": "",
+            "log": "sprint550d400-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.01 fault8 seg0 true(1027.5,-892.9,-36.7)",
+            "log": "sprint550d400-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.22 fault8 seg2 true(-37.3,-895.4,218.0)",
+            "log": "sprint550d400-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.01 fault8 seg0 true(1034.6,-885.6,-34.7)",
+            "log": "sprint550d400-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 2
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.58
+            ],
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 27
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.63
+            ],
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.62
+            ],
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.49
+            ],
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.52
+            ],
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.51
+            ],
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint550d400-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      },
+      {
+        "name": "sprint600d400",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 600.0,
+          "CAR_TT_SPRINT_DELAY_MM": 400.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.92
+            ],
+            "errors": "",
+            "log": "sprint600d400-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2 t3.31 fault8 seg0 true(1079.9,58.5,-2.3)",
+            "log": "sprint600d400-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.33 fault8 seg2 true(-36.0,-904.5,219.0)",
+            "log": "sprint600d400-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.97 fault8 seg0 true(1030.1,-891.0,-34.2)",
+            "log": "sprint600d400-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.93
+            ],
+            "errors": "",
+            "log": "sprint600d400-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2 t3.31 fault8 seg0 true(1079.9,58.5,-2.3)",
+            "log": "sprint600d400-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.34 fault8 seg2 true(-34.8,-902.5,219.6)",
+            "log": "sprint600d400-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.97 fault8 seg0 true(1030.1,-891.0,-34.2)",
+            "log": "sprint600d400-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              42.93
+            ],
+            "errors": "",
+            "log": "sprint600d400-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point3 not physically covered at 73,-722",
+            "log": "sprint600d400-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.33 fault8 seg2 true(-36.8,-896.9,219.6)",
+            "log": "sprint600d400-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.97 fault8 seg0 true(1030.1,-891.0,-34.2)",
+            "log": "sprint600d400-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.81
+            ],
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.84
+            ],
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.82
+            ],
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.73
+            ],
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.73
+            ],
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.72
+            ],
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 27
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d400-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      },
+      {
+        "name": "sprint600d500",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 600.0,
+          "CAR_TT_SPRINT_DELAY_MM": 500.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              43.28
+            ],
+            "errors": "",
+            "log": "sprint600d500-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.03 fault8 seg0 true(1026.7,-894.7,-34.1)",
+            "log": "sprint600d500-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.35 fault8 seg2 true(-30.0,-904.5,215.3)",
+            "log": "sprint600d500-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.98 fault8 seg0 true(1032.8,-888.6,-34.1)",
+            "log": "sprint600d500-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              43.26
+            ],
+            "errors": "",
+            "log": "sprint600d500-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.03 fault8 seg0 true(1026.7,-894.7,-34.1)",
+            "log": "sprint600d500-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.36 fault8 seg2 true(-31.5,-902.8,215.3)",
+            "log": "sprint600d500-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.98 fault8 seg0 true(1033.1,-888.1,-34.1)",
+            "log": "sprint600d500-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              43.23
+            ],
+            "errors": "",
+            "log": "sprint600d500-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t4.03 fault8 seg0 true(1026.7,-894.7,-34.1)",
+            "log": "sprint600d500-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 3
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.35 fault8 seg2 true(-31.7,-901.6,215.2)",
+            "log": "sprint600d500-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.98 fault8 seg0 true(1032.8,-888.6,-34.1)",
+            "log": "sprint600d500-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.09
+            ],
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.09
+            ],
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              41.11
+            ],
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 31
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.97
+            ],
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.98
+            ],
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 29
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.97
+            ],
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint600d500-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      },
+      {
+        "name": "sprint650d500",
+        "overrides": {
+          "CAR_TIME_TRIAL_BUILD": 1,
+          "CAR_TIME_TRIAL_STAGE2": 1,
+          "CAR_TIME_TRIAL_C_ENTRY": 1,
+          "CAR_TT_STRAIGHT_SPEED": 650.0,
+          "CAR_TT_SPRINT_DELAY_MM": 500.0
+        },
+        "runs": [
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              43.27
+            ],
+            "errors": "",
+            "log": "sprint650d500-model1.5-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point1 not physically covered at 939,-79",
+            "log": "sprint650d500-model1.5-phase0-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.35 fault8 seg2 true(-32.0,-900.4,215.2)",
+            "log": "sprint650d500-model1.5-phase0-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.98 fault8 seg0 true(1033.2,-886.7,-34.2)",
+            "log": "sprint650d500-model1.5-phase0-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              43.27
+            ],
+            "errors": "",
+            "log": "sprint650d500-model1.5-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point3 not physically covered at 65,-723",
+            "log": "sprint650d500-model1.5-phase5-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.36 fault8 seg2 true(-31.9,-904.1,215.4)",
+            "log": "sprint650d500-model1.5-phase5-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.98 fault8 seg0 true(1033.2,-886.7,-34.2)",
+            "log": "sprint650d500-model1.5-phase5-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              43.27
+            ],
+            "errors": "",
+            "log": "sprint650d500-model1.5-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task2: event point3 not physically covered at 66,-723",
+            "log": "sprint650d500-model1.5-phase10-full.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t9.35 fault8 seg2 true(-29.4,-907.4,215.5)",
+            "log": "sprint650d500-model1.5-phase10-d-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.5,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t3.98 fault8 seg0 true(1035.9,-886.1,-34.2)",
+            "log": "sprint650d500-model1.5-phase10-c-offset.log",
+            "cross_four_seconds_count": 0
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.59
+            ],
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase0-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.59
+            ],
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase5-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": false,
+            "returncode": 1,
+            "errors": "FAIL task4 t33.85 fault8 seg0 true(1042.2,-901.4,-40.3)",
+            "log": "sprint650d500-model1.0-phase5-c-offset.log",
+            "cross_four_seconds_count": 82
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.59
+            ],
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase10-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 1.0,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model1.0-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.52
+            ],
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase0-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase0-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase0-d-offset.log",
+            "cross_four_seconds_count": 28
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 0,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase0-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.48
+            ],
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase5-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase5-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase5-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 5,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase5-c-offset.log",
+            "cross_four_seconds_count": 108
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "nominal",
+            "passed": true,
+            "returncode": 0,
+            "cross_four_seconds": [
+              40.51
+            ],
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase10-nominal.log"
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "full",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase10-full.log",
+            "cross_four_seconds_count": 12
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "d-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase10-d-offset.log",
+            "cross_four_seconds_count": 30
+          },
+          {
+            "assumed_pwm_per_mm_s": 0.9,
+            "gray_phase_ms": 10,
+            "suite": "c-offset",
+            "passed": true,
+            "returncode": 0,
+            "errors": "",
+            "log": "sprint650d500-model0.9-phase10-c-offset.log",
+            "cross_four_seconds_count": 108
+          }
+        ],
+        "all_requested_scenarios_passed": false
+      }
+    ],
+    "summary_note": "Non-nominal per-run times omitted; all suite statuses and errors retained. Sprint trials used rejected patch t307-rejected-sprint.patch against f2f23e1 and were not flashed."
+  }
+}

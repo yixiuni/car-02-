@@ -1,0 +1,82 @@
+diff --git a/Core/Inc/car_config.h b/Core/Inc/car_config.h
+index 06850ed..653bc72 100644
+--- a/Core/Inc/car_config.h
++++ b/Core/Inc/car_config.h
+@@ -60,6 +60,12 @@
+ #ifndef CAR_TIME_TRIAL_ARC_STEP
+ #define CAR_TIME_TRIAL_ARC_STEP 0
+ #endif
++#ifndef CAR_TIME_TRIAL_D_ENTRY
++#define CAR_TIME_TRIAL_D_ENTRY 0
++#endif
++#if CAR_TIME_TRIAL_D_ENTRY && !CAR_TIME_TRIAL_ARC_STEP
++#error "D entry trial requires the T312 baseline"
++#endif
+ #if CAR_TIME_TRIAL_ARC_STEP && !CAR_TIME_TRIAL_EXIT_TRACE
+ #error "Arc step requires exit observations on the T309 control baseline"
+ #endif
+@@ -94,7 +100,7 @@
+ #define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_ARC_BOOST ? 850.0f : CAR_TIME_TRIAL_ADAPTIVE ? 800.0f : CAR_TIME_TRIAL_FAST ? 650.0f : CAR_TIME_TRIAL_STRAIGHT_BOOST ? 520.0f : CAR_TIME_TRIAL_STAGE3 ? 550.0f : CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
+ #endif
+ #ifndef CAR_TT_ARC_SPEED
+-#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_ARC_STEP ? 450.0f : CAR_TIME_TRIAL_ARC_BOOST ? 550.0f : CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
++#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_D_ENTRY ? 500.0f : CAR_TIME_TRIAL_ARC_STEP ? 450.0f : CAR_TIME_TRIAL_ARC_BOOST ? 550.0f : CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
+ #endif
+ #ifndef CAR_TT_ENTRY_SPEED
+ #define CAR_TT_ENTRY_SPEED 370.0f
+@@ -105,6 +111,9 @@
+ #ifndef CAR_TT_D_FILTER_MS
+ #define CAR_TT_D_FILTER_MS 10.0f
+ #endif
++#ifndef CAR_TT_PREVIEW_HOLD_MS
++#define CAR_TT_PREVIEW_HOLD_MS 0U
++#endif
+ #define CAR_TT_APPROACH_ACCEL 1000.0f
+ #ifndef CAR_TT_STRAIGHT_PWM_RESERVE
+ #define CAR_TT_STRAIGHT_PWM_RESERVE (CAR_TIME_TRIAL_ADAPTIVE ? 900.0f : 0.0f)
+@@ -230,7 +239,7 @@
+ #define CAR_ENDPOINT_CORRECTION_MM 60.0f /* max accepted odometry correction */
+ #define CAR_CROSS_ENDPOINT_CORRECTION_MM 100.0f /* qualified edge only; measured cross-run drift ~78 mm */
+ #ifndef CAR_CROSS_D_ENTRY_PREVIEW
+-#define CAR_CROSS_D_ENTRY_PREVIEW CAR_TIME_TRIAL_ARC_BOOST
++#define CAR_CROSS_D_ENTRY_PREVIEW (CAR_TIME_TRIAL_ARC_BOOST || CAR_TIME_TRIAL_D_ENTRY)
+ #endif
+ #ifndef CAR_CROSS_C_ENTRY_PREVIEW
+ #define CAR_CROSS_C_ENTRY_PREVIEW  CAR_TIME_TRIAL_C_ENTRY
+diff --git a/Core/Src/car_control.c b/Core/Src/car_control.c
+index 7ff2e38..d20b2fa 100644
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -82,7 +82,7 @@ static CarFault InputFault(const CarControl *c, const CarInputs *in)
+           CAR_TT_STRAIGHT_PWM_RESERVE>=0 && CAR_TT_STRAIGHT_PWM_RESERVE<=CAR_PWM_LIMIT &&
+           CAR_TT_ARC_PWM_RESERVE>=0 && CAR_TT_ARC_PWM_RESERVE<=CAR_PWM_LIMIT &&
+           CAR_TT_ARC_ACCEL_START_MM>=0 && CAR_TT_ARC_ACCEL_START_MM<=400 &&
+-          CAR_TT_D_FILTER_MS>=0 && CAR_TT_D_FILTER_MS<=100))
++          CAR_TT_D_FILTER_MS>=0 && CAR_TT_D_FILTER_MS<=100 && CAR_TT_PREVIEW_HOLD_MS<=100U))
+         return CAR_FAULT_CONFIG;
+     if (!in->gray_online) return CAR_FAULT_GRAY;
+     if (!in->imu_ready || !isfinite(in->yaw_rad)) return CAR_FAULT_IMU;
+@@ -386,7 +386,11 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
+                  * response when accelerating, unlike a fixed angular gain. */
+                 omega=CAR_HEADING_KP*(speed/CAR_FOUR_CRUISE_SPEED)*heading_error;
+             }
+-            if(CAR_DUAL_MODE_BUILD && FastCourse(c) && c->black_frames>0 &&
++            uint32_t preview_age=in->now_ms-c->last_line_at;
++            bool preview_hold=CAR_TT_PREVIEW_HOLD_MS>0 && c->have_line &&
++                c->line_missing && in->black_mask==0 &&
++                preview_age<CAR_TT_PREVIEW_HOLD_MS;
++            if(CAR_DUAL_MODE_BUILD && FastCourse(c) && (c->black_frames>0 || preview_hold) &&
+                remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
+                end_distance<CAR_ENDPOINT_GATE_MM &&
+                (Covers(c,end) || (CAR_CROSS_C_ENTRY_PREVIEW && c->task==4 && c->segment==0) ||
+@@ -397,7 +401,9 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
+                  * A white/ambiguous frame cancels this provisional steering. */
+                 float sign=c->task>=3 && c->segment==0 ? 1.0f : -1.0f;
+                 if (CAR_TIME_TRIAL_BUILD) speed=FastEntrySpeed();
+-                omega=EntryOmega(c,speed,sign*speed/ArcRadius(c)-ArcFeedback(c,speed,true));
++                float feedback=ArcFeedback(c,speed,!preview_hold);
++                if(preview_hold) feedback*=1.0f-(float)preview_age/(float)CAR_TT_PREVIEW_HOLD_MS;
++                omega=EntryOmega(c,speed,sign*speed/ArcRadius(c)-feedback);
+             }
+             /* Gentle initial turn from A-B to the crossing line. Both wheels
+              * stay forward; odometry includes the curved departure from A. */
