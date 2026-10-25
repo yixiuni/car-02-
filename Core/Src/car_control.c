@@ -304,13 +304,14 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
                 Stop(c,CAR_FAULT,CAR_FAULT_ENDPOINT); return;
             }
             float desired=atan2f(dy,dx)-atan2f(lateral,250.0f);
-            if(c->task==4 && c->segment==2) {
-                /* Aim slightly along the D->A arc instead of its exposed tip.
-                 * This gives the forward probes overlap when the true pose is
-                 * outside the arc. Keep all gates above referenced to D itself:
-                 * real black confirmation and physical coverage are still required. */
-                float advance=Clamp(CAR_CROSS_D_ENTRY_AIM_MM,0.0f,60.0f);
-                float ax=end.x-advance-begin.x;
+            if(c->task==4 && (c->segment==2 ||
+                (c->segment==0 && CAR_CROSS_C_ENTRY_AIM_MM>0))) {
+                /* Aim along the incoming black arc, not only its exposed tip.
+                 * All point gates remain referenced to the actual C/D endpoint:
+                 * fresh black and physical footprint coverage are still required. */
+                float advance=Clamp(c->segment==2 ? CAR_CROSS_D_ENTRY_AIM_MM :
+                                    CAR_CROSS_C_ENTRY_AIM_MM,0.0f,60.0f);
+                float ax=end.x+(c->segment==2 ? -advance : advance)-begin.x;
                 float ay=end.y+400.0f-sqrtf(400.0f*400.0f-advance*advance)-begin.y;
                 float aim_length=hypotf(ax,ay);
                 float aim_lateral=-(ay/aim_length)*(c->x_mm-begin.x)+
@@ -335,8 +336,9 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             }
             if(CAR_DUAL_MODE_BUILD && FastCourse(c) && c->black_frames>0 &&
                remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
-               end_distance<CAR_ENDPOINT_GATE_MM && Covers(c,end)) {
-                /* Near a covered endpoint, start tracking the observed arc on
+               end_distance<CAR_ENDPOINT_GATE_MM &&
+               (Covers(c,end) || (CAR_CROSS_C_ENTRY_PREVIEW && c->task==4 && c->segment==0))) {
+                /* Near an endpoint, start tracking the observed arc on
                  * its first valid black frame. Do not signal/advance the route
                  * until the usual three consecutive frames confirm it above.
                  * A white/ambiguous frame cancels this provisional steering. */

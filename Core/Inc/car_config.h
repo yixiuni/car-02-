@@ -39,6 +39,12 @@
 #ifndef CAR_TIME_TRIAL_STAGE3
 #define CAR_TIME_TRIAL_STAGE3 0
 #endif
+#ifndef CAR_TIME_TRIAL_C_ENTRY
+#define CAR_TIME_TRIAL_C_ENTRY 0
+#endif
+#if CAR_TIME_TRIAL_C_ENTRY && !CAR_TIME_TRIAL_STAGE2
+#error "C entry experiment requires the stage 2 baseline"
+#endif
 #if CAR_TIME_TRIAL_STAGE2 && CAR_TIME_TRIAL_STAGE3
 #error "Choose one time-trial stage"
 #endif
@@ -175,6 +181,12 @@
 #define CAR_ENDPOINT_HEADING_RAD    0.44f
 #define CAR_ENDPOINT_CORRECTION_MM 60.0f /* max accepted odometry correction */
 #define CAR_CROSS_ENDPOINT_CORRECTION_MM 100.0f /* qualified edge only; measured cross-run drift ~78 mm */
+#ifndef CAR_CROSS_C_ENTRY_PREVIEW
+#define CAR_CROSS_C_ENTRY_PREVIEW  CAR_TIME_TRIAL_C_ENTRY
+#endif
+#ifndef CAR_CROSS_C_ENTRY_AIM_MM
+#define CAR_CROSS_C_ENTRY_AIM_MM    (CAR_TIME_TRIAL_C_ENTRY ? 20.0f : 0.0f)
+#endif
 #ifndef CAR_CROSS_D_ENTRY_AIM_MM
 #define CAR_CROSS_D_ENTRY_AIM_MM    (CAR_TIME_TRIAL_STAGE3 ? 25.0f : 20.0f) /* along left arc beyond D */
 #endif

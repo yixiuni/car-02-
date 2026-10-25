@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "T302 exact original image restored and repeat CROSS4 completed42.818s,17events,fault0; prior success42.705s. Two completed runs, not long-term reliability proof. Board stays T302. T303-T305 physically failed; existing27 models insufficient for their qualification. Historical model results unchanged.",
+  "hardware_status": "T306 C-entry experiment500/430/370 flashed and idle verified, physical pending. T302 actual CROSS4 successes42.705/42.818s. New36-suite comparison T30228passed,T30636passed; assumptions not actual error fit. T303-T305 physical failures retained. Historical original results unchanged.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,

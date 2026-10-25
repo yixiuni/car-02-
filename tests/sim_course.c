@@ -19,6 +19,8 @@ static unsigned fault_lap;
 static unsigned selected_laps;
 static float b_pose_error_mm;
 static unsigned b_pose_error_lap;
+static float c_pose_error_mm;
+static unsigned c_pose_error_lap;
 static uint8_t Sense(const Plant *p,float forward)
 {
     uint8_t mask=0;
@@ -85,7 +87,7 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
 #endif
 #endif
     unsigned events=0; CarState prev=CAR_STOPPED; unsigned seg=0;
-    uint32_t arc_at=0,injected_at=0; bool injected=false,pose_displaced=false;
+    uint32_t arc_at=0,injected_at=0; bool injected=false,pose_displaced=false,c_pose_displaced=false;
     float frozen_left=0;
     unsigned active_updates=0,saturated_updates=0,peak_pwm=0;
     const CarFault expected_fault[]={CAR_OK,CAR_FAULT_GRAY,CAR_FAULT_LINE,CAR_FAULT_STALL,CAR_FAULT_TIMING,CAR_OK};
@@ -175,6 +177,14 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
                 fprintf(stderr,"FAIL task%u: event point%d not physically covered at %.0f,%.0f\n",task,c.last_point,p.x,p.y);return 1;
             }
         }
+        if(task==4 && !c_pose_displaced && c_pose_error_mm!=0 && c.segment==0 &&
+           c.state==CAR_STRAIGHT && c.completed_laps==c_pose_error_lap) {
+            /* Independent transverse position uncertainty after A, before C.
+             * Magnitudes are sensitivity assumptions, not measured true pose.
+             * As with the D fixture, do not move the controller's estimate. */
+            p.x+=c_pose_error_mm*0.624695f;p.y+=c_pose_error_mm*0.780869f;
+            c_pose_displaced=true;
+        }
         if(task==4 && !pose_displaced && b_pose_error_mm!=0 && c.segment==2 &&
            c.state==CAR_STRAIGHT && c.completed_laps==b_pose_error_lap) {
             /* Model an unobserved B-exit localization error independently of
@@ -252,6 +262,19 @@ int main(void)
     if(getenv("SIM_NOMINAL_ONLY")) {
         selected_laps=4;
         return Run(2,1,1,0,0) || Run(4,1,1,0,0);
+    }
+    if(getenv("SIM_C_ENTRY_SWEEP")) {
+        const float offsets[]={-40,-30,-20,-10,0,10,20,30,40};
+        selected_laps=4;
+        for(c_pose_error_lap=0;c_pose_error_lap<selected_laps;c_pose_error_lap++)
+            for(unsigned i=0;i<sizeof(offsets)/sizeof(offsets[0]);i++) {
+                c_pose_error_mm=offsets[i];
+                printf("C_ENTRY_CASE lap%u offset%.0fmm\n",c_pose_error_lap+1,c_pose_error_mm);
+                if(Run(4,1,1,0,0) || Run(4,.95f,1.05f,.001f,0) ||
+                   Run(4,1.05f,.95f,-.001f,0)) return 1;
+            }
+        puts("PASS: C entry position-error sweep, every lap, physical point/arc coverage");
+        return 0;
     }
     if(getenv("SIM_D_ENTRY_SWEEP")) {
         const float offsets[]={-40,0,40,60};

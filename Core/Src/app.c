@@ -34,7 +34,7 @@ volatile Task1Trace task1_test_trace[CAR_TEST_TRACE_CAPACITY];
 #if CAR_FOUR_TEST_BUILD || CAR_DUAL_MODE_BUILD
 _Static_assert(CAR_TEST_TRACE_CAPACITY >=
                (CAR_TEST_RUN_LIMIT_MS+1000U)/CAR_TEST_TRACE_PERIOD_MS+128U+
-               (CAR_TIME_TRIAL_STAGE3 ? 80U : 0U),
+               ((CAR_TIME_TRIAL_STAGE3 || CAR_TIME_TRIAL_C_ENTRY) ? 80U : 0U),
                "Four-lap trace must retain the full time window and route events");
 #endif
 static void Task1WatchdogStart(void)
@@ -86,7 +86,7 @@ void App_Run(void)
     CourseMode_Init(&mode,&car);
 #endif
     Task1WatchdogStart();
-    task1_test_magic=CAR_TIME_TRIAL_STAGE3 ? 0x54333035U : CAR_TIME_TRIAL_STAGE2 ? 0x54333032U : CAR_TIME_TRIAL_BUILD ? 0x54333031U : CAR_DUAL_MODE_BUILD ? 0x44554C35U : CAR_FOUR_TEST_BUILD ? 0x54534B37U : CAR_CROSS_TEST_BUILD ? 0x43525333U : CAR_LAP_TEST_BUILD ? 0x4C415031U : CAR_ARC_TEST_BUILD ? 0x41524331U : 0x54415331U;
+    task1_test_magic=CAR_TIME_TRIAL_C_ENTRY ? 0x54333036U : CAR_TIME_TRIAL_STAGE3 ? 0x54333035U : CAR_TIME_TRIAL_STAGE2 ? 0x54333032U : CAR_TIME_TRIAL_BUILD ? 0x54333031U : CAR_DUAL_MODE_BUILD ? 0x44554C35U : CAR_FOUR_TEST_BUILD ? 0x54534B37U : CAR_CROSS_TEST_BUILD ? 0x43525333U : CAR_LAP_TEST_BUILD ? 0x4C415031U : CAR_ARC_TEST_BUILD ? 0x41524331U : 0x54415331U;
     uint32_t fed_at=HAL_GetTick(), trace_at=0, trace_run_at=0;
     uint32_t traced_state=CAR_STOPPED, traced_points=0, traced_signals=0;
     bool tracing=false;
@@ -212,7 +212,7 @@ void App_Run(void)
         if (!tracing && car.point_events) { tracing=true; trace_run_at=now; }
         uint32_t signals=(point_signal || mode_signal ? 1U : 0U) |
             (run_led ? 2U : 0U) | (brake_applied ? 4U : 0U);
-        uint32_t trace_period=CAR_TIME_TRIAL_STAGE3 && car.state==CAR_ARC &&
+        uint32_t trace_period=(CAR_TIME_TRIAL_STAGE3 || CAR_TIME_TRIAL_C_ENTRY) && car.state==CAR_ARC &&
             now-car.segment_at<400U ? 40U : CAR_TEST_TRACE_PERIOD_MS;
         if (tracing && now-trace_run_at<=CAR_TEST_RUN_LIMIT_MS+1000U && task1_test_trace_count<CAR_TEST_TRACE_CAPACITY &&
             (!task1_test_trace_count || now-trace_at>=trace_period || traced_state!=(uint32_t)car.state ||

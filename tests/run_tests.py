@@ -24,9 +24,12 @@ def run(name, sources, defines=()):
     subprocess.run([str(exe)], cwd=ROOT, check=True)
 base = ['Core/Src/car_control.c', 'Core/Src/motion_control.c', 'Core/Src/imu_filter.c']
 trial_defines=['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1', '-DCAR_TIME_TRIAL_BUILD=1']
-for stage in (1, 2, 3):
-    defines = trial_defines + ([f'-DCAR_TIME_TRIAL_STAGE{stage}=1'] if stage > 1 else [])
-    prefix = 'time-trial' + (str(stage) if stage > 1 else '')
+trial_profiles=[('time-trial', trial_defines),
+    ('time-trial2', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1']),
+    ('time-trial3', trial_defines+['-DCAR_TIME_TRIAL_STAGE3=1']),
+    ('time-trial-entry', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+                                      '-DCAR_TIME_TRIAL_C_ENTRY=1'])]
+for prefix, defines in trial_profiles:
     run(prefix + '-profile', base + ['tests/test_time_trial.c'], defines)
     run(prefix + '-course', base + ['Core/Src/task1_test.c', 'Core/Src/course_mode.c',
                                   'tests/sim_course.c'], defines)
@@ -37,6 +40,12 @@ for stage in (1, 2, 3):
                 env['SIM_D_ENTRY_SWEEP'] = '1'
             exe = prefix + '-course' + ('.exe' if os.name == 'nt' else '')
             subprocess.run([str(out / exe)], cwd=ROOT, env=env, check=True)
+entry_defines=trial_profiles[-1][1]
+run('c-entry',base+['tests/test_c_entry.c'],entry_defines)
+for phase in ('0','5','10'):
+    subprocess.run([str(out/('time-trial-entry-course.exe' if os.name=='nt' else 'time-trial-entry-course'))],
+        cwd=ROOT,env={**os.environ,'SIM_C_ENTRY_SWEEP':'1','SIM_GRAY_PHASE_MS':phase,
+                      'SIM_WEAK_BRAKE':'1'},check=True)
 run('arc-preview', base + ['tests/test_arc_preview.c'],
     ['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1'])
 run('oled-ui',['Core/Src/oled_ui.c','tests/test_oled_ui.c'])

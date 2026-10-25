@@ -19,6 +19,21 @@ PROFILES={
     'stage1': {'CAR_TIME_TRIAL_BUILD':1},
     'stage2': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1},
     'stage3': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE3':1},
+    'straight520': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TT_STRAIGHT_SPEED':520.0},
+    'straight540': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TT_STRAIGHT_SPEED':540.0},
+    'straight550': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TT_STRAIGHT_SPEED':550.0},
+    'c-aim10': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_AIM_MM':10.0},
+    'c-aim20': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_AIM_MM':20.0},
+    'c-aim30': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_AIM_MM':30.0},
+    'c-aim40': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_AIM_MM':40.0},
+    'c-aim15': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_AIM_MM':15.0},
+    'c-aim22': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_AIM_MM':22.0},
+    'c-aim25': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_AIM_MM':25.0},
+    'c-aim28': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_AIM_MM':28.0},
+    'c-preview0': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_PREVIEW':1,'CAR_CROSS_C_ENTRY_AIM_MM':0.0},
+    'c-preview20': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_PREVIEW':1,'CAR_CROSS_C_ENTRY_AIM_MM':20.0},
+    'c-preview30': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_CROSS_C_ENTRY_PREVIEW':1,'CAR_CROSS_C_ENTRY_AIM_MM':30.0},
+    'entry': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1,'CAR_TIME_TRIAL_C_ENTRY':1},
     'target30': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TT_STRAIGHT_SPEED':800.0,
         'CAR_TT_ARC_SPEED':650.0,'CAR_TT_ENTRY_SPEED':450.0,
         'CAR_TT_WHEEL_SPEED':1000.0,'CAR_TT_D_FILTER_MS':25.0,'CAR_FOUR_PWM_LIMIT':900},
@@ -32,6 +47,7 @@ def main():
     parser.add_argument('--models',nargs='+',type=float,default=[1.5,1.0,0.9],
                         help='Assumed PWM permille per wheel mm/s; default plant stays 1.5')
     parser.add_argument('--stress',action='store_true',help='Also run placement, unequal motors, faults and D-offset suites')
+    parser.add_argument('--entry-stress',action='store_true',help='Also sweep assumed C-entry position errors for all four laps')
     parser.add_argument('--compiler',default=shutil.which('clang') or shutil.which('gcc'))
     parser.add_argument('--output',type=Path,default=ROOT/'build-host/time-trial/report.json')
     args=parser.parse_args()
@@ -55,11 +71,14 @@ def main():
         profile={'name':name,'overrides':definitions,'runs':[]}
         for model in args.models:
             for phase in (0,5,10):
-                for suite in (('nominal','full','d-offset') if args.stress else ('nominal',)):
+                suites=('nominal','full','d-offset') if args.stress else ('nominal',)
+                if args.entry_stress:suites+=('c-offset',)
+                for suite in suites:
                     env={**clean_env,'SIM_PWM_PER_MM_S':str(model),'SIM_GRAY_PHASE_MS':str(phase),
                          'SIM_WEAK_BRAKE':'1','SIM_METRICS':'1'}
                     if suite=='nominal':env['SIM_NOMINAL_ONLY']='1'
                     if suite=='d-offset':env['SIM_D_ENTRY_SWEEP']='1'
+                    if suite=='c-offset':env['SIM_C_ENTRY_SWEEP']='1'
                     proc=subprocess.run([str(exe)],cwd=ROOT,env=env,capture_output=True,text=True)
                     log=out/f'{name}-model{model}-phase{phase}-{suite}.log'
                     log.write_text(proc.stdout+proc.stderr)
