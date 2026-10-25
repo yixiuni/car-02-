@@ -427,12 +427,18 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
                     speed=fminf(speed,CAR_TT_ENTRY_SPEED);
             }
             omega=ArcSign(c)*speed/ArcRadius(c);
-            /* At faster arc entry an outer probe can briefly lose the edge.
-             * Continue the last proportional correction for at most 80 ms;
-             * dropping straight to circle feedforward would turn too late.
-             * Never extrapolate the derivative, or extend the loss timeout. */
+            /* At arc entry an outer probe can briefly lose the edge. T303's
+             * measured D entry lost that edge before settling onto the arc;
+             * removing its P correction at 80 ms then straightened the turn.
+             * Stage 3 retains P during this initial outer-edge recovery only,
+             * bounded by the existing loss stop above. No stale derivative,
+             * new endpoint confirmation, or longer loss timeout is allowed. */
+            bool entry_edge=CAR_TIME_TRIAL_STAGE3 &&
+                progress<c->geometry.sensor_forward_mm &&
+                fabsf(c->line_error)>=2.5f*CAR_GRAY_PITCH_MM;
+            uint32_t edge_hold_ms=entry_edge ? CAR_LINE_LOST_TIMEOUT_MS : 80U;
             bool recent_edge=FastCourse(c) && c->have_line &&
-                in->now_ms-c->last_line_at<=80U;
+                in->now_ms-c->last_line_at<=edge_hold_ms;
             if (!c->line_missing || recent_edge) {
                 omega-=ArcFeedback(c,speed,!c->line_missing);
             }

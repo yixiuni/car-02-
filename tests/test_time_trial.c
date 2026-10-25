@@ -54,5 +54,22 @@ int main(void)
     assert(fabsf(fmaxf(c.left_target,c.right_target)-CAR_TT_WHEEL_SPEED)<.01f);
     in.gray_online=false;in.now_ms+=5;CarControl_Update(&c,&in);
     assert(c.state==CAR_FAULT && c.fault==CAR_FAULT_GRAY && !c.left_pwm && !c.right_pwm);
+    /* Reproduce an outer-probe loss during D entry. Hold P, not D, while
+     * recovering, but still stop at the original 180 ms loss deadline. */
+    Init(120,3.8f);c.task=4;c.segment=3;c.state=CAR_ARC;
+    c.y_mm=-680;c.arc_heading_start=c.heading_rad;
+    c.have_line=true;c.line_error=52.5f;c.line_rate=2000;
+    for(unsigned i=0;i<36;i++) {
+        Step(0,true);
+        float omega_actual=(c.right_target-c.left_target)/c.geometry.track_mm;
+        float omega_expected=-CAR_TT_ENTRY_SPEED/radius;
+        if(CAR_TIME_TRIAL_STAGE3 || in.now_ms<=80)
+            omega_expected-=(CAR_TT_ENTRY_SPEED/180)*CAR_LINE_KP*c.line_error;
+        assert(fabsf(omega_actual-omega_expected)<.0001f);
+        assert(c.point_events==0 && c.black_frames==0);
+    }
+    in.now_ms+=5;++in.gray_samples;CarControl_Update(&c,&in);
+    assert(c.state==CAR_FAULT && c.fault==CAR_FAULT_LINE);
+    assert(!c.left_pwm && !c.right_pwm && c.point_events==0);
     puts("PASS: time-trial straight acceleration, alignment/entry envelope, fresh endpoint confirmation, curvature-preserving wheel limit and fault stop");
 }

@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "T302 physical CROSS4 42.705s, fault0 (data/t302-cross-four-success-2026-10-25.json); T303 flash and idle verified, physical run pending (data/t303-flash-idle-2026-10-25.json). Historical model results below are unchanged.",
+  "hardware_status": "Last completed physical CROSS4: T30242.705s. T303 failed LINE7 at7.502s, 0 laps; see t303-line-loss-2026-10-25.json. T304 flash/idle verified only; physical run pending. Historical model results unchanged.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,

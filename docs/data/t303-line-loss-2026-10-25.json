@@ -1,0 +1,59 @@
+{
+  "firmware": "T303",
+  "result": "FAILED",
+  "user_report": "到c点停下来",
+  "controller_segment": "D to A arc entry",
+  "point_name_discrepancy": "User described C; firmware recorded A,C,B,D events. Physical point name not independently verified.",
+  "run_at": 82481,
+  "elapsed_to_fault_s": 7.502,
+  "completed_laps": 0,
+  "target_laps": 4,
+  "fault": 7,
+  "fault_name": "CAR_FAULT_LINE",
+  "events": [
+    {
+      "event": 1,
+      "point": "A",
+      "elapsed_s": 0.001,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 2,
+      "point": "C",
+      "elapsed_s": 2.434,
+      "black_mask": "0x4"
+    },
+    {
+      "event": 3,
+      "point": "B",
+      "elapsed_s": 4.921,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 4,
+      "point": "D",
+      "elapsed_s": 7.305,
+      "black_mask": "0x80"
+    }
+  ],
+  "gray_counters": [
+    11104,
+    0,
+    0,
+    0
+  ],
+  "peak_pwm": [
+    623,
+    689
+  ],
+  "saturated_updates": 0,
+  "active_updates": 1051,
+  "max_control_interval_ms": 8,
+  "stop_pose_estimate": [
+    65.13680267333984,
+    -719.8500366210938,
+    3.536109447479248
+  ],
+  "observation": "D entry black mask 0x80 (outermost channel); subsequently white, line loss fault 197ms after recorded D event. Existing P feedback expired at 80ms, loss stop180ms. This supports testing longer bounded P retention, not proof of root cause.",
+  "output_at_readback": "PWM and all TIM3 CCR zero"
+}
