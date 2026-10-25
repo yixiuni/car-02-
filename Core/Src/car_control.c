@@ -65,7 +65,9 @@ static CarFault InputFault(const CarControl *c, const CarInputs *in)
         !(CAR_TT_ENTRY_SPEED>0 && CAR_TT_ENTRY_SPEED<=CAR_TT_ARC_SPEED &&
           CAR_TT_ENTRY_SPEED<=CAR_TT_STRAIGHT_SPEED && CAR_TT_ARC_SPEED<=1000 &&
           CAR_TT_STRAIGHT_SPEED<=1000 && CAR_TT_WHEEL_SPEED>=CAR_TT_ENTRY_SPEED &&
-          CAR_TT_WHEEL_SPEED<=1600 && CAR_TT_D_FILTER_MS>=0 && CAR_TT_D_FILTER_MS<=100))
+          CAR_TT_WHEEL_SPEED<=1600 && CAR_TT_STRAIGHT_DECEL>0 && CAR_TT_STRAIGHT_DECEL<=5000 &&
+          CAR_TT_STRAIGHT_PWM_RESERVE>=0 && CAR_TT_STRAIGHT_PWM_RESERVE<=CAR_PWM_LIMIT &&
+          CAR_TT_D_FILTER_MS>=0 && CAR_TT_D_FILTER_MS<=100))
         return CAR_FAULT_CONFIG;
     if (!in->gray_online) return CAR_FAULT_GRAY;
     if (!in->imu_ready || !isfinite(in->yaw_rad)) return CAR_FAULT_IMU;
@@ -173,6 +175,21 @@ static void Drive(CarControl *c,float speed,float omega,float dt,const CarInputs
             c->left_target*=CAR_TT_WHEEL_SPEED/peak;
             c->right_target*=CAR_TT_WHEEL_SPEED/peak;
         }
+    }
+    if (CAR_TIME_TRIAL_BUILD && FastCourse(c) && c->state==CAR_STRAIGHT &&
+        CAR_TT_STRAIGHT_PWM_RESERVE>0) {
+        /* Invert the current wheel PI demand to reserve steering authority.
+         * Common scaling keeps path curvature when a weak/battery-limited
+         * wheel cannot deliver the requested straight speed. No plant gain
+         * is assumed; measured speed and each PI integral determine the cap. */
+        float left_available=fmaxf(0,(CAR_TT_STRAIGHT_PWM_RESERVE+
+            CAR_SPEED_KP*in->left_speed-c->motion.left.integral)/(CAR_SPEED_FF+CAR_SPEED_KP));
+        float right_available=fmaxf(0,(CAR_TT_STRAIGHT_PWM_RESERVE+
+            CAR_SPEED_KP*in->right_speed-c->motion.right.integral)/(CAR_SPEED_FF+CAR_SPEED_KP));
+        float scale=1.0f;
+        if (c->left_target>0) scale=fminf(scale,left_available/c->left_target);
+        if (c->right_target>0) scale=fminf(scale,right_available/c->right_target);
+        c->left_target*=scale;c->right_target*=scale;
     }
     Motion_UpdateWithAccel(&c->motion,c->left_target,c->right_target,in->left_speed,in->right_speed,
                   dt,FastCourse(c) ? CAR_FOUR_ACCEL_MM_S2 : CAR_ACCEL_MM_S2,&c->left_pwm,&c->right_pwm);
@@ -329,7 +346,7 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
                     aligned*(CAR_TT_STRAIGHT_SPEED-CAR_TT_ENTRY_SPEED);
                 float available=fmaxf(0,remaining-c->geometry.sensor_forward_mm-60.0f);
                 speed=fminf(requested,sqrtf(CAR_TT_ENTRY_SPEED*CAR_TT_ENTRY_SPEED+
-                                            2*CAR_TT_APPROACH_ACCEL*available));
+                                            2*CAR_TT_STRAIGHT_DECEL*available));
                 /* Speed-scaled heading feedback preserves geometric turning
                  * response when accelerating, unlike a fixed angular gain. */
                 omega=CAR_HEADING_KP*(speed/CAR_FOUR_CRUISE_SPEED)*heading_error;

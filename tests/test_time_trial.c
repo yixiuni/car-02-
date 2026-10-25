@@ -26,8 +26,24 @@ static float Step(uint8_t mask,bool fresh)
 }
 int main(void)
 {
-    Init(400,0);float straight=Step(0,true);
+    Init(400,0);
+    if(CAR_TIME_TRIAL_ADAPTIVE) in.left_speed=in.right_speed=CAR_TT_STRAIGHT_SPEED;
+    float straight=Step(0,true);
     assert(fabsf(straight-CAR_TT_STRAIGHT_SPEED)<.01f); /* actually uses straight acceleration */
+    if(CAR_TIME_TRIAL_ADAPTIVE) {
+        /* Realizable cruise is released; unavailable output scales both wheels
+         * together rather than silently straightening a requested correction. */
+        Init(400,.1f);in.left_speed=600;in.right_speed=650;
+        c.motion.left.integral=350;c.motion.right.integral=100;
+        float v=Step(0,true);
+        assert(v<CAR_TT_STRAIGHT_SPEED && v>0);
+        float curvature=(c.right_target-c.left_target)/c.geometry.track_mm/v;
+        assert(fabsf(curvature-(-.1f*CAR_HEADING_KP/CAR_FOUR_CRUISE_SPEED))<.00001f);
+        float pl=(CAR_SPEED_FF+CAR_SPEED_KP)*c.left_target-CAR_SPEED_KP*in.left_speed+350;
+        float pr=(CAR_SPEED_FF+CAR_SPEED_KP)*c.right_target-CAR_SPEED_KP*in.right_speed+100;
+        assert(pl<=CAR_TT_STRAIGHT_PWM_RESERVE+.01f && pr<=CAR_TT_STRAIGHT_PWM_RESERVE+.01f);
+        Init(400,0);assert(Step(0,true)<CAR_TT_STRAIGHT_SPEED);
+    }
     Init(800,0);float entry=Step(0,true);
     assert(fabsf(entry-CAR_TT_ENTRY_SPEED)<.01f);
     Init(400,0.8f);assert(Step(0,true)<straight); /* align before sprint */

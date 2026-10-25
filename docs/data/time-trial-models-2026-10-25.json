@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "T308 flashed and full readback/idle verified: straight650, arc430, entry370, PWM1000, wheel850, Caim25; 36/36 expanded models and ASAN/UBSAN passed. Physical pending. Prior T306 physical CROSS4 42.502s. T307 replaced while unrun/idle; historical model results unchanged.",
+  "hardware_status": "T308 completed CROSS4 38.909s fault0, straight encoder median655.16mm/s, PWM780/730 no saturation. T309 straight800 with PI headroom allocation900, wheel1000 and Caim20 flashed/readback/idle verified;36/36 models plus ASAN/UBSAN pass; physical pending. Historical model results unchanged.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,

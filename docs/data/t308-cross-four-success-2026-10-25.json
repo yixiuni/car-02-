@@ -1,0 +1,125 @@
+{
+  "firmware": "T308",
+  "task": 4,
+  "completed_laps": 4,
+  "fault": 0,
+  "state": 5,
+  "point_events": 17,
+  "run_at": 75137,
+  "elapsed_s": 38.909,
+  "metrics": [
+    780,
+    730,
+    0,
+    5462,
+    8
+  ],
+  "encoder_estimates": {
+    "1": {
+      "samples": 83,
+      "median_mm_s": 655.16,
+      "max_interval_average_mm_s": 696.12
+    },
+    "3": {
+      "samples": 88,
+      "median_mm_s": 427.62,
+      "max_interval_average_mm_s": 437.03
+    }
+  },
+  "gray_counters": [
+    11950,
+    0,
+    0,
+    0
+  ],
+  "events": [
+    {
+      "events": 1,
+      "elapsed_s": 0.001,
+      "state": 1
+    },
+    {
+      "events": 2,
+      "elapsed_s": 2.141,
+      "state": 3
+    },
+    {
+      "events": 3,
+      "elapsed_s": 4.875,
+      "state": 1
+    },
+    {
+      "events": 4,
+      "elapsed_s": 6.981,
+      "state": 3
+    },
+    {
+      "events": 5,
+      "elapsed_s": 9.686,
+      "state": 1
+    },
+    {
+      "events": 6,
+      "elapsed_s": 11.796,
+      "state": 3
+    },
+    {
+      "events": 7,
+      "elapsed_s": 14.495,
+      "state": 1
+    },
+    {
+      "events": 8,
+      "elapsed_s": 16.624,
+      "state": 3
+    },
+    {
+      "events": 9,
+      "elapsed_s": 19.274,
+      "state": 1
+    },
+    {
+      "events": 10,
+      "elapsed_s": 21.388,
+      "state": 3
+    },
+    {
+      "events": 11,
+      "elapsed_s": 24.059,
+      "state": 1
+    },
+    {
+      "events": 12,
+      "elapsed_s": 26.227,
+      "state": 3
+    },
+    {
+      "events": 13,
+      "elapsed_s": 28.894,
+      "state": 1
+    },
+    {
+      "events": 14,
+      "elapsed_s": 31.067,
+      "state": 3
+    },
+    {
+      "events": 15,
+      "elapsed_s": 33.763,
+      "state": 1
+    },
+    {
+      "events": 16,
+      "elapsed_s": 35.872,
+      "state": 3
+    },
+    {
+      "events": 17,
+      "elapsed_s": 38.909,
+      "state": 5
+    }
+  ],
+  "user_report": "好了，感觉直线还可以快很多",
+  "scope": "One completed run; encoder interval speed estimates, not independent ground speed or footprint verification.",
+  "elapsed_method": "First DONE trace tick minus controller run_at; later idle records excluded"
+}

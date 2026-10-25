@@ -32,7 +32,9 @@ trial_profiles=[('time-trial', trial_defines),
     ('time-trial-straight', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
         '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_STRAIGHT_BOOST=1']),
     ('time-trial-fast', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
-        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1'])]
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1']),
+    ('time-trial-adaptive', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1'])]
 for prefix, defines in trial_profiles:
     run(prefix + '-profile', base + ['tests/test_time_trial.c'], defines)
     run(prefix + '-course', base + ['Core/Src/task1_test.c', 'Core/Src/course_mode.c',
@@ -44,7 +46,7 @@ for prefix, defines in trial_profiles:
                 env['SIM_D_ENTRY_SWEEP'] = '1'
             exe = prefix + '-course' + ('.exe' if os.name == 'nt' else '')
             subprocess.run([str(out / exe)], cwd=ROOT, env=env, check=True)
-for prefix, defines in trial_profiles[-3:]:
+for prefix, defines in trial_profiles[-4:]:
     run(prefix+'-c-entry',base+['tests/test_c_entry.c'],defines)
     for phase in ('0','5','10'):
         subprocess.run([str(out/(prefix+'-course'+('.exe' if os.name=='nt' else '')))],
