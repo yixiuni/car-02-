@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 p = argparse.ArgumentParser()
 p.add_argument('--compiler', default=shutil.which('clang') or shutil.which('gcc'))
 p.add_argument('--sanitize', action='store_true')
+p.add_argument('--trial-profile', action='append', help='Select trial profile(s); still runs common controller/driver tests')
 a = p.parse_args()
 if not a.compiler:
     p.error('Install a host C compiler or pass --compiler')
@@ -40,6 +41,10 @@ trial_profiles=[('time-trial', trial_defines),
     ('time-trial-exit-trace', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
         '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_FAST=1','-DCAR_TIME_TRIAL_ADAPTIVE=1','-DCAR_TIME_TRIAL_EXIT_TRACE=1'])]
 trial_profiles.append(('time-trial-arc-step',trial_profiles[-1][1]+['-DCAR_TIME_TRIAL_ARC_STEP=1']))
+if a.trial_profile:
+    unknown=set(a.trial_profile)-set(dict(trial_profiles))
+    if unknown:p.error('Unknown trial profiles: '+', '.join(sorted(unknown)))
+    trial_profiles=[(name,flags) for name,flags in trial_profiles if name in a.trial_profile]
 for prefix, defines in trial_profiles:
     run(prefix + '-profile', base + ['tests/test_time_trial.c'], defines)
     run(prefix + '-course', base + ['Core/Src/task1_test.c', 'Core/Src/course_mode.c',
@@ -51,14 +56,18 @@ for prefix, defines in trial_profiles:
                 env['SIM_D_ENTRY_SWEEP'] = '1'
             exe = prefix + '-course' + ('.exe' if os.name == 'nt' else '')
             subprocess.run([str(out / exe)], cwd=ROOT, env=env, check=True)
-for prefix, defines in trial_profiles[-7:]:
+for prefix, defines in trial_profiles:
+    if '-DCAR_TIME_TRIAL_C_ENTRY=1' not in defines:continue
     run(prefix+'-c-entry',base+['tests/test_c_entry.c'],defines)
     for phase in ('0','5','10'):
         subprocess.run([str(out/(prefix+'-course'+('.exe' if os.name=='nt' else '')))],
             cwd=ROOT,env={**os.environ,'SIM_C_ENTRY_SWEEP':'1','SIM_GRAY_PHASE_MS':phase,
                           'SIM_WEAK_BRAKE':'1'},check=True)
-run('arc-boost-acquisition',base+['tests/test_arc_boost.c'],dict(trial_profiles)['time-trial-arc-boost'])
+for profile in ('time-trial-arc-boost',):
+    if profile in dict(trial_profiles):
+        run(profile+'-acquisition',base+['tests/test_arc_boost.c'],dict(trial_profiles)[profile])
 for profile in ('time-trial-exit-trace','time-trial-arc-step'):
+    if profile not in dict(trial_profiles):continue
     run(profile+'-observation',base+['tests/test_exit_trace.c'],dict(trial_profiles)[profile])
 run('arc-preview', base + ['tests/test_arc_preview.c'],
     ['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1'])

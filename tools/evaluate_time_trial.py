@@ -59,6 +59,8 @@ def main():
     parser.add_argument('--profiles',nargs='+',choices=PROFILES,default=list(PROFILES))
     parser.add_argument('--models',nargs='+',type=float,default=[1.5,1.0,0.9],
                         help='Assumed PWM permille per wheel mm/s; default plant stays 1.5')
+    parser.add_argument('--phases',nargs='+',type=int,default=[0,5,10],
+                        help='Sensor phases in milliseconds, each in [0,14]')
     parser.add_argument('--stress',action='store_true',help='Also run placement, unequal motors, faults and D-offset suites')
     parser.add_argument('--entry-stress',action='store_true',help='Also sweep assumed C-entry position errors for all four laps')
     parser.add_argument('--compiler',default=shutil.which('clang') or shutil.which('gcc'))
@@ -66,6 +68,7 @@ def main():
     args=parser.parse_args()
     if not args.compiler:parser.error('Host C compiler required')
     if not all(0.5<=m<=3 for m in args.models):parser.error('Model must be in [0.5,3]')
+    if not all(0<=phase<15 for phase in args.phases):parser.error('Phase must be in [0,14]')
     args.output=args.output.resolve();out=args.output.parent;out.mkdir(parents=True,exist_ok=True)
     inputs=SOURCES+['Core/Inc/car_config.h','Core/Inc/car_control.h','Core/Inc/car_arc_debug.h',
                    'Core/Inc/motion_control.h','Core/Inc/course_mode.h','Core/Inc/task1_test.h',
@@ -83,7 +86,7 @@ def main():
             cwd=ROOT,check=True)
         profile={'name':name,'overrides':definitions,'runs':[]}
         for model in args.models:
-            for phase in (0,5,10):
+            for phase in args.phases:
                 suites=('nominal','full','d-offset') if args.stress else ('nominal',)
                 if args.entry_stress:suites+=('c-offset',)
                 for suite in suites:

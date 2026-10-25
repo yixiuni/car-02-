@@ -1,0 +1,193 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 350ab0f..4feb835 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -87,6 +87,11 @@ if(CAR_TIME_TRIAL_ARC_BOOST)
+ endif()
+ option(CAR_TIME_TRIAL_EXIT_TRACE "Build T311 T309 control with per-arc exit observations" OFF)
+ option(CAR_TIME_TRIAL_ARC_STEP "Build T312: T311 with arc target450 only" OFF)
++option(CAR_TIME_TRIAL_D_ENTRY "Build T313: T312 with D preview and arc500" OFF)
++if(CAR_TIME_TRIAL_D_ENTRY)
++    set(CAR_TIME_TRIAL_ARC_STEP ON)
++    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_TIME_TRIAL_D_ENTRY=1)
++endif()
+ if(CAR_TIME_TRIAL_ARC_STEP)
+     set(CAR_TIME_TRIAL_EXIT_TRACE ON)
+     target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_TIME_TRIAL_ARC_STEP=1)
+diff --git a/Core/Inc/car_config.h b/Core/Inc/car_config.h
+index 06850ed..4676a76 100644
+--- a/Core/Inc/car_config.h
++++ b/Core/Inc/car_config.h
+@@ -60,6 +60,12 @@
+ #ifndef CAR_TIME_TRIAL_ARC_STEP
+ #define CAR_TIME_TRIAL_ARC_STEP 0
+ #endif
++#ifndef CAR_TIME_TRIAL_D_ENTRY
++#define CAR_TIME_TRIAL_D_ENTRY 0
++#endif
++#if CAR_TIME_TRIAL_D_ENTRY && !CAR_TIME_TRIAL_ARC_STEP
++#error "D entry trial requires the T312 baseline"
++#endif
+ #if CAR_TIME_TRIAL_ARC_STEP && !CAR_TIME_TRIAL_EXIT_TRACE
+ #error "Arc step requires exit observations on the T309 control baseline"
+ #endif
+@@ -94,7 +100,7 @@
+ #define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_ARC_BOOST ? 850.0f : CAR_TIME_TRIAL_ADAPTIVE ? 800.0f : CAR_TIME_TRIAL_FAST ? 650.0f : CAR_TIME_TRIAL_STRAIGHT_BOOST ? 520.0f : CAR_TIME_TRIAL_STAGE3 ? 550.0f : CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
+ #endif
+ #ifndef CAR_TT_ARC_SPEED
+-#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_ARC_STEP ? 450.0f : CAR_TIME_TRIAL_ARC_BOOST ? 550.0f : CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
++#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_D_ENTRY ? 500.0f : CAR_TIME_TRIAL_ARC_STEP ? 450.0f : CAR_TIME_TRIAL_ARC_BOOST ? 550.0f : CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
+ #endif
+ #ifndef CAR_TT_ENTRY_SPEED
+ #define CAR_TT_ENTRY_SPEED 370.0f
+@@ -105,6 +111,9 @@
+ #ifndef CAR_TT_D_FILTER_MS
+ #define CAR_TT_D_FILTER_MS 10.0f
+ #endif
++#ifndef CAR_TT_PREVIEW_GATE_MM
++#define CAR_TT_PREVIEW_GATE_MM CAR_ENDPOINT_GATE_MM
++#endif
+ #define CAR_TT_APPROACH_ACCEL 1000.0f
+ #ifndef CAR_TT_STRAIGHT_PWM_RESERVE
+ #define CAR_TT_STRAIGHT_PWM_RESERVE (CAR_TIME_TRIAL_ADAPTIVE ? 900.0f : 0.0f)
+@@ -230,7 +239,7 @@
+ #define CAR_ENDPOINT_CORRECTION_MM 60.0f /* max accepted odometry correction */
+ #define CAR_CROSS_ENDPOINT_CORRECTION_MM 100.0f /* qualified edge only; measured cross-run drift ~78 mm */
+ #ifndef CAR_CROSS_D_ENTRY_PREVIEW
+-#define CAR_CROSS_D_ENTRY_PREVIEW CAR_TIME_TRIAL_ARC_BOOST
++#define CAR_CROSS_D_ENTRY_PREVIEW (CAR_TIME_TRIAL_ARC_BOOST || CAR_TIME_TRIAL_D_ENTRY)
+ #endif
+ #ifndef CAR_CROSS_C_ENTRY_PREVIEW
+ #define CAR_CROSS_C_ENTRY_PREVIEW  CAR_TIME_TRIAL_C_ENTRY
+diff --git a/Core/Src/app.c b/Core/Src/app.c
+index ad3df37..6996b92 100644
+--- a/Core/Src/app.c
++++ b/Core/Src/app.c
+@@ -86,7 +86,7 @@ void App_Run(void)
+     CourseMode_Init(&mode,&car);
+ #endif
+     Task1WatchdogStart();
+-    task1_test_magic=CAR_TIME_TRIAL_ARC_STEP ? 0x54333132U : CAR_TIME_TRIAL_EXIT_TRACE ? 0x54333131U : CAR_TIME_TRIAL_ARC_BOOST ? 0x54333130U : CAR_TIME_TRIAL_ADAPTIVE ? 0x54333039U : CAR_TIME_TRIAL_FAST ? 0x54333038U : CAR_TIME_TRIAL_STRAIGHT_BOOST ? 0x54333037U : CAR_TIME_TRIAL_C_ENTRY ? 0x54333036U : CAR_TIME_TRIAL_STAGE3 ? 0x54333035U : CAR_TIME_TRIAL_STAGE2 ? 0x54333032U : CAR_TIME_TRIAL_BUILD ? 0x54333031U : CAR_DUAL_MODE_BUILD ? 0x44554C35U : CAR_FOUR_TEST_BUILD ? 0x54534B37U : CAR_CROSS_TEST_BUILD ? 0x43525333U : CAR_LAP_TEST_BUILD ? 0x4C415031U : CAR_ARC_TEST_BUILD ? 0x41524331U : 0x54415331U;
++    task1_test_magic=CAR_TIME_TRIAL_D_ENTRY ? 0x54333133U : CAR_TIME_TRIAL_ARC_STEP ? 0x54333132U : CAR_TIME_TRIAL_EXIT_TRACE ? 0x54333131U : CAR_TIME_TRIAL_ARC_BOOST ? 0x54333130U : CAR_TIME_TRIAL_ADAPTIVE ? 0x54333039U : CAR_TIME_TRIAL_FAST ? 0x54333038U : CAR_TIME_TRIAL_STRAIGHT_BOOST ? 0x54333037U : CAR_TIME_TRIAL_C_ENTRY ? 0x54333036U : CAR_TIME_TRIAL_STAGE3 ? 0x54333035U : CAR_TIME_TRIAL_STAGE2 ? 0x54333032U : CAR_TIME_TRIAL_BUILD ? 0x54333031U : CAR_DUAL_MODE_BUILD ? 0x44554C35U : CAR_FOUR_TEST_BUILD ? 0x54534B37U : CAR_CROSS_TEST_BUILD ? 0x43525333U : CAR_LAP_TEST_BUILD ? 0x4C415031U : CAR_ARC_TEST_BUILD ? 0x41524331U : 0x54415331U;
+     uint32_t fed_at=HAL_GetTick(), trace_at=0, trace_run_at=0;
+     uint32_t traced_state=CAR_STOPPED, traced_points=0, traced_signals=0;
+     bool tracing=false;
+diff --git a/Core/Src/car_control.c b/Core/Src/car_control.c
+index 7ff2e38..856fef9 100644
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -387,8 +387,8 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
+                 omega=CAR_HEADING_KP*(speed/CAR_FOUR_CRUISE_SPEED)*heading_error;
+             }
+             if(CAR_DUAL_MODE_BUILD && FastCourse(c) && c->black_frames>0 &&
+-               remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
+-               end_distance<CAR_ENDPOINT_GATE_MM &&
++               remaining<CAR_TT_PREVIEW_GATE_MM && remaining>-80 &&
++               end_distance<CAR_TT_PREVIEW_GATE_MM &&
+                (Covers(c,end) || (CAR_CROSS_C_ENTRY_PREVIEW && c->task==4 && c->segment==0) ||
+                 (CAR_CROSS_D_ENTRY_PREVIEW && c->task==4 && c->segment==2))) {
+                 /* Near an endpoint, start tracking the observed arc on
+diff --git a/tests/test_arc_boost.c b/tests/test_arc_boost.c
+index 1ceff8e..1da5d5b 100644
+--- a/tests/test_arc_boost.c
++++ b/tests/test_arc_boost.c
+@@ -29,9 +29,14 @@ static void InitArc(float progress)
+ }
+ int main(void)
+ {
+-    assert(CAR_TIME_TRIAL_ARC_BOOST && CAR_CROSS_D_ENTRY_PREVIEW);
+-    assert(CAR_TT_STRAIGHT_SPEED==850 && CAR_TT_ARC_SPEED==550);
+-    assert(CAR_TT_ARC_ACCEL_START_MM==165 && CAR_TT_ARC_PWM_RESERVE==900);
++    assert((CAR_TIME_TRIAL_ARC_BOOST || CAR_TIME_TRIAL_D_ENTRY) && CAR_CROSS_D_ENTRY_PREVIEW);
++    if(CAR_TIME_TRIAL_D_ENTRY) {
++        assert(CAR_TT_STRAIGHT_SPEED==800 && CAR_TT_ARC_SPEED==500);
++        assert(CAR_TT_ARC_ACCEL_START_MM==0 && CAR_TT_ARC_PWM_RESERVE==0);
++    } else {
++        assert(CAR_TT_STRAIGHT_SPEED==850 && CAR_TT_ARC_SPEED==550);
++        assert(CAR_TT_ARC_ACCEL_START_MM==165 && CAR_TT_ARC_PWM_RESERVE==900);
++    }
+     /* D preview outside the footprint steers, but cannot report D early. */
+     InitD(150,-680);Step(0x80,true);assert(c.right_target<c.left_target);
+     Step(0x80,true);Step(0x80,true);
+@@ -45,6 +50,16 @@ int main(void)
+     InitD(120,-704);Step(0x18,true);Step(0x18,false);assert(c.point_events==0);
+     Step(0x18,true);assert(c.point_events==0);Step(0x18,true);
+     assert(c.state==CAR_ARC && c.segment==3 && c.last_point==CAR_POINT_D && c.point_events==1);
++    if(CAR_TIME_TRIAL_D_ENTRY) {
++        InitArc(300);assert(fabsf(Step(0x18,true)-500)<.01f);
++        /* An outer observation or line loss still requests acquisition speed. */
++        InitArc(300);assert(fabsf(Step(1,true)-370)<.01f);
++        InitArc(300);assert(fabsf(Step(0,true)-370)<.01f);
++        in.gray_online=false;in.now_ms+=5;CarControl_Update(&c,&in);
++        assert(c.state==CAR_FAULT && c.fault==CAR_FAULT_GRAY && !c.left_pwm && !c.right_pwm);
++        puts("PASS: D preview steers without early events; fresh footprint gates, arc500, acquisition recovery and fault stop");
++        return 0;
++    }
+     /* An aligned line must not accelerate before the front/axle offset clears. */
+     InitArc(100);assert(fabsf(Step(0x18,true)-370)<.01f);
+     InitArc(165);assert(fabsf(Step(0x18,true)-370)<.01f);
+diff --git a/tests/test_c_entry.c b/tests/test_c_entry.c
+index 46afeb0..414ac5d 100644
+--- a/tests/test_c_entry.c
++++ b/tests/test_c_entry.c
+@@ -28,7 +28,7 @@ int main(void)
+     assert(CAR_TT_STRAIGHT_SPEED==(CAR_TIME_TRIAL_ARC_BOOST ? 850 : CAR_TIME_TRIAL_ADAPTIVE ? 800 : CAR_TIME_TRIAL_FAST ? 650 : CAR_TIME_TRIAL_STRAIGHT_BOOST ? 520 : 500));
+     assert(CAR_CROSS_C_ENTRY_AIM_MM==(CAR_TIME_TRIAL_ADAPTIVE ? 20 : CAR_TIME_TRIAL_FAST ? 25 : 20));
+     if(CAR_TIME_TRIAL_FAST) assert(CAR_FOUR_PWM_LIMIT==1000 && CAR_TT_WHEEL_SPEED==(CAR_TIME_TRIAL_ADAPTIVE ? 1000 : 850));
+-    assert(CAR_TT_ARC_SPEED==(CAR_TIME_TRIAL_ARC_STEP ? 450 : CAR_TIME_TRIAL_ARC_BOOST ? 550 : 430) && CAR_TT_ENTRY_SPEED==370);
++    assert(CAR_TT_ARC_SPEED==(CAR_TIME_TRIAL_D_ENTRY ? 500 : CAR_TIME_TRIAL_ARC_STEP ? 450 : CAR_TIME_TRIAL_ARC_BOOST ? 550 : 430) && CAR_TT_ENTRY_SPEED==370);
+     assert(CAR_CROSS_D_ENTRY_AIM_MM==20 && !CAR_TIME_TRIAL_STAGE3);
+     /* C is 192 mm ahead of the axle: within approach gate, beyond the
+      * 170 mm front bumper. Preview may steer but must not signal C. */
+diff --git a/tests/test_exit_trace.c b/tests/test_exit_trace.c
+index 49489ee..fd5d571 100644
+--- a/tests/test_exit_trace.c
++++ b/tests/test_exit_trace.c
+@@ -20,7 +20,7 @@ static void Init(float x,float y,float heading)
+ int main(void)
+ {
+     assert(CAR_TIME_TRIAL_EXIT_TRACE && !CAR_TIME_TRIAL_ARC_BOOST);
+-    assert(CAR_TT_STRAIGHT_SPEED==800 && CAR_TT_ARC_SPEED==(CAR_TIME_TRIAL_ARC_STEP ? 450 : 430));
++    assert(CAR_TT_STRAIGHT_SPEED==800 && CAR_TT_ARC_SPEED==(CAR_TIME_TRIAL_D_ENTRY ? 500 : CAR_TIME_TRIAL_ARC_STEP ? 450 : 430));
+     /* Correction rejection is recorded but does not turn into a point event. */
+     float h=asinf(165.0f/400);
+     Init(0,-150,h);CarControl_Update(&c,&in);
+diff --git a/tools/build_firmware.py b/tools/build_firmware.py
+index b10ebdd..43da4f3 100644
+--- a/tools/build_firmware.py
++++ b/tools/build_firmware.py
+@@ -22,6 +22,7 @@ p.add_argument('--time-trial-stage3', action='store_true', help='Separate experi
+ p.add_argument('--time-trial-c-entry', action='store_true', help='Separate T306: T302 speeds and C entry path/preview experiment')
+ p.add_argument('--time-trial-exit-trace', action='store_true', help='T311: T309 speeds/control, read-only arc/exit diagnostics')
+ p.add_argument('--time-trial-arc-step', action='store_true', help='T312: T311 with arc target450 only')
++p.add_argument('--time-trial-d-entry', action='store_true', help='T313: T312 with D preview and arc500')
+ p.add_argument('--time-trial-arc-boost', action='store_true', help='Separate T310: straight850 arc550 entry370, arc headroom900 acquisition165 Dpreview')
+ p.add_argument('--time-trial-adaptive', action='store_true', help='Separate T309: straight800, PI headroom900, arc430 entry370 Caim20')
+ p.add_argument('--time-trial-fast', action='store_true', help='Separate T308: straight650 arc430 entry370, PWM1000 wheel850 Caim25')
+@@ -34,6 +35,8 @@ p.add_argument('--gray-learn', action='store_true', help='No-motion analog grays
+ p.add_argument('--motor-slow-decay', action='store_true', help='Bench-only alternate AT8236 PWM mode')
+ p.add_argument('--motor-fast-decay', action='store_true', help='Bench comparison with original fast-decay PWM')
+ a = p.parse_args()
++if a.time_trial_d_entry:
++    a.time_trial_arc_step=True
+ if a.time_trial_arc_step:
+     a.time_trial_exit_trace=True
+ if a.time_trial_exit_trace:
+@@ -77,7 +80,7 @@ def tool(name):
+         p.error('ARM tool not found: ' + name)
+     return found
+ cc, objcopy, size = tool('gcc'), tool('objcopy'), tool('size')
+-out = root / 'build-local' / (('GrayLearn' if a.gray_learn else 'TimeTrialArcStep' if a.time_trial_arc_step else 'TimeTrialExitTrace' if a.time_trial_exit_trace else 'TimeTrialArcBoost' if a.time_trial_arc_boost else 'TimeTrialAdaptive' if a.time_trial_adaptive else 'TimeTrialFast' if a.time_trial_fast else 'TimeTrialStraight' if a.time_trial_straight else 'TimeTrialEntry' if a.time_trial_c_entry else 'TimeTrial3' if a.time_trial_stage3 else 'TimeTrial2' if a.time_trial_stage2 else 'TimeTrial' if a.time_trial else 'DualMode' if a.dual_mode else 'FourTest' if a.four_test else 'CrossTest' if a.cross_test else 'LapTest' if a.lap_test else 'ArcTest' if a.arc_test else 'Task1Test' if a.task1_test else 'GroundTest' if a.ground_test else 'MotorTestFast' if a.motor_fast_decay else 'MotorTestSlow' if a.motor_slow_decay else 'MotorTest' if a.motor_test else '') + a.config)
++out = root / 'build-local' / (('GrayLearn' if a.gray_learn else 'TimeTrialDEntry' if a.time_trial_d_entry else 'TimeTrialArcStep' if a.time_trial_arc_step else 'TimeTrialExitTrace' if a.time_trial_exit_trace else 'TimeTrialArcBoost' if a.time_trial_arc_boost else 'TimeTrialAdaptive' if a.time_trial_adaptive else 'TimeTrialFast' if a.time_trial_fast else 'TimeTrialStraight' if a.time_trial_straight else 'TimeTrialEntry' if a.time_trial_c_entry else 'TimeTrial3' if a.time_trial_stage3 else 'TimeTrial2' if a.time_trial_stage2 else 'TimeTrial' if a.time_trial else 'DualMode' if a.dual_mode else 'FourTest' if a.four_test else 'CrossTest' if a.cross_test else 'LapTest' if a.lap_test else 'ArcTest' if a.arc_test else 'Task1Test' if a.task1_test else 'GroundTest' if a.ground_test else 'MotorTestFast' if a.motor_fast_decay else 'MotorTestSlow' if a.motor_slow_decay else 'MotorTest' if a.motor_test else '') + a.config)
+ out.mkdir(parents=True, exist_ok=True)
+ includes = ['Core/Inc', 'Drivers/STM32F1xx_HAL_Driver/Inc',
+             'Drivers/STM32F1xx_HAL_Driver/Inc/Legacy', 'Drivers/CMSIS/Device/ST/STM32F1xx/Include',
+@@ -110,6 +113,8 @@ if a.time_trial_exit_trace:
+     flags += ['-DCAR_TIME_TRIAL_EXIT_TRACE=1']
+ if a.time_trial_arc_step:
+     flags += ['-DCAR_TIME_TRIAL_ARC_STEP=1']
++if a.time_trial_d_entry:
++    flags += ['-DCAR_TIME_TRIAL_D_ENTRY=1']
+ if a.time_trial_arc_boost:
+     flags += ['-DCAR_TIME_TRIAL_ARC_BOOST=1']
+ if a.time_trial_adaptive:

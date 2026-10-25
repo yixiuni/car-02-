@@ -114,6 +114,7 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
     uint64_t control_hash=1469598103934665603ULL;
     const CarFault expected_fault[]={CAR_OK,CAR_FAULT_GRAY,CAR_FAULT_LINE,CAR_FAULT_STALL,CAR_FAULT_TIMING,CAR_OK};
     for(unsigned ms=5;ms<170000;ms+=5) {
+        Plant previous_plant=p;
         /* Fixed historical plant model: changing the controller feedforward
          * must not silently change the simulated motor being controlled. */
         float tl=(float)c.left_pwm/plant_pwm_per_mm_s*gain_l;
@@ -132,7 +133,20 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
         in.left_mm=encoder_left;in.right_mm=encoder_right;
         in.left_speed=p.vl*encoder_scale;in.right_speed=p.vr*encoder_scale;
         in.yaw_rad=p.theta-initial+bias*(float)ms*.001f;
-        if((ms+gray_phase)%15==0) { ++in.gray_samples; in.black_mask=Sense(&p,g.sensor_forward_mm); }
+        /* Deliver a 15 ms sensor frame at the first control tick after it is
+         * due. Non-5ms phases sample an interpolated true pose, rather than
+         * silently suppressing every frame. Historical phases0/5/10 sample p. */
+        if((ms+gray_phase)/15 != (ms-5+gray_phase)/15) {
+            Plant sensed=p;
+            unsigned age=(ms+gray_phase)%15;
+            if(age) {
+                float fraction=(5.0f-(float)age)/5.0f;
+                sensed.x=previous_plant.x+(p.x-previous_plant.x)*fraction;
+                sensed.y=previous_plant.y+(p.y-previous_plant.y)*fraction;
+                sensed.theta=previous_plant.theta+(p.theta-previous_plant.theta)*fraction;
+            }
+            ++in.gray_samples;in.black_mask=Sense(&sensed,g.sensor_forward_mm);
+        }
         if(c.state==CAR_ARC && !arc_at) arc_at=ms;
         if(injection && arc_at && ms-arc_at>1000 && c.completed_laps>=fault_lap && (injected || c.state==CAR_ARC)) {
             if(!injected) { frozen_left=in.left_mm; injected_at=ms; }
@@ -252,7 +266,13 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
                 return 0;
             }
             fprintf(stderr,"FAIL task%u t%.2f fault%d seg%u true(%.1f,%.1f,%.1f)\n",
-                task,ms*.001,c.fault,c.segment,p.x,p.y,p.theta*180/CAR_PI); return 1;
+                task,ms*.001,c.fault,c.segment,p.x,p.y,p.theta*180/CAR_PI);
+            fprintf(stderr,"DETAIL lap%u Coffset%.1f Doffset%.1f progress%.1f arc_age%u missing_age%u line_age%u line_error%.1f estimate(%.1f,%.1f,%.3f)\n",
+                c.completed_laps+1,c_pose_error_mm,b_pose_error_mm,
+                c.distance_mm-c.segment_distance,in.now_ms-c.segment_at,
+                c.line_missing ? in.now_ms-c.missing_at : 0U,in.now_ms-c.last_line_at,
+                c.line_error,c.x_mm,c.y_mm,c.heading_rad);
+            return 1;
         }
         if(!CAR_ARC_TEST_BUILD && task>=2 && c.completed_laps<laps && (c.state==CAR_BRAKING || CarControl_BrakeActive(&c,ms))) {
             fputs("FAIL: four-lap run braked before lap4\n",stderr); return 1;
