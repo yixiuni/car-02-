@@ -1,0 +1,40 @@
+{
+  "firmware": "T301",
+  "magic": "0x54333031",
+  "flashed": true,
+  "live_flash_sha256": "591b62a6af92144e57afe78405372663b141670d95bfa86a1378a1d642fd9396",
+  "straight_mm_s": 450,
+  "arc_mm_s": 370,
+  "entry_mm_s": 370,
+  "physical_run": "pending",
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    1285,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    1360,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "DUL5",
+  "source_cross_four_seconds": 51.695,
+  "source_run_records": 818,
+  "source_final_fault": 0
+}

@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "Not flashed. ST-Link recognized; direct SWD 950/100 kHz and HLA cannot connect to target. No reset, erase, flash or start issued.",
+  "hardware_status": "T301 flashed and verified after connection recovered. Source DUL5 full RAM and flash preserved; source run was 51.695 s cross4. Live T301 flash matches expected SHA256; two idle samples confirm sensors ready and zero outputs. Physical T301 course run pending.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,
