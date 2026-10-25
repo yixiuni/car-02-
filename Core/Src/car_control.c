@@ -638,7 +638,7 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             speed=FastCourse(c) ? FastEntrySpeed() : CAR_CAPTURE_SPEED; omega=0;
         } else {
             if ((c->line_missing && in->now_ms-c->missing_at>=CAR_LINE_LOST_TIMEOUT_MS) ||
-                progress>400*CAR_PI+350 || turned>CAR_PI+0.7f) {
+                progress>400*CAR_PI+350 || turned>CAR_PI+1.0f) {
                 Stop(c,CAR_FAULT,CAR_FAULT_LINE); return;
             }
             speed=FastCourse(c) ? FastArcSpeed(c) :

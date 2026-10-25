@@ -276,13 +276,13 @@
 #define CAR_HEADING_KP              3.0f
 #define CAR_LINE_KP                 0.025f
 #define CAR_LINE_KD                 0.001f
-#define CAR_ENDPOINT_GATE_MM      220.0f
+#define CAR_ENDPOINT_GATE_MM      300.0f /* was 220: T320 exit candidate had 260 mm odometry distance */
 #define CAR_LINE_CONFIRM_FRAMES      3U
 #define CAR_ARC_MIN_PROGRESS        0.65f
 #define CAR_ARC_MIN_TURN_RAD        2.45f
 #define CAR_ENDPOINT_HEADING_RAD    0.44f
 #define CAR_ENDPOINT_CORRECTION_MM 60.0f /* max accepted odometry correction */
-#define CAR_CROSS_ENDPOINT_CORRECTION_MM 100.0f /* qualified edge only; measured cross-run drift ~78 mm */
+#define CAR_CROSS_ENDPOINT_CORRECTION_MM 190.0f /* was 100: T318/T319/T320 rejected at 132.9/110.8/121.2 mm */
 #ifndef CAR_CROSS_D_ENTRY_PREVIEW
 #define CAR_CROSS_D_ENTRY_PREVIEW CAR_TIME_TRIAL_ARC_BOOST
 #endif
