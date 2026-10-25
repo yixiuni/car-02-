@@ -1,0 +1,44 @@
+{
+  "firmware": "T302",
+  "magic": "0x54333032",
+  "flashed": true,
+  "live_flash_sha256": "f21609677b84082897b2f317ad6b733cfdad8d96bde73ae52ab9a81c47af13e6",
+  "straight_mm_s": 500,
+  "arc_mm_s": 430,
+  "entry_mm_s": 370,
+  "wheel_target_limit_mm_s": 650,
+  "pwm_limit_permille": 800,
+  "physical_run": "pending",
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    872,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    947,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "T301",
+  "source_cross_four_seconds": 47.58,
+  "host_scenarios_passed": 27,
+  "host_scenarios_total": 27,
+  "asan_ubsan_passed": true,
+  "scope": "Flash readback and idle verified only; T302 course run pending"
+}

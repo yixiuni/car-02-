@@ -33,20 +33,26 @@
 #ifndef CAR_TIME_TRIAL_BUILD
 #define CAR_TIME_TRIAL_BUILD 0
 #endif
+#ifndef CAR_TIME_TRIAL_STAGE2
+#define CAR_TIME_TRIAL_STAGE2 0
+#endif
+#if CAR_TIME_TRIAL_STAGE2 && !CAR_TIME_TRIAL_BUILD
+#error "Stage 2 requires the time-trial build"
+#endif
 #if CAR_TIME_TRIAL_BUILD && !CAR_DUAL_MODE_BUILD
 #error "Time trial requires the dual-mode course build"
 #endif
 #ifndef CAR_TT_STRAIGHT_SPEED
-#define CAR_TT_STRAIGHT_SPEED 450.0f
+#define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
 #endif
 #ifndef CAR_TT_ARC_SPEED
-#define CAR_TT_ARC_SPEED 370.0f
+#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
 #endif
 #ifndef CAR_TT_ENTRY_SPEED
 #define CAR_TT_ENTRY_SPEED 370.0f
 #endif
 #ifndef CAR_TT_WHEEL_SPEED
-#define CAR_TT_WHEEL_SPEED 620.0f
+#define CAR_TT_WHEEL_SPEED (CAR_TIME_TRIAL_STAGE2 ? 650.0f : 620.0f)
 #endif
 #ifndef CAR_TT_D_FILTER_MS
 #define CAR_TT_D_FILTER_MS 10.0f
@@ -106,7 +112,7 @@
 
 #define CAR_PWM_MAX              1000U
 #ifndef CAR_FOUR_PWM_LIMIT
-#define CAR_FOUR_PWM_LIMIT        700U
+#define CAR_FOUR_PWM_LIMIT        (CAR_TIME_TRIAL_STAGE2 ? 800U : 700U)
 #endif
 #if CAR_FOUR_TEST_BUILD || CAR_DUAL_MODE_BUILD
 #define CAR_PWM_LIMIT             CAR_FOUR_PWM_LIMIT /* cruise and steering headroom */

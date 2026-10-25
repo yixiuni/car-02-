@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "T301 flashed and verified after connection recovered. Source DUL5 full RAM and flash preserved; source run was 51.695 s cross4. Live T301 flash matches expected SHA256; two idle samples confirm sensors ready and zero outputs. Physical T301 course run pending.",
+  "hardware_status": "Historical T301 first-stage model report. T301 subsequently completed physical CROSS4 in 47.580 s; see t301-cross-four-success-2026-10-25.json. T302 is now flashed/idle verified; see t302-flash-idle-2026-10-25.json. T302 physical run pending.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,

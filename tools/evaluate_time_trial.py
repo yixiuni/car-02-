@@ -17,6 +17,7 @@ ROOT=Path(__file__).resolve().parents[1]
 PROFILES={
     'dul5': {},
     'stage1': {'CAR_TIME_TRIAL_BUILD':1},
+    'stage2': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TIME_TRIAL_STAGE2':1},
     'target30': {'CAR_TIME_TRIAL_BUILD':1,'CAR_TT_STRAIGHT_SPEED':800.0,
         'CAR_TT_ARC_SPEED':650.0,'CAR_TT_ENTRY_SPEED':450.0,
         'CAR_TT_WHEEL_SPEED':1000.0,'CAR_TT_D_FILTER_MS':25.0,'CAR_FOUR_PWM_LIMIT':900},
