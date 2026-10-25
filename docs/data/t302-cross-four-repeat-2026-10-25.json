@@ -1,0 +1,135 @@
+{
+  "firmware": "T302",
+  "result": "COMPLETED",
+  "after_restore": true,
+  "straight_target_mm_s": 500,
+  "arc_target_mm_s": 430,
+  "entry_target_mm_s": 370,
+  "task": 4,
+  "route": "A-C-B-D-A",
+  "target_laps": 4,
+  "completed_laps": 4,
+  "elapsed_s": 42.818,
+  "point_events": 17,
+  "events": [
+    {
+      "event": 1,
+      "point": "A",
+      "elapsed_s": 0.001
+    },
+    {
+      "event": 2,
+      "point": "C",
+      "elapsed_s": 2.62
+    },
+    {
+      "event": 3,
+      "point": "B",
+      "elapsed_s": 5.389
+    },
+    {
+      "event": 4,
+      "point": "D",
+      "elapsed_s": 7.98
+    },
+    {
+      "event": 5,
+      "point": "A",
+      "elapsed_s": 10.74
+    },
+    {
+      "event": 6,
+      "point": "C",
+      "elapsed_s": 13.337
+    },
+    {
+      "event": 7,
+      "point": "B",
+      "elapsed_s": 16.042
+    },
+    {
+      "event": 8,
+      "point": "D",
+      "elapsed_s": 18.632
+    },
+    {
+      "event": 9,
+      "point": "A",
+      "elapsed_s": 21.347
+    },
+    {
+      "event": 10,
+      "point": "C",
+      "elapsed_s": 23.969
+    },
+    {
+      "event": 11,
+      "point": "B",
+      "elapsed_s": 26.621
+    },
+    {
+      "event": 12,
+      "point": "D",
+      "elapsed_s": 29.21
+    },
+    {
+      "event": 13,
+      "point": "A",
+      "elapsed_s": 31.94
+    },
+    {
+      "event": 14,
+      "point": "C",
+      "elapsed_s": 34.541
+    },
+    {
+      "event": 15,
+      "point": "B",
+      "elapsed_s": 37.23
+    },
+    {
+      "event": 16,
+      "point": "D",
+      "elapsed_s": 39.835
+    },
+    {
+      "event": 17,
+      "point": "A",
+      "elapsed_s": 42.818
+    }
+  ],
+  "fault": 0,
+  "run_at": 30005,
+  "peak_pwm_control_rate": [
+    681,
+    697
+  ],
+  "pwm_limit": 800,
+  "saturated_updates": 0,
+  "active_updates": 5664,
+  "max_active_control_interval_ms": 8,
+  "gray_counters": [
+    6925,
+    0,
+    0,
+    0
+  ],
+  "encoder_speed_estimates": {
+    "straight": {
+      "samples": 104,
+      "median_mm_s": 502.17,
+      "max_interval_average_mm_s": 537.23
+    },
+    "arc": {
+      "samples": 106,
+      "median_mm_s": 429.51,
+      "max_interval_average_mm_s": 439.61
+    }
+  },
+  "speed_estimate_method": "Adjacent same-state/same-point trace samples0.1-0.3s apart; calibrated signed counts. Encoder estimate, not independently measured ground speed.",
+  "previous_T302_success_s": 42.705,
+  "difference_from_previous_s": 0.113,
+  "user_report": "好了",
+  "stopped_samples": "Two reads: DONE fault0 PWM zero, encoder counts unchanged, hardware CCR all zero",
+  "scope": "Second recorded T302 CROSS4 completion (one before experiments, one after restore). Does not establish long-run reliability or independently measured endpoint geometry. No firmware changes this turn."
+}
