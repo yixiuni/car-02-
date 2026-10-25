@@ -1,0 +1,70 @@
+{
+  "firmware": "T304",
+  "result": "FAILED",
+  "user_report": "第二圈c点扭过头了",
+  "controller_segment": "Second lap C to B arc entry",
+  "run_at": 68937,
+  "elapsed_to_fault_s": 12.205,
+  "completed_laps": 1,
+  "target_laps": 4,
+  "fault": 7,
+  "fault_name": "CAR_FAULT_LINE",
+  "events": [
+    {
+      "event": 1,
+      "point": "A",
+      "elapsed_s": 0.001,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 2,
+      "point": "C",
+      "elapsed_s": 2.342,
+      "black_mask": "0x30"
+    },
+    {
+      "event": 3,
+      "point": "B",
+      "elapsed_s": 4.781,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 4,
+      "point": "D",
+      "elapsed_s": 7.195,
+      "black_mask": "0x1c"
+    },
+    {
+      "event": 5,
+      "point": "A",
+      "elapsed_s": 9.609,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 6,
+      "point": "C",
+      "elapsed_s": 12.009,
+      "black_mask": "0x1"
+    }
+  ],
+  "gray_counters": [
+    9332,
+    0,
+    0,
+    0
+  ],
+  "peak_pwm": [
+    723,
+    756
+  ],
+  "saturated_updates": 0,
+  "active_updates": 1710,
+  "max_control_interval_ms": 8,
+  "stop_pose_estimate": [
+    927.5892333984375,
+    -728.1240234375,
+    -0.309585303068161
+  ],
+  "observation": "Second C entry black mask0x01 at12.009s; white and PWM0/674 at12.128s; line fault at12.205s. Consistent with excessive correction based on stale outer probe; 200ms trace cannot establish unique cause. First lap9.609s completed, no four-lap result.",
+  "output_at_readback": "PWM and all TIM3 CCR zero"
+}

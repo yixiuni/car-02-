@@ -18,7 +18,7 @@ p.add_argument('--task1-test', action='store_true', help='One-shot real A-to-B c
 p.add_argument('--dual-mode', action='store_true')
 p.add_argument('--time-trial', action='store_true', help='Separate experimental T301 speed-planned dual-mode image')
 p.add_argument('--time-trial-stage2', action='store_true', help='Separate experimental T302: straight500 arc430 entry370')
-p.add_argument('--time-trial-stage3', action='store_true', help='Separate experimental T304: straight550 arc470 entry370 with bounded entry recovery')
+p.add_argument('--time-trial-stage3', action='store_true', help='Separate experimental T305: straight550 arc470 entry370 with fading bounded entry recovery')
 p.add_argument('--four-test', action='store_true', help='One-shot task4 four crossing laps, 160 s guard')
 p.add_argument('--cross-test', action='store_true', help='One-shot task 3 crossing lap, 40 s limit')
 p.add_argument('--lap-test', action='store_true', help='One-shot full task 2 lap, 30 s limit')

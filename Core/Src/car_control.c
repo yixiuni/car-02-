@@ -218,6 +218,15 @@ static float ArcFeedback(const CarControl *c,float speed,bool derivative)
     return gain*CAR_LINE_KP*c->line_error+(derivative ? d_gain*CAR_LINE_KD*c->line_rate : 0);
 }
 
+/* During fast acquisition keep both target wheels moving. A saturated turn
+ * on an outer-probe observation can pivot past the line before a fresh frame. */
+static float EntryOmega(const CarControl *c,float speed,float omega)
+{
+    if (!CAR_TIME_TRIAL_STAGE3) return omega;
+    float limit=speed/c->geometry.track_mm; /* inner target >= half center speed */
+    return Clamp(omega,-limit,limit);
+}
+
 void CarControl_Update(CarControl *c,const CarInputs *in)
 {
     if (!in->enabled) {
@@ -333,7 +342,7 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
                  * A white/ambiguous frame cancels this provisional steering. */
                 float sign=c->task>=3 && c->segment==0 ? 1.0f : -1.0f;
                 if (CAR_TIME_TRIAL_BUILD) speed=FastEntrySpeed();
-                omega=sign*speed/ArcRadius(c)-ArcFeedback(c,speed,true);
+                omega=EntryOmega(c,speed,sign*speed/ArcRadius(c)-ArcFeedback(c,speed,true));
             }
             /* Gentle initial turn from A-B to the crossing line. Both wheels
              * stay forward; odometry includes the curved departure from A. */
@@ -427,21 +436,24 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
                     speed=fminf(speed,CAR_TT_ENTRY_SPEED);
             }
             omega=ArcSign(c)*speed/ArcRadius(c);
-            /* At arc entry an outer probe can briefly lose the edge. T303's
-             * measured D entry lost that edge before settling onto the arc;
-             * removing its P correction at 80 ms then straightened the turn.
-             * Stage 3 retains P during this initial outer-edge recovery only,
-             * bounded by the existing loss stop above. No stale derivative,
-             * new endpoint confirmation, or longer loss timeout is allowed. */
+            /* An outer-probe observation becomes uncertain during loss.
+             * Retain P initially, then fade it to zero by the existing 180 ms
+             * loss deadline. Never extrapolate D or confirm an unseen point. */
             bool entry_edge=CAR_TIME_TRIAL_STAGE3 &&
                 progress<c->geometry.sensor_forward_mm &&
                 fabsf(c->line_error)>=2.5f*CAR_GRAY_PITCH_MM;
+            uint32_t edge_age=in->now_ms-c->last_line_at;
             uint32_t edge_hold_ms=entry_edge ? CAR_LINE_LOST_TIMEOUT_MS : 80U;
-            bool recent_edge=FastCourse(c) && c->have_line &&
-                in->now_ms-c->last_line_at<=edge_hold_ms;
+            bool recent_edge=FastCourse(c) && c->have_line && edge_age<=edge_hold_ms;
             if (!c->line_missing || recent_edge) {
-                omega-=ArcFeedback(c,speed,!c->line_missing);
+                float correction=ArcFeedback(c,speed,!c->line_missing);
+                if (c->line_missing && entry_edge && edge_age>80U)
+                    correction*=Clamp((float)(CAR_LINE_LOST_TIMEOUT_MS-edge_age)/
+                                      (CAR_LINE_LOST_TIMEOUT_MS-80U),0,1);
+                omega-=correction;
             }
+            if (progress<c->geometry.sensor_forward_mm)
+                omega=EntryOmega(c,speed,omega);
         }
     }
     Drive(c,speed,omega,dt,in);
