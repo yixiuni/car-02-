@@ -1,0 +1,17 @@
+{
+  "firmware": "T312",
+  "asan_ubsan_exit_code": 0,
+  "pass_lines": 6220,
+  "test_log_sha256": "1fd70c6f2223b7ff5a061ffa133e1e320f15ed4a81e959bf6bd571193bf15d20",
+  "model_suites_passed": 36,
+  "model_suites_total": 36,
+  "bin_sha256": "368341bae7b8827770c1741ad444ce7713a987e6e74bb57104e14d075889f478",
+  "flash_bytes": 46164,
+  "ram_bytes": 41416,
+  "physical_run": "pending",
+  "only_control_change": "arc speed430 to450",
+  "straight_mm_s": 800,
+  "entry_mm_s": 370,
+  "source_physical_baseline_s": 37.049,
+  "scope": "Host validation; not a physical stability or timing result."
+}
