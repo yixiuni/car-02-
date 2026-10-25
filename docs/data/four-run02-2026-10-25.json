@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-25",
+  "firmware_sha256": "83293a143253edabf7edeaa92033030a5c1ce05cd75e8ca8679496cc7be7ee0b",
+  "user_report": "This version feels good; requests further speed increase",
+  "state": 5,
+  "fault": 0,
+  "completed_laps": 4,
+  "point_events": 17,
+  "trace_samples": 716,
+  "done_at_ms": 79128,
+  "fault_at_ms": null,
+  "point_times": [
+    {
+      "elapsed_ms": 0,
+      "events": 1
+    },
+    {
+      "elapsed_ms": 4992,
+      "events": 2
+    },
+    {
+      "elapsed_ms": 9756,
+      "events": 3
+    },
+    {
+      "elapsed_ms": 14880,
+      "events": 4
+    },
+    {
+      "elapsed_ms": 19620,
+      "events": 5
+    },
+    {
+      "elapsed_ms": 24756,
+      "events": 6
+    },
+    {
+      "elapsed_ms": 29484,
+      "events": 7
+    },
+    {
+      "elapsed_ms": 34632,
+      "events": 8
+    },
+    {
+      "elapsed_ms": 39324,
+      "events": 9
+    },
+    {
+      "elapsed_ms": 44496,
+      "events": 10
+    },
+    {
+      "elapsed_ms": 49212,
+      "events": 11
+    },
+    {
+      "elapsed_ms": 54348,
+      "events": 12
+    },
+    {
+      "elapsed_ms": 59052,
+      "events": 13
+    },
+    {
+      "elapsed_ms": 64188,
+      "events": 14
+    },
+    {
+      "elapsed_ms": 68988,
+      "events": 15
+    },
+    {
+      "elapsed_ms": 74124,
+      "events": 16
+    },
+    {
+      "elapsed_ms": 79128,
+      "events": 17
+    }
+  ],
+  "gray_counters": [
+    18238,
+    0,
+    0,
+    0
+  ],
+  "max_pwm_permille": [
+    424,
+    423
+  ],
+  "brake_first_ms": 78804,
+  "counts_stable": true
+}

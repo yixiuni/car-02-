@@ -15,7 +15,13 @@ void ImuFilter_Update(ImuFilter *f,uint32_t now,float z,bool ok,bool still)
     if (!f->seen) { f->seen=true; return; }
     if (dt==0) return;
     if (!f->ready) {
-        if (!still || fabsf(z)>10) { f->count=0; f->mean=f->m2=0; return; }
+        /* Stationary need not mean raw zero: use the independently measured
+         * reference to reject rotation, then estimate the actual startup bias.
+         * Wheel motion, variance and freshness checks remain mandatory. */
+        if (!still || !isfinite(CAR_GYRO_Z_BIAS_PRIOR_DPS) ||
+            fabsf(z-CAR_GYRO_Z_BIAS_PRIOR_DPS)>CAR_GYRO_CALIBRATION_WINDOW_DPS) {
+            f->count=0; f->mean=f->m2=0; return;
+        }
         ++f->count;
         float delta=z-f->mean;
         f->mean+=delta/(float)f->count; f->m2+=delta*(z-f->mean);

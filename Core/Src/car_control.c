@@ -3,16 +3,36 @@
 #include <math.h>
 
 /* Map: A=(0,0), B=(1000,0), C=(1000,-800), D=(0,-800).
- * Heading positive CCW. Start axle at A: face B for tasks 1/2, C for 3/4. */
+ * Heading positive CCW. Start axle at A facing B for every task. */
 typedef struct { float x, y; } Point;
 static const Point points[] = {{0,0},{1000,0},{1000,-800},{0,-800}};
 static const CarPoint oval[] = {CAR_POINT_A,CAR_POINT_B,CAR_POINT_C,CAR_POINT_D,CAR_POINT_A};
 static const CarPoint cross[] = {CAR_POINT_A,CAR_POINT_C,CAR_POINT_B,CAR_POINT_D,CAR_POINT_A};
 static const CarPoint *Route(const CarControl *c) { return c->task <= 2 ? oval : cross; }
+static bool FastCourse(const CarControl *c)
+{
+    return c->task==4 || (CAR_DUAL_MODE_BUILD && c->task==2);
+}
+static unsigned TargetLaps(const CarControl *c)
+{
+    return c->target_laps>=1 && c->target_laps<=4 ? c->target_laps : c->task==4 ? 4U : 1U;
+}
 static float Clamp(float x, float lo, float hi) { return fminf(hi, fmaxf(lo,x)); }
 bool CarControl_Active(const CarControl *c)
 {
     return c->state >= CAR_STRAIGHT && c->state <= CAR_BRAKING;
+}
+bool CarControl_BrakeActive(const CarControl *c, uint32_t now)
+{
+    return c->state==CAR_BRAKING && c->fault==CAR_OK &&
+           (uint32_t)(now-c->brake_at)<CAR_BRAKE_HOLD_MS;
+}
+static bool FinalSegment(const CarControl *c)
+{
+#if CAR_ARC_TEST_BUILD
+    if(c->task==2 && c->segment==1) return true;
+#endif
+    return c->task==1 || (c->segment==3 && (c->completed_laps+1U>=TargetLaps(c)));
 }
 static void Stop(CarControl *c, CarState state, CarFault fault)
 {
@@ -26,13 +46,17 @@ static void Signal(CarControl *c, CarPoint point)
 {
     c->last_point = point; ++c->point_events;
 }
-static bool Covers(const CarControl *c, Point p)
+static bool CoversPose(const CarControl *c, Point p, float x, float y, float heading)
 {
-    float dx=p.x-c->x_mm, dy=p.y-c->y_mm;
-    float forward=cosf(c->heading_rad)*dx+sinf(c->heading_rad)*dy;
-    float lateral=-sinf(c->heading_rad)*dx+cosf(c->heading_rad)*dy;
+    float dx=p.x-x, dy=p.y-y;
+    float forward=cosf(heading)*dx+sinf(heading)*dy;
+    float lateral=-sinf(heading)*dx+cosf(heading)*dy;
     return forward <= c->geometry.front_mm && forward >= -c->geometry.rear_mm &&
            fabsf(lateral) <= c->geometry.half_width_mm;
+}
+static bool Covers(const CarControl *c, Point p)
+{
+    return CoversPose(c,p,c->x_mm,c->y_mm,c->heading_rad);
 }
 static CarFault InputFault(const CarControl *c, const CarInputs *in)
 {
@@ -56,7 +80,9 @@ static void Start(CarControl *c, const CarInputs *in)
     if (f!=CAR_OK) { Stop(c,CAR_FAULT,f); return; }
     c->segment=0; c->completed_laps=0; c->distance_mm=0;
     c->x_mm=c->y_mm=0;
-    c->heading_rad=c->task<=2 ? 0.0f : atan2f(-800.0f,1000.0f);
+    /* Common physical reference: A facing B. Cross tasks turn forward toward
+     * C; integrate that motion rather than relabeling the initial heading. */
+    c->heading_rad=0.0f;
     c->yaw_offset=c->heading_rad-in->yaw_rad;
     c->last_left_mm=in->left_mm; c->last_right_mm=in->right_mm;
     c->last_gray_samples=in->gray_samples;
@@ -129,8 +155,8 @@ static void Drive(CarControl *c,float speed,float omega,float dt,const CarInputs
     omega=Clamp(omega,-2*speed/c->geometry.track_mm,2*speed/c->geometry.track_mm);
     c->left_target=fmaxf(0,speed-omega*c->geometry.track_mm*0.5f);
     c->right_target=fmaxf(0,speed+omega*c->geometry.track_mm*0.5f);
-    Motion_Update(&c->motion,c->left_target,c->right_target,in->left_speed,in->right_speed,
-                  dt,&c->left_pwm,&c->right_pwm);
+    Motion_UpdateWithAccel(&c->motion,c->left_target,c->right_target,in->left_speed,in->right_speed,
+                  dt,FastCourse(c) ? CAR_FOUR_ACCEL_MM_S2 : CAR_ACCEL_MM_S2,&c->left_pwm,&c->right_pwm);
 }
 static bool StallWheel(bool *pending,uint32_t *at,float target,float measured,uint32_t now)
 {
@@ -179,7 +205,7 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
     Gray(c,in);
     /* Task 4 has no stated fixed deadline; 160 s is our recoverable watchdog,
      * not a claim about the competition rules. */
-    uint32_t limit=c->task==1 ? 15000U : c->task==2 ? 30000U : c->task==3 ? 40000U : 160000U;
+    uint32_t limit=c->task==1 ? 15000U : c->task==2 ? (TargetLaps(c)>1 ? 160000U : 30000U) : c->task==3 ? 40000U : 160000U;
     if (in->now_ms-c->run_at>=limit) { Stop(c,CAR_FAULT,CAR_FAULT_TIMEOUT); return; }
     CarPoint dest=Route(c)[c->segment+1]; Point end=points[dest];
     float end_distance=hypotf(end.x-c->x_mm,end.y-c->y_mm);
@@ -209,24 +235,67 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             c->black_frames>=CAR_LINE_CONFIRM_FRAMES;
         if (reached) {
             if (c->task==1) { Brake(c,in->now_ms); return; }
-            Signal(c,dest); ++c->segment; BeginSegment(c,in->now_ms);
-            c->state=CAR_CAPTURE;
+            Signal(c,dest); ++c->segment;
+            if (FastCourse(c)) {
+                /* The approach already confirmed three fresh black frames.
+                 * Keep that observation and steer on the arc immediately;
+                 * waiting to align at cruise would carry the probes past it. */
+                c->segment_at=in->now_ms; c->segment_distance=c->distance_mm;
+                c->arc_heading_start=c->heading_rad; c->state=CAR_ARC;
+            } else {
+                BeginSegment(c,in->now_ms); c->state=CAR_CAPTURE;
+            }
         } else {
             if (remaining < -80 || fabsf(lateral)>180) {
                 Stop(c,CAR_FAULT,CAR_FAULT_ENDPOINT); return;
             }
             float desired=atan2f(dy,dx)-atan2f(lateral,250.0f);
+            if(c->task==4 && c->segment==2) {
+                /* Aim slightly along the D->A arc instead of its exposed tip.
+                 * This gives the forward probes overlap when the true pose is
+                 * outside the arc. Keep all gates above referenced to D itself:
+                 * real black confirmation and physical coverage are still required. */
+                float advance=Clamp(CAR_CROSS_D_ENTRY_AIM_MM,0.0f,60.0f);
+                float ax=end.x-advance-begin.x;
+                float ay=end.y+400.0f-sqrtf(400.0f*400.0f-advance*advance)-begin.y;
+                float aim_length=hypotf(ax,ay);
+                float aim_lateral=-(ay/aim_length)*(c->x_mm-begin.x)+
+                                   (ax/aim_length)*(c->y_mm-begin.y);
+                desired=atan2f(ay,ax)-atan2f(aim_lateral,250.0f);
+            }
             omega=CAR_HEADING_KP*Motion_Wrap(desired-c->heading_rad);
-            speed=c->task<=2 ? CAR_STRAIGHT_SPEED : CAR_DIAGONAL_SPEED;
-            if (remaining<250) speed=fminf(speed,fmaxf(CAR_CAPTURE_SPEED,
+            speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED : c->task<=2 ? CAR_STRAIGHT_SPEED : CAR_DIAGONAL_SPEED;
+            if(CAR_DUAL_MODE_BUILD && FastCourse(c) && c->black_frames>0 &&
+               remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
+               end_distance<CAR_ENDPOINT_GATE_MM && Covers(c,end)) {
+                /* Near a covered endpoint, start tracking the observed arc on
+                 * its first valid black frame. Do not signal/advance the route
+                 * until the usual three consecutive frames confirm it above.
+                 * A white/ambiguous frame cancels this provisional steering. */
+                float sign=c->task>=3 && c->segment==0 ? 1.0f : -1.0f;
+                omega=sign*speed/400.0f-(speed/180.0f)*
+                    (CAR_LINE_KP*c->line_error+CAR_LINE_KD*c->line_rate);
+            }
+            /* Gentle initial turn from A-B to the crossing line. Both wheels
+             * stay forward; odometry includes the curved departure from A. */
+            if (c->task==3 && c->segment==0 && c->distance_mm<250 &&
+                fabsf(Motion_Wrap(desired-c->heading_rad))>0.20f)
+                speed=fminf(speed,CAR_CAPTURE_SPEED);
+            if (!FastCourse(c) && remaining<250 && !FinalSegment(c)) speed=fminf(speed,fmaxf(CAR_CAPTURE_SPEED,
                 sqrtf(2*CAR_ACCEL_MM_S2*fmaxf(0,remaining-c->geometry.sensor_forward_mm))));
         }
     }
     if (c->state==CAR_CAPTURE) {
-        float error=Motion_Wrap(ArcStart(c)-c->heading_rad);
-        speed=CAR_CAPTURE_SPEED;
-        omega=CAR_HEADING_KP*error;
-        if (c->black_frames>=CAR_LINE_CONFIRM_FRAMES && fabsf(error)<0.20f) {
+        float offset=asinf(c->geometry.sensor_forward_mm/400.0f);
+        float relative=ArcSign(c)*Motion_Wrap(c->heading_rad-ArcStart(c));
+        float desired=ArcStart(c)-ArcSign(c)*offset;
+        speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED : CAR_CAPTURE_SPEED;
+        omega=CAR_HEADING_KP*Motion_Wrap(desired-c->heading_rad);
+        /* A forward sensor reaches the arc before the axle. Accept the
+         * interval between the entry tangent and the settled body heading,
+         * avoiding a forced tangent alignment that sweeps the sensor off-line. */
+        if (c->black_frames>=CAR_LINE_CONFIRM_FRAMES &&
+            relative>=-offset-0.20f && relative<=0.20f) {
             c->state=CAR_ARC; c->arc_heading_start=c->heading_rad;
             /* Keep capture travel in the minimum-length gate. */
         }
@@ -239,43 +308,71 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
         end_distance=hypotf(end.x-c->x_mm,end.y-c->y_mm);
         float progress=c->distance_mm-c->segment_distance;
         float turned=ArcSign(c)*(c->heading_rad-c->arc_heading_start);
-        float heading_error=fabsf(Motion_Wrap(c->heading_rad-ArcEnd(c)));
+        /* Compare body heading with body heading, including the forward sensor
+         * offset; the endpoint tangent can differ by over 24 degrees. */
+        float observed=ArcEnd(c)-ArcSign(c)*asinf(c->geometry.sensor_forward_mm/400.0f);
+        float heading_error=fabsf(Motion_Wrap(c->heading_rad-observed));
         bool exit=c->have_line && c->white_frames>=CAR_LINE_CONFIRM_FRAMES &&
             in->now_ms-c->last_line_at<100 && fabsf(c->line_error)<=1.5f*CAR_GRAY_PITCH_MM &&
             progress>CAR_ARC_MIN_PROGRESS*400*CAR_PI && turned>CAR_ARC_MIN_TURN_RAD &&
-            heading_error<CAR_ENDPOINT_HEADING_RAD && end_distance<CAR_ENDPOINT_GATE_MM && Covers(c,end);
+            heading_error<CAR_ENDPOINT_HEADING_RAD && end_distance<CAR_ENDPOINT_GATE_MM;
+        /* A qualified sensor edge is a position observation. Bound its
+         * correction before using the corrected footprint: accumulated odometry
+         * error must not reject a valid edge just 5 mm behind the front bumper. */
+        float correction=Clamp(Motion_Wrap(observed-c->heading_rad),-0.15f,0.15f);
+        float observed_heading=c->heading_rad+CAR_ENDPOINT_YAW_BLEND*correction;
+        float lateral=-c->line_error;
+        float observed_x=end.x-c->geometry.sensor_forward_mm*cosf(observed_heading)
+                             +lateral*sinf(observed_heading);
+        float observed_y=end.y-c->geometry.sensor_forward_mm*sinf(observed_heading)
+                             -lateral*cosf(observed_heading);
+        float correction_limit=(c->task>=3 || FastCourse(c)) ?
+            CAR_CROSS_ENDPOINT_CORRECTION_MM : CAR_ENDPOINT_CORRECTION_MM;
+        exit=exit && hypotf(observed_x-c->x_mm,observed_y-c->y_mm)<=correction_limit &&
+            CoversPose(c,end,observed_x,observed_y,observed_heading);
         if (exit) {
             /* Geometric yaw observation at a centered, qualified arc exit.
              * For a forward sensor on a circle, body heading lags the sensor
              * tangent by asin(sensor_forward / radius), with the bend sign.
              * Blend rather than hard-snap: binary sensing has finite uncertainty.
              * This assumes settled circular tracking; verify on the real car. */
-            float observed=ArcEnd(c)-ArcSign(c)*asinf(c->geometry.sensor_forward_mm/400.0f);
-            float correction=Clamp(Motion_Wrap(observed-c->heading_rad),-0.15f,0.15f);
-            c->heading_rad+=CAR_ENDPOINT_YAW_BLEND*correction;
+            c->heading_rad=observed_heading;
             c->yaw_offset=c->heading_rad-in->yaw_rad;
-            float lateral=-c->line_error; /* positive to the vehicle's left */
-            c->x_mm=end.x-c->geometry.sensor_forward_mm*cosf(c->heading_rad)
-                        +lateral*sinf(c->heading_rad);
-            c->y_mm=end.y-c->geometry.sensor_forward_mm*sinf(c->heading_rad)
-                        -lateral*cosf(c->heading_rad);
+            c->x_mm=observed_x;
+            c->y_mm=observed_y;
             dest=Route(c)[c->segment+1];
+#if CAR_ARC_TEST_BUILD
+            /* Isolated A-B-C experiment: keep the qualified arc exit and
+             * settled footprint checks, then stop at C without entering C-D. */
+            if (c->task==2 && c->segment==1) { Brake(c,in->now_ms); return; }
+#endif
             if (c->segment==3) {
                 ++c->completed_laps;
-                if (c->task!=4 || c->completed_laps>=4) { Brake(c,in->now_ms); return; }
+                if (c->completed_laps>=TargetLaps(c)) { Brake(c,in->now_ms); return; }
                 Signal(c,dest); c->segment=0;
             } else { Signal(c,dest); ++c->segment; }
             BeginSegment(c,in->now_ms); c->state=CAR_STRAIGHT;
-            /* Retain low forward speed for this single boundary tick. */
-            speed=CAR_CAPTURE_SPEED; omega=0;
+            /* Task 4 keeps cruise through the segment boundary as well. */
+            speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED : CAR_CAPTURE_SPEED; omega=0;
         } else {
             if ((c->line_missing && in->now_ms-c->missing_at>=CAR_LINE_LOST_TIMEOUT_MS) ||
                 progress>400*CAR_PI+350 || turned>CAR_PI+0.7f) {
                 Stop(c,CAR_FAULT,CAR_FAULT_LINE); return;
             }
-            speed=(turned>2.55f) ? CAR_CAPTURE_SPEED : CAR_ARC_SPEED;
+            speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED :
+                (turned>2.55f && !FinalSegment(c)) ? CAR_CAPTURE_SPEED : CAR_ARC_SPEED;
             omega=ArcSign(c)*speed/400.0f;
-            if (!c->line_missing) omega-=CAR_LINE_KP*c->line_error+CAR_LINE_KD*c->line_rate;
+            /* At faster arc entry an outer probe can briefly lose the edge.
+             * Continue the last proportional correction for at most 80 ms;
+             * dropping straight to circle feedforward would turn too late.
+             * Never extrapolate the derivative, or extend the loss timeout. */
+            bool recent_edge=FastCourse(c) && c->have_line &&
+                in->now_ms-c->last_line_at<=80U;
+            if (!c->line_missing || recent_edge) {
+                float gain=FastCourse(c) ? speed/180.0f : 1.0f;
+                omega-=gain*(CAR_LINE_KP*c->line_error+
+                    (c->line_missing ? 0.0f : CAR_LINE_KD*c->line_rate));
+            }
         }
     }
     Drive(c,speed,omega,dt,in);

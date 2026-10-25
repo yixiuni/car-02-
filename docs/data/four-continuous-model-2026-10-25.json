@@ -1,0 +1,34 @@
+[
+  {
+    "speed_mm_s": 240,
+    "pwm_limit": 500,
+    "accel_mm_s2": 1000,
+    "returncode": 0,
+    "stdout": "PASS: task4 79.75s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 79.77s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 79.73s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 79.89s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 260,
+    "pwm_limit": 500,
+    "accel_mm_s2": 1000,
+    "returncode": 1,
+    "stdout": "PASS: task4 74.00s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 74.11s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 73.99s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t5.34 fault7 seg1 true(907.0,-773.0,-32.0)\n"
+  },
+  {
+    "speed_mm_s": 280,
+    "pwm_limit": 500,
+    "accel_mm_s2": 1000,
+    "returncode": 1,
+    "stdout": "PASS: task4 69.67s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 70.06s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 69.64s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t5.04 fault7 seg1 true(908.0,-775.0,-33.2)\n"
+  },
+  {
+    "speed_mm_s": 300,
+    "pwm_limit": 500,
+    "accel_mm_s2": 1000,
+    "returncode": 1,
+    "stdout": "PASS: task4 67.23s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 67.84s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\n",
+    "stderr": "FAIL task4 t13.19 fault7 seg3 true(63.4,-777.3,206.5)\n"
+  }
+]

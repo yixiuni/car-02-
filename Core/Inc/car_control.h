@@ -22,6 +22,7 @@ typedef struct {
     CarState state;
     CarFault fault;
     uint8_t task, segment, completed_laps;
+    uint8_t target_laps; /* 0 = legacy task default; selectable modes use 1..4 */
     CarPoint last_point;
     uint32_t point_events, mode_events;
     uint16_t left_pwm, right_pwm;
@@ -41,4 +42,5 @@ typedef struct {
 void CarControl_Init(CarControl *car, const CarGeometry *geometry, uint32_t now, bool pressed);
 void CarControl_Update(CarControl *car, const CarInputs *input);
 bool CarControl_Active(const CarControl *car);
+bool CarControl_BrakeActive(const CarControl *car, uint32_t now_ms);
 #endif

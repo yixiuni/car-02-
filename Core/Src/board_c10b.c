@@ -1,5 +1,6 @@
 #include "board_c10b.h"
 #include "car_config.h"
+#include "motor_pwm.h"
 
 void Board_EmergencyStop(void)
 {
@@ -93,6 +94,20 @@ static uint32_t ScaledDuty(uint16_t duty, uint32_t scale)
     return (TIM3->ARR + 1U) * scaled / CAR_PWM_MAX;
 }
 
+static void ApplyMotorInputs(MotorPwm pa, MotorPwm pb)
+{
+    TIM3->CR1 |= TIM_CR1_UDIS;
+    TIM3->CCR1=pa.in1;TIM3->CCR2=pa.in2;
+    TIM3->CCR3=pb.in1;TIM3->CCR4=pb.in2;
+    TIM3->CR1 &= ~TIM_CR1_UDIS;
+}
+bool Board_MotorBrake(void)
+{
+    bool allowed=Board_MotionEnabled() && !Board_ButtonPressed();
+    MotorPwm brake=MotorPwm_Brake(TIM3->ARR+1U,allowed);
+    ApplyMotorInputs(brake,brake);
+    return allowed;
+}
 void Board_MotorApply(uint16_t left, uint16_t right)
 {
     uint32_t a, b;
@@ -101,13 +116,15 @@ void Board_MotorApply(uint16_t left, uint16_t right)
                    CAR_LEFT_IS_MOTOR_A ? CAR_LEFT_SCALE_PERCENT : CAR_RIGHT_SCALE_PERCENT);
     b = ScaledDuty(CAR_LEFT_IS_MOTOR_A ? right : left,
                    CAR_LEFT_IS_MOTOR_A ? CAR_RIGHT_SCALE_PERCENT : CAR_LEFT_SCALE_PERCENT);
+    MotorPwm pa=MotorPwm_Encode(a,TIM3->ARR+1U,CAR_MOTOR_A_FORWARD_IN1,CAR_MOTOR_SLOW_DECAY);
+    MotorPwm pb=MotorPwm_Encode(b,TIM3->ARR+1U,CAR_MOTOR_B_FORWARD_IN1,CAR_MOTOR_SLOW_DECAY);
+    /* Hold preload transfers while writing the four channels. The counter
+     * keeps running; the next natural overflow commits all channels together.
+     * Repeated UG on every control call would restart the PWM period. */
     /* AT8236 has two PWM inputs per motor; no TB6612 STBY/direction GPIOs. */
-    TIM3->CCR1 = CAR_MOTOR_A_FORWARD_IN1 ? a : 0U;
-    TIM3->CCR2 = CAR_MOTOR_A_FORWARD_IN1 ? 0U : a;
-    TIM3->CCR3 = CAR_MOTOR_B_FORWARD_IN1 ? b : 0U;
-    TIM3->CCR4 = CAR_MOTOR_B_FORWARD_IN1 ? 0U : b;
-    /* Commit all four preloaded channels on the same update, including stop. */
-    TIM3->EGR = TIM_EGR_UG;
+    ApplyMotorInputs(pa,pb);
+    /* Zero output takes effect within one PWM period (50 us at 20 kHz).
+     * Fault handlers still use Board_EmergencyStop for immediate shutdown. */
 }
 
 void Board_SetLeds(bool running, bool fault)

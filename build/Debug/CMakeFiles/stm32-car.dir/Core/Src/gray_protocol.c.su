@@ -1,7 +1,0 @@
-D:/STM32project/stm32-car/Core/Src/gray_protocol.c:4:6:GrayProtocol_Init	56	static
-D:/STM32project/stm32-car/Core/Src/gray_protocol.c:10:6:GrayProtocol_CanRequest	16	static
-D:/STM32project/stm32-car/Core/Src/gray_protocol.c:16:6:GrayProtocol_BeginRequest	16	static
-D:/STM32project/stm32-car/Core/Src/gray_protocol.c:23:6:GrayProtocol_OnByte	24	static
-D:/STM32project/stm32-car/Core/Src/gray_protocol.c:52:6:GrayProtocol_Poll	16	static
-D:/STM32project/stm32-car/Core/Src/gray_protocol.c:71:6:GrayProtocol_Online	16	static
-D:/STM32project/stm32-car/Core/Src/gray_protocol.c:77:9:GrayProtocol_BlackMask	24	static

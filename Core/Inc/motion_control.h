@@ -15,6 +15,9 @@ CarGeometry CarGeometry_Default(void);
 bool CarGeometry_Valid(const CarGeometry *g);
 float Motion_Wrap(float angle);
 void Motion_Reset(MotionControl *m);
+void Motion_UpdateWithAccel(MotionControl *m, float left_target, float right_target,
+                   float left_measured, float right_measured, float dt, float accel,
+                   uint16_t *left_pwm, uint16_t *right_pwm);
 void Motion_Update(MotionControl *m, float left_target, float right_target,
                    float left_measured, float right_measured, float dt,
                    uint16_t *left_pwm, uint16_t *right_pwm);

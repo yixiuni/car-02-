@@ -1,0 +1,5 @@
+PASS: task4 13.08s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 13.15s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 13.17s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 13.20s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+FAIL task4 t10.59 fault7 seg3 true(82.1,-783.5,203.7)

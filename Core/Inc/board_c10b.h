@@ -35,11 +35,20 @@
 #define BOARD_BUZZER_PORT        GPIOA
 #define BOARD_BUZZER_PIN         GPIO_PIN_15
 
+/* Original C10B OLED: four-wire software SPI, CS tied on module. */
+#define BOARD_OLED_PORT         GPIOB
+#define BOARD_OLED_DC_PIN       GPIO_PIN_3
+#define BOARD_OLED_RST_PIN      GPIO_PIN_4
+#define BOARD_OLED_DATA_PIN     GPIO_PIN_5
+#define BOARD_OLED_CLOCK_PORT   GPIOC
+#define BOARD_OLED_CLOCK_PIN    GPIO_PIN_14
+
 void Board_SetBuzzer(bool on);
 void Board_Init(void);
 bool Board_ButtonPressed(void);
 bool Board_MotionEnabled(void);
 void Board_MotorApply(uint16_t left, uint16_t right);
+bool Board_MotorBrake(void);
 void Board_SetLeds(bool running, bool fault);
 void Board_EmergencyStop(void);
 

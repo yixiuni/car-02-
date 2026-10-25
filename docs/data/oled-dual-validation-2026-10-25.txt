@@ -1,0 +1,207 @@
+PASS: OLED route/laps/status/time, busy controls, frame bounds and deterministic rendering
+PASS: analog checksum/length/timeout/wrap, corrupted stream rejection, measured track classification and hysteresis
+PASS: threshold fitting rejects overlap/noise and handles both polarities
+PASS: production encoder accumulation, wrap, timing, locked calibration and recorded-run replay
+PASS: one-shot motor timing, channels, inhibit, abort, gap and tick wrap
+PASS: ground request isolation, position/deadline stop, stall, feedback, inhibit, wrap and bounded PI
+PASS: task1 SWD/button one-shot, debounce/boot hold/wrap, calibration, inhibits, timeouts, real endpoint and missing-line/stall stops
+PASS: task1 SWD/button one-shot, debounce/boot hold/wrap, calibration, inhibits, timeouts, real endpoint and missing-line/stall stops
+PASS: task2 14.21s, 3 point events, 0 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 14.21s, 3 point events, 0 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: task1 SWD/button one-shot, debounce/boot hold/wrap, calibration, inhibits, timeouts, real endpoint and missing-line/stall stops
+PASS: task2 29.05s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 28.99s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: task1 SWD/button one-shot, debounce/boot hold/wrap, calibration, inhibits, timeouts, real endpoint and missing-line/stall stops
+PASS: task3 26.89s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task3 26.94s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task3 26.70s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task3 27.11s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: task1 SWD/button one-shot, debounce/boot hold/wrap, calibration, inhibits, timeouts, real endpoint and missing-line/stall stops
+PASS: task4 56.68s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 56.66s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.66s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 56.76s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: dual route/lap gestures, 1/4 toggle, per-route memory, delayed start, rearm, abort, boot hold, bounce, disable and tick wrap
+PASS: task2 12.80s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 12.81s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 25.49s, 9 point events, 2 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 25.52s, 9 point events, 2 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 38.21s, 13 point events, 3 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 38.21s, 13 point events, 3 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 50.90s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 50.88s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 50.87s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 50.90s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task2 50.88s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 50.88s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task2 50.88s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 50.91s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task2 50.91s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 50.95s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task2 50.93s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 50.96s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: task4 14.35s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 14.35s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 28.45s, 9 point events, 2 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 28.45s, 9 point events, 2 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 42.55s, 13 point events, 3 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 42.56s, 13 point events, 3 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.68s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 56.68s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.77s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.81s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.72s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.77s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.68s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.69s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.68s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.69s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.68s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.68s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: task2 12.96s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 12.98s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 25.66s, 9 point events, 2 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 25.69s, 9 point events, 2 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 38.38s, 13 point events, 3 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 38.38s, 13 point events, 3 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 51.06s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 51.05s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 51.04s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 51.06s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task2 51.05s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 51.05s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task2 51.05s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 51.09s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task2 51.08s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 51.11s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task2 51.09s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 51.12s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: task4 14.51s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 14.51s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 28.61s, 9 point events, 2 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 28.61s, 9 point events, 2 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 42.71s, 13 point events, 3 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 42.73s, 13 point events, 3 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.93s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.98s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.89s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.93s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.86s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.86s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: task4 56.85s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 56.83s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.83s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 56.92s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 56.92s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.98s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.91s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.92s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.83s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.86s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: task4 56.84s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.86s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: physical button aborts arc immediately
+PASS: AT8236 truth table, effective duty, both directions, decay modes, zero and clamp
+PASS: startup interlocks, buttons, white navigation, freshness, faults, wrap, PI, encoder wrap, gyro calibration
+PASS: startup interlocks, buttons, white navigation, freshness, faults, wrap, PI, encoder wrap, gyro calibration
+PASS: UART status bytes, polarity/order, timeouts, late/unsolicited bytes, frame rejection, errors, tick wrap
+PASS: UART status bytes, polarity/order, timeouts, late/unsolicited bytes, frame rejection, errors, tick wrap
+PASS: UART status bytes, polarity/order, timeouts, late/unsolicited bytes, frame rejection, errors, tick wrap
+PASS: UART status bytes, polarity/order, timeouts, late/unsolicited bytes, frame rejection, errors, tick wrap
+PASS: task1 4.15s, 2 point events, 0 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task2 21.91s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task3 26.75s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 56.69s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task1 4.15s, 2 point events, 0 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task2 21.75s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task3 26.84s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 56.69s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: injected fault 1 stops and latches during arc
+PASS: injected fault 2 stops and latches during arc
+PASS: injected fault 3 stops and latches during arc
+PASS: injected fault 4 stops and latches during arc
+PASS: C10B pin ownership, IOC, F103RCT6 target, memory layout, UART4 vector, SWD
+
+Final column-render optimization: OLED UI ASAN/UBSAN passed again, including explicit 2x glyph bitmap assertions.

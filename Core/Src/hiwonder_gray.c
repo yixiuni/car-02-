@@ -1,8 +1,35 @@
 #include "hiwonder_gray.h"
 #include "board_c10b.h"
 #include "car_config.h"
-
+#include "gray_learn.h"
 static volatile GrayProtocol gray;
+#if CAR_GRAY_USE_ANALOG && !CAR_GRAY_LEARN_BUILD
+#include "gray_analog.h"
+#include "gray_calibration.h"
+#if GRAY_CALIBRATION_VALID_MASK != 0xFFU
+#error "All eight grayscale channels must be calibrated"
+#endif
+static volatile GrayAnalogReceiver analog;
+volatile uint16_t hiwonder_gray_analog_values[8];
+static uint8_t analog_mask;
+static void SyncAnalog(uint32_t now)
+{
+    GrayAnalog_Poll(&analog,now);
+    if(gray.samples!=analog.samples){
+        uint16_t values[8];
+        for(unsigned i=0;i<8;++i) values[i]=hiwonder_gray_analog_values[i]=analog.values[i];
+        analog_mask=GrayAnalog_Classify(values,gray_calibration_threshold,
+            gray_calibration_hysteresis,GRAY_CALIBRATION_BLACK_HIGH_MASK,analog_mask);
+        /* Keep the existing snapshot convention; this is a synthesized digital
+         * value, not the sensor's internal threshold result in analog mode. */
+        gray.raw_status=CAR_GRAY_TARGET_BIT_IS_ONE?analog_mask:(uint8_t)~analog_mask;
+    }
+    gray.valid=analog.valid;gray.last_valid_at=analog.last_valid_at;
+    gray.samples=analog.samples;gray.timeouts=analog.timeouts;
+    gray.errors=analog.errors;gray.unexpected_bytes=analog.unexpected_bytes;
+}
+#endif
+
 static uint32_t boot_at, mode_at;
 static bool mode_sent;
 
@@ -28,6 +55,9 @@ void HiwonderGray_Init(uint32_t now)
     UART4->CR2 = 0U; /* one stop bit */
     UART4->CR3 = USART_CR3_EIE;
     GrayProtocol_Init(&gray, now);
+#if CAR_GRAY_USE_ANALOG && !CAR_GRAY_LEARN_BUILD
+    GrayAnalog_Init(&analog,now);analog_mask=0;
+#endif
     boot_at = now;
     mode_sent = false;
     UART4->CR1 = USART_CR1_UE | USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE;
@@ -53,6 +83,13 @@ void HiwonderGray_Poll(uint32_t now)
     }
     else if ((uint32_t)(now - mode_at) >= CAR_GRAY_MODE_DELAY_MS)
     {
+#if CAR_GRAY_USE_ANALOG && !CAR_GRAY_LEARN_BUILD
+        SyncAnalog(now);
+        if (GrayAnalog_CanRequest(&analog,now) && (UART4->SR&USART_SR_TXE)) {
+            GrayAnalog_BeginRequest(&analog,now);
+            UART4->DR=0x02U;
+        }
+#else
         GrayProtocol_Poll(&gray, now);
         if (GrayProtocol_CanRequest(&gray, now) &&
             (UART4->SR & USART_SR_TXE) != 0U)
@@ -60,6 +97,7 @@ void HiwonderGray_Poll(uint32_t now)
             GrayProtocol_BeginRequest(&gray, now);
             UART4->DR = 0x01U; /* request S1..S8 digital state */
         }
+#endif
     }
     __set_PRIMASK(primask);
 }
@@ -72,7 +110,13 @@ void HiwonderGray_IRQHandler(void)
     {
         /* Reading SR followed by DR clears RXNE and UART error flags on F1. */
         uint8_t byte = (uint8_t)UART4->DR;
+#if CAR_GRAY_LEARN_BUILD
+        GrayLearn_OnByte(byte,(status & errors)!=0U);
+#elif CAR_GRAY_USE_ANALOG
+        GrayAnalog_OnByte(&analog,HAL_GetTick(),byte,(status & errors)!=0U);
+#else
         GrayProtocol_OnByte(&gray, HAL_GetTick(), byte, (status & errors) != 0U);
+#endif
     }
 }
 

@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-25",
+  "firmware_sha256": "8f3100e09636f3afdd7c16129d597b30999ba637cdde5acd46f16abda88aaf75",
+  "user_report": "Situation good; can go faster?",
+  "state": 5,
+  "fault": 0,
+  "completed_laps": 4,
+  "point_events": 17,
+  "trace_samples": 565,
+  "done_at_ms": 63426,
+  "fault_at_ms": null,
+  "point_times": [
+    {
+      "elapsed_ms": 0,
+      "events": 1
+    },
+    {
+      "elapsed_ms": 3960,
+      "events": 2
+    },
+    {
+      "elapsed_ms": 7776,
+      "events": 3
+    },
+    {
+      "elapsed_ms": 11904,
+      "events": 4
+    },
+    {
+      "elapsed_ms": 15660,
+      "events": 5
+    },
+    {
+      "elapsed_ms": 19788,
+      "events": 6
+    },
+    {
+      "elapsed_ms": 23580,
+      "events": 7
+    },
+    {
+      "elapsed_ms": 27720,
+      "events": 8
+    },
+    {
+      "elapsed_ms": 31476,
+      "events": 9
+    },
+    {
+      "elapsed_ms": 35604,
+      "events": 10
+    },
+    {
+      "elapsed_ms": 39408,
+      "events": 11
+    },
+    {
+      "elapsed_ms": 43536,
+      "events": 12
+    },
+    {
+      "elapsed_ms": 47268,
+      "events": 13
+    },
+    {
+      "elapsed_ms": 51396,
+      "events": 14
+    },
+    {
+      "elapsed_ms": 55224,
+      "events": 15
+    },
+    {
+      "elapsed_ms": 59352,
+      "events": 16
+    },
+    {
+      "elapsed_ms": 63426,
+      "events": 17
+    }
+  ],
+  "gray_counters": [
+    14410,
+    0,
+    0,
+    0
+  ],
+  "max_pwm_permille": [
+    482,
+    534
+  ],
+  "brake_first_ms": 63096,
+  "counts_stable": true
+}

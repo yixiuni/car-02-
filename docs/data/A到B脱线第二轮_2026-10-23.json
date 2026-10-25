@@ -1,0 +1,57 @@
+{
+  "captured_at": "2026-10-23T21:13:14.991347+08:00",
+  "firmware_sha256": "3648f6f7fb688a99df0e0881e8dcab5c94fa1db536f605f36c59e0960750e889",
+  "user_report": "轮中轴在b，不怎么偏移",
+  "start_reference": "instructed axle midpoint at A; not independently measured",
+  "state": 6,
+  "fault": 8,
+  "fault_name": "ENDPOINT",
+  "phase": 4,
+  "point_events": 1,
+  "last_point": "A",
+  "trace_samples": 200,
+  "trace_span_ms": 15992,
+  "trace_max_gap_ms": 82,
+  "nonzero_black_trace_samples": 0,
+  "fault_at_ms": 8826,
+  "fault_pose_mm_rad": [
+    1080.1405029296875,
+    0.6865553259849548,
+    0.00024355138884857297
+  ],
+  "first_counts": [
+    1,
+    0
+  ],
+  "final_counts": [
+    7660,
+    7644
+  ],
+  "second_stopped_counts": [
+    7660,
+    7644
+  ],
+  "wheel_travel_mm": [
+    1090.200290182354,
+    1083.9294286490772
+  ],
+  "mean_wheel_travel_mm": 1087.0648594157155,
+  "max_pwm_permille": [
+    183,
+    186
+  ],
+  "gray_counters": [
+    10998,
+    0,
+    0,
+    0
+  ],
+  "timer_ccr": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "trace_csv": "docs/data/A到B脱线第二轮_2026-10-23.csv",
+  "interpretation": "User reports axle at B with little lateral deviation. Still ENDPOINT fault, no B confirmation, all recorded black masks zero. No source or tuning changes. Difference between approx user stop position and 1087 mm encoder travel remains unresolved; do not refit diameter. Next stationary actual-course black detection check. Keep terminal phase; do not reset/rearm/start."
+}

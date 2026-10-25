@@ -1,0 +1,23 @@
+{
+  "firmware": "DUL2",
+  "user_report": "Near D missed line; black line to vehicle right; lateral distance not measured",
+  "task": 4,
+  "target_laps": 4,
+  "completed_laps": 0,
+  "elapsed_s": 11.363,
+  "fault_code": 8,
+  "fault_name": "CAR_FAULT_ENDPOINT",
+  "last_point": "B",
+  "point_events": 3,
+  "estimated_pose_mm_deg": [
+    -62.74528884887695,
+    -851.5139770507812,
+    218.83456183705957
+  ],
+  "gray_errors": 0,
+  "gray_timeouts": 0,
+  "max_control_interval_ms": 8,
+  "oled_max_poll_cycles": 92254,
+  "diagnosis": "No valid black samples from B exit to endpoint fault; no timing or sensor communication fault. Physical lateral error remains unmeasured.",
+  "not_physical_pose": true
+}

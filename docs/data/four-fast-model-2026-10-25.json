@@ -1,0 +1,210 @@
+[
+  {
+    "speed_mm_s": 260,
+    "pwm_limit": 600,
+    "accel_mm_s2": 1000,
+    "returncode": 1,
+    "stdout": "PASS: task4 73.77s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 73.75s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 73.69s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t5.34 fault7 seg1 true(907.1,-773.0,-31.8)\n"
+  },
+  {
+    "speed_mm_s": 260,
+    "pwm_limit": 600,
+    "accel_mm_s2": 1500,
+    "returncode": 0,
+    "stdout": "PASS: task4 73.67s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 73.69s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 73.61s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 73.75s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 260,
+    "pwm_limit": 600,
+    "accel_mm_s2": 2000,
+    "returncode": 0,
+    "stdout": "PASS: task4 73.63s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 73.63s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 73.57s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 73.70s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 260,
+    "pwm_limit": 600,
+    "accel_mm_s2": 3000,
+    "returncode": 0,
+    "stdout": "PASS: task4 73.59s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 73.57s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 73.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 73.64s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 280,
+    "pwm_limit": 600,
+    "accel_mm_s2": 1000,
+    "returncode": 1,
+    "stdout": "PASS: task4 68.62s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 68.62s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 68.62s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t5.03 fault7 seg1 true(907.1,-774.1,-32.9)\n"
+  },
+  {
+    "speed_mm_s": 280,
+    "pwm_limit": 600,
+    "accel_mm_s2": 1500,
+    "returncode": 0,
+    "stdout": "PASS: task4 68.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 68.53s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 68.52s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 68.66s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 280,
+    "pwm_limit": 600,
+    "accel_mm_s2": 2000,
+    "returncode": 0,
+    "stdout": "PASS: task4 68.49s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 68.52s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 68.49s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 68.59s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 280,
+    "pwm_limit": 600,
+    "accel_mm_s2": 3000,
+    "returncode": 0,
+    "stdout": "PASS: task4 68.45s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 68.49s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 68.41s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 68.55s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 300,
+    "pwm_limit": 600,
+    "accel_mm_s2": 1000,
+    "returncode": 1,
+    "stdout": "PASS: task4 64.29s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.35s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.31s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t4.77 fault7 seg1 true(911.4,-777.5,-32.5)\n"
+  },
+  {
+    "speed_mm_s": 300,
+    "pwm_limit": 600,
+    "accel_mm_s2": 1500,
+    "returncode": 1,
+    "stdout": "PASS: task4 64.19s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.26s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.17s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t4.70 fault7 seg1 true(909.6,-776.0,-32.5)\n"
+  },
+  {
+    "speed_mm_s": 300,
+    "pwm_limit": 600,
+    "accel_mm_s2": 2000,
+    "returncode": 0,
+    "stdout": "PASS: task4 64.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.20s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.11s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.23s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 300,
+    "pwm_limit": 600,
+    "accel_mm_s2": 3000,
+    "returncode": 0,
+    "stdout": "PASS: task4 64.08s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.12s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.03s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 320,
+    "pwm_limit": 600,
+    "accel_mm_s2": 1000,
+    "returncode": 1,
+    "stdout": "PASS: task4 60.69s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.87s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\n",
+    "stderr": "FAIL task4 t12.06 fault7 seg3 true(66.2,-778.3,209.5)\n"
+  },
+  {
+    "speed_mm_s": 320,
+    "pwm_limit": 600,
+    "accel_mm_s2": 1500,
+    "returncode": 1,
+    "stdout": "PASS: task4 60.57s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.75s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 60.57s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t4.47 fault7 seg1 true(913.9,-779.5,-32.1)\n"
+  },
+  {
+    "speed_mm_s": 320,
+    "pwm_limit": 600,
+    "accel_mm_s2": 2000,
+    "returncode": 0,
+    "stdout": "PASS: task4 60.57s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.70s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 60.52s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.60s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 320,
+    "pwm_limit": 600,
+    "accel_mm_s2": 3000,
+    "returncode": 0,
+    "stdout": "PASS: task4 60.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.75s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 60.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.66s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 300,
+    "pwm_limit": 600,
+    "accel_mm_s2": 2000,
+    "sweep": true,
+    "weak_brake": true,
+    "returncode": 0,
+    "stdout": "PASS: task4 64.28s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.36s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.27s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.39s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.44s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.45s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: task4 64.39s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.44s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: task4 64.36s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.36s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: task4 64.31s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.36s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: task4 64.31s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.41s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 300,
+    "pwm_limit": 600,
+    "accel_mm_s2": 3000,
+    "sweep": true,
+    "weak_brake": true,
+    "returncode": 0,
+    "stdout": "PASS: task4 64.24s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.28s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.20s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.31s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 64.42s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.44s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: task4 64.41s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.39s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: task4 64.28s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.33s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: task4 64.30s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.38s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: task4 64.30s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 64.36s, 17 point events, 4 laps (motor gains 1.05/0.95, yaw bias -0.001 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n",
+    "stderr": ""
+  },
+  {
+    "speed_mm_s": 320,
+    "pwm_limit": 600,
+    "accel_mm_s2": 2000,
+    "sweep": true,
+    "weak_brake": true,
+    "returncode": 1,
+    "stdout": "PASS: task4 60.73s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.87s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 60.69s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.76s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t4.42 fault7 seg1 true(907.8,-777.5,-33.1)\n"
+  },
+  {
+    "speed_mm_s": 320,
+    "pwm_limit": 600,
+    "accel_mm_s2": 3000,
+    "sweep": true,
+    "weak_brake": true,
+    "returncode": 1,
+    "stdout": "PASS: task4 60.70s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.91s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 60.70s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 60.82s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t4.40 fault7 seg1 true(908.6,-776.9,-32.0)\n"
+  },
+  {
+    "speed_mm_s": 340,
+    "pwm_limit": 600,
+    "accel_mm_s2": 2000,
+    "sweep": true,
+    "weak_brake": true,
+    "returncode": 1,
+    "stdout": "PASS: task4 57.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 58.35s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 57.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t4.25 fault7 seg1 true(918.9,-780.5,-29.4)\n"
+  },
+  {
+    "speed_mm_s": 340,
+    "pwm_limit": 600,
+    "accel_mm_s2": 3000,
+    "sweep": true,
+    "weak_brake": true,
+    "returncode": 1,
+    "stdout": "PASS: task4 58.06s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 58.37s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 58.04s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 58.14s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t4.20 fault7 seg1 true(911.9,-779.2,-31.8)\n"
+  },
+  {
+    "speed_mm_s": 360,
+    "pwm_limit": 600,
+    "accel_mm_s2": 2000,
+    "sweep": true,
+    "weak_brake": true,
+    "returncode": 1,
+    "stdout": "PASS: task4 56.39s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 56.93s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\n",
+    "stderr": "FAIL task4 t11.01 fault7 seg3 true(74.8,-781.9,212.6)\n"
+  },
+  {
+    "speed_mm_s": 360,
+    "pwm_limit": 600,
+    "accel_mm_s2": 3000,
+    "sweep": true,
+    "weak_brake": true,
+    "returncode": 1,
+    "stdout": "PASS: task4 56.41s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 56.93s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 56.38s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+    "stderr": "FAIL task4 t4.02 fault7 seg1 true(916.3,-781.5,-31.8)\n"
+  }
+]

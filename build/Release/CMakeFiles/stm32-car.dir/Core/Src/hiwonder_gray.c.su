@@ -1,4 +1,0 @@
-D:/STM32project/stm32-car/Core/Src/hiwonder_gray.c:9:6:HiwonderGray_Init	48	static
-D:/STM32project/stm32-car/Core/Src/hiwonder_gray.c:39:6:HiwonderGray_Poll	16	static,ignoring_inline_asm
-D:/STM32project/stm32-car/Core/Src/hiwonder_gray.c:67:6:HiwonderGray_IRQHandler	16	static
-D:/STM32project/stm32-car/Core/Src/hiwonder_gray.c:79:6:HiwonderGray_Snapshot	16	static,ignoring_inline_asm

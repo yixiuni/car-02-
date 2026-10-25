@@ -1,0 +1,39 @@
+{
+  "firmware_sha256": "8834ee70060b8e45a515b26356870d3b2f5d5dea26890bde60c923e67c2df8e6",
+  "user_report": "好了一切良好",
+  "state": 5,
+  "fault": 0,
+  "phase": 4,
+  "last_point": "A",
+  "point_events": 5,
+  "completed_laps": 1,
+  "done_at_ms": 29298,
+  "done_pose_mm_rad": [
+    -142.87966918945312,
+    -67.79164123535156,
+    -5.921497821807861
+  ],
+  "trace_samples": 197,
+  "trace_span_ms": 30864,
+  "trace_max_gap_ms": 162,
+  "gray_counters": [
+    14217,
+    0,
+    0,
+    0
+  ],
+  "final_counts": [
+    31495,
+    27004
+  ],
+  "second_stopped_counts": [
+    31495,
+    27004
+  ],
+  "max_pwm_permille": [
+    205,
+    182
+  ],
+  "outputs_zero": true,
+  "interpretation": "Real task2 DONE in29.298s, lap1, A/B/C/D/A5 events, user allgood. Small 0.702s timing margin, no independent geometric coverage measurement; no full performance/repeatability claim."
+}

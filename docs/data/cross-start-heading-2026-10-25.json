@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-25",
+  "user_report": "Started facing B; drove toward B and stopped beyond B. Cable reconnected.",
+  "required_start_heading": "Axle midpoint A, nose C for task3",
+  "readback": "CRS1 magic, task3 idle, gate phase/request/trace_count all0, uptime0x7dad (~32.173s), counts0, points0; previous run trace unavailable. This was observed before any reset/flash by assistant.",
+  "fault_cause": "Initial heading mismatch confirmed by user; exact stop fault unavailable.",
+  "live_checks": {
+    "gray_samples": [
+      2394,
+      2472
+    ],
+    "gray_error_counters": [
+      0,
+      0,
+      0
+    ],
+    "black_mask": 255,
+    "all_sensors_ready": true,
+    "pwm_ccr_zero": true
+  },
+  "changes": "No firmware/reset/start action. Existing task3 image already idle.",
+  "next": "Place axleA facingC, front probes WHITE, then unplug and short USER release once. Retain battery power after stop and reconnect before reset."
+}

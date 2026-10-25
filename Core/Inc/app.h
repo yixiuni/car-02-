@@ -13,7 +13,14 @@ typedef struct {
     int64_t encoder_a_counts, encoder_b_counts;
     float line_error_mm, gyro_z_dps, gyro_bias_dps, yaw_rad, x_mm, y_mm, heading_rad;
     float left_mm, right_mm, left_speed, right_speed, left_target, right_target;
+    uint8_t target_laps;
 } AppDiagnostics;
 extern volatile AppDiagnostics app_diagnostics;
+typedef struct {
+    uint16_t peak_left_pwm, peak_right_pwm;
+    uint32_t saturated_updates, active_updates, max_interval_ms;
+} CourseRunMetrics;
+/* Dual-mode only: reset before each start, retained when stopped. */
+extern volatile CourseRunMetrics course_run_metrics;
 void App_Run(void);
 #endif

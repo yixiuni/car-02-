@@ -37,13 +37,13 @@ static float Clamp(float x, float low, float high)
 {
     return fminf(high, fmaxf(low, x));
 }
-static uint16_t WheelUpdate(WheelController *w, float target, float measured, float dt)
+static uint16_t WheelUpdate(WheelController *w, float target, float measured, float dt, float accel)
 {
     if (target <= 0.0f) {
         *w = (WheelController){0};
         return 0U; /* coast; never request reverse torque */
     }
-    w->setpoint += Clamp(target - w->setpoint, -CAR_ACCEL_MM_S2 * dt, CAR_ACCEL_MM_S2 * dt);
+    w->setpoint += Clamp(target - w->setpoint, -accel * dt, accel * dt);
     float error = w->setpoint - measured;
     float proposed = w->integral + CAR_SPEED_KI * error * dt;
     float base = CAR_SPEED_FF * w->setpoint + CAR_SPEED_KP * error;
@@ -57,11 +57,18 @@ void Motion_Update(MotionControl *m, float left_target, float right_target,
                    float left_measured, float right_measured, float dt,
                    uint16_t *left_pwm, uint16_t *right_pwm)
 {
+    Motion_UpdateWithAccel(m,left_target,right_target,left_measured,right_measured,
+                           dt,CAR_ACCEL_MM_S2,left_pwm,right_pwm);
+}
+void Motion_UpdateWithAccel(MotionControl *m, float left_target, float right_target,
+                   float left_measured, float right_measured, float dt, float accel,
+                   uint16_t *left_pwm, uint16_t *right_pwm)
+{
     if (!isfinite(left_target) || !isfinite(right_target) ||
         !isfinite(left_measured) || !isfinite(right_measured) ||
-        !isfinite(dt) || dt <= 0 || dt > 0.05f) {
+        !isfinite(dt) || dt <= 0 || dt > 0.05f || !isfinite(accel) || accel<=0) {
         Motion_Reset(m); *left_pwm = *right_pwm = 0; return;
     }
-    *left_pwm = WheelUpdate(&m->left, left_target, left_measured, dt);
-    *right_pwm = WheelUpdate(&m->right, right_target, right_measured, dt);
+    *left_pwm = WheelUpdate(&m->left, left_target, left_measured, dt, accel);
+    *right_pwm = WheelUpdate(&m->right, right_target, right_measured, dt, accel);
 }

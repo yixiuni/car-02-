@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-25",
+  "firmware_sha256": "06d03905e012ccb8a35e4c51bc03f574cda4abdc0cebfa58bd238f46b422d9dd",
+  "user_report": "Situation good; proceed task4 four laps, shortest possible time",
+  "state": 5,
+  "fault": 0,
+  "completed_laps": 1,
+  "point_events": 5,
+  "last_point": "A",
+  "done_at_ms": 27228,
+  "trace_samples": 211,
+  "gray_counters": [
+    22465,
+    0,
+    0,
+    0
+  ],
+  "max_pwm_permille": [
+    242,
+    316
+  ],
+  "brake_trace_first_ms": 26952,
+  "brake_trace_release_ms": 27204,
+  "interpretation": "CRS3 actualtask3 DONE27.228s, A-C-B-D-A5events lap1, nofault. Brake bit asserted at26.952s and released27.204s (coarse trace approx252ms), DONE27.228s. User positive; independent projection notmeasured."
+}

@@ -1,0 +1,41 @@
+PASS: task4 13.11s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 13.12s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 13.12s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 13.18s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 13.22s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 13.26s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: excessive D approach pose error stops with existing endpoint/line guards
+PASS: excessive D approach pose error stops with existing endpoint/line guards
+PASS: task4 51.27s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.48s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.30s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.55s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.41s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.63s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: excessive D approach pose error stops with existing endpoint/line guards
+PASS: excessive D approach pose error stops with existing endpoint/line guards
+PASS: task4 51.26s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.54s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.30s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.55s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.36s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.62s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: excessive D approach pose error stops with existing endpoint/line guards
+PASS: task4 51.67s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.27s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.55s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.30s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.55s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.38s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.62s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: excessive D approach pose error stops with existing endpoint/line guards
+PASS: task4 51.69s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.27s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.54s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.30s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.55s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.38s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.62s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 51.42s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 51.65s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: D entry pose-error sweep, 1/4 laps, each B exit, full coverage and unchanged cruise

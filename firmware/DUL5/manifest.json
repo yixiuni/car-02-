@@ -1,0 +1,23 @@
+{
+  "version": "DUL5",
+  "date": "2026-10-25",
+  "target": "STM32F103RCT6 / WHEELTEC C10B",
+  "flash_address": "0x08000000",
+  "build": "DualModeDebug (--dual-mode)",
+  "bin_sha256": "636f75bf43d7da71ebf2e04c508988210de0a4d33f5ef80e615a63ea7606c7df",
+  "bin_bytes": 41528,
+  "speed_mm_s": 370,
+  "routes": [
+    "A-B-C-D-A",
+    "A-C-B-D-A"
+  ],
+  "lap_options": [
+    1,
+    4
+  ],
+  "physical_runs": {
+    "normal_1_lap_s": 11.739,
+    "cross_4_laps_s": 51.695
+  },
+  "calibration": "Contains calibration for this specific car; general firmware remains locked by default."
+}

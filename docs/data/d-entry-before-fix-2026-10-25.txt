@@ -1,0 +1,6 @@
+Old endpoint aim=0; expected regression failure with outside 40 mm B-exit pose error.
+PASS: task4 14.42s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 14.45s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+PASS: task4 14.51s, 5 point events, 1 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)
+PASS: task4 14.51s, 5 point events, 1 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)
+FAIL task4 t12.12 fault8 seg2 true(-37.9,-904.2,219.2)

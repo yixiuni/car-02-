@@ -1,6 +1,0 @@
-D:/STM32project/stm32-car/Core/Src/mpu6050.c:11:13:SDA	0	static
-D:/STM32project/stm32-car/Core/Src/mpu6050.c:4:13:DelayUs.constprop	0	static
-D:/STM32project/stm32-car/Core/Src/mpu6050.c:17:13:SCL	16	static
-D:/STM32project/stm32-car/Core/Src/mpu6050.c:33:13:Start	8	static
-D:/STM32project/stm32-car/Core/Src/mpu6050.c:55:13:Write	16	static
-D:/STM32project/stm32-car/Core/Src/mpu6050.c:92:6:MPU6050_CheckIdentity	40	static

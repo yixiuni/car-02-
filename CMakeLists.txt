@@ -54,7 +54,83 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Core/Src/motion_control.c
     Core/Src/encoder.c
     Core/Src/imu_filter.c
+    Core/Src/motor_test.c
+    Core/Src/motor_test_port.c
+    Core/Src/ground_test.c
+    Core/Src/task1_test.c
+    Core/Src/oled.c
+    Core/Src/oled_ui.c
+    Core/Src/course_mode.c
+    Core/Src/gray_analog.c
+    Core/Src/gray_learn.c
 )
+
+option(CAR_MOTOR_TEST_BUILD "Build one-shot raised-wheel diagnostic firmware" OFF)
+option(CAR_GROUND_TEST_BUILD "Build isolated 200/500/1000 mm ground diagnostic" OFF)
+option(CAR_TASK1_TEST_BUILD "Build one-shot real A-to-B controller test" OFF)
+option(CAR_ARC_TEST_BUILD "Build one-shot A-B-C semicircle diagnostic" OFF)
+option(CAR_LAP_TEST_BUILD "Build one-shot full task 2 lap diagnostic" OFF)
+option(CAR_CROSS_TEST_BUILD "Build one-shot task 3 crossing lap diagnostic" OFF)
+option(CAR_FOUR_TEST_BUILD "Build one-shot task4 four crossing laps" OFF)
+option(CAR_DUAL_MODE_BUILD "Build selectable oval/cross routes and lap count" OFF)
+if(CAR_DUAL_MODE_BUILD)
+    if(CAR_ARC_TEST_BUILD OR CAR_LAP_TEST_BUILD OR CAR_CROSS_TEST_BUILD OR CAR_FOUR_TEST_BUILD OR CAR_TASK1_TEST_BUILD)
+        message(FATAL_ERROR "Choose dual mode or one course diagnostic")
+    endif()
+    set(CAR_TASK1_TEST_BUILD ON)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_DUAL_MODE_BUILD=1)
+endif()
+if(CAR_FOUR_TEST_BUILD)
+    if(CAR_ARC_TEST_BUILD OR CAR_LAP_TEST_BUILD OR CAR_CROSS_TEST_BUILD OR CAR_TASK1_TEST_BUILD)
+        message(FATAL_ERROR "Choose one course diagnostic")
+    endif()
+    set(CAR_TASK1_TEST_BUILD ON)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_FOUR_TEST_BUILD=1)
+endif()
+if(CAR_CROSS_TEST_BUILD)
+    if(CAR_ARC_TEST_BUILD OR CAR_LAP_TEST_BUILD OR CAR_TASK1_TEST_BUILD)
+        message(FATAL_ERROR "Choose one course diagnostic")
+    endif()
+    set(CAR_TASK1_TEST_BUILD ON)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_CROSS_TEST_BUILD=1)
+endif()
+if(CAR_LAP_TEST_BUILD)
+    if(CAR_ARC_TEST_BUILD OR CAR_TASK1_TEST_BUILD)
+        message(FATAL_ERROR "Choose one course diagnostic")
+    endif()
+    set(CAR_TASK1_TEST_BUILD ON)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_LAP_TEST_BUILD=1)
+endif()
+if(CAR_ARC_TEST_BUILD)
+    if(CAR_TASK1_TEST_BUILD)
+        message(FATAL_ERROR "Choose arc test or task 1 test, not both")
+    endif()
+    set(CAR_TASK1_TEST_BUILD ON)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_ARC_TEST_BUILD=1)
+endif()
+option(CAR_GRAY_LEARN_BUILD "Build no-motion analog grayscale capture" OFF)
+if(CAR_GRAY_LEARN_BUILD)
+    if(CAR_MOTOR_TEST_BUILD OR CAR_GROUND_TEST_BUILD OR CAR_TASK1_TEST_BUILD)
+        message(FATAL_ERROR "Gray learning cannot include motion diagnostics")
+    endif()
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_GRAY_LEARN_BUILD=1)
+endif()
+if(CAR_GROUND_TEST_BUILD)
+    set(CAR_MOTOR_TEST_BUILD ON)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_GROUND_TEST_BUILD=1)
+endif()
+if(CAR_TASK1_TEST_BUILD)
+    if(CAR_MOTOR_TEST_BUILD)
+        message(FATAL_ERROR "Task 1 and motor diagnostics cannot be combined")
+    endif()
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_TASK1_TEST_BUILD=1)
+endif()
+option(CAR_MOTOR_SLOW_DECAY "AT8236 slow-decay PWM (validated raised-wheel default)" ON)
+if(CAR_MOTOR_TEST_BUILD)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE CAR_MOTOR_TEST_BUILD=1)
+endif()
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
+    CAR_MOTOR_SLOW_DECAY=$<BOOL:${CAR_MOTOR_SLOW_DECAY}>)
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE

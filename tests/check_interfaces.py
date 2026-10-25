@@ -20,6 +20,8 @@ expected = {
     "MPU": ("GPIOB", {"SCL": 14, "SDA": 15}),
     "ENCODER_A": ("GPIOB", {"CH1": 6, "CH2": 7}),
     "ENCODER_B": ("GPIOC", {"CH1": 6, "CH2": 7}),
+    "OLED": ("GPIOB", {"DC": 3, "RST": 4, "DATA": 5}),
+    "OLED_CLOCK": ("GPIOC", {"": 14}),
     "BUZZER": ("GPIOA", {"": 15}),
 }
 owners = {}
@@ -44,6 +46,8 @@ for key, value in {
     "PB6.Signal": "S_TIM4_CH1", "PB7.Signal": "S_TIM4_CH2",
     "PC6.Signal": "S_TIM8_CH1", "PC7.Signal": "S_TIM8_CH2",
     "TIM4.EncoderMode": "TIM_ENCODERMODE_TI12", "TIM8.EncoderMode": "TIM_ENCODERMODE_TI12",
+    "PB3.Signal": "GPIO_Output", "PB4.Signal": "GPIO_Output",
+    "PB5.Signal": "GPIO_Output", "PC14-OSC32_IN.Signal": "GPIO_Output",
     "PA15.Signal": "GPIO_Output",
     "UART4.BaudRate": "115200", "TIM3.Period": "3599",
     "PB14.GPIO_ModeDefaultOutputPP": "GPIO_MODE_OUTPUT_OD",

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-25",
+  "user_report": "Stopped at B; requests automatic turn toward C from B-facing start",
+  "firmware_sha256": "a8f70896384cf024a17cf4f586141ac622a8cd26963b0b2f15bcf9f233ed4ddf",
+  "state": 6,
+  "fault": 7,
+  "fault_name": "LINE",
+  "point_events": 2,
+  "last_point": "C",
+  "fault_at_ms": 16896,
+  "fault_pose_mm_rad": [
+    1115.3914794921875,
+    -144.7926025390625,
+    2.7318811416625977
+  ],
+  "gray_counters": [
+    15866,
+    0,
+    0,
+    0
+  ],
+  "trace_samples": 207,
+  "controller_snapshot": ".tools/hardware-backups/cross-button-02-controller.bin",
+  "last_black_tick": 36271,
+  "first_missing_tick": 36283,
+  "last_line_error_mm": 7.5,
+  "endpoint_innovation_at_fault_mm": 78.07896,
+  "interpretation": "C entered with outermost probe0x80; near B centered lastline7.5mm and white edge, estimated endpoint observation differs about78mm at final stored pose, above60mm gate. At early white frames exact pose not logged. Timeout after180ms missing line. No B confirmation. User physical B stop not independent pose measurement."
+}

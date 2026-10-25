@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-25",
+  "firmware_sha256": "77d228cddd01283af4501c7b15a82c5eede994dcf46452426bacf7a282944331",
+  "user_report": "Lap too slow, requests higher speed and immediate endpoint braking without pre-slowdown",
+  "state": 5,
+  "fault": 0,
+  "completed_laps": 1,
+  "point_events": 5,
+  "last_point": "A",
+  "done_at_ms": 35256,
+  "done_pose_mm_rad": [
+    -141.7196807861328,
+    -69.70213317871094,
+    0.38934993743896484
+  ],
+  "trace_samples": 209,
+  "gray_counters": [
+    28100,
+    0,
+    0,
+    0
+  ],
+  "final_counts": [
+    32490,
+    32700
+  ],
+  "max_pwm_permille": [
+    212,
+    243
+  ],
+  "interpretation": "CRS2 realtask3 DONE35.256s fromB-facing automaticstart; 5events/lap1, nofault. 4.744s margin to40s. No independent projection measurements. Improve speed and real electrical braking as requested."
+}

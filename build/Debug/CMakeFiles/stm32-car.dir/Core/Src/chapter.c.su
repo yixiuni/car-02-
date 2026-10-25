@@ -1,6 +1,0 @@
-D:/STM32project/stm32-car/Core/Src/chapter.c:9:13:ReadButton	8	static
-D:/STM32project/stm32-car/Core/Src/chapter.c:14:16:ReadBlackMask	24	static
-D:/STM32project/stm32-car/Core/Src/chapter.c:36:17:ScaledDuty	24	static
-D:/STM32project/stm32-car/Core/Src/chapter.c:46:13:MotorApply	24	static
-D:/STM32project/stm32-car/Core/Src/chapter.c:62:13:HardwareInit	64	static
-D:/STM32project/stm32-car/Core/Src/chapter.c:135:6:chapter_main	24	static
