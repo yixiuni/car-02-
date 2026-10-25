@@ -1,0 +1,433 @@
+{
+  "firmware": "T312",
+  "result": "COMPLETED",
+  "state": 5,
+  "fault": 0,
+  "task": 4,
+  "completed_laps": 4,
+  "target_laps": 4,
+  "point_events": 17,
+  "run_at": 468235,
+  "elapsed_s": 36.081,
+  "elapsed_method": "First DONE minus run_at",
+  "straight_target_mm_s": 800,
+  "arc_target_mm_s": 450,
+  "entry_target_mm_s": 370,
+  "peak_pwm_control_rate": [
+    901,
+    901
+  ],
+  "saturated_updates": 0,
+  "active_updates": 5061,
+  "max_active_control_interval_ms": 8,
+  "gray_counters": [
+    43306,
+    0,
+    0,
+    0
+  ],
+  "events": [
+    {
+      "event": 1,
+      "elapsed_s": 0.001,
+      "state": 1
+    },
+    {
+      "event": 2,
+      "elapsed_s": 2.028,
+      "state": 3
+    },
+    {
+      "event": 3,
+      "elapsed_s": 4.496,
+      "state": 1
+    },
+    {
+      "event": 4,
+      "elapsed_s": 6.367,
+      "state": 3
+    },
+    {
+      "event": 5,
+      "elapsed_s": 9.037,
+      "state": 1
+    },
+    {
+      "event": 6,
+      "elapsed_s": 10.886,
+      "state": 3
+    },
+    {
+      "event": 7,
+      "elapsed_s": 13.479,
+      "state": 1
+    },
+    {
+      "event": 8,
+      "elapsed_s": 15.321,
+      "state": 3
+    },
+    {
+      "event": 9,
+      "elapsed_s": 17.931,
+      "state": 1
+    },
+    {
+      "event": 10,
+      "elapsed_s": 19.801,
+      "state": 3
+    },
+    {
+      "event": 11,
+      "elapsed_s": 22.388,
+      "state": 1
+    },
+    {
+      "event": 12,
+      "elapsed_s": 24.258,
+      "state": 3
+    },
+    {
+      "event": 13,
+      "elapsed_s": 26.797,
+      "state": 1
+    },
+    {
+      "event": 14,
+      "elapsed_s": 28.653,
+      "state": 3
+    },
+    {
+      "event": 15,
+      "elapsed_s": 31.211,
+      "state": 1
+    },
+    {
+      "event": 16,
+      "elapsed_s": 33.053,
+      "state": 3
+    },
+    {
+      "event": 17,
+      "elapsed_s": 36.081,
+      "state": 5
+    }
+  ],
+  "arc_observations": [
+    {
+      "point_events": 2,
+      "black_samples": 139,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -44.530029296875,
+      "max_abs_radial_error_mm": 64.82754516601562,
+      "slot": 0,
+      "first": {
+        "tick": 472730,
+        "rejected": 0,
+        "x_mm": 1112.7232666015625,
+        "y_mm": -113.40986633300781,
+        "heading_rad": 2.7173171043395996,
+        "progress_mm": 1070.44921875,
+        "turned_rad": 3.3529722690582275,
+        "heading_error_rad": 0.0009210109710693359,
+        "correction_mm": 58.97149658203125,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      },
+      "last": {
+        "tick": 472730,
+        "rejected": 0,
+        "x_mm": 1112.7232666015625,
+        "y_mm": -113.40986633300781,
+        "heading_rad": 2.7173171043395996,
+        "progress_mm": 1070.44921875,
+        "turned_rad": 3.3529722690582275,
+        "heading_error_rad": 0.0009210109710693359,
+        "correction_mm": 58.97149658203125,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 4,
+      "black_samples": 152,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 47.499786376953125,
+      "max_abs_radial_error_mm": 47.499786376953125,
+      "slot": 1,
+      "first": {
+        "tick": 477271,
+        "rejected": 0,
+        "x_mm": -89.13719940185547,
+        "y_mm": -10.595830917358398,
+        "heading_rad": 0.33058884739875793,
+        "progress_mm": 1150.639892578125,
+        "turned_rad": 3.499769449234009,
+        "heading_error_rad": 0.09460785984992981,
+        "correction_mm": 81.56427764892578,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      },
+      "last": {
+        "tick": 477271,
+        "rejected": 0,
+        "x_mm": -89.13719940185547,
+        "y_mm": -10.595830917358398,
+        "heading_rad": 0.33058884739875793,
+        "progress_mm": 1150.639892578125,
+        "turned_rad": 3.499769449234009,
+        "heading_error_rad": 0.09460785984992981,
+        "correction_mm": 81.56427764892578,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 6,
+      "black_samples": 147,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -5.3668212890625,
+      "max_abs_radial_error_mm": 45.858001708984375,
+      "slot": 2,
+      "first": {
+        "tick": 481713,
+        "rejected": 0,
+        "x_mm": 1085.643798828125,
+        "y_mm": -69.99166107177734,
+        "heading_rad": 2.7696611881256104,
+        "progress_mm": 1116.98095703125,
+        "turned_rad": 3.409602642059326,
+        "heading_error_rad": 0.05326509475708008,
+        "correction_mm": 66.68982696533203,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      },
+      "last": {
+        "tick": 481713,
+        "rejected": 0,
+        "x_mm": 1085.643798828125,
+        "y_mm": -69.99166107177734,
+        "heading_rad": 2.7696611881256104,
+        "progress_mm": 1116.98095703125,
+        "turned_rad": 3.409602642059326,
+        "heading_error_rad": 0.05326509475708008,
+        "correction_mm": 66.68982696533203,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 8,
+      "black_samples": 150,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 22.42718505859375,
+      "max_abs_radial_error_mm": 38.3548583984375,
+      "slot": 3,
+      "first": {
+        "tick": 486165,
+        "rejected": 0,
+        "x_mm": -86.45643615722656,
+        "y_mm": -39.04830551147461,
+        "heading_rad": 0.3213421106338501,
+        "progress_mm": 1137.146484375,
+        "turned_rad": 3.507073402404785,
+        "heading_error_rad": 0.10385459661483765,
+        "correction_mm": 70.30817413330078,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      },
+      "last": {
+        "tick": 486165,
+        "rejected": 0,
+        "x_mm": -86.45643615722656,
+        "y_mm": -39.04830551147461,
+        "heading_rad": 0.3213421106338501,
+        "progress_mm": 1137.146484375,
+        "turned_rad": 3.507073402404785,
+        "heading_error_rad": 0.10385459661483765,
+        "correction_mm": 70.30817413330078,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 10,
+      "black_samples": 150,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 23.77960205078125,
+      "max_abs_radial_error_mm": 35.156951904296875,
+      "slot": 4,
+      "first": {
+        "tick": 490622,
+        "rejected": 0,
+        "x_mm": 1082.9564208984375,
+        "y_mm": -37.68120193481445,
+        "heading_rad": 2.7902321815490723,
+        "progress_mm": 1134.80859375,
+        "turned_rad": 3.428966999053955,
+        "heading_error_rad": 0.07383608818054199,
+        "correction_mm": 74.03408813476562,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      },
+      "last": {
+        "tick": 490622,
+        "rejected": 0,
+        "x_mm": 1082.9564208984375,
+        "y_mm": -37.68120193481445,
+        "heading_rad": 2.7902321815490723,
+        "progress_mm": 1134.80859375,
+        "turned_rad": 3.428966999053955,
+        "heading_error_rad": 0.07383608818054199,
+        "correction_mm": 74.03408813476562,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 12,
+      "black_samples": 145,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 1.94720458984375,
+      "max_abs_radial_error_mm": 41.880279541015625,
+      "slot": 5,
+      "first": {
+        "tick": 495031,
+        "rejected": 0,
+        "x_mm": -83.58246612548828,
+        "y_mm": -59.666595458984375,
+        "heading_rad": 0.37690478563308716,
+        "progress_mm": 1104.677734375,
+        "turned_rad": 3.454339027404785,
+        "heading_error_rad": 0.048291921615600586,
+        "correction_mm": 68.48971557617188,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      },
+      "last": {
+        "tick": 495031,
+        "rejected": 0,
+        "x_mm": -83.58246612548828,
+        "y_mm": -59.666595458984375,
+        "heading_rad": 0.37690478563308716,
+        "progress_mm": 1104.677734375,
+        "turned_rad": 3.454339027404785,
+        "heading_error_rad": 0.048291921615600586,
+        "correction_mm": 68.48971557617188,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 14,
+      "black_samples": 148,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 7.5460205078125,
+      "max_abs_radial_error_mm": 37.01959228515625,
+      "slot": 6,
+      "first": {
+        "tick": 499445,
+        "rejected": 0,
+        "x_mm": 1087.160400390625,
+        "y_mm": -47.73413848876953,
+        "heading_rad": 2.8407373428344727,
+        "progress_mm": 1122.947265625,
+        "turned_rad": 3.486879587173462,
+        "heading_error_rad": 0.12434124946594238,
+        "correction_mm": 67.95896911621094,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      },
+      "last": {
+        "tick": 499445,
+        "rejected": 0,
+        "x_mm": 1087.160400390625,
+        "y_mm": -47.73413848876953,
+        "heading_rad": 2.8407373428344727,
+        "progress_mm": 1122.947265625,
+        "turned_rad": 3.486879587173462,
+        "heading_error_rad": 0.12434124946594238,
+        "correction_mm": 67.95896911621094,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 16,
+      "black_samples": 153,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 53.30902099609375,
+      "max_abs_radial_error_mm": 53.30902099609375,
+      "slot": 7,
+      "first": {
+        "tick": 503956,
+        "rejected": 0,
+        "x_mm": -87.24375915527344,
+        "y_mm": -2.6648638248443604,
+        "heading_rad": 0.26541009545326233,
+        "progress_mm": 1157.7265625,
+        "turned_rad": 3.5636065006256104,
+        "heading_error_rad": 0.15978661179542542,
+        "correction_mm": 88.69654846191406,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      },
+      "last": {
+        "tick": 503956,
+        "rejected": 0,
+        "x_mm": -87.24375915527344,
+        "y_mm": -2.6648638248443604,
+        "heading_rad": 0.26541009545326233,
+        "progress_mm": 1157.7265625,
+        "turned_rad": 3.5636065006256104,
+        "heading_error_rad": 0.15978661179542542,
+        "correction_mm": 88.69654846191406,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      }
+    }
+  ],
+  "all_eight_exits_accepted_first_candidate": true,
+  "previous_T311_elapsed_s": 37.049,
+  "improvement_s": 0.968,
+  "state_intervals_s": {
+    "1": 15.027,
+    "3": 20.694,
+    "4": 0.359
+  },
+  "scope": "One completed physical run, not repeatability or independent ground-truth coverage proof. State durations estimated from sparse trace. T310 failure root cause still unconfirmed.",
+  "user_report": "\u597d\u4e86",
+  "stopped_check": "Two stationary snapshots agree on state and encoder counts; PWM and hardware CCR zero"
+}
