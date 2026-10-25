@@ -1,0 +1,76 @@
+{
+  "firmware": "T310",
+  "magic": "0x54333130",
+  "flashed": true,
+  "live_flash_sha256": "44d3a0a25e4efa147e6d2cd20bdd2369ec003cbcba6b4bffc045b5e0d74a8856",
+  "flash_bytes": 42996,
+  "ram_bytes": 40488,
+  "straight_mm_s": 850,
+  "arc_mm_s": 550,
+  "entry_mm_s": 370,
+  "wheel_target_limit_mm_s": 1000,
+  "pwm_limit_permille": 1000,
+  "C_entry_aim_mm": 20,
+  "D_entry_aim_mm": 20,
+  "C_preview_before_footprint": true,
+  "event_gates": "Actual C footprint and three fresh black frames unchanged",
+  "stage3_turn_changes_enabled": false,
+  "physical_run": "pending",
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    751,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    834,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "T309",
+  "source_physical_successes_s": [
+    37.161
+  ],
+  "source_run_at": 121236,
+  "source_flash_sha256": "cef962e218c53e2c19a0cf9861001e5ad034b1b989261b78d2f6e9a4ad24be17",
+  "asan_ubsan_passed": true,
+  "validation_pass_lines": 4866,
+  "expanded_suites_passed": 36,
+  "expanded_suites_total": 36,
+  "C_entry_assumptions": "Independent true position shifts -40..40mm in10mm steps after A, each lap;3 motor response mismatches;3 PWM-speed assumptions;3 sensor phases. Not a measured physical error fit.",
+  "scope": "Straight850 arc550 entry370. Arc acceleration starts165mm after acquisition; PI budget900 now also applies on arcs. D fresh-black preview added; actual footprint/3-frame event gates unchanged, no front margin experiment enabled. Full flash readback and idle verified, physical pending. Model times33.22-37.70s are not physical success.",
+  "source_state": "T309 CROSS4 DONE fault0, full RAM and flash saved before reset",
+  "previous_physical_baseline": {
+    "firmware": "T309",
+    "elapsed_s": 37.161,
+    "straight_mm_s": 800,
+    "arc_mm_s": 430,
+    "straight_encoder_median_mm_s": 745.72,
+    "arc_encoder_median_mm_s": 426.41
+  },
+  "straight_PI_demand_budget_permille": 900,
+  "arc_PI_demand_budget_permille": 900,
+  "arc_acceleration_start_mm": 165,
+  "D_preview_before_footprint": true,
+  "idle_oled": {
+    "frames": 58,
+    "max_poll_cycles": 99984,
+    "max_control_gap_ms": 14
+  },
+  "active_timing_validation": "Pending physical run; idle max14ms is not active-run timing evidence."
+}

@@ -67,6 +67,8 @@ static CarFault InputFault(const CarControl *c, const CarInputs *in)
           CAR_TT_STRAIGHT_SPEED<=1000 && CAR_TT_WHEEL_SPEED>=CAR_TT_ENTRY_SPEED &&
           CAR_TT_WHEEL_SPEED<=1600 && CAR_TT_STRAIGHT_DECEL>0 && CAR_TT_STRAIGHT_DECEL<=5000 &&
           CAR_TT_STRAIGHT_PWM_RESERVE>=0 && CAR_TT_STRAIGHT_PWM_RESERVE<=CAR_PWM_LIMIT &&
+          CAR_TT_ARC_PWM_RESERVE>=0 && CAR_TT_ARC_PWM_RESERVE<=CAR_PWM_LIMIT &&
+          CAR_TT_ARC_ACCEL_START_MM>=0 && CAR_TT_ARC_ACCEL_START_MM<=400 &&
           CAR_TT_D_FILTER_MS>=0 && CAR_TT_D_FILTER_MS<=100))
         return CAR_FAULT_CONFIG;
     if (!in->gray_online) return CAR_FAULT_GRAY;
@@ -176,15 +178,16 @@ static void Drive(CarControl *c,float speed,float omega,float dt,const CarInputs
             c->right_target*=CAR_TT_WHEEL_SPEED/peak;
         }
     }
-    if (CAR_TIME_TRIAL_BUILD && FastCourse(c) && c->state==CAR_STRAIGHT &&
-        CAR_TT_STRAIGHT_PWM_RESERVE>0) {
+    float pwm_budget=c->state==CAR_STRAIGHT ? CAR_TT_STRAIGHT_PWM_RESERVE :
+        c->state==CAR_ARC ? CAR_TT_ARC_PWM_RESERVE : 0;
+    if (CAR_TIME_TRIAL_BUILD && FastCourse(c) && pwm_budget>0) {
         /* Invert the current wheel PI demand to reserve steering authority.
          * Common scaling keeps path curvature when a weak/battery-limited
-         * wheel cannot deliver the requested straight speed. No plant gain
+         * wheel cannot deliver the requested straight or arc speed. No plant gain
          * is assumed; measured speed and each PI integral determine the cap. */
-        float left_available=fmaxf(0,(CAR_TT_STRAIGHT_PWM_RESERVE+
+        float left_available=fmaxf(0,(pwm_budget+
             CAR_SPEED_KP*in->left_speed-c->motion.left.integral)/(CAR_SPEED_FF+CAR_SPEED_KP));
-        float right_available=fmaxf(0,(CAR_TT_STRAIGHT_PWM_RESERVE+
+        float right_available=fmaxf(0,(pwm_budget+
             CAR_SPEED_KP*in->right_speed-c->motion.right.integral)/(CAR_SPEED_FF+CAR_SPEED_KP));
         float scale=1.0f;
         if (c->left_target>0) scale=fminf(scale,left_available/c->left_target);
@@ -354,7 +357,8 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             if(CAR_DUAL_MODE_BUILD && FastCourse(c) && c->black_frames>0 &&
                remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
                end_distance<CAR_ENDPOINT_GATE_MM &&
-               (Covers(c,end) || (CAR_CROSS_C_ENTRY_PREVIEW && c->task==4 && c->segment==0))) {
+               (Covers(c,end) || (CAR_CROSS_C_ENTRY_PREVIEW && c->task==4 && c->segment==0) ||
+                (CAR_CROSS_D_ENTRY_PREVIEW && c->task==4 && c->segment==2))) {
                 /* Near an endpoint, start tracking the observed arc on
                  * its first valid black frame. Do not signal/advance the route
                  * until the usual three consecutive frames confirm it above.
@@ -449,8 +453,9 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
             speed=FastCourse(c) ? FastArcSpeed() :
                 (turned>2.55f && !FinalSegment(c)) ? CAR_CAPTURE_SPEED : CAR_ARC_SPEED;
             if (CAR_TIME_TRIAL_BUILD && FastCourse(c)) {
+                /* Finish front-sensor acquisition before raising arc cruise. */
                 speed=fminf(speed,sqrtf(CAR_TT_ENTRY_SPEED*CAR_TT_ENTRY_SPEED+
-                    2*CAR_TT_APPROACH_ACCEL*fmaxf(0,progress)));
+                    2*CAR_TT_APPROACH_ACCEL*fmaxf(0,progress-CAR_TT_ARC_ACCEL_START_MM)));
                 if (c->line_missing || fabsf(c->line_error)>1.5f*CAR_GRAY_PITCH_MM)
                     speed=fminf(speed,CAR_TT_ENTRY_SPEED);
             }

@@ -1,0 +1,3183 @@
+{
+  "scope": "Host simulations only; all candidates retained. Position/motor perturbations are assumptions, not fitted high-speed hardware data. Final selected850/550/370, arc budget900, arc acceleration starts165mm, C/D aim20, Dpreview enabled.",
+  "research_only_front_margin_patch": "t310-rejected-front-margin.patch",
+  "profiles": [
+    {
+      "experiment": "t310-screen",
+      "name": "s800a500r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.56,
+        37.59,
+        37.59,
+        34.08,
+        34.1,
+        34.09,
+        34.03,
+        34.01,
+        33.99
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t28.48 fault8 seg0 true(1042.9,-902.3,-40.3)",
+          "log": "s800a500r900-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-screen",
+      "name": "s850a500r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 31,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.53,
+        37.57,
+        37.56,
+        33.62,
+        33.61,
+        33.62,
+        33.52,
+        33.53,
+        33.51
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.28 fault8 seg2 true(-39.1,-901.7,219.5)",
+          "log": "s850a500r900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task4 t8.04 fault7 seg3 true(70.2,-780.8,203.8)",
+          "log": "s850a500r900-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.86 fault7 seg3 true(81.6,-784.9,203.0)",
+          "log": "s850a500r900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t17.09 fault7 seg3 true(84.8,-789.9,209.3)",
+          "log": "s850a500r900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 69,-657",
+          "log": "s850a500r900-model0.9-phase0-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-screen",
+      "name": "s900a500r950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0
+      },
+      "passed": 31,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.8,
+        36.76,
+        36.81,
+        33.21,
+        33.22,
+        33.21,
+        33.15,
+        33.12,
+        33.11
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.67 fault7 seg3 true(86.0,-787.1,207.6)",
+          "log": "s900a500r950-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t30.71 fault7 seg1 true(916.5,-785.5,-22.4)",
+          "log": "s900a500r950-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task4 t7.84 fault7 seg3 true(66.4,-781.4,202.8)",
+          "log": "s900a500r950-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.10 fault8 seg2 true(-40.3,-899.8,219.4)",
+          "log": "s900a500r950-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task4 t7.85 fault7 seg3 true(65.2,-780.8,202.8)",
+          "log": "s900a500r950-model1.5-phase10-full.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-screen",
+      "name": "s850a550r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 26,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.3,
+        36.3,
+        36.34,
+        32.13,
+        32.12,
+        32.19,
+        31.97,
+        32.01,
+        32.05
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 18,-726",
+          "log": "s850a550r900-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.12 fault8 seg2 true(-42.6,-904.5,219.3)",
+          "log": "s850a550r900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 17,-725",
+          "log": "s850a550r900-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.12 fault8 seg2 true(-41.1,-901.4,219.6)",
+          "log": "s850a550r900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t31.01 fault8 seg0 true(1041.6,-914.7,-40.1)",
+          "log": "s850a550r900-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 988,-76",
+          "log": "s850a550r900-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.70 fault7 seg3 true(81.2,-785.8,203.1)",
+          "log": "s850a550r900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t31.00 fault8 seg0 true(1047.6,-906.5,-39.8)",
+          "log": "s850a550r900-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-659",
+          "log": "s850a550r900-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-657",
+          "log": "s850a550r900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-screen",
+      "name": "s900a550r950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0
+      },
+      "passed": 29,
+      "total": 36,
+      "nominal_cross4_s": [
+        35.51,
+        35.58,
+        35.56,
+        31.73,
+        31.77,
+        31.75,
+        31.62,
+        31.62,
+        31.62
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 983,-74",
+          "log": "s900a550r950-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t16.29 fault7 seg3 true(75.9,-787.0,204.0)",
+          "log": "s900a550r950-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 21,-728",
+          "log": "s900a550r950-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.94 fault8 seg2 true(-41.7,-905.7,219.3)",
+          "log": "s900a550r950-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 2,-722",
+          "log": "s900a550r950-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.54 fault7 seg3 true(78.1,-787.2,203.2)",
+          "log": "s900a550r950-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.08 fault8 seg2 true(-42.0,-904.9,220.0)",
+          "log": "s900a550r950-model1.0-phase5-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-screen",
+      "name": "s900a600r950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 600.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0
+      },
+      "passed": 23,
+      "total": 36,
+      "nominal_cross4_s": [
+        35.04,
+        34.98,
+        35.01,
+        30.4,
+        30.52,
+        30.48,
+        30.4,
+        30.39,
+        30.46
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 991,-74",
+          "log": "s900a600r950-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.84 fault8 seg2 true(-43.2,-904.7,219.1)",
+          "log": "s900a600r950-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.86 fault8 seg2 true(-42.7,-915.0,219.6)",
+          "log": "s900a600r950-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 984,-73",
+          "log": "s900a600r950-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.46 fault7 seg3 true(77.5,-787.5,202.9)",
+          "log": "s900a600r950-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 16,-727",
+          "log": "s900a600r950-model1.0-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t6.92 fault8 seg2 true(-45.5,-905.7,219.9)",
+          "log": "s900a600r950-model1.0-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t25.72 fault8 seg0 true(1041.5,-908.0,-40.1)",
+          "log": "s900a600r950-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 15,-727",
+          "log": "s900a600r950-model1.0-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 979,-71",
+          "log": "s900a600r950-model1.0-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t18.20 fault8 seg0 true(1046.1,-904.2,-40.1)",
+          "log": "s900a600r950-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 15,-726",
+          "log": "s900a600r950-model0.9-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t25.62 fault8 seg0 true(1043.7,-907.9,-40.2)",
+          "log": "s900a600r950-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-arc-budget",
+      "name": "s850a500b900-900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 31,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.68,
+        37.66,
+        37.72,
+        33.62,
+        33.61,
+        33.62,
+        33.52,
+        33.53,
+        33.51
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 983,-74",
+          "log": "s850a500b900-900-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.30 fault8 seg2 true(-39.9,-901.8,219.5)",
+          "log": "s850a500b900-900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task4 t8.06 fault7 seg3 true(71.6,-780.1,204.3)",
+          "log": "s850a500b900-900-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.29 fault8 seg2 true(-38.7,-901.8,219.5)",
+          "log": "s850a500b900-900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 69,-657",
+          "log": "s850a500b900-900-model0.9-phase0-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-arc-budget",
+      "name": "s850a550b900-900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 30,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.23,
+        37.23,
+        37.2,
+        32.13,
+        32.12,
+        32.19,
+        31.97,
+        32.01,
+        32.05
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task4 t8.07 fault7 seg3 true(68.6,-780.5,202.9)",
+          "log": "s850a550b900-900-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.80 fault7 seg3 true(86.5,-785.7,206.8)",
+          "log": "s850a550b900-900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.23 fault8 seg2 true(-41.5,-902.9,219.2)",
+          "log": "s850a550b900-900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.22 fault8 seg2 true(-40.3,-903.5,219.2)",
+          "log": "s850a550b900-900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-659",
+          "log": "s850a550b900-900-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-657",
+          "log": "s850a550b900-900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-arc-budget",
+      "name": "s900a550b950-900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 29,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.47,
+        36.51,
+        36.5,
+        31.73,
+        31.77,
+        31.75,
+        31.62,
+        31.62,
+        31.62
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.04 fault8 seg2 true(-38.6,-903.0,219.6)",
+          "log": "s900a550b950-900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task4 t7.87 fault7 seg3 true(70.8,-780.0,204.0)",
+          "log": "s900a550b950-900-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t16.64 fault7 seg3 true(70.9,-785.4,201.5)",
+          "log": "s900a550b950-900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t30.93 fault8 seg0 true(1041.5,-900.1,-40.2)",
+          "log": "s900a550b950-900-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task4 t7.87 fault7 seg3 true(75.6,-781.6,206.2)",
+          "log": "s900a550b950-900-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.05 fault8 seg2 true(-42.9,-903.8,219.2)",
+          "log": "s900a550b950-900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.08 fault8 seg2 true(-42.0,-904.9,220.0)",
+          "log": "s900a550b950-900-model1.0-phase5-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-arc-budget",
+      "name": "s900a600b950-900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 600.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 25,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.44,
+        36.45,
+        36.45,
+        30.4,
+        30.52,
+        30.48,
+        30.4,
+        30.39,
+        30.46
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.63 fault7 seg3 true(80.0,-786.6,204.5)",
+          "log": "s900a600b950-900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.63 fault7 seg3 true(82.5,-787.0,204.4)",
+          "log": "s900a600b950-900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t21.37 fault7 seg1 true(919.0,-784.4,-22.7)",
+          "log": "s900a600b950-900-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task4 t7.88 fault7 seg3 true(67.5,-780.0,203.2)",
+          "log": "s900a600b950-900-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.62 fault7 seg3 true(84.0,-787.6,206.6)",
+          "log": "s900a600b950-900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t6.92 fault8 seg2 true(-45.5,-905.7,219.9)",
+          "log": "s900a600b950-900-model1.0-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t25.72 fault8 seg0 true(1041.5,-908.0,-40.1)",
+          "log": "s900a600b950-900-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 990,-75",
+          "log": "s900a600b950-900-model1.0-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t18.20 fault8 seg0 true(1046.1,-904.2,-40.1)",
+          "log": "s900a600b950-900-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 15,-726",
+          "log": "s900a600b950-900-model0.9-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t25.62 fault8 seg0 true(1043.7,-907.9,-40.2)",
+          "log": "s900a600b950-900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-arc-budget",
+      "name": "s850a550b900-950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_PWM_RESERVE": 950.0
+      },
+      "passed": 29,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.41,
+        36.44,
+        36.45,
+        32.13,
+        32.12,
+        32.19,
+        31.97,
+        32.01,
+        32.05
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 973,-72",
+          "log": "s850a550b900-950-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.71 fault7 seg3 true(86.1,-785.7,206.9)",
+          "log": "s850a550b900-950-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task4 t7.95 fault7 seg3 true(75.6,-783.0,207.1)",
+          "log": "s850a550b900-950-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.72 fault7 seg3 true(80.1,-786.6,203.1)",
+          "log": "s850a550b900-950-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.71 fault7 seg3 true(80.3,-787.0,203.2)",
+          "log": "s850a550b900-950-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-659",
+          "log": "s850a550b900-950-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-657",
+          "log": "s850a550b900-950-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-arc-budget",
+      "name": "s900a550b950-950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0,
+        "CAR_TT_ARC_PWM_RESERVE": 950.0
+      },
+      "passed": 30,
+      "total": 36,
+      "nominal_cross4_s": [
+        35.66,
+        35.67,
+        35.68,
+        31.73,
+        31.77,
+        31.75,
+        31.62,
+        31.62,
+        31.62
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task4 t7.77 fault7 seg3 true(68.5,-780.5,204.6)",
+          "log": "s900a550b950-950-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t12.12 fault7 seg1 true(917.3,-785.4,-22.4)",
+          "log": "s900a550b950-950-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 980,-73",
+          "log": "s900a550b950-950-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.96 fault8 seg2 true(-41.4,-900.3,219.5)",
+          "log": "s900a550b950-950-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.54 fault7 seg3 true(83.5,-786.2,205.7)",
+          "log": "s900a550b950-950-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.08 fault8 seg2 true(-42.0,-904.9,220.0)",
+          "log": "s900a550b950-950-model1.0-phase5-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-entry",
+      "name": "s850a500e370c25d25b0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_TT_ENTRY_SPEED": 370.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 0.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.52,
+        37.54,
+        37.52,
+        33.56,
+        33.55,
+        33.55,
+        33.49,
+        33.48,
+        33.51
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t17.11 fault7 seg3 true(75.8,-785.3,202.6)",
+          "log": "s850a500e370c25d25b0-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-658",
+          "log": "s850a500e370c25d25b0-model0.9-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-659",
+          "log": "s850a500e370c25d25b0-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 935,-658",
+          "log": "s850a500e370c25d25b0-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-entry",
+      "name": "s850a500e370c20d25b0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_TT_ENTRY_SPEED": 370.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 0.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.56,
+        37.52,
+        37.51,
+        33.56,
+        33.56,
+        33.57,
+        33.51,
+        33.5,
+        33.48
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.84 fault7 seg3 true(84.7,-786.7,205.6)",
+          "log": "s850a500e370c20d25b0-model1.5-phase0-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-entry",
+      "name": "s850a500e370c25d30b0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_TT_ENTRY_SPEED": 370.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 30.0,
+        "CAR_TT_ARC_PWM_RESERVE": 0.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.53,
+        37.48,
+        37.49,
+        33.54,
+        33.56,
+        33.54,
+        33.46,
+        33.47,
+        33.47
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 931,-658",
+          "log": "s850a500e370c25d30b0-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 57,-656",
+          "log": "s850a500e370c25d30b0-model0.9-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 937,-659",
+          "log": "s850a500e370c25d30b0-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 67,-658",
+          "log": "s850a500e370c25d30b0-model0.9-phase10-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-entry",
+      "name": "s850a550e370c25d25b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ENTRY_SPEED": 370.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 29,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.16,
+        37.16,
+        37.18,
+        32.09,
+        32.02,
+        32.08,
+        32.0,
+        32.01,
+        32.04
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.82 fault7 seg3 true(78.5,-785.6,202.0)",
+          "log": "s850a550e370c25d25b900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t35.32 fault7 seg3 true(76.9,-788.3,206.1)",
+          "log": "s850a550e370c25d25b900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task4 t8.06 fault7 seg3 true(69.6,-779.7,204.2)",
+          "log": "s850a550e370c25d25b900-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.81 fault7 seg3 true(77.2,-786.5,202.8)",
+          "log": "s850a550e370c25d25b900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t6.67 fault7 seg3 true(88.5,-781.9,204.9)",
+          "log": "s850a550e370c25d25b900-model1.0-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 931,-657",
+          "log": "s850a550e370c25d25b900-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-657",
+          "log": "s850a550e370c25d25b900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-entry",
+      "name": "s800a550e370c25d25b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 800.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ENTRY_SPEED": 370.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.19,
+        37.16,
+        37.23,
+        32.51,
+        32.49,
+        32.53,
+        32.45,
+        32.48,
+        32.42
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.80 fault7 seg3 true(86.0,-788.8,207.6)",
+          "log": "s800a550e370c25d25b900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.81 fault7 seg3 true(79.4,-788.2,204.1)",
+          "log": "s800a550e370c25d25b900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.82 fault7 seg3 true(79.1,-786.0,203.1)",
+          "log": "s800a550e370c25d25b900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 941,-658",
+          "log": "s800a550e370c25d25b900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-entry",
+      "name": "s900a550e400c20d20b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ENTRY_SPEED": 400.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 20.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 29,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.91,
+        36.9,
+        36.91,
+        31.48,
+        31.46,
+        31.45,
+        31.18,
+        31.19,
+        31.2
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task4 t7.98 fault7 seg3 true(67.4,-782.0,204.5)",
+          "log": "s900a550e400c20d20b900-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.12 fault8 seg2 true(-40.6,-902.7,219.2)",
+          "log": "s900a550e400c20d20b900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.77 fault7 seg3 true(70.0,-786.3,201.3)",
+          "log": "s900a550e400c20d20b900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.76 fault7 seg3 true(73.5,-787.5,201.3)",
+          "log": "s900a550e400c20d20b900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.00 fault8 seg2 true(-43.0,-905.7,220.0)",
+          "log": "s900a550e400c20d20b900-model1.0-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t6.54 fault7 seg3 true(87.8,-784.1,206.0)",
+          "log": "s900a550e400c20d20b900-model1.0-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-657",
+          "log": "s900a550e400c20d20b900-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-entry",
+      "name": "s850a550e400c20d25b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ENTRY_SPEED": 400.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 31,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.91,
+        36.9,
+        36.88,
+        31.7,
+        31.66,
+        31.66,
+        31.57,
+        31.54,
+        31.54
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.74 fault7 seg3 true(78.3,-791.5,205.4)",
+          "log": "s850a550e400c20d25b900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task4 t7.99 fault7 seg3 true(61.8,-782.4,201.7)",
+          "log": "s850a550e400c20d25b900-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.75 fault7 seg3 true(77.6,-791.1,205.4)",
+          "log": "s850a550e400c20d25b900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t30.94 fault7 seg1 true(921.3,-787.6,-21.7)",
+          "log": "s850a550e400c20d25b900-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t6.58 fault7 seg3 true(85.4,-784.4,206.0)",
+          "log": "s850a550e400c20d25b900-model1.0-phase0-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-entry",
+      "name": "s850a500e400c20d25b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_TT_ENTRY_SPEED": 400.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 30,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.38,
+        37.38,
+        37.4,
+        33.22,
+        33.23,
+        33.2,
+        33.11,
+        33.09,
+        33.11
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.83 fault7 seg3 true(70.6,-787.7,201.4)",
+          "log": "s850a500e400c20d25b900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t22.41 fault8 seg0 true(1046.6,-904.5,-39.6)",
+          "log": "s850a500e400c20d25b900-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.88 fault7 seg3 true(70.2,-788.9,200.4)",
+          "log": "s850a500e400c20d25b900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 27,-728",
+          "log": "s850a500e400c20d25b900-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t7.81 fault7 seg3 true(77.7,-789.1,205.3)",
+          "log": "s850a500e400c20d25b900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t27.62 fault8 seg0 true(1042.5,-902.0,-40.2)",
+          "log": "s850a500e400c20d25b900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-preview",
+      "name": "s850a500d20b0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 20.0,
+        "CAR_TT_ARC_PWM_RESERVE": 0.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.48,
+        37.44,
+        37.54,
+        33.58,
+        33.56,
+        33.6,
+        33.51,
+        33.52,
+        33.49
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-659",
+          "log": "s850a500d20b0-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-preview",
+      "name": "s850a500d25b0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 0.0
+      },
+      "passed": 33,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.44,
+        37.44,
+        37.48,
+        33.56,
+        33.56,
+        33.55,
+        33.49,
+        33.47,
+        33.48
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t31.73 fault8 seg0 true(1042.7,-901.5,-39.9)",
+          "log": "s850a500d25b0-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 62,-658",
+          "log": "s850a500d25b0-model0.9-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t28.05 fault8 seg0 true(1043.0,-903.0,-40.3)",
+          "log": "s850a500d25b0-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-preview",
+      "name": "s850a550d20b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 20.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.12,
+        37.16,
+        37.12,
+        32.11,
+        32.04,
+        32.08,
+        31.96,
+        31.96,
+        32.0
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.22 fault8 seg2 true(-40.6,-903.1,219.2)",
+          "log": "s850a550d20b900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-657",
+          "log": "s850a550d20b900-model0.9-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 66,-658",
+          "log": "s850a550d20b900-model0.9-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 938,-658",
+          "log": "s850a550d20b900-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-preview",
+      "name": "s900a550d20b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 20.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 30,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.12,
+        37.13,
+        37.12,
+        31.84,
+        31.82,
+        31.87,
+        31.54,
+        31.63,
+        31.66
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t22.28 fault8 seg0 true(1040.1,-900.1,-40.1)",
+          "log": "s900a550d20b900-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 23,-727",
+          "log": "s900a550d20b900-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.22 fault8 seg2 true(-43.0,-902.0,219.3)",
+          "log": "s900a550d20b900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t26.89 fault8 seg0 true(1045.4,-906.1,-40.3)",
+          "log": "s900a550d20b900-model1.0-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-659",
+          "log": "s900a550d20b900-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 943,-658",
+          "log": "s900a550d20b900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-preview",
+      "name": "s900a600d20b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 600.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 20.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 27,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.09,
+        37.11,
+        37.12,
+        30.58,
+        30.61,
+        30.57,
+        30.36,
+        30.41,
+        30.34
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.22 fault8 seg2 true(-41.6,-900.7,219.5)",
+          "log": "s900a600d20b900-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.22 fault8 seg2 true(-42.4,-903.7,219.3)",
+          "log": "s900a600d20b900-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 984,-72",
+          "log": "s900a600d20b900-model1.0-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 12,-726",
+          "log": "s900a600d20b900-model1.0-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 993,-76",
+          "log": "s900a600d20b900-model0.9-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-658",
+          "log": "s900a600d20b900-model0.9-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 982,-72",
+          "log": "s900a600d20b900-model0.9-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-657",
+          "log": "s900a600d20b900-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 12,-726",
+          "log": "s900a600d20b900-model0.9-phase10-full.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-preview",
+      "name": "s850a550d25b900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.12,
+        37.16,
+        37.15,
+        32.02,
+        32.09,
+        32.05,
+        32.02,
+        31.99,
+        31.97
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t22.27 fault8 seg0 true(1046.2,-906.9,-39.8)",
+          "log": "s850a550d25b900-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 931,-657",
+          "log": "s850a550d25b900-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-c-aim",
+      "name": "c15",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 15.0
+      },
+      "passed": 33,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.12,
+        37.15,
+        37.13,
+        32.06,
+        32.05,
+        32.04,
+        32.07,
+        31.98,
+        31.96
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t31.59 fault8 seg0 true(1039.1,-905.2,-39.9)",
+          "log": "c15-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t26.95 fault8 seg0 true(1044.7,-905.2,-40.2)",
+          "log": "c15-model1.0-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t27.04 fault8 seg0 true(1037.3,-907.4,-40.5)",
+          "log": "c15-model1.0-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-c-aim",
+      "name": "c18",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 18.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.16,
+        37.12,
+        37.12,
+        32.03,
+        32.02,
+        32.06,
+        32.0,
+        31.96,
+        31.99
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t31.61 fault8 seg0 true(1041.9,-900.0,-40.1)",
+          "log": "c18-model1.5-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-c-aim",
+      "name": "c22",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 22.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.08,
+        37.11,
+        37.13,
+        32.05,
+        32.02,
+        32.02,
+        31.96,
+        31.96,
+        31.98
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-658",
+          "log": "c22-model1.0-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-c-aim",
+      "name": "c25",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 25.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.12,
+        37.12,
+        37.1,
+        32.0,
+        32.0,
+        32.05,
+        31.95,
+        31.93,
+        31.98
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-658",
+          "log": "c25-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-656",
+          "log": "c25-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-c-aim",
+      "name": "c28",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 28.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.08,
+        37.11,
+        37.07,
+        32.03,
+        31.95,
+        31.98,
+        31.94,
+        31.95,
+        31.97
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 939,-658",
+          "log": "c28-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 935,-659",
+          "log": "c28-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-margin",
+      "name": "m5",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 22.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 5.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.08,
+        37.12,
+        37.12,
+        32.03,
+        32.02,
+        32.06,
+        31.96,
+        31.99,
+        31.97
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t19.00 fault8 seg0 true(1044.0,-903.5,-40.3)",
+          "log": "m5-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-margin",
+      "name": "m10",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 22.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 10.0
+      },
+      "passed": 33,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.12,
+        37.11,
+        37.1,
+        32.09,
+        32.02,
+        32.09,
+        32.05,
+        31.98,
+        32.03
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.22 fault8 seg2 true(-47.2,-895.5,219.1)",
+          "log": "m10-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 931,-657",
+          "log": "m10-model1.0-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-658",
+          "log": "m10-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-margin",
+      "name": "m15",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 22.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 15.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.11,
+        37.11,
+        37.1,
+        32.06,
+        32.15,
+        32.15,
+        32.02,
+        32.02,
+        32.08
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t31.59 fault8 seg0 true(1048.5,-891.0,-40.0)",
+          "log": "m15-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 941,-657",
+          "log": "m15-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-combined",
+      "name": "s850a550c23m5r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 23.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 5.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.14,
+        37.11,
+        37.12,
+        32.05,
+        32.05,
+        31.99,
+        31.98,
+        32.01,
+        31.96
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 66,-657",
+          "log": "s850a550c23m5r900-model0.9-phase0-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-combined",
+      "name": "s850a550c20m5r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 5.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.14,
+        37.11,
+        37.15,
+        32.05,
+        32.07,
+        32.06,
+        31.98,
+        31.96,
+        32.02
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t27.02 fault8 seg0 true(1044.3,-897.8,-40.7)",
+          "log": "s850a550c20m5r900-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t26.93 fault8 seg0 true(1046.6,-899.2,-40.6)",
+          "log": "s850a550c20m5r900-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-combined",
+      "name": "s850a520c20m0r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 520.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 0.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.22,
+        37.2,
+        37.18,
+        32.88,
+        32.9,
+        32.9,
+        32.88,
+        32.81,
+        32.87
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 978,-72",
+          "log": "s850a520c20m0r900-model1.5-phase0-full.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-combined",
+      "name": "s850a520c22m5r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 520.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 22.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 5.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.24,
+        37.16,
+        37.18,
+        32.88,
+        32.91,
+        32.9,
+        32.84,
+        32.84,
+        32.86
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 978,-72",
+          "log": "s850a520c22m5r900-model1.5-phase0-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t22.45 fault8 seg0 true(1043.6,-909.3,-39.8)",
+          "log": "s850a520c22m5r900-model1.5-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-658",
+          "log": "s850a520c22m5r900-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-657",
+          "log": "s850a520c22m5r900-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-combined",
+      "name": "s850a530c20m0r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 530.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 0.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.11,
+        37.18,
+        37.15,
+        32.61,
+        32.59,
+        32.53,
+        32.55,
+        32.55,
+        32.54
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t31.71 fault8 seg0 true(1041.7,-901.7,-39.9)",
+          "log": "s850a530c20m0r900-model1.5-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-658",
+          "log": "s850a530c20m0r900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-combined",
+      "name": "s900a520c20m0r950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 520.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 0.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.42,
+        36.46,
+        36.43,
+        32.49,
+        32.48,
+        32.51,
+        32.41,
+        32.41,
+        32.42
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.06 fault8 seg2 true(-42.7,-902.2,219.2)",
+          "log": "s900a520c20m0r950-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "errors": "FAIL task2: event point3 not physically covered at 19,-727",
+          "log": "s900a520c20m0r950-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 69,-658",
+          "log": "s900a520c20m0r950-model0.9-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 932,-657",
+          "log": "s900a520c20m0r950-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-combined",
+      "name": "s850a500c20m0r950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 0.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.83,
+        36.87,
+        36.89,
+        33.51,
+        33.52,
+        33.49,
+        33.49,
+        33.5,
+        33.47
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-659",
+          "log": "s850a500c20m0r950-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-combined",
+      "name": "s900a500c20m5r950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 500.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 5.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.84,
+        36.84,
+        36.81,
+        33.2,
+        33.16,
+        33.14,
+        33.07,
+        33.12,
+        33.08
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 935,-658",
+          "log": "s900a500c20m5r950-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-acquisition",
+      "name": "s850a550h100r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 100.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.43,
+        37.41,
+        37.4,
+        32.73,
+        32.76,
+        32.73,
+        32.69,
+        32.7,
+        32.7
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 931,-658",
+          "log": "s850a550h100r900-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-658",
+          "log": "s850a550h100r900-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-acquisition",
+      "name": "s850a550h165r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.68,
+        37.7,
+        37.7,
+        33.26,
+        33.21,
+        33.15,
+        33.22,
+        33.2,
+        33.2
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-656",
+          "log": "s850a550h165r900-model0.9-phase0-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-acquisition",
+      "name": "s900a550h165r950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.88,
+        36.93,
+        36.92,
+        32.81,
+        32.8,
+        32.83,
+        32.77,
+        32.74,
+        32.74
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t22.04 fault8 seg0 true(1035.0,-909.2,-40.2)",
+          "log": "s900a550h165r950-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t19.39 fault8 seg0 true(1047.6,-901.2,-40.5)",
+          "log": "s900a550h165r950-model1.0-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 61,-658",
+          "log": "s900a550h165r950-model0.9-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 943,-659",
+          "log": "s900a550h165r950-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-acquisition",
+      "name": "s900a600h165r950",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 900.0,
+        "CAR_TT_ARC_SPEED": 600.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 950.0
+      },
+      "passed": 33,
+      "total": 36,
+      "nominal_cross4_s": [
+        36.87,
+        36.88,
+        36.86,
+        31.69,
+        31.8,
+        31.8,
+        31.8,
+        31.76,
+        31.77
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 65,-656",
+          "log": "s900a600h165r950-model0.9-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 930,-656",
+          "log": "s900a600h165r950-model0.9-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t26.72 fault8 seg0 true(1045.7,-906.2,-40.4)",
+          "log": "s900a600h165r950-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-acquisition",
+      "name": "s850a600h165r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 600.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 32,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.65,
+        37.66,
+        37.66,
+        32.16,
+        32.24,
+        32.22,
+        32.14,
+        32.15,
+        32.2
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.31 fault8 seg2 true(-43.1,-899.3,219.5)",
+          "log": "s850a600h165r900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t19.21 fault8 seg0 true(1042.7,-906.9,-40.2)",
+          "log": "s850a600h165r900-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 64,-656",
+          "log": "s850a600h165r900-model0.9-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 939,-659",
+          "log": "s850a600h165r900-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-acquisition",
+      "name": "s850a550h250r900",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 250.0,
+        "CAR_TT_STRAIGHT_PWM_RESERVE": 900.0
+      },
+      "passed": 33,
+      "total": 36,
+      "nominal_cross4_s": [
+        38.1,
+        38.09,
+        38.11,
+        33.83,
+        33.87,
+        33.87,
+        33.8,
+        33.77,
+        33.82
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "full",
+          "errors": "FAIL task2: event point1 not physically covered at 983,-74",
+          "log": "s850a550h250r900-model1.5-phase5-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.37 fault8 seg2 true(-43.9,-901.7,219.2)",
+          "log": "s850a550h250r900-model1.5-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 69,-658",
+          "log": "s850a550h250r900-model0.9-phase10-d-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-final-screen",
+      "name": "c18d25m0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 18.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 0.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.71,
+        37.7,
+        37.7,
+        33.22,
+        33.24,
+        33.25,
+        33.24,
+        33.2,
+        33.2
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 65,-657",
+          "log": "c18d25m0-model0.9-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 935,-656",
+          "log": "c18d25m0-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-final-screen",
+      "name": "c22d25m0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 22.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 0.0
+      },
+      "passed": 35,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.68,
+        37.69,
+        37.66,
+        33.2,
+        33.2,
+        33.17,
+        33.14,
+        33.18,
+        33.22
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 934,-658",
+          "log": "c22d25m0-model0.9-phase5-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-final-screen",
+      "name": "c25d25m0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 0.0
+      },
+      "passed": 33,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.65,
+        37.66,
+        37.67,
+        33.2,
+        33.2,
+        33.22,
+        33.22,
+        33.18,
+        33.17
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 69,-657",
+          "log": "c25d25m0-model0.9-phase5-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 5,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 933,-656",
+          "log": "c25d25m0-model0.9-phase5-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 935,-658",
+          "log": "c25d25m0-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-final-screen",
+      "name": "c20d20m0",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 0.0
+      },
+      "passed": 36,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.7,
+        37.69,
+        37.69,
+        33.32,
+        33.27,
+        33.22,
+        33.27,
+        33.23,
+        33.25
+      ],
+      "failures": []
+    },
+    {
+      "experiment": "t310-final-screen",
+      "name": "c20d25m5",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 20.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 5.0
+      },
+      "passed": 31,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.7,
+        37.69,
+        37.69,
+        33.27,
+        33.26,
+        33.25,
+        33.23,
+        33.21,
+        33.22
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "errors": "FAIL task4 t8.32 fault8 seg2 true(-53.0,-899.3,219.0)",
+          "log": "c20d25m5-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t27.93 fault8 seg0 true(1048.4,-899.7,-40.4)",
+          "log": "c20d25m5-model1.0-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.0,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t19.68 fault8 seg0 true(1048.8,-899.6,-40.4)",
+          "log": "c20d25m5-model1.0-phase10-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "errors": "FAIL task4: event point3 not physically covered at 60,-659",
+          "log": "c20d25m5-model0.9-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-657",
+          "log": "c20d25m5-model0.9-phase10-c-offset.log"
+        }
+      ]
+    },
+    {
+      "experiment": "t310-final-screen",
+      "name": "c22d25m5",
+      "overrides": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_CROSS_D_ENTRY_PREVIEW": 1,
+        "CAR_TT_STRAIGHT_SPEED": 850.0,
+        "CAR_TT_ARC_SPEED": 550.0,
+        "CAR_TT_ARC_PWM_RESERVE": 900.0,
+        "CAR_TT_ARC_ACCEL_START_MM": 165.0,
+        "CAR_CROSS_C_ENTRY_AIM_MM": 22.0,
+        "CAR_CROSS_D_ENTRY_AIM_MM": 25.0,
+        "CAR_CROSS_ENTRY_FRONT_MARGIN_MM": 5.0
+      },
+      "passed": 34,
+      "total": 36,
+      "nominal_cross4_s": [
+        37.68,
+        37.68,
+        37.69,
+        33.22,
+        33.23,
+        33.2,
+        33.19,
+        33.23,
+        33.25
+      ],
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "c-offset",
+          "errors": "FAIL task4 t31.99 fault8 seg0 true(1043.1,-910.6,-39.9)",
+          "log": "c22d25m5-model1.5-phase0-c-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 10,
+          "suite": "c-offset",
+          "errors": "FAIL task4: event point2 not physically covered at 936,-659",
+          "log": "c22d25m5-model0.9-phase10-c-offset.log"
+        }
+      ]
+    }
+  ]
+}

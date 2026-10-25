@@ -58,6 +58,7 @@ int main(void)
     Init(400,0);c.state=CAR_ARC;c.segment=1;
     c.x_mm=1200;c.y_mm=-400;c.have_line=true;c.distance_mm=200;
     c.line_error=-52.5f;c.line_rate=-2000;c.last_line_at=0;
+    if(CAR_TIME_TRIAL_ARC_BOOST) in.left_speed=in.right_speed=800;
     Step(1,false); /* strong steering: common scale must retain curvature */
     float radius=sqrtf(400*400-c.geometry.sensor_forward_mm*c.geometry.sensor_forward_mm);
     float omega=-CAR_TT_ENTRY_SPEED/radius-
@@ -79,6 +80,7 @@ int main(void)
         c.task=4;c.segment=side==0 ? 1 : 3;c.state=CAR_ARC;
         c.y_mm=-690;c.arc_heading_start=c.heading_rad;
         c.have_line=true;c.line_error=-sign*52.5f;c.line_rate=-sign*2000;
+        if(CAR_TIME_TRIAL_ARC_BOOST) in.left_speed=in.right_speed=800;
         float previous_turn=100;
         for(unsigned i=0;i<36;i++) {
             Step(0,true);

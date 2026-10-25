@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "T309 physical CROSS4 completed37.161s fault0,17events, straight encoder median745.72mm/s and arc426.41mm/s; peakPWM901/901 with0/5213 hardware saturation. PreviousT30838.909s. Board remainsT309; no new flash this turn. One run, not repeated reliability or30s success. Historical model results unchanged.",
+  "hardware_status": "T310 straight850 arc550 entry370, arc PI budget900, acquisition165mm and Dpreview flashed/readback/idle verified; 36/36 model suites and4866 ASAN/UBSAN PASS lines. Physical pending. Prior T309 physical37.161s retained. Historical model results unchanged.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,

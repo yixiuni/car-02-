@@ -20,6 +20,7 @@ p.add_argument('--time-trial', action='store_true', help='Separate experimental 
 p.add_argument('--time-trial-stage2', action='store_true', help='Separate experimental T302: straight500 arc430 entry370')
 p.add_argument('--time-trial-stage3', action='store_true', help='Separate experimental T305: straight550 arc470 entry370 with fading bounded entry recovery')
 p.add_argument('--time-trial-c-entry', action='store_true', help='Separate T306: T302 speeds and C entry path/preview experiment')
+p.add_argument('--time-trial-arc-boost', action='store_true', help='Separate T310: straight850 arc550 entry370, arc headroom900 acquisition165 Dpreview')
 p.add_argument('--time-trial-adaptive', action='store_true', help='Separate T309: straight800, PI headroom900, arc430 entry370 Caim20')
 p.add_argument('--time-trial-fast', action='store_true', help='Separate T308: straight650 arc430 entry370, PWM1000 wheel850 Caim25')
 p.add_argument('--time-trial-straight', action='store_true', help='Separate T307: T306 entry control, straight520 arc430 entry370')
@@ -31,6 +32,8 @@ p.add_argument('--gray-learn', action='store_true', help='No-motion analog grays
 p.add_argument('--motor-slow-decay', action='store_true', help='Bench-only alternate AT8236 PWM mode')
 p.add_argument('--motor-fast-decay', action='store_true', help='Bench comparison with original fast-decay PWM')
 a = p.parse_args()
+if a.time_trial_arc_boost:
+    a.time_trial_adaptive=True
 if a.time_trial_adaptive:
     a.time_trial_fast=True
 if a.time_trial_fast and a.time_trial_straight:
@@ -68,7 +71,7 @@ def tool(name):
         p.error('ARM tool not found: ' + name)
     return found
 cc, objcopy, size = tool('gcc'), tool('objcopy'), tool('size')
-out = root / 'build-local' / (('GrayLearn' if a.gray_learn else 'TimeTrialAdaptive' if a.time_trial_adaptive else 'TimeTrialFast' if a.time_trial_fast else 'TimeTrialStraight' if a.time_trial_straight else 'TimeTrialEntry' if a.time_trial_c_entry else 'TimeTrial3' if a.time_trial_stage3 else 'TimeTrial2' if a.time_trial_stage2 else 'TimeTrial' if a.time_trial else 'DualMode' if a.dual_mode else 'FourTest' if a.four_test else 'CrossTest' if a.cross_test else 'LapTest' if a.lap_test else 'ArcTest' if a.arc_test else 'Task1Test' if a.task1_test else 'GroundTest' if a.ground_test else 'MotorTestFast' if a.motor_fast_decay else 'MotorTestSlow' if a.motor_slow_decay else 'MotorTest' if a.motor_test else '') + a.config)
+out = root / 'build-local' / (('GrayLearn' if a.gray_learn else 'TimeTrialArcBoost' if a.time_trial_arc_boost else 'TimeTrialAdaptive' if a.time_trial_adaptive else 'TimeTrialFast' if a.time_trial_fast else 'TimeTrialStraight' if a.time_trial_straight else 'TimeTrialEntry' if a.time_trial_c_entry else 'TimeTrial3' if a.time_trial_stage3 else 'TimeTrial2' if a.time_trial_stage2 else 'TimeTrial' if a.time_trial else 'DualMode' if a.dual_mode else 'FourTest' if a.four_test else 'CrossTest' if a.cross_test else 'LapTest' if a.lap_test else 'ArcTest' if a.arc_test else 'Task1Test' if a.task1_test else 'GroundTest' if a.ground_test else 'MotorTestFast' if a.motor_fast_decay else 'MotorTestSlow' if a.motor_slow_decay else 'MotorTest' if a.motor_test else '') + a.config)
 out.mkdir(parents=True, exist_ok=True)
 includes = ['Core/Inc', 'Drivers/STM32F1xx_HAL_Driver/Inc',
             'Drivers/STM32F1xx_HAL_Driver/Inc/Legacy', 'Drivers/CMSIS/Device/ST/STM32F1xx/Include',
@@ -97,6 +100,8 @@ if a.time_trial:
     flags += ['-DCAR_TIME_TRIAL_BUILD=1']
 if a.time_trial_stage2:
     flags += ['-DCAR_TIME_TRIAL_STAGE2=1']
+if a.time_trial_arc_boost:
+    flags += ['-DCAR_TIME_TRIAL_ARC_BOOST=1']
 if a.time_trial_adaptive:
     flags += ['-DCAR_TIME_TRIAL_ADAPTIVE=1']
 if a.time_trial_fast:
