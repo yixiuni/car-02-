@@ -51,7 +51,8 @@ int main(void)
     float actual=(c.right_target-c.left_target)/c.geometry.track_mm/
         ((c.left_target+c.right_target)*.5f);
     assert(fabsf(expected-actual)<.00001f);
-    assert(fabsf(fmaxf(c.left_target,c.right_target)-CAR_TT_WHEEL_SPEED)<.01f);
+    float requested_peak=CAR_TT_ENTRY_SPEED+fabsf(omega)*c.geometry.track_mm*.5f;
+    assert(fabsf(fmaxf(c.left_target,c.right_target)-fminf(requested_peak,CAR_TT_WHEEL_SPEED))<.01f);
     in.gray_online=false;in.now_ms+=5;CarControl_Update(&c,&in);
     assert(c.state==CAR_FAULT && c.fault==CAR_FAULT_GRAY && !c.left_pwm && !c.right_pwm);
     /* Replay both outer-edge directions from C/D entry. During lost samples
