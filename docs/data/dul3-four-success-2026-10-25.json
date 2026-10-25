@@ -1,0 +1,20 @@
+{
+  "firmware": "DUL3",
+  "task": 4,
+  "target_laps": 4,
+  "completed_laps": 4,
+  "elapsed_s": 56.141,
+  "point_events": 17,
+  "fault": 0,
+  "pwm_max_sampled": [
+    560,
+    609
+  ],
+  "pwm_limit": 700,
+  "trace_interval_ms": 200,
+  "run_at": 129244,
+  "user_report": "这次跑得不错",
+  "real_peak_pwm_unknown": true,
+  "gray_errors": 0,
+  "gray_timeouts": 0
+}

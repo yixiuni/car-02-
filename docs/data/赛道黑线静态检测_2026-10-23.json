@@ -1,0 +1,53 @@
+{
+  "captured_at": "2026-10-23T21:16:07.742439+08:00",
+  "user_placement": "center probes directly over actual B black line, user confirmed ready",
+  "interval_ms": 1000,
+  "readings": [
+    {
+      "file": ".tools/hardware-backups/course-black-static-01.bin",
+      "state": 6,
+      "fault": 8,
+      "gray_online": true,
+      "raw_status": 255,
+      "black_mask": 0,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_counters": [
+        24179,
+        0,
+        0,
+        0
+      ],
+      "counts": [
+        7669,
+        7643
+      ]
+    },
+    {
+      "file": ".tools/hardware-backups/course-black-static-02.bin",
+      "state": 6,
+      "fault": 8,
+      "gray_online": true,
+      "raw_status": 255,
+      "black_mask": 0,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_counters": [
+        24275,
+        0,
+        0,
+        0
+      ],
+      "counts": [
+        7669,
+        7643
+      ]
+    }
+  ],
+  "interpretation": "Both FF/normalized0, equal to previous white reference, 96 fresh status samples and no communication errors. Static placement not independently visible; no analog readings or threshold values obtained. Cannot conclude hardware defect or specific threshold cause. Next official background/target learning, then recheck both white and black and polarity. Do not alter stop distance or flip polarity blindly.",
+  "reference": "https://docs.hiwonder.com/projects/8-ch-Line-Follower/en/latest/docs/2.Quick_Start.html"
+}

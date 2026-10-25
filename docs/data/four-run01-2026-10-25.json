@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-25",
+  "firmware_sha256": "d8e6ea6a09dfb744d0970f0e9ed15add33ddc291f16f15f549d62a1805bc4b50",
+  "user_report": "Still too slow; requests no endpoint deceleration",
+  "state": 5,
+  "fault": 0,
+  "completed_laps": 4,
+  "point_events": 17,
+  "trace_samples": 821,
+  "done_at_ms": 108654,
+  "fault_at_ms": null,
+  "point_times": [
+    {
+      "elapsed_ms": 0,
+      "events": 1
+    },
+    {
+      "elapsed_ms": 5778,
+      "events": 2
+    },
+    {
+      "elapsed_ms": 13914,
+      "events": 3
+    },
+    {
+      "elapsed_ms": 19446,
+      "events": 4
+    },
+    {
+      "elapsed_ms": 27678,
+      "events": 5
+    },
+    {
+      "elapsed_ms": 33198,
+      "events": 6
+    },
+    {
+      "elapsed_ms": 41478,
+      "events": 7
+    },
+    {
+      "elapsed_ms": 47010,
+      "events": 8
+    },
+    {
+      "elapsed_ms": 55254,
+      "events": 9
+    },
+    {
+      "elapsed_ms": 60768,
+      "events": 10
+    },
+    {
+      "elapsed_ms": 68994,
+      "events": 11
+    },
+    {
+      "elapsed_ms": 74538,
+      "events": 12
+    },
+    {
+      "elapsed_ms": 82674,
+      "events": 13
+    },
+    {
+      "elapsed_ms": 88218,
+      "events": 14
+    },
+    {
+      "elapsed_ms": 96378,
+      "events": 15
+    },
+    {
+      "elapsed_ms": 101934,
+      "events": 16
+    },
+    {
+      "elapsed_ms": 108654,
+      "events": 17
+    }
+  ],
+  "gray_counters": [
+    22174,
+    0,
+    0,
+    0
+  ],
+  "max_pwm_permille": [
+    314,
+    322
+  ],
+  "brake_first_ms": 108330,
+  "counts_stable": true
+}

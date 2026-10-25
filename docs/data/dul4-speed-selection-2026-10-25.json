@@ -1,0 +1,11 @@
+{
+  "old_speed_mm_s": 340,
+  "selected_speed_mm_s": 350,
+  "candidate_360": {
+    "base_gray_phase": "passed nominal, weak brake and D entry sweep",
+    "gray_phase_10_ms": "failed task4 C entry fault7; rejected"
+  },
+  "candidate_380": "failed C/D entry cases; rejected",
+  "selected_350": "passed full ASAN/UBSAN; gray phases0/5/10ms weak brake and each B pose-error sweep",
+  "physical_new_speed_verified": false
+}

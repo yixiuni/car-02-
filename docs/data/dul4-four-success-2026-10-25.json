@@ -1,0 +1,19 @@
+{
+  "firmware": "DUL4",
+  "task": 4,
+  "target_laps": 4,
+  "completed_laps": 4,
+  "speed_mm_s": 350,
+  "elapsed_s": 54.478,
+  "run_at": 102048,
+  "point_events": 17,
+  "fault": 0,
+  "pwm_max_sampled": [
+    616,
+    589
+  ],
+  "real_peak_pwm_unknown": true,
+  "gray_errors": 0,
+  "gray_timeouts": 0,
+  "user_report": "效果不错"
+}

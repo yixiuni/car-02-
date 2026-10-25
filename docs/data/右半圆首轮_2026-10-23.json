@@ -1,0 +1,38 @@
+{
+  "firmware_sha256": "2c4c09a128207cc239e7e3622a17925a124bcdb36d8cb6d8ab4e15d6f57c1d4c",
+  "user_report": "一切良好",
+  "state": 5,
+  "fault": 0,
+  "phase": 4,
+  "last_point": "C",
+  "point_events": 3,
+  "done_at_ms": 14340,
+  "done_pose_mm_rad": [
+    1143.0263671875,
+    -730.3853149414062,
+    -2.752019166946411
+  ],
+  "trace_samples": 219,
+  "trace_span_ms": 25981,
+  "trace_max_gap_ms": 122,
+  "gray_counters": [
+    19112,
+    0,
+    0,
+    0
+  ],
+  "final_counts": [
+    15101,
+    14579
+  ],
+  "second_stopped_counts": [
+    15101,
+    14578
+  ],
+  "max_pwm_permille": [
+    207,
+    185
+  ],
+  "outputs_zero": true,
+  "interpretation": "Real A-B-C run reached DONE with three point events, no fault, user reports all good. No independent point/arc projection measurements. Whole task2 not yet tested."
+}

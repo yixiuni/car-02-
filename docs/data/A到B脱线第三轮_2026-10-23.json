@@ -1,0 +1,58 @@
+{
+  "captured_at": "2026-10-23T21:42:59.177541+08:00",
+  "firmware_sha256": "e1ff53ac2d726eb4fa9aa4ec4622707e51bf2792b246e2a74b14451d62acf521",
+  "user_report": "最初反馈未覆盖B、略偏、停车有响声；追问明确：车头差不多就在B点。偏移方向与距离未量化。",
+  "start_reference": "用户确认轮轴中点A、车头朝B；非独立测量",
+  "state": 5,
+  "fault": 0,
+  "phase": 4,
+  "point_events": 2,
+  "last_point": "B",
+  "trace_samples": 201,
+  "trace_span_ms": 15975,
+  "trace_max_gap_ms": 82,
+  "first_black_at_ms": 5790,
+  "first_black_mask": 32,
+  "braking_at_ms": 5808,
+  "done_at_ms": 6102,
+  "done_pose_mm_rad": [
+    835.621826171875,
+    0.2131412774324417,
+    1.2927695934195071e-05
+  ],
+  "first_counts": [
+    -36,
+    -1
+  ],
+  "final_counts": [
+    5854,
+    5875
+  ],
+  "second_stopped_counts": [
+    5854,
+    5875
+  ],
+  "wheel_travel_mm": [
+    838.3966195553029,
+    833.2246628390864
+  ],
+  "mean_wheel_travel_mm": 835.8106411971946,
+  "max_pwm_permille": [
+    218,
+    174
+  ],
+  "gray_counters": [
+    38470,
+    0,
+    0,
+    0
+  ],
+  "timer_ccr": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "trace_csv": "docs/data/A到B脱线第三轮_2026-10-23.csv",
+  "interpretation": "Analog black recognition and normal B completion now observed. User says nose approximately at B, matching estimated footprint boundary. Treat coverage as marginal, not independently verified geometric pass; slight deviation unquantified. No wheel/PID/threshold changes. Preserve terminal state and RAM."
+}

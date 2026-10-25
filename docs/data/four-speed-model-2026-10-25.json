@@ -1,0 +1,28 @@
+{
+  "selected_mm_s": 240,
+  "arc_mm_s": 180,
+  "pwm_limit_permille": 350,
+  "results": [
+    {
+      "diagonal_mm_s": 220,
+      "passed": true,
+      "output": "PASS: task4 111.67s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 111.70s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 111.34s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 111.61s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n"
+    },
+    {
+      "diagonal_mm_s": 230,
+      "passed": true,
+      "output": "PASS: task4 110.28s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 111.09s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 109.97s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 110.47s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n"
+    },
+    {
+      "diagonal_mm_s": 240,
+      "passed": true,
+      "output": "PASS: task4 109.94s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 111.05s, 17 point events, 4 laps (motor gains 0.95/1.05, yaw bias 0.001 rad/s)\nPASS: task4 109.73s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: task4 110.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\nPASS: injected fault 1 stops and latches during arc\nPASS: injected fault 2 stops and latches during arc\nPASS: injected fault 3 stops and latches during arc\nPASS: injected fault 4 stops and latches during arc\nPASS: physical button aborts arc immediately\n"
+    },
+    {
+      "diagonal_mm_s": 250,
+      "passed": false,
+      "note": "Task4 initial -2deg case failed ENDPOINT at8.83s beforeC; ideal110.06s, motorbias110.80s, +2deg109.69s."
+    }
+  ],
+  "note": "Model search among220,230,240,250 only; not global optimum or real timing guarantee."
+}

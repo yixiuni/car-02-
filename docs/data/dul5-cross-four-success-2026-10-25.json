@@ -1,0 +1,116 @@
+{
+  "firmware": "DUL5",
+  "speed_mm_s": 370,
+  "task": 4,
+  "route": "A-C-B-D-A",
+  "target_laps": 4,
+  "completed_laps": 4,
+  "elapsed_s": 51.695,
+  "point_events": 17,
+  "events": [
+    {
+      "event": 1,
+      "point": "A",
+      "elapsed_s": 0.001
+    },
+    {
+      "event": 2,
+      "point": "C",
+      "elapsed_s": 3.153
+    },
+    {
+      "event": 3,
+      "point": "B",
+      "elapsed_s": 6.194
+    },
+    {
+      "event": 4,
+      "point": "D",
+      "elapsed_s": 9.544
+    },
+    {
+      "event": 5,
+      "point": "A",
+      "elapsed_s": 12.682
+    },
+    {
+      "event": 6,
+      "point": "C",
+      "elapsed_s": 16.054
+    },
+    {
+      "event": 7,
+      "point": "B",
+      "elapsed_s": 19.099
+    },
+    {
+      "event": 8,
+      "point": "D",
+      "elapsed_s": 22.462
+    },
+    {
+      "event": 9,
+      "point": "A",
+      "elapsed_s": 25.534
+    },
+    {
+      "event": 10,
+      "point": "C",
+      "elapsed_s": 28.923
+    },
+    {
+      "event": 11,
+      "point": "B",
+      "elapsed_s": 31.937
+    },
+    {
+      "event": 12,
+      "point": "D",
+      "elapsed_s": 35.284
+    },
+    {
+      "event": 13,
+      "point": "A",
+      "elapsed_s": 38.431
+    },
+    {
+      "event": 14,
+      "point": "C",
+      "elapsed_s": 41.808
+    },
+    {
+      "event": 15,
+      "point": "B",
+      "elapsed_s": 44.853
+    },
+    {
+      "event": 16,
+      "point": "D",
+      "elapsed_s": 48.211
+    },
+    {
+      "event": 17,
+      "point": "A",
+      "elapsed_s": 51.695
+    }
+  ],
+  "fault": 0,
+  "run_at": 306818,
+  "peak_pwm_control_rate": [
+    667,
+    666
+  ],
+  "pwm_limit": 700,
+  "saturated_updates": 0,
+  "active_updates": 6831,
+  "max_active_control_interval_ms": 8,
+  "gray_counters": [
+    28543,
+    0,
+    0,
+    0
+  ],
+  "user_report": "好了",
+  "improvement_vs_350_s": 2.783,
+  "scope": "One successful physical crossing four-lap run; no repeatability or higher-speed guarantee"
+}

@@ -1,0 +1,190 @@
+{
+  "white_capture": {
+    "generation": 1,
+    "source": ".tools/hardware-backups/gray-learn-white-samples.bin",
+    "sha256": "50a76ca72d10ea0535b6b9c391ad2991c15ccc61f6a7c42f0012b36a0f901b6a",
+    "old_threshold": [
+      3497,
+      3209,
+      3171,
+      3132,
+      3279,
+      3413,
+      3481,
+      3544
+    ]
+  },
+  "black_capture": {
+    "generation": 2,
+    "source": ".tools/hardware-backups/gray-learn-black-samples.bin",
+    "sha256": "0ea095102eadb43a687b701fc266573c409a39a10ae780ae7353bc592dacf1a3",
+    "old_threshold": [
+      3497,
+      3209,
+      3171,
+      3132,
+      3279,
+      3413,
+      3481,
+      3544
+    ]
+  },
+  "channels": [
+    {
+      "channel": 1,
+      "white_min": 1430,
+      "white_max": 1431,
+      "white_mean": 1430.59375,
+      "black_min": 2758,
+      "black_max": 2758,
+      "black_mean": 2758,
+      "gap": 1327,
+      "black_high": true,
+      "threshold": 2094,
+      "hysteresis": 132
+    },
+    {
+      "channel": 2,
+      "white_min": 354,
+      "white_max": 354,
+      "white_mean": 354,
+      "black_min": 2154,
+      "black_max": 2155,
+      "black_mean": 2154.125,
+      "gap": 1800,
+      "black_high": true,
+      "threshold": 1254,
+      "hysteresis": 180
+    },
+    {
+      "channel": 3,
+      "white_min": 330,
+      "white_max": 330,
+      "white_mean": 330,
+      "black_min": 2088,
+      "black_max": 2089,
+      "black_mean": 2088.9453125,
+      "gap": 1758,
+      "black_high": true,
+      "threshold": 1209,
+      "hysteresis": 175
+    },
+    {
+      "channel": 4,
+      "white_min": 290,
+      "white_max": 290,
+      "white_mean": 290,
+      "black_min": 973,
+      "black_max": 974,
+      "black_mean": 973.6171875,
+      "gap": 683,
+      "black_high": true,
+      "threshold": 631,
+      "hysteresis": 68
+    },
+    {
+      "channel": 5,
+      "white_min": 312,
+      "white_max": 313,
+      "white_mean": 312.875,
+      "black_min": 986,
+      "black_max": 987,
+      "black_mean": 986.5,
+      "gap": 673,
+      "black_high": true,
+      "threshold": 649,
+      "hysteresis": 67
+    },
+    {
+      "channel": 6,
+      "white_min": 625,
+      "white_max": 626,
+      "white_mean": 625.375,
+      "black_min": 1610,
+      "black_max": 1611,
+      "black_mean": 1610.359375,
+      "gap": 984,
+      "black_high": true,
+      "threshold": 1118,
+      "hysteresis": 98
+    },
+    {
+      "channel": 7,
+      "white_min": 944,
+      "white_max": 945,
+      "white_mean": 944.7734375,
+      "black_min": 2011,
+      "black_max": 2012,
+      "black_mean": 2011.53125,
+      "gap": 1066,
+      "black_high": true,
+      "threshold": 1478,
+      "hysteresis": 106
+    },
+    {
+      "channel": 8,
+      "white_min": 802,
+      "white_max": 807,
+      "white_mean": 803.2890625,
+      "black_min": 1549,
+      "black_max": 1554,
+      "black_mean": 1550.8671875,
+      "gap": 742,
+      "black_high": true,
+      "threshold": 1178,
+      "hysteresis": 74
+    }
+  ],
+  "black_high_mask": 255,
+  "independent_validation_complete": false,
+  "note": "Stationary white/black checks passed; run03 detected black and reached controller DONE at B. User reports nose approximately at B; physical coverage remains marginal, arc tracking untested.",
+  "live_black_validation": {
+    "mask": [
+      255,
+      255
+    ],
+    "gray_samples": [
+      1476,
+      1553
+    ],
+    "raw_analog": [
+      2754,
+      2184,
+      2101,
+      968,
+      998,
+      1599,
+      1974,
+      1526
+    ],
+    "communication_errors": 0,
+    "outputs_zero": true
+  },
+  "live_white_validation": {
+    "mask": [
+      0,
+      0
+    ],
+    "gray_samples": [
+      8760,
+      8837
+    ],
+    "raw_analog": [
+      1414,
+      381,
+      344,
+      294,
+      323,
+      712,
+      1032,
+      956
+    ],
+    "communication_errors": 0,
+    "outputs_zero": true
+  },
+  "stationary_validation_complete": true,
+  "dynamic_track_validation_complete": false,
+  "dynamic_black_detection_verified": true,
+  "dynamic_endpoint_controller_done": true,
+  "dynamic_run_record": "docs/data/A到B脱线第三轮_2026-10-23.json"
+}

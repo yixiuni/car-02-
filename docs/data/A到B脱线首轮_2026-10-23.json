@@ -1,0 +1,55 @@
+{
+  "captured_at": "2026-10-23T21:08:08.040049+08:00",
+  "firmware_sha256": "3648f6f7fb688a99df0e0881e8dcab5c94fa1db536f605f36c59e0960750e889",
+  "user_report": {
+    "start_reference": "front tip at A, not axle midpoint",
+    "stop_reference": "front tip 70 mm beyond B",
+    "left_deviation_mm_approx": 80,
+    "battery_kept_on": true
+  },
+  "state": 6,
+  "fault": 8,
+  "fault_name": "ENDPOINT",
+  "phase": 4,
+  "point_events": 1,
+  "last_point": "A",
+  "trace_samples": 200,
+  "trace_span_ms": 15980,
+  "trace_max_gap_ms": 82,
+  "nonzero_black_trace_samples": 0,
+  "fault_at_ms": 8814,
+  "fault_pose_mm_rad": [
+    1080.19384765625,
+    0.41283026337623596,
+    0.0022402405738830566
+  ],
+  "first_counts": [
+    0,
+    -27
+  ],
+  "final_counts": [
+    7670,
+    7619
+  ],
+  "wheel_travel_mm": [
+    1091.7660563648851,
+    1084.2130313253328
+  ],
+  "mean_wheel_travel_mm": 1087.989543845109,
+  "max_pwm_permille": [
+    196,
+    172
+  ],
+  "terminal_outputs": [
+    0,
+    0
+  ],
+  "timer_ccr": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "interpretation": "Failed task 1: no B confirmation; encoder position passed +80 mm guard. Trace samples all white, not every sensor frame logged. User started FRONT at A, but firmware assumes AXLE at A (170 mm origin error). Heading is relative to initial placement; left drift cause unconfirmed, initial alignment possible. No wheel/PID tuning justified. Preserve settings and retry with correct placement.",
+  "trace_csv": "docs/data/A到B脱线首轮_2026-10-23.csv"
+}
