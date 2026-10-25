@@ -1,0 +1,49 @@
+{
+  "firmware": "T302",
+  "action": "Restore original previously tested image after T303-T305 physical failures",
+  "magic": "0x54333032",
+  "flashed": true,
+  "live_flash_sha256": "f21609677b84082897b2f317ad6b733cfdad8d96bde73ae52ab9a81c47af13e6",
+  "flash_bytes": 42312,
+  "ram_bytes": 40488,
+  "straight_mm_s": 500,
+  "arc_mm_s": 430,
+  "entry_mm_s": 370,
+  "wheel_target_limit_mm_s": 650,
+  "pwm_limit_permille": 800,
+  "D_entry_aim_mm": 20,
+  "physical_run_after_restore": "pending",
+  "prior_physical_run": "One CROSS4 run42.705s fault0; not a repeatability guarantee",
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    729,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    804,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "T305",
+  "source_result": "Second lap D LINE7 at17.183s;1lap",
+  "source_flash_sha256": "1932adb10515d81e98736073ee5956d75670f3f258c9e298bb10a222bad98753",
+  "verification": "Archived BIN hash matches original successful T302; ELF re-extracted BIN identical; BIN/HEX/vectors/RAM symbols verified; OpenOCD program verify and full flash readback; two idle samples. No new control-code edits or repeated full test suite for this exact image restore.",
+  "readback_script": "tools/read_t302.tcl",
+  "scope": "Restored known image; physical repetition pending, not a new successful course run"
+}

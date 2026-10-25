@@ -1,0 +1,83 @@
+{
+  "firmware": "T305",
+  "result": "FAILED",
+  "user_report": "又失败了，在d点",
+  "controller_segment": "Second lap D to A arc entry",
+  "run_at": 240805,
+  "elapsed_to_fault_s": 17.183,
+  "completed_laps": 1,
+  "target_laps": 4,
+  "fault": 7,
+  "fault_name": "CAR_FAULT_LINE",
+  "events": [
+    {
+      "event": 1,
+      "point": "A",
+      "elapsed_s": 0.001,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 2,
+      "point": "C",
+      "elapsed_s": 2.356,
+      "black_mask": "0x30"
+    },
+    {
+      "event": 3,
+      "point": "B",
+      "elapsed_s": 4.795,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 4,
+      "point": "D",
+      "elapsed_s": 7.193,
+      "black_mask": "0x20"
+    },
+    {
+      "event": 5,
+      "point": "A",
+      "elapsed_s": 9.708,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 6,
+      "point": "C",
+      "elapsed_s": 12.121,
+      "black_mask": "0x80"
+    },
+    {
+      "event": 7,
+      "point": "B",
+      "elapsed_s": 14.602,
+      "black_mask": "0x0"
+    },
+    {
+      "event": 8,
+      "point": "D",
+      "elapsed_s": 16.995,
+      "black_mask": "0x80"
+    }
+  ],
+  "gray_counters": [
+    23591,
+    0,
+    0,
+    0
+  ],
+  "peak_pwm": [
+    666,
+    755
+  ],
+  "saturated_updates": 0,
+  "active_updates": 2407,
+  "max_control_interval_ms": 8,
+  "stop_pose_estimate": [
+    67.9105453491211,
+    -719.0768432617188,
+    3.497021198272705
+  ],
+  "observation": "Second D event16.995s mask0x80; white at17.038/17.082/17.114/17.154s, LINE fault17.183s. Passed second C this run, but entry remained fragile. No evidence of communication failure or PWM saturation. Existing 27 model suites did not predict repeated physical entry failures.",
+  "output_at_readback": "PWM and all TIM3 CCR zero",
+  "decision": "Restore exact T302 image with one previous successful42.705s four-lap run. Repeatability still needs physical confirmation; T303-T305 not qualified for use."
+}

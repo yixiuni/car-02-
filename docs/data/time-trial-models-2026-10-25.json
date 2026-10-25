@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "Last completed physical CROSS4:T30242.705s. T303 failed first lap LINE7; T304 failed secondC at12.205s,1lap. T305 flash/idle verified, physical pending; see t304-second-c-loss and t305-flash-idle records. Historical model results unchanged.",
+  "hardware_status": "T303,T304,T305 physically failed; latest T305 secondD LINE7 at17.183s,1lap. Restored exact T302 image f21609677b84082897b2f317ad6b733cfdad8d96bde73ae52ab9a81c47af13e6; flash/idle verified; repeat pending. Previous T302 CROSS4 success42.705s once. Historical model results unchanged and insufficient to qualify stage3.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,
