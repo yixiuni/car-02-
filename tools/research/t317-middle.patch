@@ -1,0 +1,16 @@
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -506,6 +506,13 @@
+             speed=FastCourse(c) ? FastArcSpeed() :
+                 (turned>2.55f && !FinalSegment(c)) ? CAR_CAPTURE_SPEED : CAR_ARC_SPEED;
+             if (CAR_TIME_TRIAL_BUILD && FastCourse(c)) {
++                /* Research: retain baseline entry/exit speed; accelerate only in the middle. */
++                if (CAR_RESEARCH_MID_WINDOW) {
++                    float baseline=450.0f;
++                    float rise=sqrtf(baseline*baseline+2000.0f*fmaxf(0,progress-200.0f));
++                    float fall=sqrtf(baseline*baseline+2000.0f*fmaxf(0,900.0f-progress));
++                    speed=fminf(speed,fminf(rise,fall));
++                }
+                 /* Finish front-sensor acquisition before raising arc cruise. */
+                 speed=fminf(speed,sqrtf(CAR_TT_ENTRY_SPEED*CAR_TT_ENTRY_SPEED+
+                     2*CAR_TT_APPROACH_ACCEL*fmaxf(0,progress-CAR_TT_ARC_ACCEL_START_MM)));

@@ -2,9 +2,13 @@
 
 本工程使用 WHEELTEC C10B 主板上的 STM32F103RCT6，复现 2024 年 H 题的四项行驶任务。硬件采用两台 MG513X 电机、两只 65 mm 橡胶轮、幻尔八路灰度和 MPU6050。保留 STM32 是本次课程复现的明确选择；原赛题要求 TI MSPM0。
 
+当前开发版本为 **T321**：已完成软件测试、烧录与回读核对，**尚未完成实车验证**。CROSS 直线/弯道/接线目标速度为 1000/650/370 mm/s，NORMAL 为 800/460/370 mm/s；支持 NORMAL/CROSS 和 1/4 圈选择。下载 [T321 BIN](firmware/T321/stm32-car.bin) / [HEX](firmware/T321/stm32-car.hex)，构建与校验信息见 [manifest](firmware/T321/manifest.json)。
+
+此前 T319 两次记录为 29.975 / 29.730 秒，但随后多次失败；T320 在第二圈 B 点失败。因此目前不能宣称已稳定实现四圈 30 秒。详见 [T321 修改与验证](docs/T321沿弧位置约束与验证.md)、[T319 失败情况](docs/T319弯道位置校正与验证.md)、[T320 失败记录](docs/data/t320-cross-four-run-01.json)。
+
 已发布基线 **DUL5** 支持普通/交叉两条路线、1/4 圈选择和原配 OLED 显示。两种路线目标速度均为 **370 mm/s**，过点不减速，最后一圈回 A 主动刹停。已实测：普通单圈 **11.739 秒**、交叉四圈 **51.695 秒**，各成功一轮、无故障。
 
-基于 [yixiuni/stm32-car](https://github.com/yixiuni/stm32-car) 继续开发。可直接下载本车已验证的 [BIN](firmware/DUL5/stm32-car.bin) / [HEX](firmware/DUL5/stm32-car.hex)，镜像信息见 [manifest](firmware/DUL5/manifest.json)。本车标定参数已写入；另一台车需要重新标定。默认普通 Debug/Release 构建仍保留标定锁，当前已验证版本须使用 `--dual-mode` 构建。
+基于 [yixiuni/stm32-car](https://github.com/yixiuni/stm32-car) 继续开发。可直接下载本车已验证的 [BIN](firmware/DUL5/stm32-car.bin) / [HEX](firmware/DUL5/stm32-car.hex)，镜像信息见 [manifest](firmware/DUL5/manifest.json)。本车标定参数已写入；另一台车需要重新标定。默认普通 Debug/Release 构建仍保留标定锁，DUL5 对应 `--dual-mode`，当前 T321 须使用 `--time-trial-arc-phase` 构建。
 
 ## 接线
 
@@ -81,32 +85,36 @@ python3 tests/run_tests.py
 # Clang/GCC 支持时启用内存及未定义行为检查
 python3 tests/run_tests.py --sanitize
 
-# 当前 DUL5，ARM GCC 已在 PATH
+# 当前 T321 试验版，ARM GCC 已在 PATH
+python3 tools/build_firmware.py --time-trial-arc-phase
+python3 tests/run_tests.py --trial-profile time-trial-arc-phase --sanitize
+
+# 历史 DUL5 基线
 python3 tools/build_firmware.py --dual-mode
 
 # 或明确指定工具链 bin 目录
-python3 tools/build_firmware.py --dual-mode --toolchain /path/to/arm-toolchain/bin
+python3 tools/build_firmware.py --time-trial-arc-phase --toolchain /path/to/arm-toolchain/bin
 
 # 保留标定锁的常规版本（不是当前实车运行版本）
 python3 tools/build_firmware.py --config Release
 ```
 
-DUL5 输出到 `build-local/DualModeDebug/`，包含 ELF、HEX、BIN；常规 Release 输出到 `build-local/Release/`。构建缓存与本机工具链不上传；仅在 `firmware/DUL5/` 保存本车已验证镜像。
+T321 输出到 `build-local/ArcPhaseDebug/`，DUL5 输出到 `build-local/DualModeDebug/`，包含 ELF、HEX、BIN；常规 Release 输出到 `build-local/Release/`。`firmware/T321/` 保存本次已烧录但待实跑的镜像；`firmware/DUL5/` 保留历史基线。构建缓存和本机工具链不上传。
 
 已有 CMake/Ninja 时也可用全新构建目录，避免复用旧 Windows 构建缓存：
 
 ```sh
-cmake -S . -B build-local/cmake-dual -G Ninja \
+cmake -S . -B build-local/cmake-t321 -G Ninja \
   -DCMAKE_TOOLCHAIN_FILE=cmake/gcc-arm-none-eabi.cmake \
-  -DCMAKE_BUILD_TYPE=Debug -DCAR_DUAL_MODE_BUILD=ON
-cmake --build build-local/cmake-dual
+  -DCMAKE_BUILD_TYPE=Debug -DCAR_TIME_TRIAL_ARC_PHASE=ON
+cmake --build build-local/cmake-t321
 ```
 
 本次通过 Python 构建入口实际验证 Debug/Release；该入口读取 CMake 中的源码列表。CubeMX 重新生成工程不在本次验证范围内；当前 TIM3、TIM4、TIM8、UART4 和软件 I²C 由自有驱动初始化。
 
 ## 回收 DUL5 轨迹
 
-当前镜像魔数 `0x44554C35`。使用 OpenOCD/ST-Link 连接已完成运行且保持电池供电的小车；以下命令不复位、不启动电机，先检查版本和零输出后保存到 `build-local/captures/`：
+历史 DUL5 镜像魔数 `0x44554C35`。使用 OpenOCD/ST-Link 连接已完成运行且保持电池供电的小车；以下命令不复位、不启动电机，先检查版本和零输出后保存到 `build-local/captures/`：
 
 ```sh
 openocd -f interface/stlink.cfg -c "transport select swd" \
@@ -136,7 +144,27 @@ openocd -f interface/stlink.cfg -c "transport select swd" \
 | `tests/sim_course.c` | 独立差速运动、轮速响应与赛道灰度模型 |
 ## 30 秒目标试验进展
 
-新增独立 T301 算法试验构建，包含分段速度规划、转向增益调整和轮速协同限幅。
-当前主板为 **T312弧速450版**，直线800 / 接线370mm/s。实测交叉四圈 **36.081秒**，fault0、17个点位事件，八次弧线出口均首次通过；比上一版T311的37.049秒缩短0.968秒。这是一次成功实测，30秒目标尚未达到。详见[优化记录](docs/30秒目标与算法优化.md)。
-研究参数在部分模型中达到 30 秒以内，但未通过扰动测试。
-详见 [30秒目标与算法优化](docs/30秒目标与算法优化.md)。
+| 版本 | 实跑结果 | 当前结论 |
+| --- | --- | --- |
+| T317 | 交叉四圈 35.667 s | 一次留存成功记录 |
+| T319 | 两次 29.975 / 29.730 s，随后约五六次失败 | 不稳定，不能按两次成功验收 |
+| T320 | 第二圈 B，11.872 s，fault 7 | 已保存失败现场 |
+| T321 | 尚未实跑 | 增加有边界的沿弧位置约束，待验证 |
+
+T321 软件回归通过；扩展模型 224/225，唯一失败是原有 NORMAL 场景，CROSS/C/D 扩展各 45/45。额外弧线里程比例误差模型 63/63；这些是模型证据，不是实车成功率。详见 [部署记录](docs/data/t321-validation-2026-10-25.json)。
+
+## 回收 T321 轨迹
+
+T321 魔数为 `0x54333231`。跑后保持电池供电、接回电脑，不复位；每次使用新的文件前缀。脚本检查固件版本与零电机输出，不主动启动小车。
+
+```sh
+openocd -f interface/stlink.cfg -c 'transport select swd' \
+  -f target/stm32f1x.cfg \
+  -c 'stm32f1x.cpu configure -event examine-end {}' \
+  -c 'adapter speed 950' -c 'gdb port disabled' \
+  -c 'tcl port disabled' -c 'telnet port disabled' \
+  -c init -c 'set capture_prefix build-local/captures/t321-run-01' \
+  -f tools/read_t321.tcl -c shutdown
+```
+
+该脚本对应发布的 T321 镜像布局。重新构建后，先按 ELF 核对 RAM 地址。研究脚本与历史报告保留开发过程，部分依赖指定历史提交或本地实验缓存；日常构建与测试使用上方正式入口。

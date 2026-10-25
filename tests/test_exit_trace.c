@@ -20,7 +20,7 @@ static void Init(float x,float y,float heading)
 int main(void)
 {
     assert(CAR_TIME_TRIAL_EXIT_TRACE && !CAR_TIME_TRIAL_ARC_BOOST);
-    assert(CAR_TT_STRAIGHT_SPEED==800 && CAR_TT_ARC_SPEED==(CAR_TIME_TRIAL_ARC_STEP ? 450 : 430));
+    assert(CAR_TT_STRAIGHT_SPEED==800 && CAR_TT_ARC_SPEED==(CAR_TIME_TRIAL_ENTRY_HOLD ? 460 : CAR_TIME_TRIAL_ARC_STEP ? 450 : 430));
     /* Correction rejection is recorded but does not turn into a point event. */
     float h=asinf(165.0f/400);
     Init(0,-150,h);CarControl_Update(&c,&in);

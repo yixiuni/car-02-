@@ -1,0 +1,152 @@
+{
+  "firmware": "T318",
+  "status": "PHYSICAL_FAILED_AT_FIRST_A",
+  "bin_sha256": "729daaf9b2924b2b597f56c4be6b44d49d0f55e6a5c6a16fbaeea0b5462da55a",
+  "flash_bytes": 47924,
+  "ram_link_bytes": 47288,
+  "host_regression_pass_lines": 1122,
+  "standard_model_passed": 72,
+  "standard_model_total": 72,
+  "extended_model_passed": 224,
+  "extended_model_total": 225,
+  "cross_full_passed": 45,
+  "cross_full_total": 45,
+  "extended_failures": [
+    {
+      "assumed_pwm_per_mm_s": 1.5,
+      "gray_phase_ms": 14,
+      "suite": "full",
+      "passed": false,
+      "returncode": 1,
+      "cross_four_seconds": [],
+      "errors": "FAIL task2: event point3 not physically covered at -2,-719\nPOINT_DETAIL heading-22.071 map(20.4,-793.1,-22.002) line-52.5 frames3 lap3 Coffset0.0 Doffset0.0",
+      "log": "cross-sprint-model1.5-phase14-full.log"
+    }
+  ],
+  "baseline_extended_passed": 171,
+  "baseline_extended_total": 180,
+  "normal_control_equivalence_cases": 45,
+  "physical_result": "FAILED",
+  "model_scope": "HOST SIMULATION ONLY. Plant gain, response time and tire grip are not high-speed measurements.",
+  "source_sha256": {
+    "Core/Src/car_control.c": "1dcafa1739b7a9b1690bcd0d2f66c4df0e59d3290a5e7672ca934283d272b3c9",
+    "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+    "Core/Src/imu_filter.c": "7da06894224dfff5e0283a52ebb360e7b03410a9009a54421920c8d542d8a4bd",
+    "Core/Src/task1_test.c": "52d7a311d1b316409b4eb45719110715213bed000616a8ee05bce9e2591300fc",
+    "Core/Src/course_mode.c": "339517b9a6f21d6adb002d7cb77346612bb0d358fe8be09e34b3fc57d42d36fb",
+    "tests/sim_course.c": "ed91a6bf7f4650cd1dd4072b4e37339af3e5259bc3fd78a96764ea73830918b4",
+    "Core/Inc/car_config.h": "0801bc62f5a8179afd5a4a883873f6603cf2278a28674b141754b03026e480b0",
+    "Core/Inc/car_control.h": "80df5927b7e87a6a48c22c16e2c029d5f9b4171a6c34e3614302a27456a22df9",
+    "Core/Inc/car_arc_debug.h": "9b2eac284c25d3dd458b6775706759b55bd391a45c02475fa9805bb177f8d98b",
+    "Core/Inc/motion_control.h": "c7f60a43a89b2eee9b0b6ade2e1e90c4e6132e8e1a10b96588d1a3d4c693ddb9",
+    "Core/Inc/course_mode.h": "29817e54d0021fdcc797495293d2a40fde2f1efc82e483bffd86931fc3510f4e",
+    "Core/Inc/task1_test.h": "f2d00c31c633d143a03cdd9648e4fea7b7258324e52f77711cc183aee7e664ad",
+    "Core/Inc/imu_filter.h": "43f6426cb2b8cf164f7ac7f6b4a6a59247f4fcb5c3a3d671c0f3e1f8bb85e92f",
+    "tools/evaluate_time_trial.py": "2ea296dd3e76419030381f540e18ae70068ab1b268a0006f12ef4a9a872c234e"
+  },
+  "model_report_sha256": "860a8c77f8e72480fb0568fdbe13a78cc5c8467b55e5c11dedfea067db01b8d0",
+  "normal_speeds_mm_s": [
+    800,
+    460,
+    370
+  ],
+  "cross_speeds_mm_s": [
+    1000,
+    650,
+    370
+  ],
+  "C_aim_mm": 30,
+  "D_aim_mm": 35,
+  "lookahead_mm": 350,
+  "cruise_P_scale": 0.5,
+  "cruise_D_scale": 0.25,
+  "arc_PWM_budget": 900,
+  "edge_confirmation_limit_mm": 22.5,
+  "remote_motor_start": false,
+  "nominal_cross4_seconds_by_assumed_gain": {
+    "1.5": [
+      37.12,
+      37.11,
+      37.16,
+      37.16,
+      37.16,
+      37.12,
+      37.13,
+      37.15,
+      37.12,
+      37.13,
+      37.15,
+      37.1,
+      37.12,
+      37.2,
+      37.23
+    ],
+    "1.0": [
+      29.52,
+      29.54,
+      29.54,
+      29.5,
+      29.48,
+      29.53,
+      29.43,
+      29.53,
+      29.5,
+      29.52,
+      29.53,
+      29.5,
+      29.53,
+      29.5,
+      29.53
+    ],
+    "0.9": [
+      28.96,
+      29.04,
+      28.96,
+      29.1,
+      29.12,
+      28.99,
+      28.99,
+      28.96,
+      28.99,
+      29.0,
+      29.05,
+      29.05,
+      29.0,
+      29.05,
+      29.03
+    ]
+  },
+  "flash_readback_identical": true,
+  "post_flash": [
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        3685,
+        0,
+        0,
+        0
+      ],
+      "max_control_interval_ms": 6
+    },
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        3771,
+        0,
+        0,
+        0
+      ],
+      "max_control_interval_ms": 6
+    }
+  ],
+  "active_control_timing_pending": false,
+  "physical_elapsed_s": 7.704,
+  "physical_run": "docs/data/t318-cross-four-run-01.json",
+  "max_active_control_interval_ms": 8
+}

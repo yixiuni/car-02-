@@ -1,0 +1,230 @@
+{
+  "scope": "Check every model control-tick fingerprint with/without T315 logging.\n\nThis proves host control equivalence, not hardware timing. Existing baseline\nfailures must be identical; they are reported rather than relabeled passes.\n",
+  "all_equivalent": true,
+  "runs": [
+    {
+      "phase": 0,
+      "suite": "nominal",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 202,
+      "stdout_sha256": "b95c5e63f10b9f7d91f4b89dba1d6147576ac4fce4027d1b30c00a439e56da1f"
+    },
+    {
+      "phase": 0,
+      "suite": "full",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3656,
+      "stdout_sha256": "55365d6ba83a47163989759c858647f9e84c010251e24e23aecff83a6b2b598b"
+    },
+    {
+      "phase": 0,
+      "suite": "d-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3340,
+      "stdout_sha256": "f6e5489f673979e50feb7ef4d0218001d0516497e1396bfbf032e90996b868d4"
+    },
+    {
+      "phase": 0,
+      "suite": "c-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 10908,
+      "stdout_sha256": "60e863804a67ace9ee68730018d09a5ccc56673ed7705d5249e35484ed07671f"
+    },
+    {
+      "phase": 2,
+      "suite": "nominal",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 202,
+      "stdout_sha256": "e1f36b22e2b0ddd1c7e05ff294e7e8de118e243398fa51a1f49d4c08d9eadb5c"
+    },
+    {
+      "phase": 2,
+      "suite": "full",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3656,
+      "stdout_sha256": "d3ce062beb65842671e543e151c6361c9aa8581053408dd87423a8cbd2ef98c5"
+    },
+    {
+      "phase": 2,
+      "suite": "d-offset",
+      "equivalent": true,
+      "baseline_passed": false,
+      "stderr": "FAIL task4 t8.09 fault7 seg3 true(84.9,-785.7,205.6)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress77.6 arc_age195 missing_age180 line_age195 line_error52.5 estimate(60.0,-733.5,3.559)\n",
+      "control_hashes": 405,
+      "stdout_sha256": "aba11bb12db687c51866eb0d3d81fed563f168721b95788b8bc88f0201cbeaf6"
+    },
+    {
+      "phase": 2,
+      "suite": "c-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 10908,
+      "stdout_sha256": "107ecd711e4489a662ebf27f94b3fb0d432a509e5f06d82e0f1a040c470ee7a8"
+    },
+    {
+      "phase": 5,
+      "suite": "nominal",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 202,
+      "stdout_sha256": "ae10e5c3266ed51c1b3d1216bff0327552a8302a7481c432b9bdb42a68e2f2a4"
+    },
+    {
+      "phase": 5,
+      "suite": "full",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3656,
+      "stdout_sha256": "35670716fe3770c14fd793363e11f414a9c0aa6b6beb84ae261ad3c3f5cddd7c"
+    },
+    {
+      "phase": 5,
+      "suite": "d-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3540,
+      "stdout_sha256": "05887da400e7698ad841f09c2b7b7489a34e840323e00873249f0e8570076152"
+    },
+    {
+      "phase": 5,
+      "suite": "c-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 10908,
+      "stdout_sha256": "19e737c04148295aa2d00a8ab13eb57c269c4099f9c17dbc77c4cadde8efb19a"
+    },
+    {
+      "phase": 7,
+      "suite": "nominal",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 202,
+      "stdout_sha256": "629ab83abf7cdb597c3a749efbeca66ac209c7798b82539a64c30ac40b7b782f"
+    },
+    {
+      "phase": 7,
+      "suite": "full",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3656,
+      "stdout_sha256": "9d902eaef9482db802c9da38c1c10b932e68a5994df127550c63c4a50b080ddd"
+    },
+    {
+      "phase": 7,
+      "suite": "d-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3240,
+      "stdout_sha256": "d6f36afa7f5d13c41cee40d39bbe3bb7cbb0cdf482442da266baff412a6cea25"
+    },
+    {
+      "phase": 7,
+      "suite": "c-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 10908,
+      "stdout_sha256": "e7f7118431fb9ec507e9a63856498860998fb9f67bd717d85e19ccf1b7607396"
+    },
+    {
+      "phase": 10,
+      "suite": "nominal",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 202,
+      "stdout_sha256": "e602f2f43532a383c256a5bda705b3466ea583b3e42af920b3683d056d0b9235"
+    },
+    {
+      "phase": 10,
+      "suite": "full",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3656,
+      "stdout_sha256": "7968b7ea6bc398f1fe7ad46ac20d81c2cb317c58aba31f7650c227178205a930"
+    },
+    {
+      "phase": 10,
+      "suite": "d-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3240,
+      "stdout_sha256": "52c952507f780c38ad2319bfc16ccf9ae6eb3a460497b323eb43b3a335731fd1"
+    },
+    {
+      "phase": 10,
+      "suite": "c-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 10908,
+      "stdout_sha256": "f3c7b858a51ce8dffe4b3e4a938333415740d13b0b134ebba71d9f72c37813a8"
+    },
+    {
+      "phase": 12,
+      "suite": "nominal",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 202,
+      "stdout_sha256": "c11172e781735d013e790da9f7879841f8834d0203bfc0b0849ca3dc3dd3f204"
+    },
+    {
+      "phase": 12,
+      "suite": "full",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3656,
+      "stdout_sha256": "24a95a7bdf5f24b98f631610571d9fa69be1f01c5fd28b248a4de54bac1bd6a7"
+    },
+    {
+      "phase": 12,
+      "suite": "d-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 3340,
+      "stdout_sha256": "57b49c542b0e5a9d64ecc0438d13598840e285ce40d5fa98001580ed1e4f9eda"
+    },
+    {
+      "phase": 12,
+      "suite": "c-offset",
+      "equivalent": true,
+      "baseline_passed": true,
+      "stderr": "",
+      "control_hashes": 10908,
+      "stdout_sha256": "1b0f5ef0872450c476afe5ab73001fcfc08eaf52f5b80cb2a459ed44d385a322"
+    }
+  ],
+  "inputs_sha256": {
+    "Core/Src/speed_trace.c": "9d342714ed4401dbf6babcd5c81f71c4a7e60971699acd18f6c063a499cd7c90",
+    "Core/Inc/speed_trace.h": "dca6c4c772428cb9b94adb38e4a1758595e484a4dbfc8ee82f9fc7d23ffa1e39",
+    "Core/Src/car_control.c": "0582be2083b0d639756c1caf0596dd37e240911716c251d4c545b1d2f7fd5b79",
+    "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+    "tests/sim_course.c": "c809cb0f3b280f35f4aed3831e350b45c6e65a479fd53e976e20d5ed4cf53b2e",
+    "tools/compare_speed_trace.py": "0bf833095dc1b15f0ef66e50e1bdcc52bb505cef061bafa9c7f475c01a7aba3d"
+  }
+}

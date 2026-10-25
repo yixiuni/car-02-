@@ -60,6 +60,60 @@
 #ifndef CAR_TIME_TRIAL_ARC_STEP
 #define CAR_TIME_TRIAL_ARC_STEP 0
 #endif
+#ifndef CAR_SPEED_TRACE_BUILD
+#define CAR_SPEED_TRACE_BUILD 0
+#endif
+#ifndef CAR_TIME_TRIAL_ENTRY_HOLD
+#define CAR_TIME_TRIAL_ENTRY_HOLD 0
+#endif
+#ifndef CAR_TIME_TRIAL_CROSS_SPRINT
+#define CAR_TIME_TRIAL_CROSS_SPRINT 0
+#endif
+#ifndef CAR_TIME_TRIAL_ARC_PHASE
+#define CAR_TIME_TRIAL_ARC_PHASE 0
+#endif
+#if CAR_TIME_TRIAL_ARC_PHASE && !CAR_TIME_TRIAL_EDGE_POSE
+#error "Arc phase prior requires T320 edge pose"
+#endif
+#ifndef CAR_TIME_TRIAL_EDGE_POSE
+#define CAR_TIME_TRIAL_EDGE_POSE 0
+#endif
+#if CAR_TIME_TRIAL_EDGE_POSE && !CAR_TIME_TRIAL_ARC_LOCALIZE
+#error "Edge pose requires T319 arc localization"
+#endif
+#define CAR_EDGE_POSE_ENTRY_AIM_MM 15.0f
+#ifndef CAR_TIME_TRIAL_ARC_LOCALIZE
+#define CAR_TIME_TRIAL_ARC_LOCALIZE 0
+#endif
+#if CAR_TIME_TRIAL_ARC_LOCALIZE && !CAR_TIME_TRIAL_CROSS_SPRINT
+#error "Arc localization requires the T318 CROSS baseline"
+#endif
+#ifndef CAR_ARC_POSITION_GAIN
+#define CAR_ARC_POSITION_GAIN 0.5f
+#endif
+#ifndef CAR_ARC_POSITION_STEP_MM
+#define CAR_ARC_POSITION_STEP_MM 8.0f
+#endif
+#define CAR_ARC_POSITION_INNOVATION_MM 120.0f
+#if CAR_TIME_TRIAL_CROSS_SPRINT && !CAR_TIME_TRIAL_ENTRY_HOLD
+#error "Cross sprint requires the T317 entry-hold baseline"
+#endif
+/* T318: CROSS only. NORMAL retains the T317 targets and controller. */
+#define CAR_CROSS_SPRINT_STRAIGHT_SPEED 1000.0f
+#define CAR_CROSS_SPRINT_ARC_SPEED       650.0f
+#define CAR_CROSS_SPRINT_LOOKAHEAD_MM    350.0f
+#define CAR_CROSS_SPRINT_ARC_PWM         900.0f
+#define CAR_CROSS_SPRINT_C_AIM_MM         30.0f
+#define CAR_CROSS_SPRINT_D_AIM_MM         35.0f
+#define CAR_CROSS_SPRINT_P_SCALE          0.5f
+#define CAR_CROSS_SPRINT_D_SCALE          0.25f
+#define CAR_CROSS_SPRINT_EDGE_LIMIT       (1.5f*CAR_GRAY_PITCH_MM)
+#if CAR_TIME_TRIAL_ENTRY_HOLD && !CAR_TIME_TRIAL_ARC_STEP
+#error "Entry hold requires the validated arc-step baseline"
+#endif
+#if CAR_SPEED_TRACE_BUILD && !CAR_TIME_TRIAL_ARC_STEP
+#error "Speed recording requires the T312 baseline"
+#endif
 #if CAR_TIME_TRIAL_ARC_STEP && !CAR_TIME_TRIAL_EXIT_TRACE
 #error "Arc step requires exit observations on the T309 control baseline"
 #endif
@@ -94,7 +148,7 @@
 #define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_ARC_BOOST ? 850.0f : CAR_TIME_TRIAL_ADAPTIVE ? 800.0f : CAR_TIME_TRIAL_FAST ? 650.0f : CAR_TIME_TRIAL_STRAIGHT_BOOST ? 520.0f : CAR_TIME_TRIAL_STAGE3 ? 550.0f : CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
 #endif
 #ifndef CAR_TT_ARC_SPEED
-#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_ARC_STEP ? 450.0f : CAR_TIME_TRIAL_ARC_BOOST ? 550.0f : CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
+#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_ENTRY_HOLD ? 460.0f : CAR_TIME_TRIAL_ARC_STEP ? 450.0f : CAR_TIME_TRIAL_ARC_BOOST ? 550.0f : CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
 #endif
 #ifndef CAR_TT_ENTRY_SPEED
 #define CAR_TT_ENTRY_SPEED 370.0f

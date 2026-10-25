@@ -1,0 +1,238 @@
+{
+  "date": "2026-10-25",
+  "scope": "HOST SIMULATION ONLY. Plant gain, response time and tire grip are not high-speed measurements.",
+  "trigger": "T315 measured cruise tracks target; investigate early approach deceleration instead of adding acceleration feedforward.",
+  "physical_baseline_s": 36.123,
+  "board_unchanged": "T315",
+  "flashed": false,
+  "production_control_edits": false,
+  "profiles": [
+    {
+      "name": "arc-step",
+      "definitions": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TIME_TRIAL_EXIT_TRACE": 1,
+        "CAR_TIME_TRIAL_ARC_STEP": 1
+      },
+      "passed": 71,
+      "total": 72,
+      "new_failure_suites": 0,
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 2,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.09 fault7 seg3 true(84.9,-785.7,205.6)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress77.6 arc_age195 missing_age180 line_age195 line_error52.5 estimate(60.0,-733.5,3.559)",
+          "log": "arc-step-model1.5-phase2-d-offset.log"
+        }
+      ],
+      "nominal_savings_s_range": [
+        0.0,
+        0.0
+      ],
+      "accepted_for_flash": null
+    },
+    {
+      "name": "decel1300",
+      "definitions": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TIME_TRIAL_EXIT_TRACE": 1,
+        "CAR_TIME_TRIAL_ARC_STEP": 1,
+        "CAR_TT_STRAIGHT_DECEL": 1300.0
+      },
+      "passed": 65,
+      "total": 72,
+      "new_failure_suites": 6,
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 0,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.05 fault7 seg3 true(81.7,-786.3,204.0)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress83.8 arc_age210 missing_age180 line_age195 line_error52.5 estimate(57.8,-734.0,3.538)",
+          "log": "decel1300-model1.5-phase0-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 2,
+          "suite": "full",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task2: event point3 not physically covered at 9,-724",
+          "log": "decel1300-model1.5-phase2-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 2,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t27.45 fault7 seg3 true(77.1,-785.2,202.6)\nDETAIL lap3 Coffset0.0 Doffset40.0 progress83.8 arc_age210 missing_age180 line_age195 line_error52.5 estimate(55.7,-734.4,3.516)",
+          "log": "decel1300-model1.5-phase2-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 7,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.06 fault7 seg3 true(83.1,-784.7,203.0)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress77.7 arc_age195 missing_age180 line_age195 line_error52.5 estimate(56.4,-734.1,3.516)",
+          "log": "decel1300-model1.5-phase7-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.06 fault7 seg3 true(81.3,-785.3,204.1)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress83.8 arc_age210 missing_age180 line_age195 line_error52.5 estimate(57.7,-734.0,3.538)",
+          "log": "decel1300-model1.5-phase10-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 12,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.48 fault8 seg2 true(-42.7,-902.2,219.1)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress1498.8 arc_age2930 missing_age620 line_age635 line_error52.5 estimate(-70.6,-842.5,3.799)",
+          "log": "decel1300-model1.5-phase12-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 0.9,
+          "gray_phase_ms": 12,
+          "suite": "c-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4: event point2 not physically covered at 936,-659",
+          "log": "decel1300-model0.9-phase12-c-offset.log"
+        }
+      ],
+      "nominal_savings_s_range": [
+        0.060000000000002274,
+        0.2700000000000031
+      ],
+      "accepted_for_flash": false
+    },
+    {
+      "name": "decel1600",
+      "definitions": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TIME_TRIAL_EXIT_TRACE": 1,
+        "CAR_TIME_TRIAL_ARC_STEP": 1,
+        "CAR_TT_STRAIGHT_DECEL": 1600.0
+      },
+      "passed": 70,
+      "total": 72,
+      "new_failure_suites": 1,
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 2,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.05 fault7 seg3 true(79.2,-787.6,202.9)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress83.9 arc_age210 missing_age180 line_age195 line_error52.5 estimate(55.2,-734.8,3.516)",
+          "log": "decel1600-model1.5-phase2-d-offset.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 12,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.06 fault7 seg3 true(81.0,-786.7,201.8)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress77.8 arc_age195 missing_age180 line_age195 line_error52.5 estimate(53.9,-734.8,3.492)",
+          "log": "decel1600-model1.5-phase12-d-offset.log"
+        }
+      ],
+      "nominal_savings_s_range": [
+        0.07000000000000028,
+        0.4100000000000037
+      ],
+      "accepted_for_flash": false
+    },
+    {
+      "name": "decel1900",
+      "definitions": {
+        "CAR_TIME_TRIAL_BUILD": 1,
+        "CAR_TIME_TRIAL_STAGE2": 1,
+        "CAR_TIME_TRIAL_C_ENTRY": 1,
+        "CAR_TIME_TRIAL_FAST": 1,
+        "CAR_TIME_TRIAL_ADAPTIVE": 1,
+        "CAR_TIME_TRIAL_EXIT_TRACE": 1,
+        "CAR_TIME_TRIAL_ARC_STEP": 1,
+        "CAR_TT_STRAIGHT_DECEL": 1900.0
+      },
+      "passed": 69,
+      "total": 72,
+      "new_failure_suites": 3,
+      "failures": [
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 2,
+          "suite": "full",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.19 fault7 seg3 true(66.9,-780.3,203.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress84.1 arc_age210 missing_age180 line_age195 line_error52.5 estimate(50.9,-736.9,3.502)",
+          "log": "decel1900-model1.5-phase2-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 10,
+          "suite": "full",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.18 fault7 seg3 true(66.7,-779.6,203.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress84.1 arc_age210 missing_age180 line_age195 line_error52.5 estimate(51.0,-736.9,3.502)",
+          "log": "decel1900-model1.5-phase10-full.log"
+        },
+        {
+          "assumed_pwm_per_mm_s": 1.5,
+          "gray_phase_ms": 12,
+          "suite": "d-offset",
+          "passed": false,
+          "returncode": 1,
+          "errors": "FAIL task4 t8.03 fault7 seg3 true(83.2,-789.7,205.4)\nDETAIL lap1 Coffset0.0 Doffset40.0 progress78.0 arc_age195 missing_age180 line_age195 line_error52.5 estimate(58.8,-734.0,3.559)",
+          "log": "decel1900-model1.5-phase12-d-offset.log"
+        }
+      ],
+      "nominal_savings_s_range": [
+        0.1600000000000037,
+        0.519999999999996
+      ],
+      "accepted_for_flash": false
+    }
+  ],
+  "inputs_sha256": {
+    "Core/Src/car_control.c": "0582be2083b0d639756c1caf0596dd37e240911716c251d4c545b1d2f7fd5b79",
+    "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+    "Core/Src/imu_filter.c": "7da06894224dfff5e0283a52ebb360e7b03410a9009a54421920c8d542d8a4bd",
+    "Core/Src/task1_test.c": "52d7a311d1b316409b4eb45719110715213bed000616a8ee05bce9e2591300fc",
+    "Core/Src/course_mode.c": "339517b9a6f21d6adb002d7cb77346612bb0d358fe8be09e34b3fc57d42d36fb",
+    "tests/sim_course.c": "c809cb0f3b280f35f4aed3831e350b45c6e65a479fd53e976e20d5ed4cf53b2e",
+    "Core/Inc/car_config.h": "5cbea2333b8b7c7d2591c9ff8dc5f896c3b330e8f257454ffc9158d54e267448",
+    "Core/Inc/car_control.h": "80df5927b7e87a6a48c22c16e2c029d5f9b4171a6c34e3614302a27456a22df9",
+    "Core/Inc/car_arc_debug.h": "9b2eac284c25d3dd458b6775706759b55bd391a45c02475fa9805bb177f8d98b",
+    "Core/Inc/motion_control.h": "c7f60a43a89b2eee9b0b6ade2e1e90c4e6132e8e1a10b96588d1a3d4c693ddb9",
+    "Core/Inc/course_mode.h": "29817e54d0021fdcc797495293d2a40fde2f1efc82e483bffd86931fc3510f4e",
+    "Core/Inc/task1_test.h": "f2d00c31c633d143a03cdd9648e4fea7b7258324e52f77711cc183aee7e664ad",
+    "Core/Inc/imu_filter.h": "43f6426cb2b8cf164f7ac7f6b4a6a59247f4fcb5c3a3d671c0f3e1f8bb85e92f",
+    "tools/evaluate_time_trial.py": "13be2a87c88a61d0760cb5ce571d4a23f173c96a526377a214a3878f54467e6f"
+  },
+  "raw_report_sha256": "7835aa324df3ad8e2f3f47a823251e13e70506eeabd2a46441acd388fa367151",
+  "reproduce": "python3 tools/research/t316_approach_screen.py",
+  "decision": "All shorter approach candidates rejected: each introduces failures in baseline-passing scenarios. No new physical run requested."
+}

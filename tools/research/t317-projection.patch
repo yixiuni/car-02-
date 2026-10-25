@@ -1,0 +1,33 @@
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -308,7 +308,30 @@
+     float ds=(dl+dr)*0.5f, mid=c->heading_rad+turn*0.5f;
+     c->x_mm+=ds*cosf(mid); c->y_mm+=ds*sinf(mid);
+     c->heading_rad+=turn; c->distance_mm+=ds;
++    bool fresh_gray=in->gray_samples!=c->last_gray_samples;
+     Gray(c,in);
++    if (CAR_RESEARCH_ENTRY_OBSERVER && CAR_TIME_TRIAL_BUILD && FastCourse(c) &&
++        c->state==CAR_STRAIGHT && fresh_gray && c->black_frames>0 &&
++        in->black_mask!=0xFF && fabsf(c->line_error)<=3.5f*CAR_GRAY_PITCH_MM) {
++        CarPoint destination=Route(c)[c->segment+1];
++        Point endpoint=points[destination];
++        if (hypotf(endpoint.x-c->x_mm,endpoint.y-c->y_mm)<CAR_ENDPOINT_GATE_MM) {
++            float cx=c->segment==0 ? 1000.0f : 0.0f;
++            float sx=c->x_mm+c->geometry.sensor_forward_mm*cosf(c->heading_rad)+c->line_error*sinf(c->heading_rad);
++            float sy=c->y_mm+c->geometry.sensor_forward_mm*sinf(c->heading_rad)-c->line_error*cosf(c->heading_rad);
++            float dx=sx-cx,dy=sy+400.0f,r=hypotf(dx,dy);
++            bool on_half=c->segment==0 ? sx>=1000.0f : sx<=0.0f;
++            if (r>300.0f && r<500.0f) {
++                float ox=on_half ? cx+400.0f*dx/r : endpoint.x;
++                float oy=on_half ? -400.0f+400.0f*dy/r : endpoint.y;
++                float ex=ox-sx,ey=oy-sy,length=hypotf(ex,ey);
++                if (length<100.0f && length>0.01f) {
++                    float gain=fminf(CAR_RESEARCH_ENTRY_GAIN,20.0f/length);
++                    c->x_mm+=gain*ex;c->y_mm+=gain*ey;
++                }
++            }
++        }
++    }
+     /* Task 4 has no stated fixed deadline; 160 s is our recoverable watchdog,
+      * not a claim about the competition rules. */
+     uint32_t limit=c->task==1 ? 15000U : c->task==2 ? (TargetLaps(c)>1 ? 160000U : 30000U) : c->task==3 ? 40000U : 160000U;

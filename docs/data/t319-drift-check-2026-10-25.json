@@ -1,0 +1,1634 @@
+{
+  "scope": "Synthetic arc estimator drift, independent physical plant/coverage unchanged.\nThis is a controlled failure-mode test, not an exact replay of the real run.\n",
+  "runs": [
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.02 fault7 seg3 true(-71.3,-41.1,10.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1215.2 arc_age2445 missing_age180 line_age195 line_error0.0 estimate(-189.3,-113.0,0.164)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.02 fault7 seg3 true(-71.3,-41.1,10.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1215.2 arc_age2445 missing_age180 line_age195 line_error0.0 estimate(33.8,43.1,0.164)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.02 fault7 seg3 true(-71.3,-41.1,10.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1215.2 arc_age2445 missing_age180 line_age195 line_error0.0 estimate(86.9,80.3,0.164)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.04 fault7 seg3 true(-63.9,-39.0,10.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1222.2 arc_age2460 missing_age180 line_age195 line_error-7.5 estimate(-180.7,-109.2,0.155)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.04 fault7 seg3 true(-63.9,-39.0,10.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1222.2 arc_age2460 missing_age180 line_age195 line_error-7.5 estimate(43.7,47.8,0.155)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.04 fault7 seg3 true(-63.9,-39.0,10.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1222.2 arc_age2460 missing_age180 line_age195 line_error-7.5 estimate(97.1,85.2,0.155)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.00 fault7 seg3 true(-77.5,-42.9,10.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1209.0 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(-195.7,-115.7,0.168)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.08s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.00 fault7 seg3 true(-77.5,-42.9,10.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1209.0 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(26.2,39.6,0.168)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.00 fault7 seg3 true(-77.5,-42.9,10.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1209.0 arc_age2430 missing_age180 line_age195 line_error7.5 estimate(79.0,76.6,0.168)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.04 fault7 seg3 true(-63.8,-38.8,10.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1220.8 arc_age2460 missing_age180 line_age195 line_error-7.5 estimate(-177.8,-111.0,0.152)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.04 fault7 seg3 true(-63.8,-38.8,10.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1220.8 arc_age2460 missing_age180 line_age195 line_error-7.5 estimate(46.3,45.9,0.152)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.04 fault7 seg3 true(-63.8,-38.8,10.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1220.8 arc_age2460 missing_age180 line_age195 line_error-7.5 estimate(99.7,83.2,0.152)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.03 fault7 seg3 true(-70.6,-41.0,10.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1215.8 arc_age2445 missing_age180 line_age195 line_error0.0 estimate(-187.9,-116.2,0.156)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.03 fault7 seg3 true(-70.6,-41.0,10.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1215.8 arc_age2445 missing_age180 line_age195 line_error0.0 estimate(35.3,40.0,0.156)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.03 fault7 seg3 true(-70.6,-41.0,10.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1215.8 arc_age2445 missing_age180 line_age195 line_error0.0 estimate(88.5,77.2,0.156)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.03 fault7 seg3 true(-66.3,-39.3,10.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1219.9 arc_age2445 missing_age180 line_age195 line_error-7.5 estimate(-184.0,-115.6,0.164)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.03 fault7 seg3 true(-66.3,-39.3,10.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1219.9 arc_age2445 missing_age180 line_age195 line_error-7.5 estimate(40.0,41.2,0.164)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.03 fault7 seg3 true(-66.3,-39.3,10.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1219.9 arc_age2445 missing_age180 line_age195 line_error-7.5 estimate(93.3,78.5,0.164)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.16 fault7 seg3 true(-51.4,-39.5,9.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1216.5 arc_age1990 missing_age180 line_age195 line_error-7.5 estimate(-160.4,-102.8,0.120)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.52s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.52s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.16 fault7 seg3 true(-51.4,-39.5,9.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1216.5 arc_age1990 missing_age180 line_age195 line_error-7.5 estimate(62.9,53.5,0.120)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.16 fault7 seg3 true(-51.4,-39.5,9.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1216.5 arc_age1990 missing_age180 line_age195 line_error-7.5 estimate(116.1,90.7,0.120)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.16 fault7 seg3 true(-53.5,-41.9,5.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.7 arc_age1985 missing_age180 line_age195 line_error0.0 estimate(-165.4,-107.7,0.065)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.16 fault7 seg3 true(-53.5,-41.9,5.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.7 arc_age1985 missing_age180 line_age195 line_error0.0 estimate(57.4,48.2,0.065)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.16 fault7 seg3 true(-53.5,-41.9,5.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.7 arc_age1985 missing_age180 line_age195 line_error0.0 estimate(110.5,85.3,0.065)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.4,-39.6,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1212.4 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(-163.6,-97.0,0.134)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.4,-39.6,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1212.4 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(59.0,58.8,0.134)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.4,-39.6,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1212.4 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(112.0,95.9,0.134)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.5,-39.1,9.6)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.6 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(-163.8,-96.9,0.132)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.5,-39.1,9.6)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.6 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(59.0,59.0,0.132)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.5,-39.1,9.6)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.6 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(112.0,96.2,0.132)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.7,-39.7,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.6 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(-164.8,-97.4,0.134)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.7,-39.7,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.6 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(58.0,58.5,0.134)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.7,-39.7,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.6 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(111.0,95.6,0.134)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.17 fault7 seg3 true(-51.1,-38.7,9.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1216.8 arc_age1990 missing_age180 line_age195 line_error-7.5 estimate(-159.1,-99.1,0.119)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.17 fault7 seg3 true(-51.1,-38.7,9.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1216.8 arc_age1990 missing_age180 line_age195 line_error-7.5 estimate(64.3,57.3,0.119)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.17 fault7 seg3 true(-51.1,-38.7,9.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1216.8 arc_age1990 missing_age180 line_age195 line_error-7.5 estimate(117.5,94.5,0.119)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.98 fault7 seg3 true(-58.0,-43.7,6.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.2 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(-171.5,-104.6,0.075)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.98 fault7 seg3 true(-58.0,-43.7,6.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.2 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(49.9,50.4,0.075)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.98 fault7 seg3 true(-58.0,-43.7,6.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.2 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(102.6,87.3,0.075)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.03 fault7 seg3 true(-56.0,-43.3,5.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.5 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(-163.6,-105.2,0.062)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.03 fault7 seg3 true(-56.0,-43.3,5.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.5 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(57.8,49.8,0.062)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.03 fault7 seg3 true(-56.0,-43.3,5.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.5 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(110.6,86.8,0.062)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.02 fault7 seg3 true(-53.6,-39.9,9.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1209.3 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(-160.5,-100.6,0.126)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 28.99s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 28.99s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.02 fault7 seg3 true(-53.6,-39.9,9.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1209.3 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(61.5,54.8,0.126)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.02 fault7 seg3 true(-53.6,-39.9,9.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1209.3 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(114.3,91.7,0.126)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.02 fault7 seg3 true(-55.3,-43.2,5.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.9 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(-164.7,-107.9,0.064)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.02 fault7 seg3 true(-55.3,-43.2,5.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.9 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(56.8,47.2,0.064)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.02 fault7 seg3 true(-55.3,-43.2,5.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.9 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(109.6,84.1,0.064)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.99 fault7 seg3 true(-55.4,-40.4,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.2 arc_age1980 missing_age180 line_age195 line_error-7.5 estimate(-166.8,-99.6,0.137)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.05s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.05s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.99 fault7 seg3 true(-55.4,-40.4,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.2 arc_age1980 missing_age180 line_age195 line_error-7.5 estimate(54.6,55.4,0.137)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.99 fault7 seg3 true(-55.4,-40.4,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.2 arc_age1980 missing_age180 line_age195 line_error-7.5 estimate(107.4,92.3,0.137)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": -130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.99 fault7 seg3 true(-54.5,-43.3,5.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.8 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(-166.1,-101.1,0.062)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.00s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.00s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": 80,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.99 fault7 seg3 true(-54.5,-43.3,5.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.8 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(55.4,54.0,0.062)\n"
+    },
+    {
+      "profile": "cross-sprint",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.99 fault7 seg3 true(-54.5,-43.3,5.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.8 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(108.2,90.9,0.062)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 0,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.02 fault7 seg3 true(-71.3,-41.1,10.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1215.2 arc_age2445 missing_age180 line_age195 line_error0.0 estimate(15.9,-22.3,0.164)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 37.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 37.16s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 2,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.04 fault7 seg3 true(-63.9,-39.0,10.4)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1222.2 arc_age2460 missing_age180 line_age195 line_error-7.5 estimate(26.0,-20.0,0.155)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 5,
+      "drift_mm": 130,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 7,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.04 fault7 seg3 true(-63.8,-38.8,10.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1220.8 arc_age2460 missing_age180 line_age195 line_error-7.5 estimate(26.3,-19.4,0.152)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 37.15s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 10,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.03 fault7 seg3 true(-70.6,-41.0,10.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1215.8 arc_age2445 missing_age180 line_age195 line_error0.0 estimate(16.0,-22.8,0.156)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 37.12s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.5,
+      "phase": 12,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t10.03 fault7 seg3 true(-66.3,-39.3,10.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1219.9 arc_age2445 missing_age180 line_age195 line_error-7.5 estimate(19.7,-15.5,0.164)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 29.52s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.52s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.52s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 29.52s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 0,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.16 fault7 seg3 true(-51.4,-39.5,9.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1216.5 arc_age1990 missing_age180 line_age195 line_error-7.5 estimate(49.3,-13.3,0.120)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 29.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 29.54s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 2,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.16 fault7 seg3 true(-53.5,-41.9,5.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.7 arc_age1985 missing_age180 line_age195 line_error0.0 estimate(45.3,-15.9,0.065)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 5,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.4,-39.6,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1212.4 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(50.4,-12.3,0.134)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 7,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.5,-39.1,9.6)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.6 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(52.0,-12.8,0.132)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 10,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.12 fault7 seg3 true(-53.7,-39.7,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1213.6 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(50.7,-12.3,0.134)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 29.53s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 1.0,
+      "phase": 12,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.17 fault7 seg3 true(-51.1,-38.7,9.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1216.8 arc_age1990 missing_age180 line_age195 line_error-7.5 estimate(52.6,-10.8,0.119)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 0,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.98 fault7 seg3 true(-58.0,-43.7,6.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.2 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(41.9,-17.1,0.075)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 2,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.03 fault7 seg3 true(-56.0,-43.3,5.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.5 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(44.3,-16.2,0.062)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 28.99s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 28.99s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 28.99s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 28.99s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 5,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.02 fault7 seg3 true(-53.6,-39.9,9.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1209.3 arc_age1985 missing_age180 line_age195 line_error-7.5 estimate(48.0,-13.4,0.126)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 28.96s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 7,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t8.02 fault7 seg3 true(-55.3,-43.2,5.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.9 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(41.9,-19.0,0.064)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 29.05s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.05s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.05s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 29.05s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 10,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.99 fault7 seg3 true(-55.4,-40.4,9.7)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.2 arc_age1980 missing_age180 line_age195 line_error-7.5 estimate(45.8,-13.5,0.137)\n"
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": -130,
+      "passed": true,
+      "stdout": "PASS: task4 29.00s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": -80,
+      "passed": true,
+      "stdout": "PASS: task4 29.00s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": 0,
+      "passed": true,
+      "stdout": "PASS: task4 29.00s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": 80,
+      "passed": true,
+      "stdout": "PASS: task4 29.00s, 17 point events, 4 laps (motor gains 1.00/1.00, yaw bias 0.000 rad/s)\n",
+      "errors": ""
+    },
+    {
+      "profile": "arc-localize",
+      "gain": 0.9,
+      "phase": 12,
+      "drift_mm": 130,
+      "passed": false,
+      "stdout": "",
+      "errors": "FAIL task4 t7.99 fault7 seg3 true(-54.5,-43.3,5.5)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1206.8 arc_age1980 missing_age180 line_age195 line_error0.0 estimate(47.9,-16.4,0.062)\n"
+    }
+  ],
+  "inputs_sha256": {
+    "Core/Src/car_control.c": "4864f9e4237287b91362408b508f32a7ab45a4a7902e591c4c83edcdf60a17ca",
+    "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+    "Core/Src/imu_filter.c": "7da06894224dfff5e0283a52ebb360e7b03410a9009a54421920c8d542d8a4bd",
+    "Core/Src/task1_test.c": "52d7a311d1b316409b4eb45719110715213bed000616a8ee05bce9e2591300fc",
+    "Core/Src/course_mode.c": "339517b9a6f21d6adb002d7cb77346612bb0d358fe8be09e34b3fc57d42d36fb",
+    "tests/sim_course.c": "6dd9f16a87955d47f114944c557626fc3593b6321035268bcf1c69c4cb9b5646",
+    "Core/Inc/car_config.h": "4ac2f02d9901077e5bdbd2efea4b7ed2b515a01a4107ef398121813e8fd02f14"
+  }
+}

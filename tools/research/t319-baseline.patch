@@ -1,0 +1,157 @@
+--- a/Core/Src/car_control.c
++++ b/Core/Src/car_control.c
+@@ -26,6 +26,10 @@
+ {
+     return c->task==4 || (CAR_DUAL_MODE_BUILD && c->task==2);
+ }
++static bool CrossSprint(const CarControl *c)
++{
++    return CAR_TIME_TRIAL_CROSS_SPRINT && c->task==4;
++}
+ static unsigned TargetLaps(const CarControl *c)
+ {
+     return c->target_laps>=1 && c->target_laps<=4 ? c->target_laps : c->task==4 ? 4U : 1U;
+@@ -83,6 +87,13 @@
+           CAR_TT_ARC_PWM_RESERVE>=0 && CAR_TT_ARC_PWM_RESERVE<=CAR_PWM_LIMIT &&
+           CAR_TT_ARC_ACCEL_START_MM>=0 && CAR_TT_ARC_ACCEL_START_MM<=400 &&
+           CAR_TT_D_FILTER_MS>=0 && CAR_TT_D_FILTER_MS<=100))
++        return CAR_FAULT_CONFIG;
++    if (CrossSprint(c) &&
++        !(CAR_CROSS_SPRINT_STRAIGHT_SPEED>=CAR_TT_ENTRY_SPEED &&
++          CAR_CROSS_SPRINT_STRAIGHT_SPEED<=CAR_TT_WHEEL_SPEED &&
++          CAR_CROSS_SPRINT_ARC_SPEED>=CAR_TT_ENTRY_SPEED &&
++          CAR_CROSS_SPRINT_ARC_SPEED<=CAR_TT_WHEEL_SPEED &&
++          CAR_CROSS_SPRINT_ARC_PWM>0 && CAR_CROSS_SPRINT_ARC_PWM<=CAR_PWM_LIMIT))
+         return CAR_FAULT_CONFIG;
+     if (!in->gray_online) return CAR_FAULT_GRAY;
+     if (!in->imu_ready || !isfinite(in->yaw_rad)) return CAR_FAULT_IMU;
+@@ -211,7 +222,7 @@
+         }
+     }
+     float pwm_budget=c->state==CAR_STRAIGHT ? CAR_TT_STRAIGHT_PWM_RESERVE :
+-        c->state==CAR_ARC ? CAR_TT_ARC_PWM_RESERVE : 0;
++        c->state==CAR_ARC ? (CrossSprint(c) ? CAR_CROSS_SPRINT_ARC_PWM : CAR_TT_ARC_PWM_RESERVE) : 0;
+     if (CAR_TIME_TRIAL_BUILD && FastCourse(c) && pwm_budget>0) {
+         /* Invert the current wheel PI demand to reserve steering authority.
+          * Common scaling keeps path curvature when a weak/battery-limited
+@@ -243,8 +254,9 @@
+ static float ArcStart(const CarControl *c) { return c->segment==1 ? 0.0f : CAR_PI; }
+ static float ArcEnd(const CarControl *c) { return c->segment==1 ? CAR_PI : 0.0f; }
+ static float ArcSign(const CarControl *c) { return c->task>=3 && c->segment==1 ? 1.0f : -1.0f; }
+-static float FastArcSpeed(void)
+-{
++static float FastArcSpeed(const CarControl *c)
++{
++    if (CrossSprint(c)) return CAR_CROSS_SPRINT_ARC_SPEED;
+     return CAR_TIME_TRIAL_BUILD ? CAR_TT_ARC_SPEED : CAR_FOUR_CRUISE_SPEED;
+ }
+ static float FastEntrySpeed(void)
+@@ -267,7 +279,14 @@
+      * at the reference speed avoids amplifying the same spatial disturbance
+      * twice when cruise is raised. P still scales with speed. */
+     float d_gain=CAR_TIME_TRIAL_BUILD && FastCourse(c) ? CAR_FOUR_CRUISE_SPEED/180.0f : gain;
+-    return gain*CAR_LINE_KP*c->line_error+(derivative ? d_gain*CAR_LINE_KD*c->line_rate : 0);
++    /* Keep acquisition feedback intact. During settled CROSS tracking, reduce
++     * binary-probe steering steps and derivative kicks at the higher cruise. */
++    bool cruise=CrossSprint(c) && c->state==CAR_ARC &&
++        c->distance_mm-c->segment_distance>=c->geometry.sensor_forward_mm;
++    float pscale=cruise ? CAR_CROSS_SPRINT_P_SCALE : 1.0f;
++    float dscale=cruise ? CAR_CROSS_SPRINT_D_SCALE : 1.0f;
++    return pscale*gain*CAR_LINE_KP*c->line_error+
++        (derivative ? dscale*d_gain*CAR_LINE_KD*c->line_rate : 0);
+ }
+ 
+ /* During fast acquisition keep both target wheels moving. A saturated turn
+@@ -336,9 +355,16 @@
+         float lateral=-uy*(c->x_mm-begin.x)+ux*(c->y_mm-begin.y);
+         float remaining=length-along;
+         /* Position + fresh black + footprint gate. Black elsewhere cannot switch. */
++        /* At C a right-edge-only hit can be the arc beside the body while C
++         * remains outside its footprint. Continue preview steering, but wait
++         * for the observation to move inward before confirming this point.
++         * Left-side acquisition is different geometry and retains its gate. */
++        bool entry_line_confirmed=!CrossSprint(c) ||
++            (c->segment==0 ? c->line_error<=CAR_CROSS_SPRINT_EDGE_LIMIT :
++                            c->line_error>=-CAR_CROSS_SPRINT_EDGE_LIMIT);
+         bool reached=remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
+             end_distance<CAR_ENDPOINT_GATE_MM && Covers(c,end) &&
+-            c->black_frames>=CAR_LINE_CONFIRM_FRAMES;
++            c->black_frames>=CAR_LINE_CONFIRM_FRAMES && entry_line_confirmed;
+         if (reached) {
+             if (c->task==1) { Brake(c,in->now_ms); return; }
+             Signal(c,dest); ++c->segment;
+@@ -355,7 +381,8 @@
+             if (remaining < -80 || fabsf(lateral)>180) {
+                 Stop(c,CAR_FAULT,CAR_FAULT_ENDPOINT); return;
+             }
+-            float desired=atan2f(dy,dx)-atan2f(lateral,250.0f);
++            float lookahead=CrossSprint(c) ? CAR_CROSS_SPRINT_LOOKAHEAD_MM : 250.0f;
++            float desired=atan2f(dy,dx)-atan2f(lateral,lookahead);
+             if(c->task==4 && (c->segment==2 ||
+                 (c->segment==0 && CAR_CROSS_C_ENTRY_AIM_MM>0))) {
+                 /* Aim along the incoming black arc, not only its exposed tip.
+@@ -363,12 +390,13 @@
+                  * fresh black and physical footprint coverage are still required. */
+                 float advance=Clamp(c->segment==2 ? CAR_CROSS_D_ENTRY_AIM_MM :
+                                     CAR_CROSS_C_ENTRY_AIM_MM,0.0f,60.0f);
++                if (CrossSprint(c)) advance=c->segment==2 ? CAR_CROSS_SPRINT_D_AIM_MM : CAR_CROSS_SPRINT_C_AIM_MM;
+                 float ax=end.x+(c->segment==2 ? -advance : advance)-begin.x;
+                 float ay=end.y+400.0f-sqrtf(400.0f*400.0f-advance*advance)-begin.y;
+                 float aim_length=hypotf(ax,ay);
+                 float aim_lateral=-(ay/aim_length)*(c->x_mm-begin.x)+
+                                    (ax/aim_length)*(c->y_mm-begin.y);
+-                desired=atan2f(ay,ax)-atan2f(aim_lateral,250.0f);
++                desired=atan2f(ay,ax)-atan2f(aim_lateral,lookahead);
+             }
+             omega=CAR_HEADING_KP*Motion_Wrap(desired-c->heading_rad);
+             speed=FastCourse(c) ? CAR_FOUR_CRUISE_SPEED : c->task<=2 ? CAR_STRAIGHT_SPEED : CAR_DIAGONAL_SPEED;
+@@ -377,8 +405,9 @@
+                 /* Accelerate only after aligning. The distance envelope reaches
+                  * arc speed before the front sensor can see the endpoint. */
+                 float aligned=Clamp((0.55f-fabsf(heading_error))/0.35f,0,1);
++                float cruise=CrossSprint(c) ? CAR_CROSS_SPRINT_STRAIGHT_SPEED : CAR_TT_STRAIGHT_SPEED;
+                 float requested=CAR_TT_ENTRY_SPEED+
+-                    aligned*(CAR_TT_STRAIGHT_SPEED-CAR_TT_ENTRY_SPEED);
++                    aligned*(cruise-CAR_TT_ENTRY_SPEED);
+                 float available=fmaxf(0,remaining-c->geometry.sensor_forward_mm-60.0f);
+                 speed=fminf(requested,sqrtf(CAR_TT_ENTRY_SPEED*CAR_TT_ENTRY_SPEED+
+                                             2*CAR_TT_STRAIGHT_DECEL*available));
+@@ -390,7 +419,7 @@
+                remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
+                end_distance<CAR_ENDPOINT_GATE_MM &&
+                (Covers(c,end) || (CAR_CROSS_C_ENTRY_PREVIEW && c->task==4 && c->segment==0) ||
+-                (CAR_CROSS_D_ENTRY_PREVIEW && c->task==4 && c->segment==2))) {
++                ((CAR_CROSS_D_ENTRY_PREVIEW || CrossSprint(c)) && c->task==4 && c->segment==2))) {
+                 /* Near an endpoint, start tracking the observed arc on
+                  * its first valid black frame. Do not signal/advance the route
+                  * until the usual three consecutive frames confirm it above.
+@@ -503,7 +532,7 @@
+                 progress>400*CAR_PI+350 || turned>CAR_PI+0.7f) {
+                 Stop(c,CAR_FAULT,CAR_FAULT_LINE); return;
+             }
+-            speed=FastCourse(c) ? FastArcSpeed() :
++            speed=FastCourse(c) ? FastArcSpeed(c) :
+                 (turned>2.55f && !FinalSegment(c)) ? CAR_CAPTURE_SPEED : CAR_ARC_SPEED;
+             if (CAR_TIME_TRIAL_BUILD && FastCourse(c)) {
+                 /* Finish front-sensor acquisition before raising arc cruise. */
+@@ -516,7 +545,7 @@
+             /* An outer-probe observation becomes uncertain during loss.
+              * Retain P initially, then fade it to zero by the existing 180 ms
+              * loss deadline. Never extrapolate D or confirm an unseen point. */
+-            bool entry_edge=CAR_TIME_TRIAL_STAGE3 &&
++            bool entry_edge=(CAR_TIME_TRIAL_STAGE3 || (CAR_TIME_TRIAL_ENTRY_HOLD && FastCourse(c))) &&
+                 progress<c->geometry.sensor_forward_mm &&
+                 fabsf(c->line_error)>=2.5f*CAR_GRAY_PITCH_MM;
+             uint32_t edge_age=in->now_ms-c->last_line_at;
+@@ -524,7 +553,10 @@
+             bool recent_edge=FastCourse(c) && c->have_line && edge_age<=edge_hold_ms;
+             if (!c->line_missing || recent_edge) {
+                 float correction=ArcFeedback(c,speed,!c->line_missing);
+-                if (c->line_missing && entry_edge && edge_age>80U)
++                /* T317 retains only the last outer-probe P correction during
++                 * entry. Stale D remains disabled, the existing loss timeout
++                 * still stops at 180 ms, and white cannot confirm a point. */
++                if (c->line_missing && entry_edge && edge_age>80U && !CAR_TIME_TRIAL_ENTRY_HOLD)
+                     correction*=Clamp((float)(CAR_LINE_LOST_TIMEOUT_MS-edge_age)/
+                                       (CAR_LINE_LOST_TIMEOUT_MS-80U),0,1);
+                 omega-=correction;

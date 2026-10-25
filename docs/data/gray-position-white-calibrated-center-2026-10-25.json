@@ -1,0 +1,85 @@
+{
+  "source": "docs/data/gray-position-center-02-2026-10-25.capture.txt",
+  "source_sha256": "6bb134fcc3cae1e4084b93c5e264631581c18d3b3bf22775268827535ac75f5b",
+  "accepted_rows": 97,
+  "unique_frames": 97,
+  "duration_ms": 4982,
+  "candidate_calibration": {
+    "white": [
+      1241.0,
+      339.0,
+      317.0,
+      288.0,
+      309.0,
+      539.0,
+      759.0,
+      623.0
+    ],
+    "black": [
+      2764,
+      2240,
+      2261,
+      1736,
+      1879,
+      2214,
+      3459,
+      3791
+    ],
+    "pitch_mm": 15,
+    "reversed": false
+  },
+  "calibration_origin": "docs/data/gray-position-white-calibrated-sweep-2026-10-25.json",
+  "status_counts": {
+    "OK": 97
+  },
+  "binary_mask_counts": {
+    "08": 97
+  },
+  "channels": [
+    {
+      "channel": 1,
+      "minimum": 1183,
+      "maximum": 1184
+    },
+    {
+      "channel": 2,
+      "minimum": 336,
+      "maximum": 337
+    },
+    {
+      "channel": 3,
+      "minimum": 912,
+      "maximum": 913
+    },
+    {
+      "channel": 4,
+      "minimum": 1315,
+      "maximum": 1316
+    },
+    {
+      "channel": 5,
+      "minimum": 535,
+      "maximum": 535
+    },
+    {
+      "channel": 6,
+      "minimum": 497,
+      "maximum": 498
+    },
+    {
+      "channel": 7,
+      "minimum": 873,
+      "maximum": 874
+    },
+    {
+      "channel": 8,
+      "minimum": 651,
+      "maximum": 656
+    }
+  ],
+  "estimator_sha256": "44d3fc559be959745838d0d38df1bf53ff90836a50be44eb5a516ffa30b87fdf",
+  "physical_position_ground_truth": false,
+  "steering_validated": false,
+  "firmware_changed": false,
+  "note": "Stationary dwell biases frame percentages. Unlabeled range coverage is not proof of spatial accuracy, monotonic motion, or faster successful laps."
+}

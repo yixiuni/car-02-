@@ -53,6 +53,13 @@ PROFILES={
 }
 SOURCES=['Core/Src/car_control.c','Core/Src/motion_control.c','Core/Src/imu_filter.c',
          'Core/Src/task1_test.c','Core/Src/course_mode.c','tests/sim_course.c']
+PROFILES['entry-hold']={**PROFILES['arc-step'],'CAR_TIME_TRIAL_ENTRY_HOLD':1}
+PROFILES['cross-sprint']={**PROFILES['entry-hold'],'CAR_TIME_TRIAL_CROSS_SPRINT':1}
+PROFILES['arc-localize']={**PROFILES['cross-sprint'],'CAR_TIME_TRIAL_ARC_LOCALIZE':1}
+
+PROFILES['edge-pose']={**PROFILES['arc-localize'],'CAR_TIME_TRIAL_EDGE_POSE':1}
+
+PROFILES['arc-phase']={**PROFILES['edge-pose'],'CAR_TIME_TRIAL_ARC_PHASE':1}
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -63,6 +70,7 @@ def main():
                         help='Sensor phases in milliseconds, each in [0,14]')
     parser.add_argument('--stress',action='store_true',help='Also run placement, unequal motors, faults and D-offset suites')
     parser.add_argument('--entry-stress',action='store_true',help='Also sweep assumed C-entry position errors for all four laps')
+    parser.add_argument('--cross-full',action='store_true',help='Also run the full CROSS suite independently so an earlier NORMAL failure cannot hide its result')
     parser.add_argument('--compiler',default=shutil.which('clang') or shutil.which('gcc'))
     parser.add_argument('--output',type=Path,default=ROOT/'build-host/time-trial/report.json')
     args=parser.parse_args()
@@ -89,12 +97,14 @@ def main():
             for phase in args.phases:
                 suites=('nominal','full','d-offset') if args.stress else ('nominal',)
                 if args.entry_stress:suites+=('c-offset',)
+                if args.cross_full:suites+=('cross-full',)
                 for suite in suites:
                     env={**clean_env,'SIM_PWM_PER_MM_S':str(model),'SIM_GRAY_PHASE_MS':str(phase),
                          'SIM_WEAK_BRAKE':'1','SIM_METRICS':'1'}
                     if suite=='nominal':env['SIM_NOMINAL_ONLY']='1'
                     if suite=='d-offset':env['SIM_D_ENTRY_SWEEP']='1'
                     if suite=='c-offset':env['SIM_C_ENTRY_SWEEP']='1'
+                    if suite=='cross-full':env['SIM_TASK4_ONLY']='1'
                     proc=subprocess.run([str(exe)],cwd=ROOT,env=env,capture_output=True,text=True)
                     log=out/f'{name}-model{model}-phase{phase}-{suite}.log'
                     log.write_text(proc.stdout+proc.stderr)

@@ -3,6 +3,9 @@
  * It cannot validate tire slip, electrical wiring or real sensor calibration. */
 #include "car_control.h"
 #include "car_config.h"
+#if CAR_SPEED_TRACE_BUILD
+#include "speed_trace.h"
+#endif
 #if CAR_ARC_TEST_BUILD || CAR_LAP_TEST_BUILD || CAR_CROSS_TEST_BUILD || CAR_FOUR_TEST_BUILD || CAR_DUAL_MODE_BUILD
 #include "task1_test.h"
 #if CAR_DUAL_MODE_BUILD
@@ -71,6 +74,9 @@ static bool ArcCovered(const Plant *p, const CarGeometry *g, unsigned segment)
 }
 static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injection)
 {
+#if CAR_SPEED_TRACE_BUILD
+    SpeedTrace_Reset();
+#endif
     /* Optional sensitivity experiment only. Keep the historical default fixed;
      * a faster assumed plant is never evidence that the actual car is faster. */
     float plant_pwm_per_mm_s=getenv("SIM_PWM_PER_MM_S") ?
@@ -86,6 +92,11 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
     if (!isfinite(arc_odometry_scale) || arc_odometry_scale<.8f || arc_odometry_scale>1.2f) {
         fputs("FAIL: invalid arc odometry scale\n",stderr);return 1;
     }
+    /* Synthetic estimator drift only: does not move the physical plant or
+     * relax point/arc coverage. Not an exact replay or measured drift fit. */
+    float arc_pose_drift=getenv("SIM_ARC_POSE_DRIFT_MM") ?
+        strtof(getenv("SIM_ARC_POSE_DRIFT_MM"),NULL) : 0.0f;
+    if(!isfinite(arc_pose_drift) || fabsf(arc_pose_drift)>200) return 1;
     float encoder_left=0,encoder_right=0;
     unsigned gray_phase=getenv("SIM_GRAY_PHASE_MS") ?
         (unsigned)strtoul(getenv("SIM_GRAY_PHASE_MS"),NULL,10)%15U : 0;
@@ -168,7 +179,15 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
         Task1Test_Apply(&gate,&in,c.state,0);
 #endif
 #endif
+        if(c.state==CAR_ARC && c.segment==3 && c.completed_laps==0) {
+            float fraction=(dl+dr)*.5f/1144.0f;
+            c.x_mm+=arc_pose_drift*fraction;
+            c.y_mm+=.7f*arc_pose_drift*fraction;
+        }
         CarControl_Update(&c,&in);
+#if CAR_SPEED_TRACE_BUILD
+        SpeedTrace_Observe(&c,&in);
+#endif
         if (getenv("SIM_CONTROL_FINGERPRINT")) {
             control_hash=ControlHash(control_hash,&c);
             if (c.state==CAR_DONE || c.state==CAR_FAULT || (injected && c.state==CAR_STOPPED))
@@ -191,7 +210,9 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
            (c.state==CAR_STRAIGHT || c.state==CAR_CAPTURE || c.state==CAR_ARC) &&
            (c.left_target>CAR_TT_WHEEL_SPEED+.01f || c.right_target>CAR_TT_WHEEL_SPEED+.01f ||
             (c.left_target+c.right_target)*.5f<1 ||
-            (c.left_target+c.right_target)*.5f>fmaxf(CAR_TT_STRAIGHT_SPEED,CAR_TT_ARC_SPEED)+.01f)) {
+            (c.left_target+c.right_target)*.5f>(CAR_TIME_TRIAL_CROSS_SPRINT && task==4 ?
+                fmaxf(CAR_CROSS_SPRINT_STRAIGHT_SPEED,CAR_CROSS_SPRINT_ARC_SPEED) :
+                fmaxf(CAR_TT_STRAIGHT_SPEED,CAR_TT_ARC_SPEED))+.01f)) {
             fputs("FAIL: time-trial target outside planned envelope\n",stderr); return 1;
         }
         if(task>=3 && ms==2000 && p.theta-initial>-0.35f) {
@@ -218,7 +239,10 @@ static int Run(unsigned task,float gain_l,float gain_r,float bias,unsigned injec
                 if(c.last_point!=order[(events-1)%4]) return 1;
             }
             if(!PointCovered(&p,c.last_point,&g)) {
-                fprintf(stderr,"FAIL task%u: event point%d not physically covered at %.0f,%.0f\n",task,c.last_point,p.x,p.y);return 1;
+                fprintf(stderr,"FAIL task%u: event point%d not physically covered at %.0f,%.0f\n",task,c.last_point,p.x,p.y);
+                fprintf(stderr,"POINT_DETAIL heading%.3f map(%.1f,%.1f,%.3f) line%.1f frames%u lap%u Coffset%.1f Doffset%.1f\n",
+                    p.theta,c.x_mm,c.y_mm,c.heading_rad,c.line_error,c.black_frames,
+                    c.completed_laps,c_pose_error_mm,b_pose_error_mm);return 1;
             }
         }
         if(task==4 && !c_pose_displaced && c_pose_error_mm!=0 && c.segment==0 &&
@@ -316,6 +340,7 @@ int main(void)
 #if CAR_DUAL_MODE_BUILD
     if(getenv("SIM_NOMINAL_ONLY")) {
         selected_laps=4;
+        if(getenv("SIM_TASK4_ONLY"))return Run(4,1,1,0,0);
         return Run(2,1,1,0,0) || Run(4,1,1,0,0);
     }
     if(getenv("SIM_C_ENTRY_SWEEP")) {
@@ -342,7 +367,7 @@ int main(void)
         puts("PASS: D entry pose-error sweep, 1/4 laps, each B exit, full coverage and speed envelope");
         return 0;
     }
-    for(unsigned task=2;task<=4;task+=2) {
+    for(unsigned task=getenv("SIM_TASK4_ONLY") ? 4 : 2;task<=4;task+=2) {
         for(selected_laps=1;selected_laps<=4;selected_laps++) {
             if(Run(task,1,1,0,0) || Run(task,.95f,1.05f,.001f,0)) return 1;
         }

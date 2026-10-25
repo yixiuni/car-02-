@@ -1,0 +1,61 @@
+{
+  "firmware": "T317",
+  "status": "FLASH_VERIFIED_PHYSICAL_RUN_COMPLETED",
+  "passed_suites": 72,
+  "total_suites": 72,
+  "asan_ubsan_pass_lines": 1798,
+  "raw_model_report_sha256": "32c244319ae5dab2b02343aeb62b5d621e0f467ef07cadb2401bbaeec1f41961",
+  "inputs_sha256": {
+    "Core/Src/car_control.c": "9f5e461260dfcd7545b8ef238f28c1ac4c265a50ffd725da357ef7782a40ddbe",
+    "Core/Src/motion_control.c": "99410da1852487cd1a1dfe56bbcbe5e49671332a5ebf1fe319216c50a658360f",
+    "Core/Src/imu_filter.c": "7da06894224dfff5e0283a52ebb360e7b03410a9009a54421920c8d542d8a4bd",
+    "Core/Src/task1_test.c": "52d7a311d1b316409b4eb45719110715213bed000616a8ee05bce9e2591300fc",
+    "Core/Src/course_mode.c": "339517b9a6f21d6adb002d7cb77346612bb0d358fe8be09e34b3fc57d42d36fb",
+    "tests/sim_course.c": "c809cb0f3b280f35f4aed3831e350b45c6e65a479fd53e976e20d5ed4cf53b2e",
+    "Core/Inc/car_config.h": "7fb9808d24fdb7127e0133e3909aa726d6f10534ca62b494945436d6fcc032e0",
+    "Core/Inc/car_control.h": "80df5927b7e87a6a48c22c16e2c029d5f9b4171a6c34e3614302a27456a22df9",
+    "Core/Inc/car_arc_debug.h": "9b2eac284c25d3dd458b6775706759b55bd391a45c02475fa9805bb177f8d98b",
+    "Core/Inc/motion_control.h": "c7f60a43a89b2eee9b0b6ade2e1e90c4e6132e8e1a10b96588d1a3d4c693ddb9",
+    "Core/Inc/course_mode.h": "29817e54d0021fdcc797495293d2a40fde2f1efc82e483bffd86931fc3510f4e",
+    "Core/Inc/task1_test.h": "f2d00c31c633d143a03cdd9648e4fea7b7258324e52f77711cc183aee7e664ad",
+    "Core/Inc/imu_filter.h": "43f6426cb2b8cf164f7ac7f6b4a6a59247f4fcb5c3a3d671c0f3e1f8bb85e92f",
+    "tools/evaluate_time_trial.py": "13be2a87c88a61d0760cb5ce571d4a23f173c96a526377a214a3878f54467e6f"
+  },
+  "flash_bytes": 47352,
+  "ram_link_bytes": 47288,
+  "bin_sha256": "90a6ad114d61da49ce3b69aaf299563e53675f3c06c8d5af0d8e1bed49cd4374",
+  "physical_result": "COMPLETED",
+  "reproduce": "python3 tools/evaluate_time_trial.py --profiles entry-hold --models 1.5 1.0 0.9 --phases 0 2 5 7 10 12 --stress --entry-stress --output build-host/t317-recheck/report.json",
+  "flash_readback_identical": true,
+  "post_flash": [
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        1673,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "state": 0,
+      "fault": 0,
+      "task": 2,
+      "target_laps": 1,
+      "gray_counters": [
+        1759,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "active_control_gap_pending": false,
+  "remote_motor_start": false,
+  "physical_run": "docs/data/t317-cross-four-run-01.json",
+  "physical_elapsed_s": 35.667,
+  "max_active_control_interval_ms": 8
+}

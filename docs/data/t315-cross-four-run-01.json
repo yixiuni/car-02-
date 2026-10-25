@@ -1,0 +1,441 @@
+{
+  "firmware": "T315",
+  "result": "COMPLETED",
+  "state": 5,
+  "fault": 0,
+  "task": 4,
+  "completed_laps": 4,
+  "target_laps": 4,
+  "point_events": 17,
+  "run_at": 157796,
+  "elapsed_s": 36.123,
+  "elapsed_method": "First DONE minus run_at",
+  "straight_target_mm_s": 800,
+  "arc_target_mm_s": 450,
+  "entry_target_mm_s": 370,
+  "peak_pwm_control_rate": [
+    901,
+    901
+  ],
+  "saturated_updates": 0,
+  "active_updates": 5064,
+  "max_active_control_interval_ms": 8,
+  "gray_counters": [
+    16558,
+    0,
+    0,
+    0
+  ],
+  "events": [
+    {
+      "event": 1,
+      "elapsed_s": 0.001,
+      "state": 1
+    },
+    {
+      "event": 2,
+      "elapsed_s": 1.97,
+      "state": 3
+    },
+    {
+      "event": 3,
+      "elapsed_s": 4.684,
+      "state": 1
+    },
+    {
+      "event": 4,
+      "elapsed_s": 6.538,
+      "state": 3
+    },
+    {
+      "event": 5,
+      "elapsed_s": 9.063,
+      "state": 1
+    },
+    {
+      "event": 6,
+      "elapsed_s": 10.926,
+      "state": 3
+    },
+    {
+      "event": 7,
+      "elapsed_s": 13.505,
+      "state": 1
+    },
+    {
+      "event": 8,
+      "elapsed_s": 15.432,
+      "state": 3
+    },
+    {
+      "event": 9,
+      "elapsed_s": 18.005,
+      "state": 1
+    },
+    {
+      "event": 10,
+      "elapsed_s": 19.847,
+      "state": 3
+    },
+    {
+      "event": 11,
+      "elapsed_s": 22.414,
+      "state": 1
+    },
+    {
+      "event": 12,
+      "elapsed_s": 24.27,
+      "state": 3
+    },
+    {
+      "event": 13,
+      "elapsed_s": 26.856,
+      "state": 1
+    },
+    {
+      "event": 14,
+      "elapsed_s": 28.712,
+      "state": 3
+    },
+    {
+      "event": 15,
+      "elapsed_s": 31.353,
+      "state": 1
+    },
+    {
+      "event": 16,
+      "elapsed_s": 33.209,
+      "state": 3
+    },
+    {
+      "event": 17,
+      "elapsed_s": 36.123,
+      "state": 5
+    }
+  ],
+  "arc_observations": [
+    {
+      "point_events": 2,
+      "black_samples": 152,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 49.8702392578125,
+      "max_abs_radial_error_mm": 59.626983642578125,
+      "slot": 0,
+      "first": {
+        "tick": 162478,
+        "rejected": 0,
+        "x_mm": 1119.77392578125,
+        "y_mm": -2.5252676010131836,
+        "heading_rad": 2.836439847946167,
+        "progress_mm": 1177.9876708984375,
+        "turned_rad": 3.502755880355835,
+        "heading_error_rad": 0.12004375457763672,
+        "correction_mm": 66.03353118896484,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      },
+      "last": {
+        "tick": 162478,
+        "rejected": 0,
+        "x_mm": 1119.77392578125,
+        "y_mm": -2.5252676010131836,
+        "heading_rad": 2.836439847946167,
+        "progress_mm": 1177.9876708984375,
+        "turned_rad": 3.502755880355835,
+        "heading_error_rad": 0.12004375457763672,
+        "correction_mm": 66.03353118896484,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 4,
+      "black_samples": 146,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 1.379974365234375,
+      "max_abs_radial_error_mm": 39.3297119140625,
+      "slot": 1,
+      "first": {
+        "tick": 166858,
+        "rejected": 0,
+        "x_mm": -86.89270782470703,
+        "y_mm": -61.24893569946289,
+        "heading_rad": 0.39010927081108093,
+        "progress_mm": 1112.343994140625,
+        "turned_rad": 3.4218544960021973,
+        "heading_error_rad": 0.03508743643760681,
+        "correction_mm": 64.72041320800781,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      },
+      "last": {
+        "tick": 166858,
+        "rejected": 0,
+        "x_mm": -86.89270782470703,
+        "y_mm": -61.24893569946289,
+        "heading_rad": 0.39010927081108093,
+        "progress_mm": 1112.343994140625,
+        "turned_rad": 3.4218544960021973,
+        "heading_error_rad": 0.03508743643760681,
+        "correction_mm": 64.72041320800781,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 6,
+      "black_samples": 149,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 24.4927978515625,
+      "max_abs_radial_error_mm": 36.108306884765625,
+      "slot": 2,
+      "first": {
+        "tick": 171300,
+        "rejected": 0,
+        "x_mm": 1081.933837890625,
+        "y_mm": -48.95096206665039,
+        "heading_rad": 2.8158559799194336,
+        "progress_mm": 1132.10546875,
+        "turned_rad": 3.482430934906006,
+        "heading_error_rad": 0.09945988655090332,
+        "correction_mm": 71.1689682006836,
+        "line_error_mm": 22.5,
+        "white_frames": 3,
+        "line_age_ms": 44,
+        "reasons": []
+      },
+      "last": {
+        "tick": 171300,
+        "rejected": 0,
+        "x_mm": 1081.933837890625,
+        "y_mm": -48.95096206665039,
+        "heading_rad": 2.8158559799194336,
+        "progress_mm": 1132.10546875,
+        "turned_rad": 3.482430934906006,
+        "heading_error_rad": 0.09945988655090332,
+        "correction_mm": 71.1689682006836,
+        "line_error_mm": 22.5,
+        "white_frames": 3,
+        "line_age_ms": 44,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 8,
+      "black_samples": 148,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 11.981597900390625,
+      "max_abs_radial_error_mm": 30.750762939453125,
+      "slot": 3,
+      "first": {
+        "tick": 175800,
+        "rejected": 0,
+        "x_mm": -85.65540313720703,
+        "y_mm": -42.45442581176758,
+        "heading_rad": 0.34870272874832153,
+        "progress_mm": 1129.052734375,
+        "turned_rad": 3.4579010009765625,
+        "heading_error_rad": 0.07649397850036621,
+        "correction_mm": 71.14833068847656,
+        "line_error_mm": 7.5,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      },
+      "last": {
+        "tick": 175800,
+        "rejected": 0,
+        "x_mm": -85.65540313720703,
+        "y_mm": -42.45442581176758,
+        "heading_rad": 0.34870272874832153,
+        "progress_mm": 1129.052734375,
+        "turned_rad": 3.4579010009765625,
+        "heading_error_rad": 0.07649397850036621,
+        "correction_mm": 71.14833068847656,
+        "line_error_mm": 7.5,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 10,
+      "black_samples": 147,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 13.4080810546875,
+      "max_abs_radial_error_mm": 41.65203857421875,
+      "slot": 4,
+      "first": {
+        "tick": 180209,
+        "rejected": 0,
+        "x_mm": 1079.1397705078125,
+        "y_mm": -54.25372314453125,
+        "heading_rad": 2.7834677696228027,
+        "progress_mm": 1115.205078125,
+        "turned_rad": 3.450625419616699,
+        "heading_error_rad": 0.06707167625427246,
+        "correction_mm": 72.22178649902344,
+        "line_error_mm": 7.5,
+        "white_frames": 3,
+        "line_age_ms": 44,
+        "reasons": []
+      },
+      "last": {
+        "tick": 180209,
+        "rejected": 0,
+        "x_mm": 1079.1397705078125,
+        "y_mm": -54.25372314453125,
+        "heading_rad": 2.7834677696228027,
+        "progress_mm": 1115.205078125,
+        "turned_rad": 3.450625419616699,
+        "heading_error_rad": 0.06707167625427246,
+        "correction_mm": 72.22178649902344,
+        "line_error_mm": 7.5,
+        "white_frames": 3,
+        "line_age_ms": 44,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 12,
+      "black_samples": 149,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 18.804412841796875,
+      "max_abs_radial_error_mm": 38.18096923828125,
+      "slot": 5,
+      "first": {
+        "tick": 184651,
+        "rejected": 0,
+        "x_mm": -92.58743286132812,
+        "y_mm": -37.381103515625,
+        "heading_rad": 0.2623017430305481,
+        "progress_mm": 1131.537109375,
+        "turned_rad": 3.544916868209839,
+        "heading_error_rad": 0.16289496421813965,
+        "correction_mm": 65.32170104980469,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      },
+      "last": {
+        "tick": 184651,
+        "rejected": 0,
+        "x_mm": -92.58743286132812,
+        "y_mm": -37.381103515625,
+        "heading_rad": 0.2623017430305481,
+        "progress_mm": 1131.537109375,
+        "turned_rad": 3.544916868209839,
+        "heading_error_rad": 0.16289496421813965,
+        "correction_mm": 65.32170104980469,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 14,
+      "black_samples": 152,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 47.27032470703125,
+      "max_abs_radial_error_mm": 49.33917236328125,
+      "slot": 6,
+      "first": {
+        "tick": 189148,
+        "rejected": 0,
+        "x_mm": 1087.46923828125,
+        "y_mm": -10.495136260986328,
+        "heading_rad": 2.811927080154419,
+        "progress_mm": 1152.0595703125,
+        "turned_rad": 3.4694924354553223,
+        "heading_error_rad": 0.09553098678588867,
+        "correction_mm": 82.92438507080078,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      },
+      "last": {
+        "tick": 189148,
+        "rejected": 0,
+        "x_mm": 1087.46923828125,
+        "y_mm": -10.495136260986328,
+        "heading_rad": 2.811927080154419,
+        "progress_mm": 1152.0595703125,
+        "turned_rad": 3.4694924354553223,
+        "heading_error_rad": 0.09553098678588867,
+        "correction_mm": 82.92438507080078,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 43,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 16,
+      "black_samples": 147,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 2.29974365234375,
+      "max_abs_radial_error_mm": 36.531280517578125,
+      "slot": 7,
+      "first": {
+        "tick": 193544,
+        "rejected": 0,
+        "x_mm": -88.96216583251953,
+        "y_mm": -54.490901947021484,
+        "heading_rad": 0.3122342824935913,
+        "progress_mm": 1114.7265625,
+        "turned_rad": 3.4955310821533203,
+        "heading_error_rad": 0.11296242475509644,
+        "correction_mm": 65.13884735107422,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      },
+      "last": {
+        "tick": 193544,
+        "rejected": 0,
+        "x_mm": -88.96216583251953,
+        "y_mm": -54.490901947021484,
+        "heading_rad": 0.3122342824935913,
+        "progress_mm": 1114.7265625,
+        "turned_rad": 3.4955310821533203,
+        "heading_error_rad": 0.11296242475509644,
+        "correction_mm": 65.13884735107422,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      }
+    }
+  ],
+  "all_eight_exits_accepted_first_candidate": true,
+  "state_intervals_s": {
+    "1": 15.023,
+    "3": 20.725,
+    "4": 0.374
+  },
+  "scope": "One completed physical run; not independent ground-truth point coverage or repeatability proof. Same control as T312, with recording.",
+  "user_report": "跑完了，已接回电脑线，未断电",
+  "raw_sources_sha256": {
+    "t315-run-01-arc-debug.bin": "62a3b7cd65a23307cc15804a3bca49b91e48108f97a9bc115ef8199549341e89",
+    "t315-run-01-controller.bin": "be8aa4eb53606c3a194fcb960382eeba910773ffb38d569a4ec516ee8aa424c3",
+    "t315-run-01-diag.bin": "d59d960c195bf81df9efd46a3608d7e353a727149f8cb353e3543f043ed345f8",
+    "t315-run-01-metadata.bin": "df979268b161bb60dc46ed69189b69a9d34c2d3a96597649f62d14320c006342",
+    "t315-run-01-ram.bin": "914d1cfce94a96b1d2d5c491617ae879c119b75aaf9520374363625307457ee8",
+    "t315-run-01-run-metrics.bin": "74a3259f57626f55aa1ad40e3655c2568719bf0841c69abcd1b107f3df4df0d0",
+    "t315-run-01-speed-meta.bin": "6c413fd4417e1bd5319d7c6c3154b20f74bb08cbbaede78e0fdcee713b65f763",
+    "t315-run-01-speed-samples.bin": "fa02bdafc280a8a1d1c8cf55896966e637739f60f4fdc011958f49859c86263f",
+    "t315-run-01-trace.bin": "9c1e2b01e2b3171bd59e0224b2a6eaceeda4a4d421b957c6c043d919f2eaf7c2"
+  }
+}

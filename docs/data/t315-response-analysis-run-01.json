@@ -1,0 +1,31 @@
+{
+  "scope": "First-lap straight windows only; dt-weighted samples, requested is after planner wheel/PWM scaling. Plateau means requested center in [790,805]. Filtered speed has 30ms lag, not instantaneous ground truth. No plant or Ka fit.",
+  "windows": [
+    {
+      "window": 0,
+      "cruise_duration_ms": 686,
+      "cruise_mean_requested_mm_s": 799.6027696793003,
+      "cruise_mean_setpoint_mm_s": 799.6027696793003,
+      "cruise_mean_measured_mm_s": 836.1443148688047,
+      "cruise_mean_pwm_permille": 818.1537900874636,
+      "deceleration_below780_at_ms": 1371,
+      "entry370_at_ms": 1737,
+      "deceleration_to_segment_end_ms": 598,
+      "entry370_to_segment_end_ms": 232
+    },
+    {
+      "window": 1,
+      "cruise_duration_ms": 858,
+      "cruise_mean_requested_mm_s": 799.743006993007,
+      "cruise_mean_setpoint_mm_s": 799.743006993007,
+      "cruise_mean_measured_mm_s": 819.1923076923077,
+      "cruise_mean_pwm_permille": 792.3980186480186,
+      "deceleration_below780_at_ms": 1308,
+      "entry370_at_ms": 1695,
+      "deceleration_to_segment_end_ms": 547,
+      "entry370_to_segment_end_ms": 160
+    }
+  ],
+  "interpretation": "Measured cruise is not persistently below requested. Planner holds 370 entry speed and begins deceleration well before segment exit. Acceleration FF is not justified as first modification from these data.",
+  "proposed_experiment": "Shorten approach deceleration distance, preserve entry speed and all point/line gates; model screen before considering flash."
+}
