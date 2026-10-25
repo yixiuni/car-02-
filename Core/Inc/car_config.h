@@ -42,6 +42,12 @@
 #ifndef CAR_TIME_TRIAL_C_ENTRY
 #define CAR_TIME_TRIAL_C_ENTRY 0
 #endif
+#ifndef CAR_TIME_TRIAL_STRAIGHT_BOOST
+#define CAR_TIME_TRIAL_STRAIGHT_BOOST 0
+#endif
+#if CAR_TIME_TRIAL_STRAIGHT_BOOST && !CAR_TIME_TRIAL_C_ENTRY
+#error "Straight boost requires the validated C-entry baseline"
+#endif
 #if CAR_TIME_TRIAL_C_ENTRY && !CAR_TIME_TRIAL_STAGE2
 #error "C entry experiment requires the stage 2 baseline"
 #endif
@@ -55,7 +61,7 @@
 #error "Time trial requires the dual-mode course build"
 #endif
 #ifndef CAR_TT_STRAIGHT_SPEED
-#define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_STAGE3 ? 550.0f : CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
+#define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_STRAIGHT_BOOST ? 520.0f : CAR_TIME_TRIAL_STAGE3 ? 550.0f : CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
 #endif
 #ifndef CAR_TT_ARC_SPEED
 #define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)

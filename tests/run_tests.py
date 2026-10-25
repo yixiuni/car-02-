@@ -28,7 +28,9 @@ trial_profiles=[('time-trial', trial_defines),
     ('time-trial2', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1']),
     ('time-trial3', trial_defines+['-DCAR_TIME_TRIAL_STAGE3=1']),
     ('time-trial-entry', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
-                                      '-DCAR_TIME_TRIAL_C_ENTRY=1'])]
+                                      '-DCAR_TIME_TRIAL_C_ENTRY=1']),
+    ('time-trial-straight', trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1',
+        '-DCAR_TIME_TRIAL_C_ENTRY=1','-DCAR_TIME_TRIAL_STRAIGHT_BOOST=1'])]
 for prefix, defines in trial_profiles:
     run(prefix + '-profile', base + ['tests/test_time_trial.c'], defines)
     run(prefix + '-course', base + ['Core/Src/task1_test.c', 'Core/Src/course_mode.c',
@@ -40,12 +42,12 @@ for prefix, defines in trial_profiles:
                 env['SIM_D_ENTRY_SWEEP'] = '1'
             exe = prefix + '-course' + ('.exe' if os.name == 'nt' else '')
             subprocess.run([str(out / exe)], cwd=ROOT, env=env, check=True)
-entry_defines=trial_profiles[-1][1]
-run('c-entry',base+['tests/test_c_entry.c'],entry_defines)
-for phase in ('0','5','10'):
-    subprocess.run([str(out/('time-trial-entry-course.exe' if os.name=='nt' else 'time-trial-entry-course'))],
-        cwd=ROOT,env={**os.environ,'SIM_C_ENTRY_SWEEP':'1','SIM_GRAY_PHASE_MS':phase,
-                      'SIM_WEAK_BRAKE':'1'},check=True)
+for prefix, defines in trial_profiles[-2:]:
+    run(prefix+'-c-entry',base+['tests/test_c_entry.c'],defines)
+    for phase in ('0','5','10'):
+        subprocess.run([str(out/(prefix+'-course'+('.exe' if os.name=='nt' else '')))],
+            cwd=ROOT,env={**os.environ,'SIM_C_ENTRY_SWEEP':'1','SIM_GRAY_PHASE_MS':phase,
+                          'SIM_WEAK_BRAKE':'1'},check=True)
 run('arc-preview', base + ['tests/test_arc_preview.c'],
     ['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1'])
 run('oled-ui',['Core/Src/oled_ui.c','tests/test_oled_ui.c'])

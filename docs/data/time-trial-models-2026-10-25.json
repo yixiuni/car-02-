@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "T306 C-entry experiment500/430/370 flashed and idle verified, physical pending. T302 actual CROSS4 successes42.705/42.818s. New36-suite comparison T30228passed,T30636passed; assumptions not actual error fit. T303-T305 physical failures retained. Historical original results unchanged.",
+  "hardware_status": "T306 completed CROSS4 42.502s fault0; T307 straight-only500->520,arc430/entry370,36suitespassed, flash/idle verified, physical pending. Higher530+ and delayed sprints failed stress tests; T306 image retained. Original historical model results unchanged.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,

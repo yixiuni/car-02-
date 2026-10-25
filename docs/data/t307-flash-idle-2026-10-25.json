@@ -1,0 +1,57 @@
+{
+  "firmware": "T307",
+  "magic": "0x54333037",
+  "flashed": true,
+  "live_flash_sha256": "30dc1807472bb76426cf71dc9565349644e85240eb53b8d079d572c3659fe4ad",
+  "flash_bytes": 42620,
+  "ram_bytes": 40488,
+  "straight_mm_s": 520,
+  "arc_mm_s": 430,
+  "entry_mm_s": 370,
+  "wheel_target_limit_mm_s": 650,
+  "pwm_limit_permille": 800,
+  "C_entry_aim_mm": 20,
+  "D_entry_aim_mm": 20,
+  "C_preview_before_footprint": true,
+  "event_gates": "Actual C footprint and three fresh black frames unchanged",
+  "stage3_turn_changes_enabled": false,
+  "physical_run": "pending",
+  "default_route": "NORMAL",
+  "default_laps": 1,
+  "idle_state": 0,
+  "idle_fault": 0,
+  "idle_sensor_flags": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "idle_pwm": [
+    0,
+    0
+  ],
+  "gray_counters_before": [
+    655,
+    0,
+    0,
+    0
+  ],
+  "gray_counters_after": [
+    737,
+    0,
+    0,
+    0
+  ],
+  "source_firmware": "T306",
+  "source_physical_successes_s": [
+    42.502
+  ],
+  "source_run_at": 124922,
+  "source_flash_sha256": "db9331ac819af3352ec5d8ce9ce26987233ab99536dc10a11496036ab425223c",
+  "asan_ubsan_passed": true,
+  "validation_pass_lines": 2837,
+  "expanded_suites_passed": 36,
+  "expanded_suites_total": 36,
+  "C_entry_assumptions": "Independent true position shifts -40..40mm in10mm steps after A, each lap;3 motor response mismatches;3 PWM-speed assumptions;3 sensor phases. Not a measured physical error fit.",
+  "scope": "Straight target only500 to520; T306 arc430/entry370 and all control preserved. Flash/readback and idle verified, T307 physical pending."
+}

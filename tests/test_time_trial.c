@@ -27,7 +27,7 @@ static float Step(uint8_t mask,bool fresh)
 int main(void)
 {
     Init(400,0);float straight=Step(0,true);
-    assert(straight>CAR_TT_ENTRY_SPEED+20); /* actually uses straight acceleration */
+    assert(fabsf(straight-CAR_TT_STRAIGHT_SPEED)<.01f); /* actually uses straight acceleration */
     Init(800,0);float entry=Step(0,true);
     assert(fabsf(entry-CAR_TT_ENTRY_SPEED)<.01f);
     Init(400,0.8f);assert(Step(0,true)<straight); /* align before sprint */

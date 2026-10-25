@@ -24,7 +24,8 @@ static float Step(uint8_t mask,bool fresh)
 }
 int main(void)
 {
-    assert(CAR_TIME_TRIAL_C_ENTRY && CAR_TT_STRAIGHT_SPEED==500);
+    assert(CAR_TIME_TRIAL_C_ENTRY);
+    assert(CAR_TT_STRAIGHT_SPEED==(CAR_TIME_TRIAL_STRAIGHT_BOOST ? 520 : 500));
     assert(CAR_TT_ARC_SPEED==430 && CAR_TT_ENTRY_SPEED==370);
     assert(CAR_CROSS_D_ENTRY_AIM_MM==20 && !CAR_TIME_TRIAL_STAGE3);
     /* C is 192 mm ahead of the axle: within approach gate, beyond the
