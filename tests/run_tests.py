@@ -24,23 +24,19 @@ def run(name, sources, defines=()):
     subprocess.run([str(exe)], cwd=ROOT, check=True)
 base = ['Core/Src/car_control.c', 'Core/Src/motion_control.c', 'Core/Src/imu_filter.c']
 trial_defines=['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1', '-DCAR_TIME_TRIAL_BUILD=1']
-stage2_defines=trial_defines+['-DCAR_TIME_TRIAL_STAGE2=1']
-run('time-trial2-profile',base+['tests/test_time_trial.c'],stage2_defines)
-run('time-trial2-course',base+['Core/Src/task1_test.c','Core/Src/course_mode.c','tests/sim_course.c'],stage2_defines)
-for phase in ('0','5','10'):
-    for offset in (False,True):
-        env={**os.environ,'SIM_GRAY_PHASE_MS':phase,'SIM_WEAK_BRAKE':'1'}
-        if offset:env['SIM_D_ENTRY_SWEEP']='1'
-        subprocess.run([str(out/('time-trial2-course.exe' if os.name=='nt' else 'time-trial2-course'))],
-                       cwd=ROOT,env=env,check=True)
-run('time-trial-profile',base+['tests/test_time_trial.c'],trial_defines)
-run('time-trial-course',base+['Core/Src/task1_test.c','Core/Src/course_mode.c','tests/sim_course.c'],trial_defines)
-for phase in ('0','5','10'):
-    for offset in (False,True):
-        env={**os.environ,'SIM_GRAY_PHASE_MS':phase,'SIM_WEAK_BRAKE':'1'}
-        if offset:env['SIM_D_ENTRY_SWEEP']='1'
-        subprocess.run([str(out/('time-trial-course.exe' if os.name=='nt' else 'time-trial-course'))],
-                       cwd=ROOT,env=env,check=True)
+for stage in (1, 2, 3):
+    defines = trial_defines + ([f'-DCAR_TIME_TRIAL_STAGE{stage}=1'] if stage > 1 else [])
+    prefix = 'time-trial' + (str(stage) if stage > 1 else '')
+    run(prefix + '-profile', base + ['tests/test_time_trial.c'], defines)
+    run(prefix + '-course', base + ['Core/Src/task1_test.c', 'Core/Src/course_mode.c',
+                                  'tests/sim_course.c'], defines)
+    for phase in ('0', '5', '10'):
+        for offset in (False, True):
+            env = {**os.environ, 'SIM_GRAY_PHASE_MS': phase, 'SIM_WEAK_BRAKE': '1'}
+            if offset:
+                env['SIM_D_ENTRY_SWEEP'] = '1'
+            exe = prefix + '-course' + ('.exe' if os.name == 'nt' else '')
+            subprocess.run([str(out / exe)], cwd=ROOT, env=env, check=True)
 run('arc-preview', base + ['tests/test_arc_preview.c'],
     ['-DCAR_TASK1_TEST_BUILD=1', '-DCAR_DUAL_MODE_BUILD=1'])
 run('oled-ui',['Core/Src/oled_ui.c','tests/test_oled_ui.c'])

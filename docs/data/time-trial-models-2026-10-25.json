@@ -1709,7 +1709,7 @@
       "all_requested_scenarios_passed": false
     }
   ],
-  "hardware_status": "Historical T301 first-stage model report. T301 subsequently completed physical CROSS4 in 47.580 s; see t301-cross-four-success-2026-10-25.json. T302 is now flashed/idle verified; see t302-flash-idle-2026-10-25.json. T302 physical run pending.",
+  "hardware_status": "T302 physical CROSS4 42.705s, fault0 (data/t302-cross-four-success-2026-10-25.json); T303 flash and idle verified, physical run pending (data/t303-flash-idle-2026-10-25.json). Historical model results below are unchanged.",
   "firmware": {
     "identity": "T301",
     "straight_mm_s": 450,

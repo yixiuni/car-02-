@@ -36,23 +36,29 @@
 #ifndef CAR_TIME_TRIAL_STAGE2
 #define CAR_TIME_TRIAL_STAGE2 0
 #endif
-#if CAR_TIME_TRIAL_STAGE2 && !CAR_TIME_TRIAL_BUILD
-#error "Stage 2 requires the time-trial build"
+#ifndef CAR_TIME_TRIAL_STAGE3
+#define CAR_TIME_TRIAL_STAGE3 0
+#endif
+#if CAR_TIME_TRIAL_STAGE2 && CAR_TIME_TRIAL_STAGE3
+#error "Choose one time-trial stage"
+#endif
+#if (CAR_TIME_TRIAL_STAGE2 || CAR_TIME_TRIAL_STAGE3) && !CAR_TIME_TRIAL_BUILD
+#error "Stage 2/3 requires the time-trial build"
 #endif
 #if CAR_TIME_TRIAL_BUILD && !CAR_DUAL_MODE_BUILD
 #error "Time trial requires the dual-mode course build"
 #endif
 #ifndef CAR_TT_STRAIGHT_SPEED
-#define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
+#define CAR_TT_STRAIGHT_SPEED (CAR_TIME_TRIAL_STAGE3 ? 550.0f : CAR_TIME_TRIAL_STAGE2 ? 500.0f : 450.0f)
 #endif
 #ifndef CAR_TT_ARC_SPEED
-#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
+#define CAR_TT_ARC_SPEED (CAR_TIME_TRIAL_STAGE3 ? 470.0f : CAR_TIME_TRIAL_STAGE2 ? 430.0f : 370.0f)
 #endif
 #ifndef CAR_TT_ENTRY_SPEED
 #define CAR_TT_ENTRY_SPEED 370.0f
 #endif
 #ifndef CAR_TT_WHEEL_SPEED
-#define CAR_TT_WHEEL_SPEED (CAR_TIME_TRIAL_STAGE2 ? 650.0f : 620.0f)
+#define CAR_TT_WHEEL_SPEED (CAR_TIME_TRIAL_STAGE3 ? 700.0f : CAR_TIME_TRIAL_STAGE2 ? 650.0f : 620.0f)
 #endif
 #ifndef CAR_TT_D_FILTER_MS
 #define CAR_TT_D_FILTER_MS 10.0f
@@ -112,7 +118,7 @@
 
 #define CAR_PWM_MAX              1000U
 #ifndef CAR_FOUR_PWM_LIMIT
-#define CAR_FOUR_PWM_LIMIT        (CAR_TIME_TRIAL_STAGE2 ? 800U : 700U)
+#define CAR_FOUR_PWM_LIMIT        (CAR_TIME_TRIAL_STAGE3 ? 850U : CAR_TIME_TRIAL_STAGE2 ? 800U : 700U)
 #endif
 #if CAR_FOUR_TEST_BUILD || CAR_DUAL_MODE_BUILD
 #define CAR_PWM_LIMIT             CAR_FOUR_PWM_LIMIT /* cruise and steering headroom */
@@ -170,7 +176,7 @@
 #define CAR_ENDPOINT_CORRECTION_MM 60.0f /* max accepted odometry correction */
 #define CAR_CROSS_ENDPOINT_CORRECTION_MM 100.0f /* qualified edge only; measured cross-run drift ~78 mm */
 #ifndef CAR_CROSS_D_ENTRY_AIM_MM
-#define CAR_CROSS_D_ENTRY_AIM_MM    20.0f /* aim onto left arc just beyond D */
+#define CAR_CROSS_D_ENTRY_AIM_MM    (CAR_TIME_TRIAL_STAGE3 ? 25.0f : 20.0f) /* along left arc beyond D */
 #endif
 #define CAR_ENDPOINT_YAW_BLEND      0.5f
 

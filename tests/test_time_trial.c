@@ -41,7 +41,7 @@ int main(void)
 
     Init(400,0);c.state=CAR_ARC;c.segment=1;
     c.x_mm=1200;c.y_mm=-400;c.have_line=true;
-    c.line_error=-52.5f;c.line_rate=-1800;c.last_line_at=0;
+    c.line_error=-52.5f;c.line_rate=-2000;c.last_line_at=0;
     Step(1,false); /* strong steering: common scale must retain curvature */
     float radius=sqrtf(400*400-c.geometry.sensor_forward_mm*c.geometry.sensor_forward_mm);
     float omega=-CAR_TT_ENTRY_SPEED/radius-
