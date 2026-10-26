@@ -25,28 +25,54 @@ void GrayAnalog_BeginRequest(volatile GrayAnalogReceiver *r,uint32_t now)
 {
     r->waiting=true;r->count=0;r->request_at=now;
 }
+static void AlignHeader(volatile GrayAnalogReceiver *r)
+{
+    /* Keep any possible header suffix after noise or a broken packet. Payload
+     * can itself contain 55 AA: only discard it after validation has failed. */
+    while(r->count && (r->bytes[0]!=0x55 ||
+          (r->count>=2 && r->bytes[1]!=0xAA) ||
+          (r->count>=3 && r->bytes[2]!=2) ||
+          (r->count>=4 && r->bytes[3]!=16))) {
+        for(unsigned i=1;i<r->count;++i)r->bytes[i-1]=r->bytes[i];
+        --r->count;++r->unexpected_bytes;r->valid=false;
+    }
+}
 void GrayAnalog_OnByte(volatile GrayAnalogReceiver *r,uint32_t now,uint8_t byte,bool error)
 {
     r->activity_at=now;
-    if(error){++r->errors;r->valid=r->waiting=false;return;}
-    if(!r->waiting || now-r->request_at>=CAR_GRAY_RESPONSE_TIMEOUT_MS){
-        ++r->unexpected_bytes;r->valid=r->waiting=false;return;
+    if(error){++r->errors;r->valid=r->waiting=false;r->count=0;return;}
+    if(r->waiting && now-r->request_at>=CAR_GRAY_RESPONSE_TIMEOUT_MS){
+        ++r->timeouts;r->valid=r->waiting=false;r->count=0;
     }
-    if(r->count>=21){++r->errors;r->valid=r->waiting=false;return;}
+    /* A self-contained checked analog frame is also valid in continuous
+     * reporting mode. Do not require a prior query or a quiet byte interval. */
+    if(!r->waiting && byte==0x55){r->waiting=true;r->request_at=now;}
     r->bytes[r->count++]=byte;r->received_at=now;
+    AlignHeader(r);
+    if(r->count==21){
+        uint8_t bytes[21];uint16_t values[8];
+        for(unsigned i=0;i<21;++i)bytes[i]=r->bytes[i];
+        if(!GrayAnalog_Decode(bytes,21,2,values)){
+            ++r->errors;r->valid=false;
+            for(unsigned i=1;i<21;++i)r->bytes[i-1]=r->bytes[i];
+            --r->count;AlignHeader(r);return;
+        }
+        r->count=0;r->waiting=false;
+        /* Preserve approximately the query-mode observation cadence instead
+         * of applying frame-based course corrections at raw UART line rate. */
+        if(!r->valid || now-r->last_valid_at>=CAR_GRAY_QUERY_PERIOD_MS+CAR_GRAY_SETTLE_MS){
+            for(unsigned i=0;i<8;++i)r->values[i]=values[i];
+            r->last_valid_at=now;++r->samples;
+        }
+        r->valid=true;
+    }
 }
 void GrayAnalog_Poll(volatile GrayAnalogReceiver *r,uint32_t now)
 {
-    if(r->waiting && r->count==21 && now-r->received_at>=CAR_GRAY_SETTLE_MS){
-        uint8_t bytes[21];uint16_t values[8];
-        for(unsigned i=0;i<21;++i)bytes[i]=r->bytes[i];
-        r->waiting=false;
-        if(!GrayAnalog_Decode(bytes,21,2,values)){++r->errors;r->valid=false;return;}
-        for(unsigned i=0;i<8;++i)r->values[i]=values[i];
-        r->valid=true;r->last_valid_at=r->received_at;++r->samples;
-    }else if(r->waiting && now-r->request_at>=CAR_GRAY_RESPONSE_TIMEOUT_MS){
-        ++r->timeouts;r->valid=r->waiting=false;r->activity_at=now;
+    if(r->waiting && now-r->request_at>=CAR_GRAY_RESPONSE_TIMEOUT_MS){
+        ++r->timeouts;r->valid=r->waiting=false;r->count=0;r->activity_at=now;
     }
+    if(r->valid && now-r->last_valid_at>=CAR_GRAY_STALE_TIMEOUT_MS)r->valid=false;
 }
 uint8_t GrayAnalog_Classify(const uint16_t v[8],const uint16_t t[8],
     const uint16_t h[8],uint8_t high,uint8_t previous)

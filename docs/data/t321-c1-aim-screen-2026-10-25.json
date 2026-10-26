@@ -1,0 +1,869 @@
+{
+  "scope": "Host-only C aim screen. Actual coverage still requires track validation. D aim and speeds unchanged.",
+  "runs": [
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t25.46 fault8 seg0 true(1030.9,-891.0,-39.9)\nDETAIL lap4 Coffset-40.0 Doffset0.0 progress1472.2 arc_age2505 missing_age645 line_age660 line_error-52.5 estimate(1061.1,-852.9,-0.689)\n"
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t10.58 fault8 seg0 true(1028.3,-895.3,-40.0)\nDETAIL lap2 Coffset-40.0 Doffset0.0 progress1471.8 arc_age2500 missing_age655 line_age670 line_error-52.5 estimate(1059.3,-854.0,-0.688)\n"
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t10.61 fault8 seg0 true(1028.7,-890.1,-40.2)\nDETAIL lap2 Coffset-40.0 Doffset0.0 progress1472.0 arc_age2530 missing_age640 line_age655 line_error-52.5 estimate(1061.8,-853.3,-0.689)\n"
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.69 fault8 seg0 true(1025.6,-896.3,-41.9)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.0 arc_age3045 missing_age615 line_age630 line_error-52.5 estimate(1057.7,-858.3,-0.693)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t31.34 fault8 seg0 true(1029.9,-887.3,-38.5)\nDETAIL lap4 Coffset-40.0 Doffset0.0 progress1473.7 arc_age2900 missing_age575 line_age590 line_error-52.5 estimate(1056.9,-858.7,-0.667)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.69 fault8 seg0 true(1027.0,-894.7,-41.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.0 arc_age3045 missing_age605 line_age620 line_error-52.5 estimate(1059.0,-856.7,-0.692)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t12.87 fault8 seg0 true(1029.5,-887.6,-38.6)\nDETAIL lap2 Coffset-40.0 Doffset0.0 progress1473.6 arc_age2900 missing_age575 line_age590 line_error-52.5 estimate(1056.8,-858.7,-0.667)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.69 fault8 seg0 true(1027.0,-894.7,-41.8)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.0 arc_age3045 missing_age610 line_age625 line_error-52.5 estimate(1059.0,-856.7,-0.692)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t12.85 fault8 seg0 true(1029.3,-886.3,-38.5)\nDETAIL lap2 Coffset-40.0 Doffset0.0 progress1473.3 arc_age2900 missing_age575 line_age590 line_error-52.5 estimate(1056.6,-858.5,-0.667)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.21 fault8 seg0 true(1028.0,-893.4,-42.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.8 arc_age2565 missing_age645 line_age660 line_error-52.5 estimate(1059.7,-855.7,-0.698)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t10.64 fault8 seg0 true(1023.4,-896.0,-40.3)\nDETAIL lap2 Coffset-40.0 Doffset0.0 progress1471.5 arc_age2530 missing_age2515 line_age2575 line_error0.0 estimate(1055.7,-860.2,-0.693)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t10.64 fault8 seg0 true(1029.0,-893.5,-40.0)\nDETAIL lap2 Coffset-40.0 Doffset0.0 progress1472.7 arc_age2505 missing_age645 line_age660 line_error-52.5 estimate(1057.3,-858.2,-0.694)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.21 fault8 seg0 true(1028.0,-893.4,-42.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.8 arc_age2565 missing_age640 line_age655 line_error-52.5 estimate(1059.7,-855.7,-0.698)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t10.63 fault8 seg0 true(1023.3,-898.9,-40.5)\nDETAIL lap2 Coffset-40.0 Doffset0.0 progress1472.2 arc_age2530 missing_age2515 line_age2575 line_error0.0 estimate(1056.1,-860.6,-0.693)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.15 fault8 seg0 true(1028.3,-892.5,-42.1)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.8 arc_age2500 missing_age655 line_age670 line_error-52.5 estimate(1059.9,-854.8,-0.698)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t17.80 fault8 seg0 true(1027.7,-890.0,-40.3)\nDETAIL lap3 Coffset-40.0 Doffset0.0 progress1470.1 arc_age2490 missing_age660 line_age675 line_error-52.5 estimate(1058.2,-855.6,-0.695)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t17.75 fault8 seg0 true(1026.2,-897.7,-40.0)\nDETAIL lap3 Coffset-40.0 Doffset0.0 progress1472.5 arc_age2470 missing_age2440 line_age2455 line_error-37.5 estimate(1057.7,-858.6,-0.692)\n"
+    },
+    {
+      "aim": -10,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.69 fault8 seg0 true(1020.4,-901.2,-42.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1382.6 arc_age3045 missing_age3030 line_age3690 line_error0.0 estimate(1052.6,-863.4,-0.698)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.62 fault8 seg0 true(1028.6,-893.4,-38.8)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1381.4 arc_age2975 missing_age605 line_age620 line_error-52.5 estimate(1053.6,-862.1,-0.677)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.69 fault8 seg0 true(1020.4,-901.2,-42.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1382.6 arc_age3045 missing_age3035 line_age3690 line_error0.0 estimate(1052.6,-863.4,-0.698)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.62 fault8 seg0 true(1028.6,-893.4,-38.8)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1381.4 arc_age2975 missing_age610 line_age625 line_error-52.5 estimate(1053.6,-862.2,-0.677)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.69 fault8 seg0 true(1020.4,-901.2,-42.2)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1382.6 arc_age3045 missing_age3040 line_age3690 line_error0.0 estimate(1052.6,-863.4,-0.698)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.62 fault8 seg0 true(1029.9,-891.7,-38.7)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1381.4 arc_age2975 missing_age600 line_age615 line_error-52.5 estimate(1054.9,-860.5,-0.676)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.21 fault8 seg0 true(1021.3,-899.8,-42.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.3 arc_age2565 missing_age2550 line_age3210 line_error0.0 estimate(1053.2,-862.3,-0.702)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.21 fault8 seg0 true(1027.5,-894.3,-40.4)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1383.3 arc_age2565 missing_age645 line_age660 line_error-52.5 estimate(1053.7,-861.8,-0.702)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.21 fault8 seg0 true(1021.3,-899.8,-42.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.3 arc_age2565 missing_age2555 line_age3210 line_error0.0 estimate(1053.2,-862.3,-0.702)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.21 fault8 seg0 true(1027.5,-894.3,-40.4)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1383.3 arc_age2565 missing_age650 line_age665 line_error-52.5 estimate(1053.7,-861.8,-0.702)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.21 fault8 seg0 true(1021.3,-899.8,-42.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.3 arc_age2565 missing_age2560 line_age3210 line_error0.0 estimate(1053.2,-862.3,-0.702)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.21 fault8 seg0 true(1028.9,-892.7,-40.4)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1383.3 arc_age2565 missing_age640 line_age655 line_error-52.5 estimate(1055.0,-860.2,-0.703)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.15 fault8 seg0 true(1021.8,-898.9,-42.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.4 arc_age2500 missing_age2485 line_age3145 line_error0.0 estimate(1053.6,-861.4,-0.701)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.15 fault8 seg0 true(1029.3,-891.9,-40.4)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1383.4 arc_age2500 missing_age655 line_age670 line_error-52.5 estimate(1055.4,-859.4,-0.703)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.15 fault8 seg0 true(1021.8,-898.9,-42.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.4 arc_age2500 missing_age2490 line_age3145 line_error0.0 estimate(1053.6,-861.4,-0.701)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.15 fault8 seg0 true(1028.0,-893.4,-40.3)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1383.4 arc_age2500 missing_age660 line_age675 line_error-52.5 estimate(1054.1,-860.9,-0.701)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": false,
+      "errors": "FAIL task4 t3.15 fault8 seg0 true(1021.8,-898.9,-42.3)\nDETAIL lap1 Coffset0.0 Doffset0.0 progress1383.4 arc_age2500 missing_age2495 line_age3145 line_error0.0 estimate(1053.6,-861.4,-0.701)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t3.15 fault8 seg0 true(1029.3,-891.9,-40.4)\nDETAIL lap1 Coffset-40.0 Doffset0.0 progress1383.4 arc_age2500 missing_age650 line_age665 line_error-52.5 estimate(1055.4,-859.4,-0.703)\n"
+    },
+    {
+      "aim": -20,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    }
+  ]
+}

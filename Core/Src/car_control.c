@@ -75,6 +75,14 @@ static bool Covers(const CarControl *c, Point p)
 {
     return CoversPose(c,p,c->x_mm,c->y_mm,c->heading_rad);
 }
+static bool EntryCovered(const CarControl *c, Point p)
+{
+    if (!Covers(c,p)) return false;
+    if (!CAR_TIME_TRIAL_ARC_PHASE || !CrossSprint(c) || c->segment!=0) return true;
+    float dx=p.x-c->x_mm,dy=p.y-c->y_mm;
+    float forward=cosf(c->heading_rad)*dx+sinf(c->heading_rad)*dy;
+    return forward<=c->geometry.front_mm-CAR_C_ENTRY_FRONT_MARGIN_MM;
+}
 static CarFault InputFault(const CarControl *c, const CarInputs *in)
 {
     if (!CarGeometry_Valid(&c->geometry)) return CAR_FAULT_CONFIG;
@@ -364,6 +372,14 @@ static float ArcFeedback(const CarControl *c,float speed,bool derivative)
         c->distance_mm-c->segment_distance>=c->geometry.sensor_forward_mm;
     float pscale=cruise ? CAR_CROSS_SPRINT_P_SCALE : 1.0f;
     float dscale=cruise ? CAR_CROSS_SPRINT_D_SCALE : 1.0f;
+    /* C can remain to the vehicle's right despite the estimated footprint.
+     * Strengthen observed right-side acquisition, without shifting the white
+     * approach path or boosting a held observation after line loss. */
+    bool c_entry=CAR_TIME_TRIAL_ARC_PHASE && CrossSprint(c) && !c->line_missing &&
+        ((c->state==CAR_STRAIGHT && c->segment==0) ||
+         (c->state==CAR_ARC && c->segment==1 &&
+          c->distance_mm-c->segment_distance<c->geometry.sensor_forward_mm));
+    if (c_entry && c->line_error>0) pscale*=CAR_C_ENTRY_RIGHT_P_SCALE;
     return pscale*gain*CAR_LINE_KP*c->line_error+
         (derivative ? dscale*d_gain*CAR_LINE_KD*c->line_rate : 0);
 }
@@ -446,11 +462,12 @@ void CarControl_Update(CarControl *c,const CarInputs *in)
          * remains outside its footprint. Continue preview steering, but wait
          * for the observation to move inward before confirming this point.
          * Left-side acquisition is different geometry and retains its gate. */
+        float c_right_limit=CAR_TIME_TRIAL_ARC_PHASE ? CAR_C_ENTRY_RIGHT_LIMIT_MM : CAR_CROSS_SPRINT_EDGE_LIMIT;
         bool entry_line_confirmed=!CrossSprint(c) ||
-            (c->segment==0 ? c->line_error<=CAR_CROSS_SPRINT_EDGE_LIMIT :
+            (c->segment==0 ? c->line_error<=c_right_limit :
                             c->line_error>=-CAR_CROSS_SPRINT_EDGE_LIMIT);
         bool reached=remaining<CAR_ENDPOINT_GATE_MM && remaining>-80 &&
-            end_distance<CAR_ENDPOINT_GATE_MM && Covers(c,end) &&
+            end_distance<CAR_ENDPOINT_GATE_MM && EntryCovered(c,end) &&
             c->black_frames>=CAR_LINE_CONFIRM_FRAMES && entry_line_confirmed;
         if (reached) {
             if (c->task==1) { Brake(c,in->now_ms); return; }

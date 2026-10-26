@@ -36,9 +36,10 @@ void OledUI_Lines(const OledView *v,char lines[8][22])
         v->ready ? "READY" : "WAIT SENSORS";
     if(v->fault) snprintf(lines[3],22,"FAULT %u",v->fault);
     else snprintf(lines[3],22,"%s",status);
-    snprintf(lines[4],22,"TIME %lu.%lu S",(unsigned long)(v->elapsed_ms/1000U),
-             (unsigned long)(v->elapsed_ms/100U%10U));
-    snprintf(lines[5],22,"%s",v->task==2 ? "A-B-C-D-A" : "A-C-B-D-A");
+    /* Two pages for a readable live/frozen result, with millisecond precision.
+     * Route remains identified by the NORMAL/CROSS title above. */
+    snprintf(lines[4],22,"%lu.%03lu S",(unsigned long)(v->elapsed_ms/1000U),
+             (unsigned long)(v->elapsed_ms%1000U));
     bool busy=v->active || v->phase==TASK1_CALIBRATING || v->phase==TASK1_PRESS;
     snprintf(lines[6],22,"%s",busy ? "PRESS TO STOP" : "HOLD ROUTE  2X LAPS");
     snprintf(lines[7],22,"%s",busy ? "" : "CLICK TO START");
@@ -56,7 +57,7 @@ void OledUI_Render(const OledView *v,uint8_t frame[1024])
     char lines[8][22]; OledUI_Lines(v,lines);
     memset(frame,0,1024);
     for(unsigned row=0;row<8;row++) {
-        unsigned scale=row==0 ? 2 : 1;
+        unsigned scale=(row==0 || (row==4 && strlen(lines[row])<=10U)) ? 2 : 1;
         for(unsigned ch=0;lines[row][ch] && (ch*6U+5U)*scale<=128;ch++)
             for(unsigned col=0;col<5;col++) {
                 uint8_t bits=Column(lines[row][ch],col);
@@ -70,8 +71,8 @@ void OledUI_Render(const OledView *v,uint8_t frame[1024])
                     wide=(wide|(wide<<2))&0x3333U;
                     wide=(wide|(wide<<1))&0x5555U;
                     wide|=wide<<1;
-                    frame[x]=frame[x+1]=(uint8_t)wide;
-                    frame[128+x]=frame[128+x+1]=(uint8_t)(wide>>8);
+                    frame[row*128+x]=frame[row*128+x+1]=(uint8_t)wide;
+                    frame[(row+1)*128+x]=frame[(row+1)*128+x+1]=(uint8_t)(wide>>8);
                 }
             }
     }

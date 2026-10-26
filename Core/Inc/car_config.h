@@ -82,6 +82,10 @@
 #error "Edge pose requires T319 arc localization"
 #endif
 #define CAR_EDGE_POSE_ENTRY_AIM_MM 15.0f
+/* T321-C1: CROSS C acquisition only; retain D and all cruise targets. */
+#define CAR_C_ENTRY_FRONT_MARGIN_MM 15.0f
+#define CAR_C_ENTRY_RIGHT_LIMIT_MM (0.5f*CAR_GRAY_PITCH_MM)
+#define CAR_C_ENTRY_RIGHT_P_SCALE 1.2f /* T321-C2: observed right-side C entry only */
 #ifndef CAR_TIME_TRIAL_ARC_LOCALIZE
 #define CAR_TIME_TRIAL_ARC_LOCALIZE 0
 #endif

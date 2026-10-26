@@ -14,14 +14,20 @@ int main(void)
     assert(strstr(lines[2],"LAPS 1") && strstr(lines[6],"2X LAPS"));
     v.task=4;v.laps=4;v.completed=3;v.active=true;v.elapsed_ms=63426;
     OledUI_Lines(&v,lines);
-    assert(!strcmp(lines[0],"CROSS") && !strcmp(lines[5],"A-C-B-D-A"));
+    assert(!strcmp(lines[0],"CROSS") && !lines[5][0]);
     assert(!strcmp(lines[2],"LAPS 4   DONE 3"));
-    assert(!strcmp(lines[3],"RUNNING") && !strcmp(lines[4],"TIME 63.4 S"));
+    assert(!strcmp(lines[3],"RUNNING") && !strcmp(lines[4],"63.426 S"));
     assert(!strcmp(lines[6],"PRESS TO STOP") && !lines[7][0]);
     v.active=false;v.phase=TASK1_CALIBRATING;OledUI_Lines(&v,lines);
     assert(!strcmp(lines[3],"CALIBRATING") && !strcmp(lines[6],"PRESS TO STOP"));
     v.phase=TASK1_FINISHED;v.state=CAR_DONE;OledUI_Lines(&v,lines);
     assert(!strcmp(lines[3],"FINISHED"));
+    v.elapsed_ms=29972;OledUI_Lines(&v,lines);
+    assert(!strcmp(lines[4],"29.972 S"));
+    v.elapsed_ms=30005;OledUI_Lines(&v,lines);
+    assert(!strcmp(lines[4],"30.005 S"));
+    v.elapsed_ms=0;OledUI_Lines(&v,lines);
+    assert(!strcmp(lines[4],"0.000 S"));
     v.state=CAR_STOPPED;v.phase=TASK1_ABORTED;OledUI_Lines(&v,lines);
     assert(!strcmp(lines[3],"STOPPED"));
     v.fault=CAR_FAULT_LINE;OledUI_Lines(&v,lines);
@@ -41,5 +47,9 @@ int main(void)
     /* Enlarged N: 0x7f -> 0x3fff, 0x04 -> 0x0030, two identical columns. */
     assert(same[0]==0xff && same[1]==0xff && same[128]==0x3f && same[129]==0x3f);
     assert(same[2]==0x30 && same[3]==0x30 && same[130]==0 && same[131]==0);
+    v.elapsed_ms=29972;OledUI_Render(&v,same);
+    /* First column of enlarged '2': 0x42 expands to 0x300c on pages 4/5. */
+    assert(same[4*128]==0x0c && same[4*128+1]==0x0c);
+    assert(same[5*128]==0x30 && same[5*128+1]==0x30);
     puts("PASS: OLED route/laps/status/time, busy controls, frame bounds and deterministic rendering");
 }

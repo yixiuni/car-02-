@@ -93,6 +93,7 @@ if 'time-trial-edge-pose' in dict(trial_profiles):
 if 'time-trial-arc-phase' in dict(trial_profiles):
     flags=dict(trial_profiles)['time-trial-arc-phase']
     run('arc-phase-boundaries',base+['tests/test_arc_phase.c'],flags)
+    run('arc-phase-c-margin',base+['tests/test_c_entry_margin.c'],flags)
     run('arc-phase-edge-pose',base+['tests/test_edge_pose.c'],flags)
     run('arc-phase-sprint',base+['tests/test_cross_sprint.c'],flags)
     run('arc-phase-entry-hold',base+['tests/test_entry_hold.c'],flags)

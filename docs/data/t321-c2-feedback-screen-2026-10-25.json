@@ -1,0 +1,653 @@
+{
+  "scope": "Host preliminary C right-side P gain screen. Production additionally excludes line-missing holds, checked separately in complete model matrix.",
+  "runs": [
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.1,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.2,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 1.3,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    }
+  ]
+}
