@@ -57,7 +57,9 @@ int main(void)
     ExitFixture();c.edge_valid=false;CarControl_Update(&c,&in);
     assert(c.point_events==4 && c.state==CAR_ARC);
     assert(car_arc_debug[1].first.rejected&ARC_EXIT_EDGE_POSE);
-    ExitFixture();c.x_mm+=110;c.edge_x+=110;CarControl_Update(&c,&in);
+    /* offset must exceed CAR_CROSS_ENDPOINT_CORRECTION_MM; the test checks the rule, not the number */
+    ExitFixture();c.x_mm+=CAR_CROSS_ENDPOINT_CORRECTION_MM+20;
+    c.edge_x+=CAR_CROSS_ENDPOINT_CORRECTION_MM+20;CarControl_Update(&c,&in);
     assert(c.point_events==4 && (car_arc_debug[1].first.rejected&ARC_EXIT_CORRECTION));
     ExitFixture();c.last_line_at=0;in.now_ms=105;c.last_update=100;CarControl_Update(&c,&in);
     assert(c.point_events==4 && (car_arc_debug[1].first.rejected&ARC_EXIT_STALE));

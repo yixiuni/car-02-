@@ -1,0 +1,1085 @@
+{
+  "scope": "Host-only C aim screen. Actual coverage still requires track validation. D aim and speeds unchanged.",
+  "runs": [
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge22.5",
+      "front": 15,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front25-edge22.5",
+      "front": 25,
+      "edge": 22.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front0-edge7.5",
+      "front": 0,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "tag": "front15-edge7.5",
+      "front": 15,
+      "edge": 7.5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    }
+  ]
+}

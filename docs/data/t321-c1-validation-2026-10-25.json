@@ -1,0 +1,75 @@
+{
+  "label": "T321-C1",
+  "status": "PHYSICAL_C_COVERAGE_MISS_REPORTED",
+  "magic": "0x54333231",
+  "firmware_bytes": 51580,
+  "bin_sha256": "c3805567d7bcc430549c0438b4abf81d0c0cd3e01f4c9e67a25d086cf69431ff",
+  "hex_sha256": "1d523f105ea9b9313a969804ebbac14c4bacb2f3c920fb09671dc4a57b2ea57c",
+  "host_sanitized_checks_pass": 1124,
+  "models_pass": 224,
+  "models_total": 225,
+  "known_failure": "Existing NORMAL task2 gain1.5 phase14 D coverage; CROSS full/C-offset/D-offset each45/45",
+  "idle_snapshots": [
+    {
+      "state": 0,
+      "fault": 0,
+      "readiness_flags": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "task": 2,
+      "black_mask": 0,
+      "laps": 1,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_counters": [
+        419,
+        0,
+        0,
+        8
+      ],
+      "control_interval_ms": 6
+    },
+    {
+      "state": 0,
+      "fault": 0,
+      "readiness_flags": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "task": 2,
+      "black_mask": 0,
+      "laps": 1,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_counters": [
+        503,
+        0,
+        0,
+        8
+      ],
+      "control_interval_ms": 6
+    }
+  ],
+  "readback_identical": true,
+  "remote_motor_start": false,
+  "source_sha256": {
+    "Core/Inc/car_config.h": "0e3c9930ed2c762d62b5c58ea458e3b8197a4fd656e09ebb2d71e1fca16d73bd",
+    "Core/Src/car_control.c": "0ca44cbf1d3a17246266bf9aeb74a1c46b166f1da043da223959c1f00e9434df",
+    "Core/Src/gray_analog.c": "2d92a11ec7fc4b92ba93ab357e4dd963c3d6004633906db54af255ebe1cc820f",
+    "tests/test_c_entry_margin.c": "e6576a49e24ad75075a03de18503ac7b8124de70838b1f8006a30b0e42f8efce"
+  },
+  "latest_run": "t321-c1-cross-four-run-01.json"
+}

@@ -1,0 +1,77 @@
+{
+  "label": "T321-C2",
+  "status": "PHYSICAL_COMPLETED_USER_REPORT_GOOD_SINGLE_RUN",
+  "magic": "0x54333231",
+  "firmware_bytes": 51744,
+  "bin_sha256": "7b5714bed249009da5e5446229c0e13ae2e5df214498b82b960c113d2d0b1341",
+  "hex_sha256": "df2c07bb6c5f7db3e0e897e3ddb6abb591cf67565c7c826e8f638f1f57665fe7",
+  "change": "C acquisition right-side observed P gain1.2; excludes missing-line holds; C1 margins retained; aim remains15mm; D/NORMAL/cruise targets unchanged",
+  "host_sanitized_checks_pass": 1124,
+  "models_pass": 224,
+  "models_total": 225,
+  "known_failure": "Existing NORMAL task2 gain1.5 phase14 D coverage; CROSS full/C-offset/D-offset each45/45",
+  "idle_snapshots": [
+    {
+      "state": 0,
+      "fault": 0,
+      "readiness_flags": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "task": 2,
+      "black_mask": 0,
+      "laps": 1,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_counters": [
+        419,
+        0,
+        0,
+        3
+      ],
+      "control_interval_ms": 6
+    },
+    {
+      "state": 0,
+      "fault": 0,
+      "readiness_flags": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "task": 2,
+      "black_mask": 0,
+      "laps": 1,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_counters": [
+        503,
+        0,
+        0,
+        3
+      ],
+      "control_interval_ms": 6
+    }
+  ],
+  "readback_identical": true,
+  "remote_motor_start": false,
+  "source_sha256": {
+    "Core/Inc/car_config.h": "c846be7927f4321348c9647c5f0862ce20156016e128b44efdc97dfa9fd6a0f3",
+    "Core/Src/car_control.c": "6840c2981031e03157e80ad44adf16db0c0353facd94030ef7fc87ef9c2c166e",
+    "Core/Src/gray_analog.c": "2d92a11ec7fc4b92ba93ab357e4dd963c3d6004633906db54af255ebe1cc820f",
+    "tests/test_cross_sprint.c": "188ee30f402cbe7dc7c02e7a1bda9bc7f608e944324f98422eabe57318e8967b",
+    "tests/test_c_entry_margin.c": "e6576a49e24ad75075a03de18503ac7b8124de70838b1f8006a30b0e42f8efce"
+  },
+  "latest_run": "t321-c2-cross-four-run-01.json"
+}

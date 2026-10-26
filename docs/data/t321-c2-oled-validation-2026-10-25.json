@@ -1,0 +1,64 @@
+{
+  "label": "T321-C2-OLED",
+  "status": "FLASH_VERIFIED_IDLE_READY_FRAME_MATCHED",
+  "firmware_bytes": 51756,
+  "bin_sha256": "87414add6dacf4fce6f4a11911e668dadcc3dd649fd9fbdbcb499e51a9b9ddb5",
+  "hex_sha256": "91ceaf1675f31fdb1d9daca354e76be23bb7fc14b6f74bd139ab42b819f86a53",
+  "change": "OLED time shown double size with three fractional digits, runtime/freeze/reset timing unchanged; row5 reserved for second time page replaces route string",
+  "oled_sanitized_tests_passed": true,
+  "frame_buffer_matches_normal1_ready_0_seconds": true,
+  "idle_snapshots": [
+    {
+      "state": 0,
+      "fault": 0,
+      "readiness_flags": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "task": 2,
+      "laps": 1,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_counters": [
+        420,
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "state": 0,
+      "fault": 0,
+      "readiness_flags": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "task": 2,
+      "laps": 1,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_counters": [
+        504,
+        0,
+        0,
+        3
+      ]
+    }
+  ],
+  "readback_identical": true,
+  "remote_motor_start": false,
+  "control_source_sha256": "6840c2981031e03157e80ad44adf16db0c0353facd94030ef7fc87ef9c2c166e",
+  "config_sha256": "c846be7927f4321348c9647c5f0862ce20156016e128b44efdc97dfa9fd6a0f3"
+}

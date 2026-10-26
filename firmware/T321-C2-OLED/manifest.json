@@ -1,0 +1,46 @@
+{
+  "version": "T321-C2-OLED",
+  "publication_date": "2026-10-26",
+  "flash_validation_date": "2026-10-25",
+  "target": "STM32F103RCT6 / WHEELTEC C10B",
+  "flash_address": "0x08000000",
+  "magic": "0x54333231",
+  "identity_note": "Shared T321 RAM magic; identify exact revision by binary hash.",
+  "build": "ArcPhaseDebug (--time-trial-arc-phase)",
+  "toolchain": "Arm GNU Toolchain 14.3.Rel1",
+  "bin_sha256": "87414add6dacf4fce6f4a11911e668dadcc3dd649fd9fbdbcb499e51a9b9ddb5",
+  "hex_sha256": "91ceaf1675f31fdb1d9daca354e76be23bb7fc14b6f74bd139ab42b819f86a53",
+  "bin_bytes": 51756,
+  "ram_link_bytes": 47304,
+  "flash_readback_identical": true,
+  "physical_status": "C2_CONTROLLER_SINGLE_RUN_29_972_SECONDS_USER_REPORT_GOOD; OLED_ONLY_REVISION_FLASH_AND_IDLE_VERIFIED",
+  "physical_run": "../../docs/data/t321-c2-cross-four-run-01.json",
+  "validation": "../../docs/data/t321-c2-oled-validation-2026-10-25.json",
+  "control_validation": "../../docs/data/t321-c2-validation-2026-10-25.json",
+  "speeds_mm_s": {
+    "cross": [
+      1000,
+      650,
+      370
+    ],
+    "normal": [
+      800,
+      460,
+      370
+    ]
+  },
+  "lap_options": [
+    1,
+    4
+  ],
+  "oled": "Large seconds display with three fractional digits; live while running, frozen after stop, cleared next start; no power-cycle persistence.",
+  "source_sha256": {
+    "Core/Inc/car_config.h": "c846be7927f4321348c9647c5f0862ce20156016e128b44efdc97dfa9fd6a0f3",
+    "Core/Src/car_control.c": "6840c2981031e03157e80ad44adf16db0c0353facd94030ef7fc87ef9c2c166e",
+    "Core/Src/gray_analog.c": "2d92a11ec7fc4b92ba93ab357e4dd963c3d6004633906db54af255ebe1cc820f",
+    "Core/Src/oled_ui.c": "7713f390d53631e4d4adef4d29a6396ba32ae924f3647a4bd426520f2bf7d0bb",
+    "Core/Src/app.c": "46404c1a2389cf72e46a51919c941b29a8905cce2bf63e453cf5ed3cd95e616f",
+    "Core/Inc/gray_calibration.h": "5f4ea48ab90b5f3e963beda5d769e43f4cf4151f12d10ea08dbc5fa092df4097"
+  },
+  "calibration": "Specific to this car. Default non-trial firmware remains calibration locked."
+}

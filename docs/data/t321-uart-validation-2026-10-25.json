@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-25",
+  "label": "T321-UART",
+  "magic": "0x54333231",
+  "ram_layout_unchanged": true,
+  "firmware_bin_sha256": "1db5a190315810ef895830e855464aa82a4aa055637f5ade740200e03a89ebdc",
+  "firmware_hex_sha256": "468008aeb9a67977639217907661b7cfc17b83f0c43c27630bbfb172180ce1a4",
+  "firmware_bytes": 51364,
+  "raw_capture": "1e01180106011301320167016001cc55aa0210d0021e01180106011301320167016001cc55aa0210d0021e01180106011301320167016001cc55aa0210d0021e",
+  "complete_captured_frames": [
+    {
+      "offset": 15,
+      "hex": "55aa0210d0021e01180106011301320167016001cc",
+      "checksum_valid": true
+    },
+    {
+      "offset": 36,
+      "hex": "55aa0210d0021e01180106011301320167016001cc",
+      "checksum_valid": true
+    }
+  ],
+  "source_sha256": {
+    "Core/Src/gray_analog.c": "2d92a11ec7fc4b92ba93ab357e4dd963c3d6004633906db54af255ebe1cc820f",
+    "tests/test_gray_analog.c": "434262167a476605f97d4ed244847e806e855d091fb4daa549349e5f455526e1"
+  },
+  "status": "FLASH_VERIFIED_IDLE_READY_PHYSICAL_PENDING",
+  "readback_identical": true,
+  "host_checks_pass": 1123,
+  "idle_snapshots": [
+    {
+      "snapshot": 0,
+      "state": 0,
+      "fault": 0,
+      "enabled": 1,
+      "calibration_valid": 1,
+      "gray_online": 1,
+      "imu_online": 1,
+      "imu_ready": 1,
+      "encoder_valid": 1,
+      "task": 2,
+      "black_mask": 0,
+      "laps": 1,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_samples": 420,
+      "gray_timeouts": 0,
+      "gray_errors": 0,
+      "unexpected_bytes": 9,
+      "control_interval_ms": 8
+    },
+    {
+      "snapshot": 1,
+      "state": 0,
+      "fault": 0,
+      "enabled": 1,
+      "calibration_valid": 1,
+      "gray_online": 1,
+      "imu_online": 1,
+      "imu_ready": 1,
+      "encoder_valid": 1,
+      "task": 2,
+      "black_mask": 0,
+      "laps": 1,
+      "pwm": [
+        0,
+        0
+      ],
+      "gray_samples": 503,
+      "gray_timeouts": 0,
+      "gray_errors": 0,
+      "unexpected_bytes": 9,
+      "control_interval_ms": 8
+    }
+  ],
+  "remote_motor_start": false
+}

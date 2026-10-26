@@ -1,0 +1,869 @@
+{
+  "scope": "T321-C1 based C-only aim screen, D aim15mm and C margin15mm/right-line7.5mm retained. Host assumptions only; 15/10/5/0mm passed27/27,27/27,25/27,25/27.",
+  "runs": [
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 15,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 10,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t25.46 fault8 seg0 true(1029.1,-891.4,-40.3)\nDETAIL lap4 Coffset-40.0 Doffset0.0 progress1471.5 arc_age2525 missing_age635 line_age650 line_error-52.5 estimate(1063.3,-850.2,-0.687)\n"
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t25.47 fault8 seg0 true(1027.1,-895.1,-40.4)\nDETAIL lap4 Coffset-40.0 Doffset0.0 progress1471.1 arc_age2525 missing_age650 line_age665 line_error-52.5 estimate(1061.8,-851.6,-0.686)\n"
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 5,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.5,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t25.46 fault8 seg0 true(1030.9,-891.0,-39.9)\nDETAIL lap4 Coffset-40.0 Doffset0.0 progress1472.2 arc_age2505 missing_age645 line_age660 line_error-52.5 estimate(1061.1,-852.9,-0.689)\n"
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 1.0,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 0,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "c-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 5,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "cross",
+      "passed": true,
+      "errors": ""
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "c-offset",
+      "passed": false,
+      "errors": "FAIL task4 t25.03 fault8 seg0 true(1027.1,-895.1,-40.4)\nDETAIL lap4 Coffset-40.0 Doffset0.0 progress1470.4 arc_age2490 missing_age675 line_age690 line_error-52.5 estimate(1061.3,-852.2,-0.688)\n"
+    },
+    {
+      "aim": 0,
+      "gain": 0.9,
+      "phase": 10,
+      "suite": "d-offset",
+      "passed": true,
+      "errors": ""
+    }
+  ]
+}

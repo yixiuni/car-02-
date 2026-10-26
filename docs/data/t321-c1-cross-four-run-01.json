@@ -1,0 +1,1626 @@
+{
+  "firmware": "T321-C1",
+  "result": "CONTROLLER_COMPLETED_PHYSICAL_C_COVERAGE_MISS_REPORTED",
+  "state": 5,
+  "fault": 0,
+  "task": 4,
+  "completed_laps": 4,
+  "target_laps": 4,
+  "point_events": 17,
+  "run_at": 124843,
+  "elapsed_s": 30.829,
+  "brake_start_elapsed_s": 30.387,
+  "elapsed_method": "First DONE trace minus run_at; brake start separately reported",
+  "user_report": "仍有一点漏盖（C 点右侧）",
+  "scope": "User reports residual physical C coverage miss despite controller completion. Estimated margins are not physical ground truth.",
+  "estimated_c_entries": [
+    {
+      "lap": 1,
+      "tick": 126785,
+      "black_mask": 6,
+      "estimated_C_forward_mm": 137.55073572643394,
+      "estimated_C_left_mm": -15.477703507335377,
+      "estimated_front_clearance_mm": 32.44926427356606,
+      "estimated_side_clearance_mm": 57.02229649266462
+    },
+    {
+      "lap": 1,
+      "tick": 126827,
+      "black_mask": 3,
+      "estimated_C_forward_mm": 122.77350276581652,
+      "estimated_C_left_mm": -17.692445794613207,
+      "estimated_front_clearance_mm": 47.22649723418348,
+      "estimated_side_clearance_mm": 54.80755420538679
+    },
+    {
+      "lap": 1,
+      "tick": 126869,
+      "black_mask": 3,
+      "estimated_C_forward_mm": 106.98578871683792,
+      "estimated_C_left_mm": -25.338098376189755,
+      "estimated_front_clearance_mm": 63.01421128316208,
+      "estimated_side_clearance_mm": 47.161901623810245
+    },
+    {
+      "lap": 1,
+      "tick": 126904,
+      "black_mask": 3,
+      "estimated_C_forward_mm": 92.61881002715299,
+      "estimated_C_left_mm": -34.404604872405386,
+      "estimated_front_clearance_mm": 77.38118997284701,
+      "estimated_side_clearance_mm": 38.095395127594614
+    },
+    {
+      "lap": 1,
+      "tick": 126946,
+      "black_mask": 2,
+      "estimated_C_forward_mm": 72.7532156644155,
+      "estimated_C_left_mm": -45.62630135097051,
+      "estimated_front_clearance_mm": 97.2467843355845,
+      "estimated_side_clearance_mm": 26.873698649029492
+    },
+    {
+      "lap": 1,
+      "tick": 126988,
+      "black_mask": 12,
+      "estimated_C_forward_mm": 50.69399379057427,
+      "estimated_C_left_mm": -54.52740263076148,
+      "estimated_front_clearance_mm": 119.30600620942573,
+      "estimated_side_clearance_mm": 17.97259736923852
+    },
+    {
+      "lap": 1,
+      "tick": 127032,
+      "black_mask": 24,
+      "estimated_C_forward_mm": 26.14889085452552,
+      "estimated_C_left_mm": -59.447305260229804,
+      "estimated_front_clearance_mm": 143.85110914547448,
+      "estimated_side_clearance_mm": 13.052694739770196
+    },
+    {
+      "lap": 1,
+      "tick": 127075,
+      "black_mask": 48,
+      "estimated_C_forward_mm": 0.25464920850980466,
+      "estimated_C_left_mm": -60.92396778459418,
+      "estimated_front_clearance_mm": 169.74535079149018,
+      "estimated_side_clearance_mm": 11.576032215405817
+    },
+    {
+      "lap": 1,
+      "tick": 127119,
+      "black_mask": 96,
+      "estimated_C_forward_mm": -27.275995621833697,
+      "estimated_C_left_mm": -59.79356857162643,
+      "estimated_front_clearance_mm": 197.2759956218337,
+      "estimated_side_clearance_mm": 12.70643142837357
+    },
+    {
+      "lap": 1,
+      "tick": 127162,
+      "black_mask": 96,
+      "estimated_C_forward_mm": -53.46536408809479,
+      "estimated_C_left_mm": -57.65600857263,
+      "estimated_front_clearance_mm": 223.4653640880948,
+      "estimated_side_clearance_mm": 14.84399142737
+    },
+    {
+      "lap": 1,
+      "tick": 127364,
+      "black_mask": 32,
+      "estimated_C_forward_mm": -142.28442045708601,
+      "estimated_C_left_mm": -44.74811875879067,
+      "estimated_front_clearance_mm": 312.284420457086,
+      "estimated_side_clearance_mm": 27.751881241209333
+    },
+    {
+      "lap": 1,
+      "tick": 127566,
+      "black_mask": 4,
+      "estimated_C_forward_mm": -258.17133502800135,
+      "estimated_C_left_mm": -10.76824913175983,
+      "estimated_front_clearance_mm": 428.17133502800135,
+      "estimated_side_clearance_mm": 61.73175086824017
+    },
+    {
+      "lap": 1,
+      "tick": 127766,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -349.5536306032029,
+      "estimated_C_left_mm": 159.21269201583564,
+      "estimated_front_clearance_mm": 519.5536306032029,
+      "estimated_side_clearance_mm": -86.71269201583564
+    },
+    {
+      "lap": 1,
+      "tick": 127967,
+      "black_mask": 32,
+      "estimated_C_forward_mm": -393.0038078609255,
+      "estimated_C_left_mm": 283.91173541859337,
+      "estimated_front_clearance_mm": 563.0038078609255,
+      "estimated_side_clearance_mm": -211.41173541859337
+    },
+    {
+      "lap": 1,
+      "tick": 128171,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -424.1064078724551,
+      "estimated_C_left_mm": 394.80268106687276,
+      "estimated_front_clearance_mm": 594.1064078724551,
+      "estimated_side_clearance_mm": -322.30268106687276
+    },
+    {
+      "lap": 1,
+      "tick": 128372,
+      "black_mask": 8,
+      "estimated_C_forward_mm": -356.7184882643096,
+      "estimated_C_left_mm": 556.5326926645862,
+      "estimated_front_clearance_mm": 526.7184882643096,
+      "estimated_side_clearance_mm": -484.0326926645862
+    },
+    {
+      "lap": 1,
+      "tick": 128409,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -334.243115394421,
+      "estimated_C_left_mm": 581.541949946149,
+      "estimated_front_clearance_mm": 504.243115394421,
+      "estimated_side_clearance_mm": -509.041949946149
+    },
+    {
+      "lap": 1,
+      "tick": 128424,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -326.57882137544317,
+      "estimated_C_left_mm": 590.7401348567075,
+      "estimated_front_clearance_mm": 496.57882137544317,
+      "estimated_side_clearance_mm": -518.2401348567075
+    },
+    {
+      "lap": 1,
+      "tick": 128444,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -316.25046905254817,
+      "estimated_C_left_mm": 604.7712127841049,
+      "estimated_front_clearance_mm": 486.25046905254817,
+      "estimated_side_clearance_mm": -532.2712127841049
+    },
+    {
+      "lap": 1,
+      "tick": 128460,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -309.2713888214578,
+      "estimated_C_left_mm": 613.5565967959895,
+      "estimated_front_clearance_mm": 479.2713888214578,
+      "estimated_side_clearance_mm": -541.0565967959895
+    },
+    {
+      "lap": 1,
+      "tick": 128475,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -300.701181573783,
+      "estimated_C_left_mm": 623.1002372219473,
+      "estimated_front_clearance_mm": 470.701181573783,
+      "estimated_side_clearance_mm": -550.6002372219473
+    },
+    {
+      "lap": 1,
+      "tick": 128494,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -288.9120859953904,
+      "estimated_C_left_mm": 636.4589162457346,
+      "estimated_front_clearance_mm": 458.9120859953904,
+      "estimated_side_clearance_mm": -563.9589162457346
+    },
+    {
+      "lap": 1,
+      "tick": 128511,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -280.3035664979992,
+      "estimated_C_left_mm": 645.2004144261697,
+      "estimated_front_clearance_mm": 450.3035664979992,
+      "estimated_side_clearance_mm": -572.7004144261697
+    },
+    {
+      "lap": 1,
+      "tick": 128531,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -267.716074299457,
+      "estimated_C_left_mm": 657.7986645519734,
+      "estimated_front_clearance_mm": 437.716074299457,
+      "estimated_side_clearance_mm": -585.2986645519734
+    },
+    {
+      "lap": 1,
+      "tick": 128547,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -259.30438700012337,
+      "estimated_C_left_mm": 665.2476499120272,
+      "estimated_front_clearance_mm": 429.30438700012337,
+      "estimated_side_clearance_mm": -592.7476499120272
+    },
+    {
+      "lap": 1,
+      "tick": 128562,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -250.8139468613631,
+      "estimated_C_left_mm": 673.2003649107509,
+      "estimated_front_clearance_mm": 420.8139468613631,
+      "estimated_side_clearance_mm": -600.7003649107509
+    },
+    {
+      "lap": 1,
+      "tick": 128580,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -235.92573745600328,
+      "estimated_C_left_mm": 684.0674138657049,
+      "estimated_front_clearance_mm": 405.9257374560033,
+      "estimated_side_clearance_mm": -611.5674138657049
+    },
+    {
+      "lap": 1,
+      "tick": 128596,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -226.34027673692688,
+      "estimated_C_left_mm": 691.782450578015,
+      "estimated_front_clearance_mm": 396.34027673692685,
+      "estimated_side_clearance_mm": -619.282450578015
+    },
+    {
+      "lap": 1,
+      "tick": 128612,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -217.02899895577266,
+      "estimated_C_left_mm": 698.1935110466961,
+      "estimated_front_clearance_mm": 387.02899895577264,
+      "estimated_side_clearance_mm": -625.6935110466961
+    },
+    {
+      "lap": 1,
+      "tick": 128627,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -206.91747410720035,
+      "estimated_C_left_mm": 704.7472035371862,
+      "estimated_front_clearance_mm": 376.91747410720035,
+      "estimated_side_clearance_mm": -632.2472035371862
+    },
+    {
+      "lap": 1,
+      "tick": 128647,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -192.46151293700993,
+      "estimated_C_left_mm": 713.6435469423524,
+      "estimated_front_clearance_mm": 362.46151293700996,
+      "estimated_side_clearance_mm": -641.1435469423524
+    },
+    {
+      "lap": 1,
+      "tick": 128662,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -183.2945801549606,
+      "estimated_C_left_mm": 718.7149686925864,
+      "estimated_front_clearance_mm": 353.2945801549606,
+      "estimated_side_clearance_mm": -646.2149686925864
+    },
+    {
+      "lap": 1,
+      "tick": 128682,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -167.22680183342683,
+      "estimated_C_left_mm": 726.9646908347195,
+      "estimated_front_clearance_mm": 337.22680183342686,
+      "estimated_side_clearance_mm": -654.4646908347195
+    },
+    {
+      "lap": 1,
+      "tick": 128698,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -153.26947063952196,
+      "estimated_C_left_mm": 725.7367194299565,
+      "estimated_front_clearance_mm": 323.26947063952196,
+      "estimated_side_clearance_mm": -653.2367194299565
+    },
+    {
+      "lap": 1,
+      "tick": 128713,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -140.54677758272626,
+      "estimated_C_left_mm": 727.4451297159947,
+      "estimated_front_clearance_mm": 310.54677758272624,
+      "estimated_side_clearance_mm": -654.9451297159947
+    },
+    {
+      "lap": 1,
+      "tick": 128732,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -125.8924963968203,
+      "estimated_C_left_mm": 732.6422903127175,
+      "estimated_front_clearance_mm": 295.8924963968203,
+      "estimated_side_clearance_mm": -660.1422903127175
+    },
+    {
+      "lap": 1,
+      "tick": 128749,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -116.13081055870094,
+      "estimated_C_left_mm": 735.8769182472721,
+      "estimated_front_clearance_mm": 286.13081055870094,
+      "estimated_side_clearance_mm": -663.3769182472721
+    },
+    {
+      "lap": 1,
+      "tick": 128769,
+      "black_mask": 32,
+      "estimated_C_forward_mm": -104.01842688991142,
+      "estimated_C_left_mm": 739.841526593056,
+      "estimated_front_clearance_mm": 274.01842688991144,
+      "estimated_side_clearance_mm": -667.341526593056
+    },
+    {
+      "lap": 1,
+      "tick": 128785,
+      "black_mask": 0,
+      "estimated_C_forward_mm": -97.65057565611389,
+      "estimated_C_left_mm": 741.974043806618,
+      "estimated_front_clearance_mm": 267.6505756561139,
+      "estimated_side_clearance_mm": -669.474043806618
+    },
+    {
+      "lap": 1,
+      "tick": 128800,
+      "black_mask": 0,
+      "estimated_C_forward_mm": -91.21819703805438,
+      "estimated_C_left_mm": 744.0273895073483,
+      "estimated_front_clearance_mm": 261.21819703805437,
+      "estimated_side_clearance_mm": -671.5273895073483
+    },
+    {
+      "lap": 2,
+      "tick": 134505,
+      "black_mask": 56,
+      "estimated_C_forward_mm": 140.0020033638472,
+      "estimated_C_left_mm": -18.0638499187639,
+      "estimated_front_clearance_mm": 29.997996636152806,
+      "estimated_side_clearance_mm": 54.4361500812361
+    },
+    {
+      "lap": 2,
+      "tick": 134547,
+      "black_mask": 28,
+      "estimated_C_forward_mm": 125.89563789920511,
+      "estimated_C_left_mm": -18.832097872113778,
+      "estimated_front_clearance_mm": 44.10436210079489,
+      "estimated_side_clearance_mm": 53.66790212788622
+    },
+    {
+      "lap": 2,
+      "tick": 134589,
+      "black_mask": 4,
+      "estimated_C_forward_mm": 110.08092576151745,
+      "estimated_C_left_mm": -25.4755095651305,
+      "estimated_front_clearance_mm": 59.91907423848255,
+      "estimated_side_clearance_mm": 47.0244904348695
+    },
+    {
+      "lap": 2,
+      "tick": 134624,
+      "black_mask": 4,
+      "estimated_C_forward_mm": 94.87562713808639,
+      "estimated_C_left_mm": -33.60764953537565,
+      "estimated_front_clearance_mm": 75.12437286191361,
+      "estimated_side_clearance_mm": 38.89235046462435
+    },
+    {
+      "lap": 2,
+      "tick": 134666,
+      "black_mask": 4,
+      "estimated_C_forward_mm": 72.66257095085156,
+      "estimated_C_left_mm": -43.70171335095949,
+      "estimated_front_clearance_mm": 97.33742904914844,
+      "estimated_side_clearance_mm": 28.798286649040513
+    },
+    {
+      "lap": 2,
+      "tick": 134708,
+      "black_mask": 28,
+      "estimated_C_forward_mm": 46.901159517791946,
+      "estimated_C_left_mm": -51.67491457879693,
+      "estimated_front_clearance_mm": 123.09884048220806,
+      "estimated_side_clearance_mm": 20.82508542120307
+    },
+    {
+      "lap": 2,
+      "tick": 134751,
+      "black_mask": 24,
+      "estimated_C_forward_mm": 18.04898582536578,
+      "estimated_C_left_mm": -56.04184243818029,
+      "estimated_front_clearance_mm": 151.95101417463422,
+      "estimated_side_clearance_mm": 16.45815756181971
+    },
+    {
+      "lap": 2,
+      "tick": 134795,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -12.009728625917253,
+      "estimated_C_left_mm": -56.43308168953756,
+      "estimated_front_clearance_mm": 182.00972862591726,
+      "estimated_side_clearance_mm": 16.06691831046244
+    },
+    {
+      "lap": 2,
+      "tick": 134838,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -42.969377085121145,
+      "estimated_C_left_mm": -53.80923545297144,
+      "estimated_front_clearance_mm": 212.96937708512115,
+      "estimated_side_clearance_mm": 18.690764547028557
+    },
+    {
+      "lap": 2,
+      "tick": 134882,
+      "black_mask": 56,
+      "estimated_C_forward_mm": -78.10271881528662,
+      "estimated_C_left_mm": -43.1426413250607,
+      "estimated_front_clearance_mm": 248.1027188152866,
+      "estimated_side_clearance_mm": 29.3573586749393
+    },
+    {
+      "lap": 2,
+      "tick": 135084,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -216.7629348240796,
+      "estimated_C_left_mm": 16.17978050015664,
+      "estimated_front_clearance_mm": 386.7629348240796,
+      "estimated_side_clearance_mm": 56.32021949984336
+    },
+    {
+      "lap": 2,
+      "tick": 135288,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -321.1176201496521,
+      "estimated_C_left_mm": 132.12516186988285,
+      "estimated_front_clearance_mm": 491.1176201496521,
+      "estimated_side_clearance_mm": -59.625161869882845
+    },
+    {
+      "lap": 2,
+      "tick": 135489,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -383.9199843754027,
+      "estimated_C_left_mm": 283.92052100170605,
+      "estimated_front_clearance_mm": 553.9199843754027,
+      "estimated_side_clearance_mm": -211.42052100170605
+    },
+    {
+      "lap": 2,
+      "tick": 135690,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -375.5568051319896,
+      "estimated_C_left_mm": 435.8128699970824,
+      "estimated_front_clearance_mm": 545.5568051319897,
+      "estimated_side_clearance_mm": -363.3128699970824
+    },
+    {
+      "lap": 2,
+      "tick": 135894,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -367.61503764771714,
+      "estimated_C_left_mm": 540.6540078837475,
+      "estimated_front_clearance_mm": 537.6150376477171,
+      "estimated_side_clearance_mm": -468.15400788374745
+    },
+    {
+      "lap": 2,
+      "tick": 135986,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -339.23302997678957,
+      "estimated_C_left_mm": 591.8711185880325,
+      "estimated_front_clearance_mm": 509.23302997678957,
+      "estimated_side_clearance_mm": -519.3711185880325
+    },
+    {
+      "lap": 2,
+      "tick": 136002,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -328.53420460622505,
+      "estimated_C_left_mm": 602.5820387877172,
+      "estimated_front_clearance_mm": 498.53420460622505,
+      "estimated_side_clearance_mm": -530.0820387877172
+    },
+    {
+      "lap": 2,
+      "tick": 136018,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -319.81053148084067,
+      "estimated_C_left_mm": 612.0259095840404,
+      "estimated_front_clearance_mm": 489.81053148084067,
+      "estimated_side_clearance_mm": -539.5259095840404
+    },
+    {
+      "lap": 2,
+      "tick": 136033,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -311.16886197388766,
+      "estimated_C_left_mm": 621.3655332853343,
+      "estimated_front_clearance_mm": 481.16886197388766,
+      "estimated_side_clearance_mm": -548.8655332853343
+    },
+    {
+      "lap": 2,
+      "tick": 136052,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -298.01357091860405,
+      "estimated_C_left_mm": 634.5028656697732,
+      "estimated_front_clearance_mm": 468.01357091860405,
+      "estimated_side_clearance_mm": -562.0028656697732
+    },
+    {
+      "lap": 2,
+      "tick": 136067,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -288.44339684959766,
+      "estimated_C_left_mm": 643.6493722479204,
+      "estimated_front_clearance_mm": 458.44339684959766,
+      "estimated_side_clearance_mm": -571.1493722479204
+    },
+    {
+      "lap": 2,
+      "tick": 136082,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -279.6437926896217,
+      "estimated_C_left_mm": 651.4105640946752,
+      "estimated_front_clearance_mm": 449.6437926896217,
+      "estimated_side_clearance_mm": -578.9105640946752
+    },
+    {
+      "lap": 2,
+      "tick": 136100,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -265.8772696983697,
+      "estimated_C_left_mm": 663.2234750588754,
+      "estimated_front_clearance_mm": 435.8772696983697,
+      "estimated_side_clearance_mm": -590.7234750588754
+    },
+    {
+      "lap": 2,
+      "tick": 136116,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -256.2078463931373,
+      "estimated_C_left_mm": 671.0505225833649,
+      "estimated_front_clearance_mm": 426.2078463931373,
+      "estimated_side_clearance_mm": -598.5505225833649
+    },
+    {
+      "lap": 2,
+      "tick": 136131,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -245.73103560210305,
+      "estimated_C_left_mm": 678.8847237296121,
+      "estimated_front_clearance_mm": 415.731035602103,
+      "estimated_side_clearance_mm": -606.3847237296121
+    },
+    {
+      "lap": 2,
+      "tick": 136151,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -230.23154756541896,
+      "estimated_C_left_mm": 690.2607170689436,
+      "estimated_front_clearance_mm": 400.23154756541896,
+      "estimated_side_clearance_mm": -617.7607170689436
+    },
+    {
+      "lap": 2,
+      "tick": 136166,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -220.60369665526574,
+      "estimated_C_left_mm": 696.5331185212866,
+      "estimated_front_clearance_mm": 390.6036966552657,
+      "estimated_side_clearance_mm": -624.0331185212866
+    },
+    {
+      "lap": 2,
+      "tick": 136186,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -204.36907328028815,
+      "estimated_C_left_mm": 706.874154688782,
+      "estimated_front_clearance_mm": 374.36907328028815,
+      "estimated_side_clearance_mm": -634.374154688782
+    },
+    {
+      "lap": 2,
+      "tick": 136202,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -193.73170877320894,
+      "estimated_C_left_mm": 712.8260769224715,
+      "estimated_front_clearance_mm": 363.73170877320894,
+      "estimated_side_clearance_mm": -640.3260769224715
+    },
+    {
+      "lap": 2,
+      "tick": 136217,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -182.53286303355233,
+      "estimated_C_left_mm": 718.8484674689425,
+      "estimated_front_clearance_mm": 352.5328630335523,
+      "estimated_side_clearance_mm": -646.3484674689425
+    },
+    {
+      "lap": 2,
+      "tick": 136235,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -167.19072205756993,
+      "estimated_C_left_mm": 726.743249335396,
+      "estimated_front_clearance_mm": 337.19072205756993,
+      "estimated_side_clearance_mm": -654.243249335396
+    },
+    {
+      "lap": 2,
+      "tick": 136250,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -155.64759676517897,
+      "estimated_C_left_mm": 731.9448135489229,
+      "estimated_front_clearance_mm": 325.64759676517895,
+      "estimated_side_clearance_mm": -659.4448135489229
+    },
+    {
+      "lap": 2,
+      "tick": 136265,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -143.80117241150376,
+      "estimated_C_left_mm": 736.2275024220153,
+      "estimated_front_clearance_mm": 313.8011724115038,
+      "estimated_side_clearance_mm": -663.7275024220153
+    },
+    {
+      "lap": 2,
+      "tick": 136280,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -131.38089603232055,
+      "estimated_C_left_mm": 740.3692613294804,
+      "estimated_front_clearance_mm": 301.38089603232055,
+      "estimated_side_clearance_mm": -667.8692613294804
+    },
+    {
+      "lap": 2,
+      "tick": 136296,
+      "black_mask": 0,
+      "estimated_C_forward_mm": -119.8747520634225,
+      "estimated_C_left_mm": 743.8686267545576,
+      "estimated_front_clearance_mm": 289.87475206342253,
+      "estimated_side_clearance_mm": -671.3686267545576
+    },
+    {
+      "lap": 2,
+      "tick": 136311,
+      "black_mask": 0,
+      "estimated_C_forward_mm": -107.53607941530083,
+      "estimated_C_left_mm": 747.2344736324641,
+      "estimated_front_clearance_mm": 277.53607941530083,
+      "estimated_side_clearance_mm": -674.7344736324641
+    },
+    {
+      "lap": 3,
+      "tick": 141920,
+      "black_mask": 56,
+      "estimated_C_forward_mm": 128.97771802171093,
+      "estimated_C_left_mm": -9.816470381841548,
+      "estimated_front_clearance_mm": 41.02228197828907,
+      "estimated_side_clearance_mm": 62.68352961815845
+    },
+    {
+      "lap": 3,
+      "tick": 141963,
+      "black_mask": 28,
+      "estimated_C_forward_mm": 114.59558778659623,
+      "estimated_C_left_mm": -9.295228206121486,
+      "estimated_front_clearance_mm": 55.40441221340377,
+      "estimated_side_clearance_mm": 63.204771793878514
+    },
+    {
+      "lap": 3,
+      "tick": 142003,
+      "black_mask": 6,
+      "estimated_C_forward_mm": 101.54228101312052,
+      "estimated_C_left_mm": -13.791787141698997,
+      "estimated_front_clearance_mm": 68.45771898687948,
+      "estimated_side_clearance_mm": 58.708212858301
+    },
+    {
+      "lap": 3,
+      "tick": 142042,
+      "black_mask": 6,
+      "estimated_C_forward_mm": 85.83806005985195,
+      "estimated_C_left_mm": -22.55913018956761,
+      "estimated_front_clearance_mm": 84.16193994014805,
+      "estimated_side_clearance_mm": 49.94086981043239
+    },
+    {
+      "lap": 3,
+      "tick": 142084,
+      "black_mask": 6,
+      "estimated_C_forward_mm": 68.35776258600063,
+      "estimated_C_left_mm": -31.821895859084528,
+      "estimated_front_clearance_mm": 101.64223741399937,
+      "estimated_side_clearance_mm": 40.67810414091547
+    },
+    {
+      "lap": 3,
+      "tick": 142126,
+      "black_mask": 4,
+      "estimated_C_forward_mm": 49.53708923324801,
+      "estimated_C_left_mm": -39.130816677759064,
+      "estimated_front_clearance_mm": 120.46291076675199,
+      "estimated_side_clearance_mm": 33.369183322240936
+    },
+    {
+      "lap": 3,
+      "tick": 142168,
+      "black_mask": 28,
+      "estimated_C_forward_mm": 28.519630076534526,
+      "estimated_C_left_mm": -44.061416679745946,
+      "estimated_front_clearance_mm": 141.48036992346547,
+      "estimated_side_clearance_mm": 28.438583320254054
+    },
+    {
+      "lap": 3,
+      "tick": 142210,
+      "black_mask": 24,
+      "estimated_C_forward_mm": 4.75881143295615,
+      "estimated_C_left_mm": -46.16749901179495,
+      "estimated_front_clearance_mm": 165.24118856704385,
+      "estimated_side_clearance_mm": 26.332500988205048
+    },
+    {
+      "lap": 3,
+      "tick": 142253,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -22.274015720964904,
+      "estimated_C_left_mm": -45.19177175744145,
+      "estimated_front_clearance_mm": 192.2740157209649,
+      "estimated_side_clearance_mm": 27.30822824255855
+    },
+    {
+      "lap": 3,
+      "tick": 142293,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -47.17697438863914,
+      "estimated_C_left_mm": -42.10233329680343,
+      "estimated_front_clearance_mm": 217.17697438863914,
+      "estimated_side_clearance_mm": 30.39766670319657
+    },
+    {
+      "lap": 3,
+      "tick": 142495,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -187.82761902794073,
+      "estimated_C_left_mm": -3.0622047936925156,
+      "estimated_front_clearance_mm": 357.8276190279407,
+      "estimated_side_clearance_mm": 69.43779520630748
+    },
+    {
+      "lap": 3,
+      "tick": 142697,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -296.86717698683316,
+      "estimated_C_left_mm": 136.80669514732733,
+      "estimated_front_clearance_mm": 466.86717698683316,
+      "estimated_side_clearance_mm": -64.30669514732733
+    },
+    {
+      "lap": 3,
+      "tick": 142897,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -357.5846327450752,
+      "estimated_C_left_mm": 282.0457842484947,
+      "estimated_front_clearance_mm": 527.5846327450752,
+      "estimated_side_clearance_mm": -209.54578424849473
+    },
+    {
+      "lap": 3,
+      "tick": 143097,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -404.0020190246054,
+      "estimated_C_left_mm": 387.0134434304463,
+      "estimated_front_clearance_mm": 574.0020190246054,
+      "estimated_side_clearance_mm": -314.5134434304463
+    },
+    {
+      "lap": 3,
+      "tick": 143299,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -360.2660800879211,
+      "estimated_C_left_mm": 534.1270677858619,
+      "estimated_front_clearance_mm": 530.2660800879212,
+      "estimated_side_clearance_mm": -461.62706778586187
+    },
+    {
+      "lap": 3,
+      "tick": 143443,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -297.81843259880884,
+      "estimated_C_left_mm": 628.0276087127532,
+      "estimated_front_clearance_mm": 467.81843259880884,
+      "estimated_side_clearance_mm": -555.5276087127532
+    },
+    {
+      "lap": 3,
+      "tick": 143459,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -290.10877485937,
+      "estimated_C_left_mm": 636.3850413150177,
+      "estimated_front_clearance_mm": 460.10877485937,
+      "estimated_side_clearance_mm": -563.8850413150177
+    },
+    {
+      "lap": 3,
+      "tick": 143474,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -281.52010433160007,
+      "estimated_C_left_mm": 645.1838379226414,
+      "estimated_front_clearance_mm": 451.52010433160007,
+      "estimated_side_clearance_mm": -572.6838379226414
+    },
+    {
+      "lap": 3,
+      "tick": 143493,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -268.7053034833983,
+      "estimated_C_left_mm": 657.4545470434263,
+      "estimated_front_clearance_mm": 438.7053034833983,
+      "estimated_side_clearance_mm": -584.9545470434263
+    },
+    {
+      "lap": 3,
+      "tick": 143508,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -258.63549971819407,
+      "estimated_C_left_mm": 666.1052558563115,
+      "estimated_front_clearance_mm": 428.63549971819407,
+      "estimated_side_clearance_mm": -593.6052558563115
+    },
+    {
+      "lap": 3,
+      "tick": 143523,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -249.89655516143796,
+      "estimated_C_left_mm": 673.1919743530856,
+      "estimated_front_clearance_mm": 419.89655516143796,
+      "estimated_side_clearance_mm": -600.6919743530856
+    },
+    {
+      "lap": 3,
+      "tick": 143541,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -237.61124573274176,
+      "estimated_C_left_mm": 683.4912007516344,
+      "estimated_front_clearance_mm": 407.61124573274174,
+      "estimated_side_clearance_mm": -610.9912007516344
+    },
+    {
+      "lap": 3,
+      "tick": 143557,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -228.8080765303376,
+      "estimated_C_left_mm": 690.108706620131,
+      "estimated_front_clearance_mm": 398.8080765303376,
+      "estimated_side_clearance_mm": -617.608706620131
+    },
+    {
+      "lap": 3,
+      "tick": 143572,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -218.89444470189636,
+      "estimated_C_left_mm": 696.8491412249805,
+      "estimated_front_clearance_mm": 388.89444470189636,
+      "estimated_side_clearance_mm": -624.3491412249805
+    },
+    {
+      "lap": 3,
+      "tick": 143592,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -202.66051641967394,
+      "estimated_C_left_mm": 707.2139724010395,
+      "estimated_front_clearance_mm": 372.66051641967397,
+      "estimated_side_clearance_mm": -634.7139724010395
+    },
+    {
+      "lap": 3,
+      "tick": 143608,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -191.76905502408496,
+      "estimated_C_left_mm": 713.2873334947078,
+      "estimated_front_clearance_mm": 361.769055024085,
+      "estimated_side_clearance_mm": -640.7873334947078
+    },
+    {
+      "lap": 3,
+      "tick": 143623,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -180.42239413797424,
+      "estimated_C_left_mm": 719.3892994518964,
+      "estimated_front_clearance_mm": 350.42239413797427,
+      "estimated_side_clearance_mm": -646.8892994518964
+    },
+    {
+      "lap": 3,
+      "tick": 143641,
+      "black_mask": 16,
+      "estimated_C_forward_mm": -162.8481064049398,
+      "estimated_C_left_mm": 724.5760817859336,
+      "estimated_front_clearance_mm": 332.8481064049398,
+      "estimated_side_clearance_mm": -652.0760817859336
+    },
+    {
+      "lap": 3,
+      "tick": 143658,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -149.27374672231312,
+      "estimated_C_left_mm": 724.9603496164917,
+      "estimated_front_clearance_mm": 319.27374672231315,
+      "estimated_side_clearance_mm": -652.4603496164917
+    },
+    {
+      "lap": 3,
+      "tick": 143676,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -131.74106390935842,
+      "estimated_C_left_mm": 728.4000920683509,
+      "estimated_front_clearance_mm": 301.74106390935845,
+      "estimated_side_clearance_mm": -655.9000920683509
+    },
+    {
+      "lap": 3,
+      "tick": 143691,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -120.84382955358032,
+      "estimated_C_left_mm": 731.9922292296458,
+      "estimated_front_clearance_mm": 290.84382955358035,
+      "estimated_side_clearance_mm": -659.4922292296458
+    },
+    {
+      "lap": 3,
+      "tick": 143706,
+      "black_mask": 32,
+      "estimated_C_forward_mm": -112.72727407115242,
+      "estimated_C_left_mm": 734.7416547554693,
+      "estimated_front_clearance_mm": 282.7272740711524,
+      "estimated_side_clearance_mm": -662.2416547554693
+    },
+    {
+      "lap": 3,
+      "tick": 143721,
+      "black_mask": 0,
+      "estimated_C_forward_mm": -106.57372898240246,
+      "estimated_C_left_mm": 737.1072864361256,
+      "estimated_front_clearance_mm": 276.5737289824025,
+      "estimated_side_clearance_mm": -664.6072864361256
+    },
+    {
+      "lap": 3,
+      "tick": 143737,
+      "black_mask": 0,
+      "estimated_C_forward_mm": -101.4018568530978,
+      "estimated_C_left_mm": 739.1265931651479,
+      "estimated_front_clearance_mm": 271.4018568530978,
+      "estimated_side_clearance_mm": -666.6265931651479
+    },
+    {
+      "lap": 4,
+      "tick": 149520,
+      "black_mask": 56,
+      "estimated_C_forward_mm": 124.82848887310729,
+      "estimated_C_left_mm": -10.40972232734913,
+      "estimated_front_clearance_mm": 45.17151112689271,
+      "estimated_side_clearance_mm": 62.09027767265087
+    },
+    {
+      "lap": 4,
+      "tick": 149563,
+      "black_mask": 12,
+      "estimated_C_forward_mm": 110.29168286674195,
+      "estimated_C_left_mm": -11.619317740482202,
+      "estimated_front_clearance_mm": 59.70831713325805,
+      "estimated_side_clearance_mm": 60.8806822595178
+    },
+    {
+      "lap": 4,
+      "tick": 149603,
+      "black_mask": 6,
+      "estimated_C_forward_mm": 96.90601709695615,
+      "estimated_C_left_mm": -16.54083173322737,
+      "estimated_front_clearance_mm": 73.09398290304385,
+      "estimated_side_clearance_mm": 55.95916826677263
+    },
+    {
+      "lap": 4,
+      "tick": 149639,
+      "black_mask": 6,
+      "estimated_C_forward_mm": 83.05124367095928,
+      "estimated_C_left_mm": -24.08502310706837,
+      "estimated_front_clearance_mm": 86.94875632904072,
+      "estimated_side_clearance_mm": 48.414976892931634
+    },
+    {
+      "lap": 4,
+      "tick": 149679,
+      "black_mask": 6,
+      "estimated_C_forward_mm": 65.02652387285309,
+      "estimated_C_left_mm": -33.34862556228779,
+      "estimated_front_clearance_mm": 104.97347612714691,
+      "estimated_side_clearance_mm": 39.15137443771221
+    },
+    {
+      "lap": 4,
+      "tick": 149719,
+      "black_mask": 4,
+      "estimated_C_forward_mm": 47.943230253985085,
+      "estimated_C_left_mm": -39.86627158978261,
+      "estimated_front_clearance_mm": 122.05676974601491,
+      "estimated_side_clearance_mm": 32.63372841021739
+    },
+    {
+      "lap": 4,
+      "tick": 149759,
+      "black_mask": 24,
+      "estimated_C_forward_mm": 25.364531541546185,
+      "estimated_C_left_mm": -44.91023137970326,
+      "estimated_front_clearance_mm": 144.63546845845383,
+      "estimated_side_clearance_mm": 27.589768620296738
+    },
+    {
+      "lap": 4,
+      "tick": 149801,
+      "black_mask": 24,
+      "estimated_C_forward_mm": 1.0240228700355056,
+      "estimated_C_left_mm": -46.55804019950704,
+      "estimated_front_clearance_mm": 168.9759771299645,
+      "estimated_side_clearance_mm": 25.94195980049296
+    },
+    {
+      "lap": 4,
+      "tick": 149843,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -25.49795094694847,
+      "estimated_C_left_mm": -45.288360079321485,
+      "estimated_front_clearance_mm": 195.49795094694846,
+      "estimated_side_clearance_mm": 27.211639920678515
+    },
+    {
+      "lap": 4,
+      "tick": 149885,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -52.574613702851174,
+      "estimated_C_left_mm": -42.18325781537281,
+      "estimated_front_clearance_mm": 222.57461370285117,
+      "estimated_side_clearance_mm": 30.316742184627188
+    },
+    {
+      "lap": 4,
+      "tick": 150085,
+      "black_mask": 4,
+      "estimated_C_forward_mm": -196.00652591686907,
+      "estimated_C_left_mm": 6.428813103273782,
+      "estimated_front_clearance_mm": 366.00652591686907,
+      "estimated_side_clearance_mm": 66.07118689672622
+    },
+    {
+      "lap": 4,
+      "tick": 150287,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -299.02325889547393,
+      "estimated_C_left_mm": 158.67385703012582,
+      "estimated_front_clearance_mm": 469.02325889547393,
+      "estimated_side_clearance_mm": -86.17385703012582
+    },
+    {
+      "lap": 4,
+      "tick": 150489,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -362.2636387908485,
+      "estimated_C_left_mm": 267.4151167488227,
+      "estimated_front_clearance_mm": 532.2636387908485,
+      "estimated_side_clearance_mm": -194.9151167488227
+    },
+    {
+      "lap": 4,
+      "tick": 150690,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -403.1358595363825,
+      "estimated_C_left_mm": 382.37461380791143,
+      "estimated_front_clearance_mm": 573.1358595363824,
+      "estimated_side_clearance_mm": -309.87461380791143
+    },
+    {
+      "lap": 4,
+      "tick": 150893,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -352.786559336756,
+      "estimated_C_left_mm": 542.2681982947438,
+      "estimated_front_clearance_mm": 522.786559336756,
+      "estimated_side_clearance_mm": -469.7681982947438
+    },
+    {
+      "lap": 4,
+      "tick": 151036,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -291.78075305070763,
+      "estimated_C_left_mm": 633.6189363682757,
+      "estimated_front_clearance_mm": 461.78075305070763,
+      "estimated_side_clearance_mm": -561.1189363682757
+    },
+    {
+      "lap": 4,
+      "tick": 151052,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -284.4949824917089,
+      "estimated_C_left_mm": 642.2133656126957,
+      "estimated_front_clearance_mm": 454.4949824917089,
+      "estimated_side_clearance_mm": -569.7133656126957
+    },
+    {
+      "lap": 4,
+      "tick": 151068,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -275.71650001457425,
+      "estimated_C_left_mm": 650.566401947882,
+      "estimated_front_clearance_mm": 445.71650001457425,
+      "estimated_side_clearance_mm": -578.066401947882
+    },
+    {
+      "lap": 4,
+      "tick": 151083,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -265.90102613922073,
+      "estimated_C_left_mm": 659.4152491933802,
+      "estimated_front_clearance_mm": 435.90102613922073,
+      "estimated_side_clearance_mm": -586.9152491933802
+    },
+    {
+      "lap": 4,
+      "tick": 151101,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -253.47898498365885,
+      "estimated_C_left_mm": 670.531153586516,
+      "estimated_front_clearance_mm": 423.47898498365885,
+      "estimated_side_clearance_mm": -598.031153586516
+    },
+    {
+      "lap": 4,
+      "tick": 151116,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -245.46892580340847,
+      "estimated_C_left_mm": 677.2210539899811,
+      "estimated_front_clearance_mm": 415.46892580340847,
+      "estimated_side_clearance_mm": -604.7210539899811
+    },
+    {
+      "lap": 4,
+      "tick": 151136,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -231.36369087778576,
+      "estimated_C_left_mm": 688.23913796434,
+      "estimated_front_clearance_mm": 401.36369087778576,
+      "estimated_side_clearance_mm": -615.73913796434
+    },
+    {
+      "lap": 4,
+      "tick": 151152,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -221.33618821857468,
+      "estimated_C_left_mm": 695.1236122952747,
+      "estimated_front_clearance_mm": 391.33618821857465,
+      "estimated_side_clearance_mm": -622.6236122952747
+    },
+    {
+      "lap": 4,
+      "tick": 151170,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -206.73249924995125,
+      "estimated_C_left_mm": 704.3915769729867,
+      "estimated_front_clearance_mm": 376.7324992499513,
+      "estimated_side_clearance_mm": -631.8915769729867
+    },
+    {
+      "lap": 4,
+      "tick": 151185,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -197.56247872715633,
+      "estimated_C_left_mm": 710.6232902961227,
+      "estimated_front_clearance_mm": 367.5624787271563,
+      "estimated_side_clearance_mm": -638.1232902961227
+    },
+    {
+      "lap": 4,
+      "tick": 151200,
+      "black_mask": 24,
+      "estimated_C_forward_mm": -186.53995976356876,
+      "estimated_C_left_mm": 716.7448597360822,
+      "estimated_front_clearance_mm": 356.53995976356873,
+      "estimated_side_clearance_mm": -644.2448597360822
+    },
+    {
+      "lap": 4,
+      "tick": 151216,
+      "black_mask": 56,
+      "estimated_C_forward_mm": -174.14023331862714,
+      "estimated_C_left_mm": 719.3490054928136,
+      "estimated_front_clearance_mm": 344.1402333186271,
+      "estimated_side_clearance_mm": -646.8490054928136
+    },
+    {
+      "lap": 4,
+      "tick": 151231,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -159.31784478011448,
+      "estimated_C_left_mm": 720.3598542797002,
+      "estimated_front_clearance_mm": 329.31784478011446,
+      "estimated_side_clearance_mm": -647.8598542797002
+    },
+    {
+      "lap": 4,
+      "tick": 151250,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -141.0040049376159,
+      "estimated_C_left_mm": 724.6854538426512,
+      "estimated_front_clearance_mm": 311.0040049376159,
+      "estimated_side_clearance_mm": -652.1854538426512
+    },
+    {
+      "lap": 4,
+      "tick": 151267,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -129.5581911944369,
+      "estimated_C_left_mm": 728.5601513266954,
+      "estimated_front_clearance_mm": 299.55819119443686,
+      "estimated_side_clearance_mm": -656.0601513266954
+    },
+    {
+      "lap": 4,
+      "tick": 151287,
+      "black_mask": 48,
+      "estimated_C_forward_mm": -116.99413730008062,
+      "estimated_C_left_mm": 733.0934741029037,
+      "estimated_front_clearance_mm": 286.99413730008064,
+      "estimated_side_clearance_mm": -660.5934741029037
+    },
+    {
+      "lap": 4,
+      "tick": 151303,
+      "black_mask": 32,
+      "estimated_C_forward_mm": -110.64431907738653,
+      "estimated_C_left_mm": 735.4857931670031,
+      "estimated_front_clearance_mm": 280.6443190773865,
+      "estimated_side_clearance_mm": -662.9857931670031
+    },
+    {
+      "lap": 4,
+      "tick": 151318,
+      "black_mask": 0,
+      "estimated_C_forward_mm": -104.1265103153343,
+      "estimated_C_left_mm": 737.8747228710035,
+      "estimated_front_clearance_mm": 274.1265103153343,
+      "estimated_side_clearance_mm": -665.3747228710035
+    }
+  ],
+  "peak_pwm_and_metrics": [
+    902,
+    902,
+    0,
+    4316,
+    8
+  ],
+  "gray_counters": [
+    15713,
+    0,
+    0,
+    8
+  ],
+  "arc_observations": [
+    {
+      "point_events": 2,
+      "black_samples": 122,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 9.3492431640625,
+      "max_abs_radial_error_mm": 12.64300537109375,
+      "slot": 0,
+      "first": {
+        "tick": 128803,
+        "rejected": 0,
+        "x_mm": 1089.5994873046875,
+        "y_mm": -55.22688674926758,
+        "heading_rad": 2.903430700302124,
+        "progress_mm": 1165.0474853515625,
+        "turned_rad": 3.5286059379577637,
+        "heading_error_rad": 0.1399223804473877,
+        "correction_mm": 40.62871551513672,
+        "line_error_mm": 22.5,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      },
+      "last": {
+        "tick": 128803,
+        "rejected": 0,
+        "x_mm": 1089.5994873046875,
+        "y_mm": -55.22688674926758,
+        "heading_rad": 2.903430700302124,
+        "progress_mm": 1165.0474853515625,
+        "turned_rad": 3.5286059379577637,
+        "heading_error_rad": 0.1399223804473877,
+        "correction_mm": 40.62871551513672,
+        "line_error_mm": 22.5,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 4,
+      "black_samples": 121,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -1.608978271484375,
+      "max_abs_radial_error_mm": 19.9390869140625,
+      "slot": 1,
+      "first": {
+        "tick": 132668,
+        "rejected": 0,
+        "x_mm": -103.70026397705078,
+        "y_mm": -51.791290283203125,
+        "heading_rad": 0.2728869915008545,
+        "progress_mm": 1161.23876953125,
+        "turned_rad": 3.5684125423431396,
+        "heading_error_rad": 0.08486708998680115,
+        "correction_mm": 29.7869873046875,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      },
+      "last": {
+        "tick": 132668,
+        "rejected": 0,
+        "x_mm": -103.70026397705078,
+        "y_mm": -51.791290283203125,
+        "heading_rad": 0.2728869915008545,
+        "progress_mm": 1161.23876953125,
+        "turned_rad": 3.5684125423431396,
+        "heading_error_rad": 0.08486708998680115,
+        "correction_mm": 29.7869873046875,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 6,
+      "black_samples": 118,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -2.3065185546875,
+      "max_abs_radial_error_mm": 12.279327392578125,
+      "slot": 2,
+      "first": {
+        "tick": 136314,
+        "rejected": 0,
+        "x_mm": 1114.360107421875,
+        "y_mm": -53.151302337646484,
+        "heading_rad": 2.854107618331909,
+        "progress_mm": 1114.623046875,
+        "turned_rad": 3.4961845874786377,
+        "heading_error_rad": 0.08093476295471191,
+        "correction_mm": 21.103626251220703,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      },
+      "last": {
+        "tick": 136314,
+        "rejected": 0,
+        "x_mm": 1114.360107421875,
+        "y_mm": -53.151302337646484,
+        "heading_rad": 2.854107618331909,
+        "progress_mm": 1114.623046875,
+        "turned_rad": 3.4961845874786377,
+        "heading_error_rad": 0.08093476295471191,
+        "correction_mm": 21.103626251220703,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 8,
+      "black_samples": 127,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 0.444488525390625,
+      "max_abs_radial_error_mm": 36.914642333984375,
+      "slot": 3,
+      "first": {
+        "tick": 140050,
+        "rejected": 0,
+        "x_mm": -95.99785614013672,
+        "y_mm": -52.75796127319336,
+        "heading_rad": 0.2936302721500397,
+        "progress_mm": 1164.0732421875,
+        "turned_rad": 3.5472776889801025,
+        "heading_error_rad": 0.061079204082489014,
+        "correction_mm": 35.14989471435547,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      },
+      "last": {
+        "tick": 140050,
+        "rejected": 0,
+        "x_mm": -95.99785614013672,
+        "y_mm": -52.75796127319336,
+        "heading_rad": 0.2936302721500397,
+        "progress_mm": 1164.0732421875,
+        "turned_rad": 3.5472776889801025,
+        "heading_error_rad": 0.061079204082489014,
+        "correction_mm": 35.14989471435547,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 42,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 10,
+      "black_samples": 116,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 6.82183837890625,
+      "max_abs_radial_error_mm": 12.04583740234375,
+      "slot": 4,
+      "first": {
+        "tick": 143741,
+        "rejected": 0,
+        "x_mm": 1105.6492919921875,
+        "y_mm": -60.776283264160156,
+        "heading_rad": 2.86714506149292,
+        "progress_mm": 1096.998046875,
+        "turned_rad": 3.5631775856018066,
+        "heading_error_rad": 0.10989904403686523,
+        "correction_mm": 25.76883888244629,
+        "line_error_mm": 22.5,
+        "white_frames": 3,
+        "line_age_ms": 37,
+        "reasons": []
+      },
+      "last": {
+        "tick": 143741,
+        "rejected": 0,
+        "x_mm": 1105.6492919921875,
+        "y_mm": -60.776283264160156,
+        "heading_rad": 2.86714506149292,
+        "progress_mm": 1096.998046875,
+        "turned_rad": 3.5631775856018066,
+        "heading_error_rad": 0.10989904403686523,
+        "correction_mm": 25.76883888244629,
+        "line_error_mm": 22.5,
+        "white_frames": 3,
+        "line_age_ms": 37,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 12,
+      "black_samples": 125,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -0.190032958984375,
+      "max_abs_radial_error_mm": 40.412139892578125,
+      "slot": 5,
+      "first": {
+        "tick": 147598,
+        "rejected": 0,
+        "x_mm": -82.34970092773438,
+        "y_mm": -55.74679183959961,
+        "heading_rad": 0.2764575779438019,
+        "progress_mm": 1182.619140625,
+        "turned_rad": 3.566373348236084,
+        "heading_error_rad": 0.10953527688980103,
+        "correction_mm": 49.685184478759766,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 35,
+        "reasons": []
+      },
+      "last": {
+        "tick": 147598,
+        "rejected": 0,
+        "x_mm": -82.34970092773438,
+        "y_mm": -55.74679183959961,
+        "heading_rad": 0.2764575779438019,
+        "progress_mm": 1182.619140625,
+        "turned_rad": 3.566373348236084,
+        "heading_error_rad": 0.10953527688980103,
+        "correction_mm": 49.685184478759766,
+        "line_error_mm": -7.5,
+        "white_frames": 3,
+        "line_age_ms": 35,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 14,
+      "black_samples": 115,
+      "exit_attempts": 1,
+      "last_radial_error_mm": 6.7828369140625,
+      "max_abs_radial_error_mm": 12.197967529296875,
+      "slot": 6,
+      "first": {
+        "tick": 151328,
+        "rejected": 0,
+        "x_mm": 1105.3658447265625,
+        "y_mm": -61.07740783691406,
+        "heading_rad": 2.86873197555542,
+        "progress_mm": 1093.30078125,
+        "turned_rad": 3.5631885528564453,
+        "heading_error_rad": 0.10931038856506348,
+        "correction_mm": 26.21051788330078,
+        "line_error_mm": 22.5,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      },
+      "last": {
+        "tick": 151328,
+        "rejected": 0,
+        "x_mm": 1105.3658447265625,
+        "y_mm": -61.07740783691406,
+        "heading_rad": 2.86873197555542,
+        "progress_mm": 1093.30078125,
+        "turned_rad": 3.5631885528564453,
+        "heading_error_rad": 0.10931038856506348,
+        "correction_mm": 26.21051788330078,
+        "line_error_mm": 22.5,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      }
+    },
+    {
+      "point_events": 16,
+      "black_samples": 123,
+      "exit_attempts": 1,
+      "last_radial_error_mm": -3.987396240234375,
+      "max_abs_radial_error_mm": 29.58502197265625,
+      "slot": 7,
+      "first": {
+        "tick": 155229,
+        "rejected": 0,
+        "x_mm": -82.34132385253906,
+        "y_mm": -57.56195068359375,
+        "heading_rad": 0.29582494497299194,
+        "progress_mm": 1182.08984375,
+        "turned_rad": 3.541532278060913,
+        "heading_error_rad": 0.07821917533874512,
+        "correction_mm": 53.04970169067383,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      },
+      "last": {
+        "tick": 155229,
+        "rejected": 0,
+        "x_mm": -82.34132385253906,
+        "y_mm": -57.56195068359375,
+        "heading_rad": 0.29582494497299194,
+        "progress_mm": 1182.08984375,
+        "turned_rad": 3.541532278060913,
+        "heading_error_rad": 0.07821917533874512,
+        "correction_mm": 53.04970169067383,
+        "line_error_mm": 0.0,
+        "white_frames": 3,
+        "line_age_ms": 36,
+        "reasons": []
+      }
+    }
+  ],
+  "capture_sha256": "9c4d9e9827fad91c5d3200dcd88058074cb115c8a7b82378b4d47b9ed93b6123",
+  "firmware_bin_sha256": "c3805567d7bcc430549c0438b4abf81d0c0cd3e01f4c9e67a25d086cf69431ff"
+}

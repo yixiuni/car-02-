@@ -63,6 +63,7 @@ int main(void)
         Step(0x30,false);
         float v=(c.left_target+c.right_target)*.5f;
         float ps=!normal && !early ? CAR_CROSS_SPRINT_P_SCALE : 1;
+        if(CAR_TIME_TRIAL_ARC_PHASE && !normal && early) ps*=CAR_C_ENTRY_RIGHT_P_SCALE;
         float ds=!normal && !early ? CAR_CROSS_SPRINT_D_SCALE : 1;
         float radius=sqrtf(400*400-CAR_SENSOR_FORWARD_MM*CAR_SENSOR_FORWARD_MM);
         float omega=(normal ? -1 : 1)*v/radius-

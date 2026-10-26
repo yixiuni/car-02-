@@ -173,7 +173,8 @@ int main(void)
 
     CrossBEdge(0,false,false);
     assert(car.state==CAR_STRAIGHT && car.segment==2 && car.last_point==CAR_POINT_B);
-    CrossBEdge(80,false,false);
+    /* beyond the CROSS correction limit -> the qualified edge must be rejected */
+    CrossBEdge(CAR_CROSS_ENDPOINT_CORRECTION_MM+20,false,false);
     assert(car.state==CAR_ARC && car.segment==1 && car.point_events==1);
     Tick(200);assert(car.state==CAR_FAULT && car.fault==CAR_FAULT_LINE);
     CrossBEdge(0,true,false);
